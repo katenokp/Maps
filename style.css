@@ -1,0 +1,296 @@
+body {
+    font-family: "segoe ui light",sans-serif;
+    margin: 1em 5em 5em 5em;
+    font-size: 62.5%;
+    min-width: 1024px;
+}
+
+a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    outline: none;
+}
+
+input:focus{
+    outline: 1px solid silver;
+    outline-offset: -1px;
+    background: #ffe;
+}
+
+#mainWrapper {
+    font-size: 1.8em;
+    position: relative;
+}
+
+.buttonsWrapper {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    margin: -47px 0 0 -20px;
+}
+
+.button{
+    width: 100px;
+    height: 30px;
+    background-color: #f1f1f1;
+    border: solid #a8a8a8 1px;
+}
+
+.button:focus{
+    background-color: #f1f1f1;
+}
+
+.button:hover{
+    background-color: #dedede;
+}
+
+.button:active{
+    background-color: #c9c9c9;
+    color: #f1f1f1;
+    border: solid #717171 1px;
+}
+
+.grayLinesBlock {
+    display: block;
+    margin: 0 0 0 1.2em;
+    background-color: transparent;
+    border: solid silver;
+    border-width: 0 0 1px 1px;
+}
+
+.listItemLink:hover{
+    text-decoration: underline;
+    cursor: default;
+}
+
+.listItemWrapper {
+    display: block;
+    position: relative;
+    top: .95em; /* смещаем узел на середину линии */
+    background-color: #ffffff; /* закраска в цвет фона обязательна иначе будет видно линию */
+    margin: 0 0 3px .7em; /* делаем промежуток между узлами, отодвигаем левее  */
+    padding: 0 0.3em;
+}
+
+.changed{
+    color: #b64dbe;
+}
+
+.topItemWrapper {
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 2.4em;
+    margin: 0 0 0.8em -0.4em;
+    padding: 0 .25em;
+    border-bottom: 1px solid silver;
+}
+
+.topItemText{
+    margin:0 0 0 0.3em;
+    display: inline-block;
+}
+
+.counter{
+    display: inline-block;
+    height: 25px;
+    margin: 0 0 0 -3px;
+    padding-bottom: 1px;
+    font-size: 14px;
+    color: #878787;
+}
+
+.value{
+    margin: 0 2px;
+}
+
+ul {
+    display: block;
+}
+
+ul, li {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+ul li {
+    line-height: 1.6em;
+}
+
+ul li ul li {
+     margin: 0 0 0 1.2em;
+     border-left: 1px solid silver;
+ }
+
+ul li ul li ul li {
+    margin: 0 0 0 1.2em;
+    border-left: 1px solid silver;
+}
+
+ul li ul li ul li ul li {
+    margin: 0 0 0 1.2em;
+    border-left: 1px solid silver;
+}
+
+ul li ul li ul li ul li ul li {
+    margin: 0 0 0 1.2em;
+    border-left: 1px solid silver;
+}
+
+ul li.last ul li {/* последний узел, соединительную линию к след. узлу убираем */
+    border: none;
+}
+
+
+.marker {
+    border-color: gray transparent transparent transparent;
+    border-width: .5em .25em 0 .25em;
+    border-style: solid;
+    margin: .60em .25em 0 0;
+    float: left;
+    width: 0px;
+    height: 0px;
+    line-height: 0px;
+}
+
+.marker.close {
+    border-color: transparent transparent transparent gray;
+    border-width: .25em 0 .25em .5em;
+}
+
+.subList {
+    display: block;
+}
+
+.hidden {
+    display: none!important;
+}
+
+a:focus{
+    background-color: gray;
+}
+
+.checkbox{
+    vertical-align: middle;
+    margin: 0 0 2px 5px;
+}
+
+.checkbox:focus{
+    outline:none;
+}
+
+.progressBar{
+    margin: 0 0 3px 0;
+    height: 20px;
+    width: 50px;
+    vertical-align: middle;
+}
+
+.dropdownWrapper {
+    padding:0;
+    margin: 0 0 3px 0;
+    height: 18px;
+    width: 24px;
+    vertical-align: middle;
+    border: 1px solid #a8a8a8;
+    display: inline-block;
+}
+
+.dropButton{
+    position: absolute;
+    background-color: transparent;
+    padding: 9px 12px 9px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropButton:focus{
+    outline: none;
+}
+
+.dropContent{
+    position: relative;
+    text-align: center;
+    background-color: #fdfdfd;
+    border: 1px solid  #a8a8a8;
+    margin: 17px 0 0 -1px;
+    width: 24px;
+    z-index: 2;
+    line-height: 24px;
+}
+
+.dropLink{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+}
+
+.dropLink:active{
+    background: transparent;
+}
+
+#listItemId_dropLink1 {
+    background:  url("images/1.ico") no-repeat;
+    margin-left: 2px;
+}
+
+#listItemId_dropLink2 {
+    background:  url("images/2.ico") no-repeat;
+    margin-left: 2px;
+}
+#listItemId_dropLink3 {
+    background:  url("images/3.ico") no-repeat;
+    margin-left: 2px;
+}
+#listItemId_dropLink4 {
+    background:  url("images/4.ico") no-repeat;
+    margin-left: 2px;
+}
+#listItemId_dropLink5 {
+    background:  url("images/5.ico") no-repeat;
+    margin-left: 2px;
+}
+
+.commentInput {
+    color: #878787;
+    border: none;
+    font-family: "Courier New",sans-serif;
+    margin: 0 0 0 1em;
+    width: 200px;
+}
+
+.starsControlWrapper{
+    display: inline-block;
+    width: 165px;
+}
+
+.starsControlWrapper:hover > .starsWrapper{
+    display: inline-block;
+}
+
+.starsWrapper {
+    margin: 0 0 -0.1em 0;
+    width: 8em;
+    display: none;
+}
+
+.star{
+    width: 1em;
+    height: 1em;
+    background-image: url("images/GrayStar.png");
+    margin: -1px 1em 0 1em;
+}
+
+.star:hover{
+    background-image: url("images/GoldStar.png");
+}
+
+.resetStarsControl{
+    display: inline-block;
+    margin: 0 -1.3em 0 0;
+    width: 2em;
+    height: 1em;
+    position: relative;
+    z-index: 2;
+}

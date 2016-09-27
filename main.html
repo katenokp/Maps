@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div id="mainWrapper" onclick="hideAllDropdownLists(event)">
+
+    <div class="listItemWrapper">
+        <div class="topItemWrapper"><p class="topItemText">Пустой список</p>
+            <p class="counter">(<span class="value">100/120</span>)</p>
+        </div>
+    </div>
+
+    <div  class="buttonsWrapper">
+        <div>
+            <input type="button" class="button" value="Свернуть все" onclick="collapseAll()">
+            <input type="submit" class="button" value="Сохранить">
+        </div>
+    </div>
+
+
+    <ul>
+
+
+        <!--ListItem-->
+
+        <!--Последнему li в каждом ul нужно присвоить class="last"-->
+        <li class="last">
+
+            <div class="grayLinesBlock">
+                <div class="listItemWrapper">
+                    
+                    <input id="listItemId_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
+
+                    <!--если у элемента списка нед подстрок, то к классу элемента em добавляем hidden-->
+                    <!--если список свернут, то у класса должен быть close, если развернут убрать close-->
+
+                    <em id="listItemId_Marker" class="marker close" onclick="collapseElement(this.id)"></em>
+                    <progress class="progressBar" value="0" max="100">45%</progress>
+
+                    <!--контрол приоритета-->
+                    <div id="listItemId_DropWrapper" class="dropdownWrapper">
+                        <button id="listItemId_DropButton"class="dropButton" onclick="switchDropdownList(this.id)"></button>
+                        <div id="listItemId_Dropdown" class="dropContent hidden"onclick="switchDropdownList(this.id)">
+                            <a class="dropLink" href="#" id="listItemId_dropLinkDefault" >-</a>
+                            <a class="dropLink" href="#" id="listItemId_dropLink1"></a>
+                            <a class="dropLink" href="#" id="listItemId_dropLink2"></a>
+                            <a class="dropLink" href="#" id="listItemId_dropLink3"></a>
+                            <a class="dropLink" href="#" id="listItemId_dropLink4"></a>
+                            <a class="dropLink" href="#" id="listItemId_dropLink5"></a>
+                        </div>
+                    </div>
+
+                    <!--если у элемента списка нед подстрок, то у ссылки <a> нужно убрать обработчик на onclick-->
+                    <!--если у элемента списка есть подстроки, то для <a> добавляем обработчик onclick="collapseElement(this.id)-->
+                    <a id="listItemId" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Первый и последний элемент списка</a>
+                    <input id="listItemId_commentInput" class="commentInput" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
+
+                </div>
+            </div>
+
+            <!--если есть вложенный список, то у ul в id указан listItemId управляющего элемента-->
+            <ul id="listItemId_Ul" class="subList hidden">
+
+                <li>
+
+                    <div class="grayLinesBlock">
+                        <div class="listItemWrapper">
+
+                            <input id="listItemId11_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
+                            <em id="listItemId11_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
+                            <p class="counter">(<span class="value">100/666</span>)</p>
+                            <a id="listItemId11" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1</a>
+                            <input id="listItemId11_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
+
+                        </div>
+                    </div>
+
+                </li>
+
+
+                <li class="last">
+
+                    <div class="grayLinesBlock">
+                        <div class="listItemWrapper">
+
+                            <input id="listItemId12_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
+                            <em id="listItemId12_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
+                            <p class="counter">(<span class="value">08/30</span>)</p>
+                            <a id="listItemId12" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
+                            <input id="listItemId12_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
+
+                        </div>
+                    </div>
+
+                </li>
+
+            </ul>
+            
+            
+        </li>
+
+
+
+    </ul>
+</div>
+</body>
+</html>
