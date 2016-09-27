@@ -34,7 +34,7 @@
         <!--ListItem-->
 
         <!--Последнему li в каждом ul нужно присвоить class="last"-->
-        <li class="last">
+        <li> <!--class="last"-->
 
             <div class="grayLinesBlock">
                 <div class="listItemWrapper">
@@ -50,7 +50,7 @@
                     <!--контрол приоритета-->
                     <div id="listItemId_DropWrapper" class="dropdownWrapper">
                         <button id="listItemId_DropButton"class="dropButton" onclick="switchDropdownList(this.id)"></button>
-                        <div id="listItemId_Dropdown" class="dropContent hidden"onclick="switchDropdownList(this.id)">
+                        <div id="listItemId_Dropdown" class="dropContent hidden" onclick="switchDropdownList(this.id)">
                             <a class="dropLink" href="#" id="listItemId_dropLinkDefault" >-</a>
                             <a class="dropLink" href="#" id="listItemId_dropLink1"></a>
                             <a class="dropLink" href="#" id="listItemId_dropLink2"></a>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <!--если у элемента списка нед подстрок, то у ссылки <a> нужно убрать обработчик на onclick-->
+                    <!--если у элемента списка нет подстрок, то у ссылки <a> нужно убрать обработчик на onclick-->
                     <!--если у элемента списка есть подстроки, то для <a> добавляем обработчик onclick="collapseElement(this.id)-->
                     <a id="listItemId" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Первый и последний элемент списка</a>
                     <input id="listItemId_commentInput" class="commentInput" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
