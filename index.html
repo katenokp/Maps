@@ -5,14 +5,10 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <script type="text/javascript" src="/reader.js"></script>
 </head>
-<script>
-    loadData()
-</script>
-<body>
+<body onclick="hideAllDropdownLists(event)">
 
-<div id="mainWrapper" onclick="hideAllDropdownLists(event)">
+<div id="mainWrapper">
 
     <div class="listItemWrapper">
         <div class="topItemWrapper"><p class="topItemText">Пустой список</p>
@@ -45,23 +41,21 @@
                     <!--если список свернут, то у класса должен быть close, если развернут убрать close-->
 
                     <em id="listItemId_Marker" class="marker close" onclick="collapseElement(this.id)"></em>
-                    <progress class="progressBar" value="0" max="100">45%</progress>
+                    <progress class="progressBar" value="0" max="100">45%</progress><div id="listItemId_DropWrapper" class="dropdownWrapper">
+                        <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
+                        <button id="listItemId_DropButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
 
-                    <!--контрол приоритета-->
-                    <div id="listItemId_DropWrapper" class="dropdownWrapper">
-                        <button id="listItemId_DropButton"class="dropButton" onclick="switchDropdownList(this.id)"></button>
-                        <div id="listItemId_Dropdown" class="dropContent hidden" onclick="switchDropdownList(this.id)">
-                            <a class="dropLink" href="#" id="listItemId_dropLinkDefault" >-</a>
-                            <a class="dropLink" href="#" id="listItemId_dropLink1"></a>
-                            <a class="dropLink" href="#" id="listItemId_dropLink2"></a>
-                            <a class="dropLink" href="#" id="listItemId_dropLink3"></a>
-                            <a class="dropLink" href="#" id="listItemId_dropLink4"></a>
-                            <a class="dropLink" href="#" id="listItemId_dropLink5"></a>
+                        <div id="listItemId_Dropdown" class="dropContent hidden">
+                            <a class="dropLink priorityDefault" href="#" id="listItemId_dropLinkDefault" onclick="setPriority(this.id)"></a>
+                            <a id="listItemId_dropLink1" class="dropLink priority1" href="#" onclick="setPriority(this.id)"></a>
+                            <a class="dropLink priority2" href="#" id="listItemId_dropLink2" onclick="setPriority(this.id)"></a>
+                            <a class="dropLink priority3" href="#" id="listItemId_dropLink3" onclick="setPriority(this.id)"></a>
+                            <a class="dropLink priority4" href="#" id="listItemId_dropLink4" onclick="setPriority(this.id)"></a>
+                            <a class="dropLink priority5" href="#" id="listItemId_dropLink5" onclick="setPriority(this.id)"></a>
                         </div>
                     </div>
 
-                    <!--если у элемента списка нет подстрок, то у ссылки <a> нужно убрать обработчик на onclick-->
-                    <!--если у элемента списка есть подстроки, то для <a> добавляем обработчик onclick="collapseElement(this.id)-->
+                    <!--если у элемента списка нед подстрок, то у ссылки <a> нужно убрать обработчик onclick="collapseElement(this.id) и в имя класса добавить commentInput-->
                     <a id="listItemId" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Первый и последний элемент списка</a>
                     <input id="listItemId_commentInput" class="commentInput" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
 
@@ -106,11 +100,7 @@
 
             </ul>
             
-            
         </li>
-
-
-
     </ul>
 </div>
 </body>
