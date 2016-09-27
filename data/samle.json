@@ -1,0 +1,34 @@
+[
+  {
+    "name":"Шапка",
+    "id":"GlobalHeader",
+    "comment":"GlobalHeader",
+    "idChildren" : ["ExternHeader", "NDFLHeader"],
+    "isDone":true,
+    "completeness":1,
+    "completenessChildren": {
+      "isAutoValue": false,
+      "childrenCount":2,
+      "completeChildrenCount":1
+    },
+    "priority":2
+  },
+  {
+    "name":"Шапка Экстерновская",
+    "id":"ExternHeader",
+    "comment":"ExternHeader",
+    "isDone":false,
+    "completeness":1,
+    "completenessChildren":null,
+    "priority":1
+  },
+  {
+    "name":"Шапка НДФЛ",
+    "id":"NDFLHeader",
+    "comment":"NDFLHeader",
+    "isDone":true,
+    "completeness":1,
+    "completenessChildren":null,
+    "priority":2
+  }
+]

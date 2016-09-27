@@ -1,26 +1,34 @@
 [
     {
-    	"name":"Шапка",
+        "name":"Шапка",
         "id":"GlobalHeader",
-        "state":true,
+        "comment":"GlobalHeader",
+        "idChildren" : ["ExternHeader", "NDFLHeader"],
+        "isDone":true,
+        "completeness":1,
+        "completenessChildren": {
+            "isAutoValue": false,
+            "childrenCount":2,
+            "completeChildrenCount":1
+        },
         "priority":2
     },
     {
-    	"name":"Шапка Экстерновская",
+        "name":"Шапка Экстерновская",
         "id":"ExternHeader",
-        "state":false,
+        "comment":"ExternHeader",
+        "isDone":false,
+        "completeness":1,
+        "completenessChildren":null,
         "priority":1
     },
     {
-    	"name":"Шапка НДФЛ",
+        "name":"Шапка НДФЛ",
         "id":"NDFLHeader",
-        "state":true,
+        "comment":"NDFLHeader",
+        "isDone":true,
+        "completeness":1,
+        "completenessChildren":null,
         "priority":2
-    }, 
-    {
-    	"name":"Реквизиты и настройки",
-        "id":"RequisitesAndPreferences",
-        "state":false,
-        "priority":5
     }
 ]
