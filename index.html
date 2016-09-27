@@ -5,7 +5,11 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script type="text/javascript" src="/reader.js"></script>
 </head>
+<script>
+    loadData()
+</script>
 <body>
 
 <div id="mainWrapper" onclick="hideAllDropdownLists(event)">
@@ -24,7 +28,7 @@
     </div>
 
 
-    <ul>
+    <ul id="root"> <!--сюда будем фигачить элементы при построении страницы-->
 
 
         <!--ListItem-->

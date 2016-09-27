@@ -1,0 +1,26 @@
+[
+    {
+    	"name":"Шапка",
+        "id":"GlobalHeader",
+        "state":true,
+        "priority":2
+    },
+    {
+    	"name":"Шапка Экстерновская",
+        "id":"ExternHeader",
+        "state":false,
+        "priority":1
+    },
+    {
+    	"name":"Шапка НДФЛ",
+        "id":"NDFLHeader",
+        "state":true,
+        "priority":2
+    }, 
+    {
+    	"name":"Реквизиты и настройки",
+        "id":"RequisitesAndPreferences",
+        "state":false,
+        "priority":5
+    }
+]
