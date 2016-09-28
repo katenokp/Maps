@@ -12,7 +12,7 @@
     loadData();
 </script>
 <body onclick="hideAllDropdownLists(event)">
-<!--comment-->
+
 <div id="mainWrapper">
 
     <div class="listItemWrapper">
@@ -47,7 +47,12 @@
 
                     <!--если вложенного списка нет, то к классу добавлять hidden для progress-->
                     <em id="listItemId_Marker" class="marker close" onclick="collapseElement(this.id)"></em>
-                    <progress class="progressBar" value="0" max="100">45%</progress>
+
+                    <div class="hintContainer">
+                        <progress class="progressBar" value="53" max="325"></progress>
+                        <span class="hintText">53/325</span>
+                    </div>
+
                     <div id="listItemId_DropWrapper" class="dropdownWrapper">
                         <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
                         <button id="listItemId_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
@@ -79,7 +84,12 @@
 
                             <input id="listItemId11_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
                             <em id="listItemId11_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
-                            <progress class="progressBar hidden" value="0" max="100">45%</progress>
+
+                            <div class="hintContainer">
+                                <progress class="progressBar hidden" value="0" max="100"></progress>
+                                <span class="hintText">0/100</span>
+                            </div>
+
                             <div id="listItemId11_DropWrapper" class="dropdownWrapper">
                                 <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
                                 <button id="listItemId11_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
@@ -109,7 +119,12 @@
 
                             <input id="listItemId12_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
                             <em id="listItemId12_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
-                            <progress class="progressBar hidden" value="0" max="100">45%</progress>
+
+                            <div class="hintContainer">
+                                <progress class="progressBar hidden" value="100" max="100"></progress>
+                                <span class="hintText">100/100</span>
+                            </div>
+
                             <div id="listItemId12_DropWrapper" class="dropdownWrapper">
                                 <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
                                 <button id="listItemId12_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
