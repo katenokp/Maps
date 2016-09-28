@@ -1,5 +1,7 @@
 //todo перетащить на сервер, убрать из скриптов клиента
 
+//todo починить кнопку "свернуть всё"
+
 function drawBlockByAllFields(blockParentId, data){
     data.forEach(function(item){
         drawBlock(blockParentId, item, false); //todo научиться определять, последний ли элемент в списке
