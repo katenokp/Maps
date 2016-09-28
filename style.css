@@ -1,6 +1,7 @@
 body {
     font-family: "segoe ui light",sans-serif;
-    margin: 1em 5em 5em 5em;
+    padding: 1em 5em 5em 5em;
+    margin:0;
     font-size: 62.5%;
     min-width: 1024px;
 }
@@ -193,16 +194,16 @@ a:focus{
     height: 18px;
     width: 24px;
     vertical-align: middle;
-    border: 1px solid #a8a8a8;
+    text-align: center;
     display: inline-block;
 }
 
 .dropButton{
     position: absolute;
-    background-color: transparent;
     padding: 9px 12px 9px 12px;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .dropButton:focus{
@@ -214,42 +215,42 @@ a:focus{
     text-align: center;
     background-color: #fdfdfd;
     border: 1px solid  #a8a8a8;
-    margin: 17px 0 0 -1px;
+    margin: 17px 0 0 0;
     width: 24px;
     z-index: 2;
     line-height: 24px;
 }
 
 .dropLink{
-    display: inline-block;
-    width: 17px;
+    width: 24px;
     height: 17px;
+    text-align: center;
 }
 
 .dropLink:active{
     background: transparent;
 }
 
-#listItemId_dropLink1 {
-    background:  url("images/1.ico") no-repeat;
-    margin-left: 2px;
+.priorityDefault{
+    background:  url("images/default.png") no-repeat;
+    border: 1px solid #a8a8a8;
 }
 
-#listItemId_dropLink2 {
+.priority1 {
+    background:  url("images/1.ico") no-repeat;
+}
+
+.priority2 {
     background:  url("images/2.ico") no-repeat;
-    margin-left: 2px;
 }
-#listItemId_dropLink3 {
+.priority3 {
     background:  url("images/3.ico") no-repeat;
-    margin-left: 2px;
 }
-#listItemId_dropLink4 {
+.priority4 {
     background:  url("images/4.ico") no-repeat;
-    margin-left: 2px;
 }
-#listItemId_dropLink5 {
+.priority5 {
     background:  url("images/5.ico") no-repeat;
-    margin-left: 2px;
 }
 
 .commentInput {

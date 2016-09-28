@@ -31,6 +31,16 @@ function collapseAll() {
     }
 }
 
+function setPriority(elemId){
+
+    var listItemId = getListItemId(elemId);
+    var dropButtonId = getDropButtonId(listItemId);
+
+    var priorityClassName = document.getElementById(elemId).className;
+
+    document.getElementById(dropButtonId).className = "dropButton " + priorityClassName;
+}
+
 function switchDropdownList(elemId) {
     var listItemId = getListItemId(elemId);
     var dropdownId = getDropdownId(listItemId);
@@ -45,7 +55,8 @@ function switchDropdownList(elemId) {
 }
 
 function hideAllDropdownLists(event) {
-    if(event.target.className == "dropButton" || event.target.className == "dropContent")
+
+    if(event.target.id.search("DropButton") != -1)
         return;
 
     var dropLists = document.getElementsByClassName("dropContent");
@@ -127,4 +138,8 @@ function getMarkerId(listItemIndex) {
 
 function getDropdownId(listItemIndex) {
     return listItemIndex + "_Dropdown";
+}
+
+function getDropButtonId(listItemIndex) {
+    return listItemIndex + "_DropButton";
 }
