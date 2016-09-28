@@ -32,24 +32,34 @@ input:focus{
 }
 
 .button{
-    width: 100px;
-    height: 30px;
-    background-color: #f1f1f1;
-    border: solid #a8a8a8 1px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+.button.collapseAll{
+    background: url("images/collapseAll.png");
+}
+
+.button.expandAll{
+    background: url("images/expandAll.png");
+}
+
+.button.saveAll{
+    background: url("images/saveAll.png");
 }
 
 .button:focus{
-    background-color: #f1f1f1;
+    outline: none;
 }
 
 .button:hover{
-    background-color: #dedede;
+    background-color: #f5f5f5;
 }
 
 .button:active{
-    background-color: #c9c9c9;
-    color: #f1f1f1;
-    border: solid #717171 1px;
+    background-color: #e2e2e2;
 }
 
 .grayLinesBlock {
