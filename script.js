@@ -39,6 +39,8 @@ function setPriority(elemId){
     var priorityClassName = document.getElementById(elemId).className;
 
     document.getElementById(dropButtonId).className = "dropButton " + priorityClassName;
+
+    markChangedItem(elemId);
 }
 
 function switchDropdownList(elemId) {
