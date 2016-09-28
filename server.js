@@ -18,9 +18,11 @@ function start(request, response){
      //saver.
      fs.writeFileSync("data/savedData.json", postDataChunk);
      });
-    /*request.addListener("end", function(){
-     route(handle, pathname, response, postData);
-     });*/
+
+    request.addListener("end", function(){
+        console.log("end");
+     //route(handle, pathname, response, postData);
+     });
 
     file.serve(request, response);
     //reader.loadData();
