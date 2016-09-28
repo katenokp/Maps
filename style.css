@@ -28,12 +28,12 @@ input:focus{
     position: absolute;
     width: 100%;
     text-align: right;
-    margin: -47px 0 0 -20px;
+    margin: -45px 0 0 -20px;
 }
 
 .button{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: transparent;
     border: none;
 }
