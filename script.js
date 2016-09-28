@@ -16,17 +16,34 @@ function collapseElement(elementId) {
 }
 
 function collapseAll() {
-    var listItems = document.getElementsByClassName("listItemLink");
-    for (var i = 0; i < listItems.length; i++) {
+    var liControls = document.getElementsByTagName("li");
+    for (var i = 0; i < liControls.length; i++) {
 
-        var ulId = getUlId(listItems[i].id);
-        var markerId = getMarkerId(listItems[i].id);
+        var ulId = getUlId(liControls[i].id);
+        var markerId = getMarkerId(liControls[i].id);
 
         var initialUlClass = document.getElementById(ulId).className;
 
         if (initialUlClass.search("hidden") == -1) {
             document.getElementById(ulId).className += ' hidden';
             document.getElementById(markerId).className += ' close';
+        }
+    }
+}
+
+function expandAll() {
+    var liControls = document.getElementsByTagName("li");
+    for (var i = 0; i < liControls.length; i++) {
+
+        var ulId = getUlId(liControls[i].id);
+        var markerId = getMarkerId(liControls[i].id);
+
+        var initialUlClass = document.getElementById(ulId).className;
+        var initialMarkerClass = document.getElementById(markerId).className;
+
+        if (initialUlClass.search("hidden") != -1) {
+            document.getElementById(ulId).className = initialUlClass.replace(' hidden', '');
+            document.getElementById(markerId).className = initialMarkerClass.replace(' close', '');
         }
     }
 }
