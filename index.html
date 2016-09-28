@@ -79,8 +79,21 @@
 
                             <input id="listItemId11_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
                             <em id="listItemId11_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
-                            <p class="counter">(<span class="value">100/666</span>)</p>
-                            <a id="listItemId11" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1</a>
+                            <progress class="progressBar hidden" value="0" max="100">45%</progress>
+                            <div id="listItemId11_DropWrapper" class="dropdownWrapper">
+                                <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
+                                <button id="listItemId11_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
+
+                                <div id="listItemId11_PriorityDropDown" class="dropContent hidden">
+                                    <a class="dropLink priorityDefault" href="#" id="listItemId11_dropLinkDefault" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority1" id="listItemId11_dropLink1" href="#" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority2" href="#" id="listItemId11_dropLink2" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority3" href="#" id="listItemId11_dropLink3" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority4" href="#" id="listItemId11_dropLink4" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority5" href="#" id="listItemId11_dropLink5" onclick="setPriority(this.id)"></a>
+                                </div>
+                            </div>
+                            <a id="listItemId11" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1</a>
                             <input id="listItemId11_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
 
                         </div>
@@ -96,8 +109,21 @@
 
                             <input id="listItemId12_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
                             <em id="listItemId12_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
-                            <p class="counter">(<span class="value">08/30</span>)</p>
-                            <a id="listItemId12" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
+                            <progress class="progressBar hidden" value="0" max="100">45%</progress>
+                            <div id="listItemId12_DropWrapper" class="dropdownWrapper">
+                                <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
+                                <button id="listItemId12_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
+
+                                <div id="listItemId12_PriorityDropDown" class="dropContent hidden">
+                                    <a class="dropLink priorityDefault" href="#" id="listItemId12_dropLinkDefault" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority1" id="listItemId12_dropLink1" href="#" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority2" href="#" id="listItemId12_dropLink2" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority3" href="#" id="listItemId12_dropLink3" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority4" href="#" id="listItemId12_dropLink4" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority5" href="#" id="listItemId12_dropLink5" onclick="setPriority(this.id)"></a>
+                                </div>
+                            </div>
+                            <a id="listItemId12" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
                             <input id="listItemId12_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
 
                         </div>

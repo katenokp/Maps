@@ -178,7 +178,7 @@ a:focus{
 
 .checkbox{
     vertical-align: middle;
-    margin: 0 3px 2px 5px;
+    margin: 0 0 2px 5px;
 }
 
 .checkbox:focus{
@@ -186,7 +186,7 @@ a:focus{
 }
 
 .progressBar{
-    margin: 0 0 3px 3px;
+    margin: 0 0 3px 5px;
     height: 20px;
     width: 50px;
     vertical-align: middle;
@@ -198,7 +198,6 @@ a:focus{
     height: 18px;
     width: 24px;
     vertical-align: middle;
-    text-align: center;
     display: inline-block;
 }
 
