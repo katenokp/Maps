@@ -68,6 +68,8 @@ function addProgressBar(rootNodeId, id, data){
     progress.value = data.isDone ? 100 : 0; //todo вычислять по данным в базе
     progress.max = "100";
 
+    var br = hintContainer.appendChild(document.createElement('br'));
+
     var hintText = hintContainer.appendChild(document.createElement("span"));
     hintText.className = "hintText";
     hintText.id = id + "_HintText";
