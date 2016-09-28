@@ -129,7 +129,7 @@ function getStarId(listItemIndex, starIndex) {
 }
 
 function getUlId(listItemIndex) {
-    return listItemIndex + "_Ul";
+    return listItemIndex + "_ChildrenUl";
 }
 
 function getMarkerId(listItemIndex) {
@@ -137,9 +137,9 @@ function getMarkerId(listItemIndex) {
 }
 
 function getDropdownId(listItemIndex) {
-    return listItemIndex + "_Dropdown";
+    return listItemIndex + "_PriorityDropDown";
 }
 
 function getDropButtonId(listItemIndex) {
-    return listItemIndex + "_DropButton";
+    return listItemIndex + "_PriorityButton";
 }

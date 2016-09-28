@@ -50,9 +50,9 @@
                     <progress class="progressBar" value="0" max="100">45%</progress>
                     <div id="listItemId_DropWrapper" class="dropdownWrapper">
                         <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
-                        <button id="listItemId_DropButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
+                        <button id="listItemId_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
 
-                        <div id="listItemId_Dropdown" class="dropContent hidden">
+                        <div id="listItemId_PriorityDropDown" class="dropContent hidden">
                             <a class="dropLink priorityDefault" href="#" id="listItemId_dropLinkDefault" onclick="setPriority(this.id)"></a>
                             <a class="dropLink priority1" id="listItemId_dropLink1" href="#" onclick="setPriority(this.id)"></a>
                             <a class="dropLink priority2" href="#" id="listItemId_dropLink2" onclick="setPriority(this.id)"></a>
@@ -70,7 +70,7 @@
             </div>
 
             <!--если есть вложенный список, то у ul в id указан listItemId управляющего элемента-->
-            <ul id="listItemId_Ul" class="subList hidden">
+            <ul id="listItemId_ChildrenUl" class="subList hidden">
 
                 <li>
 
