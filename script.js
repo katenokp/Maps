@@ -74,60 +74,14 @@ function hideAllDropdownLists(event) {
     }
 }
 
-function fixStarsOnEvent(event, starId) {
-
-    if(event != undefined)
-        if(event.target.id != starId)
-            return;
-
-    fixStars(starId);
-}
-
-function fixStars(starId){
-
-    //фиксируем состояние звездочек
-    var starIndex = getStarIndex(starId);
-    var listItemIndex = getListItemId(starId);
-
-    var currentStarId;
-    for (var i = 1; i <= 5; i++) {
-        currentStarId = getStarId(listItemIndex, i);
-
-        if(i > starIndex)
-            document.getElementById(currentStarId).style.backgroundImage = "url('images/GrayStar.png')";
-        else document.getElementById(currentStarId).style.backgroundImage = "url('images/GoldStar.png')";
-    }
-
-    //фиксируем видимость звездочек
-    document.getElementById(listItemIndex + "_starsWrapper").style.display = "inline-block";
-}
-
-function resetStars(controlId){
-    var listItemIndex = getListItemId(controlId);
-    var currentStarId;
-
-    for (var i = 1; i <= 5; i++) {
-        currentStarId = getStarId(listItemIndex, i);
-        document.getElementById(currentStarId).style.backgroundImage = "";
-    }
-}
-
 function markChangedItem(controlId){
 
     var itemId = getListItemId(controlId);
     document.getElementById(itemId).className += " changed";
 }
 
-function getStarIndex (starId) {
-    return parseInt(starId[starId.length - 1]);
-}
-
 function getListItemId(elemId) {
     return elemId.split("_")[0];
-}
-
-function getStarId(listItemIndex, starIndex) {
-    return listItemIndex + "_star" + starIndex;
 }
 
 function getUlId(listItemIndex) {

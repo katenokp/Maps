@@ -268,38 +268,3 @@ a:focus{
     margin: 0 0 0 5px;
     width: 200px;
 }
-
-.starsControlWrapper{
-    display: inline-block;
-    width: 165px;
-}
-
-.starsControlWrapper:hover > .starsWrapper{
-    display: inline-block;
-}
-
-.starsWrapper {
-    margin: 0 0 -0.1em 0;
-    width: 8em;
-    display: none;
-}
-
-.star{
-    width: 1em;
-    height: 1em;
-    background-image: url("images/GrayStar.png");
-    margin: -1px 1em 0 1em;
-}
-
-.star:hover{
-    background-image: url("images/GoldStar.png");
-}
-
-.resetStarsControl{
-    display: inline-block;
-    margin: 0 -1.3em 0 0;
-    width: 2em;
-    height: 1em;
-    position: relative;
-    z-index: 2;
-}
