@@ -31,7 +31,6 @@ function drawBlockByAllFields(blockParentId, data){
     });
 
     //todo после построения всей страницы добавлять last к последнему элементу
-    
 }
 
 function addBlockName(rootNodeId, id, data){
