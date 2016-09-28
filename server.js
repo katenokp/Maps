@@ -11,14 +11,13 @@ var file = new nodeStatic.Server('.', {
 
 
 function start(request, response){
-    /*request.addListener("data", /!*saver.writeToFile*!/function(postDataChunk){
+    request.addListener("data", /*saver.writeToFile*/function(postDataChunk){
      postData += postDataChunk;
      console.log("Received POST data chunk '" +
      postDataChunk + "'.");
      //saver.
      fs.writeFileSync("data/savedData.json", postDataChunk);
      });
-     */
     /*request.addListener("end", function(){
      route(handle, pathname, response, postData);
      });*/
