@@ -101,7 +101,7 @@ function drawBlock(rootNodeId, data, isLastElement){
 
     var em = wrapper.appendChild(document.createElement("em"));
     em.id = id + "_Marker";
-    if(data.idChildren == null)
+    if(data.children == null)
         em.className = "hidden";
     else
         em.className = "marker close";
@@ -123,7 +123,7 @@ function drawBlock(rootNodeId, data, isLastElement){
 
         data.children.forEach(function (item) {
             console.log("children: " + item.id);
-            drawBlock(childrenUl.id, item, true);
+            drawBlock(childrenUl.id, item, false);
         });
     }
 
