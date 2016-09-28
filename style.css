@@ -162,6 +162,7 @@ ul li.last ul li {/* последний узел, соединительную �
 .marker.close {
     border-color: transparent transparent transparent gray;
     border-width: .25em 0 .25em .5em;
+    margin: .60em .20em 0 0;
 }
 
 .subList {
