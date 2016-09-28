@@ -17,10 +17,13 @@ function collapseElement(elementId) {
 
 function collapseAll() {
     var liControls = document.getElementsByTagName("li");
-    for (var i = 0; i < liControls.length; i++) {
 
-        var ulId = getUlId(liControls[i].id);
+    for (var i = 0; i < liControls.length; i++) {
         var markerId = getMarkerId(liControls[i].id);
+        var ulId = getUlId(liControls[i].id);
+
+        if(document.getElementById(ulId) == null)
+            break;
 
         var initialUlClass = document.getElementById(ulId).className;
 
@@ -37,6 +40,9 @@ function expandAll() {
 
         var ulId = getUlId(liControls[i].id);
         var markerId = getMarkerId(liControls[i].id);
+
+        if(document.getElementById(ulId) == null)
+            break;
 
         var initialUlClass = document.getElementById(ulId).className;
         var initialMarkerClass = document.getElementById(markerId).className;
@@ -95,7 +101,21 @@ function markChangedItem(controlId){
     var liId = getLiId(controlId);
     var itemId = getItemId(liId);
 
-    document.getElementById(itemId).className += " changed";
+    var itemClass =document.getElementById(itemId).className;
+
+    if(itemClass.search("changed") == -1)
+        document.getElementById(itemId).className += " changed";
+}
+
+function unmarkAllItems(){
+    var items = document.getElementsByClassName("listItemLink");
+
+    for (var i = 0; i < items.length; i++) {
+        var itemClass = items[i].className;
+
+        if(itemClass.search("changed") != -1)
+            items[i].className = items[i].className.replace(' changed', '');
+    }
 }
 
 function getItemId(liId){
