@@ -134,6 +134,7 @@ function drawBlock(rootNodeId, data, isLastElement){
     if(data.children != null) {
         var childrenUl = li.appendChild(document.createElement('ul'));
         childrenUl.id = id + "_ChildrenUl";
+        childrenUl.className = "subList hidden";
 
         data.children.forEach(function (item) {
             console.log("children: " + item.id);
