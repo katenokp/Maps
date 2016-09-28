@@ -48,7 +48,7 @@ function addDropDown(rootNodeId, id, data){
     for(var i = 1; i <= 5; i++){
         var priorityLink = priorityDropDown.appendChild(document.createElement('a'));
         priorityLink.href = "#";
-        priorityLink.id = id + "priorityLink" + i;
+        priorityLink.id = id + "_PriorityLink" + i;
         priorityLink.className = "dropLink priority" + i;
         priorityLink.onclick = function(){setPriority(this.id);};
     }
