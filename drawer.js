@@ -1,0 +1,160 @@
+//todo перетащить на сервер, убрать из скриптов клиента
+
+function drawBlockByAllFields(blockParentId, data){
+    data.forEach(function(item){
+        drawBlock(blockParentId, item, false); //todo научиться определять, последний ли элемент в списке
+        /*item.children.forEach(function(childItem){
+         drawBlock(item.id, childItem, true);
+         })*/
+    });
+
+    //todo после построения всей страницы добавлять last к последнему элементу
+}
+
+function addBlockName(rootNodeId, id, data){
+    var item = rootNodeId.appendChild(document.createElement('a'));
+    <!--todo если у элемента списка нет подстрок, то у ссылки <a> нужно убрать обработчик onclick="collapseElement(this.id) и в имя класса добавить commentInput-->
+    item.id = id + "_Item";
+    item.className = "listItemLink";
+    item.onclick = function(){collapseElement(this.id);};
+    item.onselectstart = function(){return false;};
+    item.onmousedown = function(){return false;};
+    item.innerHTML = data.name;
+}
+
+function addDropDown(rootNodeId, id, data){
+    var priorityWrapper = rootNodeId.appendChild(document.createElement("div")); //в вёрстке - listItemId_DropWrapper
+    priorityWrapper.id = id + "_PriorityWrapper";
+    priorityWrapper.className = "dropdownWrapper";
+
+    var priorityButton = priorityWrapper.appendChild(document.createElement("button")); <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
+    priorityButton.id = id + "_PriorityButton";
+    priorityButton.className = "dropButton " + getPriority(data); //todo
+    priorityButton.onclick = function(){switchDropdownList(this.id);};
+
+    var priorityDropDown = priorityWrapper.appendChild(document.createElement('div'));
+    priorityDropDown.id = id + "_PriorityDropDown";
+    priorityDropDown.className = "dropContent hidden";
+    priorityDropDown.onclick = function(){switchDropdownList(this.id);};
+
+    var priorityLinkDefault = priorityDropDown.appendChild(document.createElement('a'));
+    priorityLinkDefault.href = "#";
+    priorityLinkDefault.id = id + "_PriorityLinkDefault";
+    priorityLinkDefault.className = "dropLink priorityDefault";
+    priorityLinkDefault.onclick = function(){setPriority(this.id);};
+
+    for(var i = 1; i <= 5; i++){
+        var priorityLink = priorityDropDown.appendChild(document.createElement('a'));
+        priorityLink.href = "#";
+        priorityLink.id = id + "priorityLink" + i;
+        priorityLink.className = "dropLink priority" + i;
+        priorityLink.onclick = function(){setPriority(this.id);};
+    }
+}
+
+//todo сделать разные варианты: со шкалой и с числами
+function addProgressBar(rootNodeId, id, data){
+    var progress = rootNodeId.appendChild(document.createElement("progress"));
+    progress.id = id + "_Progress";
+    progress.className = "progressBar";
+    progress.value = data.isDone ? 100 : 0; //todo вычислять по данным в базе
+    progress.max = "100";
+    progress.innerHTML = "45%";
+}
+
+function addComment(rootNodeId, id, data){
+    var comment = rootNodeId.appendChild(document.createElement('input'));
+    comment.id = id + "_Comment";
+    comment.className = "commentInput";
+    comment.type = "text";
+    comment.value = data.comment + ".cs";
+    comment.oninput = function(){markChangedItem(this.id);};
+}
+
+//todo вернуть на родину маркер
+
+//todo для прозрачности зафигачивать json в объект js
+
+//todo передавать в вызываемые функции ровно то, что нужно
+//todo например, id создаваемого элемента (т.е уже с постфиксом), data - только если нужна, иначе конкретное поле
+
+//todo вытащить наверх признак наличия дочерних элементов. передавать его в функции в готовом виде
+function drawBlock(rootNodeId, data, isLastElement){
+    var li = document.getElementById(rootNodeId).appendChild(document.createElement("li"));
+    var id = data.id;
+    li.id = id;
+    if(isLastElement)
+        li.className = "last";
+
+    var block = li.appendChild(document.createElement("div"));
+    block.id = id + "_Block";
+    block.className = "grayLinesBlock";
+
+    var wrapper = block.appendChild(document.createElement("div"));
+    wrapper.id = id + "_Wrapper";
+    wrapper.className = "listItemWrapper";
+
+    var checkbox = wrapper.appendChild(document.createElement("input"));
+    checkbox.type = "checkbox";
+    checkbox.id = id + "_Checkbox";
+    checkbox.className = "checkbox";
+    checkbox.checked = data.isDone;
+    checkbox.onchange = function(){markChangedItem(this.id);};
+
+
+    <!--если у элемента списка нет подстрок, то к классу элемента em добавляем hidden-->
+    <!--если список свернут, то у класса должен быть close, если развернут убрать close-->
+
+    var em = wrapper.appendChild(document.createElement("em"));
+    em.id = id + "_Marker";
+    if(data.idChildren == null)
+        em.className = "hidden";
+    else
+        em.className = "marker close";
+    em.onclick = function(){collapseElement(this.id);};
+
+    addProgressBar(wrapper, id, data);
+
+    addDropDown(wrapper, id, data);
+
+    addBlockName(wrapper, id, data);
+
+    addComment(wrapper, id, data);
+
+    //строим дочерние элементы
+
+    if(data.children != null) {
+        var childrenUl = li.appendChild(document.createElement('ul'));
+        childrenUl.id = id + "_ChildrenUl";
+
+        data.children.forEach(function (item) {
+            console.log("children: " + item.id);
+            drawBlock(childrenUl.id, item, true);
+        });
+    }
+
+    /*var checkbox = li.appendChild(document.createElement("input"));
+     checkbox.type = "checkbox";
+     checkbox.id = id + "_Checkbox";
+     checkbox.checked = data.isDone;
+     checkbox.onclick = function(){checkbox.value = checkbox.checked};
+
+     var name = li.appendChild(document.createElement("input"));
+     name.value = data.name;
+     name.id = id + "_Id";
+
+     var priority = li.appendChild(document.createElement("input"));
+     priority.value = data.priority;
+     priority.id = id + "_Priority";*/
+}
+
+function getPriority(data){
+    if(data.priority > 5 || data.priority <0) {
+        console.error("Error: incorrect priority = '" + data.priority + "' for id '" + data.id + "'");
+        return;
+    }
+    if(data.priority == 0)
+        return "priorityDefault";
+    else
+        return "priority" + data.priority;
+}
