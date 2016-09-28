@@ -60,6 +60,10 @@ input:focus{
     border-width: 0 0 1px 1px;
 }
 
+.listItemLink{
+    margin: 0 0 0 5px;
+}
+
 .listItemLink:hover{
     text-decoration: underline;
     cursor: default;
@@ -120,9 +124,9 @@ ul li {
 }
 
 ul li ul li {
-     margin: 0 0 0 1.2em;
-     border-left: 1px solid silver;
- }
+    margin: 0 0 0 1.2em;
+    border-left: 1px solid silver;
+}
 
 ul li ul li ul li {
     margin: 0 0 0 1.2em;
@@ -174,7 +178,7 @@ a:focus{
 
 .checkbox{
     vertical-align: middle;
-    margin: 0 0 2px 5px;
+    margin: 0 3px 2px 5px;
 }
 
 .checkbox:focus{
@@ -182,7 +186,7 @@ a:focus{
 }
 
 .progressBar{
-    margin: 0 0 3px 0;
+    margin: 0 0 3px 3px;
     height: 20px;
     width: 50px;
     vertical-align: middle;
@@ -190,7 +194,7 @@ a:focus{
 
 .dropdownWrapper {
     padding:0;
-    margin: 0 0 3px 0;
+    margin: 0 0 0 7px;
     height: 18px;
     width: 24px;
     vertical-align: middle;
@@ -200,7 +204,9 @@ a:focus{
 
 .dropButton{
     position: absolute;
+    display: block;
     padding: 9px 12px 9px 12px;
+    margin: -2px 0 0 0 !important;
     border: none;
     cursor: pointer;
     text-align: center;
@@ -215,7 +221,7 @@ a:focus{
     text-align: center;
     background-color: #fdfdfd;
     border: 1px solid  #a8a8a8;
-    margin: 17px 0 0 0;
+    margin: 17px 0 0 -1px;
     width: 24px;
     z-index: 2;
     line-height: 24px;
@@ -223,41 +229,43 @@ a:focus{
 
 .dropLink{
     width: 24px;
-    height: 17px;
-    text-align: center;
+    height: 18px;
+    display:block;
+    margin: 0 0 3px 0;
 }
 
 .dropLink:active{
-    background: transparent;
+    background-color: transparent;
 }
 
 .priorityDefault{
-    background:  url("images/default.png") no-repeat;
-    border: 1px solid #a8a8a8;
+    background:  url("images/default.png") no-repeat center;
+    outline: 1px solid #a8a8a8 !important;
+    outline-offset: 0;
 }
 
 .priority1 {
-    background:  url("images/1.ico") no-repeat;
+    background:  url("images/1.ico") no-repeat center;
 }
 
 .priority2 {
-    background:  url("images/2.ico") no-repeat;
+    background:  url("images/2.ico") no-repeat center;
 }
 .priority3 {
-    background:  url("images/3.ico") no-repeat;
+    background:  url("images/3.ico") no-repeat center;
 }
 .priority4 {
-    background:  url("images/4.ico") no-repeat;
+    background:  url("images/4.ico") no-repeat center;
 }
 .priority5 {
-    background:  url("images/5.ico") no-repeat;
+    background:  url("images/5.ico") no-repeat center;
 }
 
 .commentInput {
     color: #878787;
     border: none;
     font-family: "Courier New",sans-serif;
-    margin: 0 0 0 1em;
+    margin: 0 0 0 5px;
     width: 200px;
 }
 
