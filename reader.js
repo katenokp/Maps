@@ -14,7 +14,7 @@ function loadData() {
             try {
                 var parsedText = JSON.parse(xhr.responseText);
             } catch (e) {
-                console.log("Error: " + e.message + "trewq");
+                console.log("Error: " + e.message);
             }
             //window.allData = parsedText;
             drawBlockByAllFields("root", parsedText);
