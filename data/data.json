@@ -11,24 +11,61 @@
             "childrenCount":2,
             "completeChildrenCount":1
         },
-        "priority":2
+        "priority":3,
+        "children":[
+            {
+                "name":"Шапка Экстерновская",
+                "id":"ExternHeader",
+                "comment":"ExternHeader",
+                "isDone":false,
+                "completeness":1,
+                "completenessChildren":null,
+                "priority":2
+            },
+            {
+                "name":"Шапка НДФЛ",
+                "id":"NDFLHeader",
+                "comment":"NDFLHeader",
+                "isDone":true,
+                "completeness":1,
+                "completenessChildren":null,
+                "priority":1
+            }
+        ]
     },
     {
-        "name":"Шапка Экстерновская",
-        "id":"ExternHeader",
-        "comment":"ExternHeader",
-        "isDone":false,
-        "completeness":1,
-        "completenessChildren":null,
-        "priority":1
-    },
-    {
-        "name":"Шапка НДФЛ",
-        "id":"NDFLHeader",
-        "comment":"NDFLHeader",
+        "name":"Шапка1",
+        "id":"GlobalHeader1",
+        "comment":"GlobalHeader1",
+        "idChildren" : ["ExternHeader1", "NDFLHeader1"],
         "isDone":true,
         "completeness":1,
-        "completenessChildren":null,
-        "priority":2
+        "completenessChildren": {
+            "isAutoValue": false,
+            "childrenCount":2,
+            "completeChildrenCount":1
+        },
+        "priority":3,
+        "children":[
+            {
+                "name":"Шапка Экстерновская1",
+                "id":"ExternHeader1",
+                "comment":"ExternHeader1",
+                "isDone":false,
+                "completeness":1,
+                "completenessChildren":null,
+                "priority":5
+            },
+            {
+                "name":"Шапка НДФЛ1",
+                "id":"NDFLHeader1",
+                "comment":"NDFLHeader1",
+                "isDone":true,
+                "completeness":1,
+                "completenessChildren":null,
+                "priority":0
+            }
+        ]
     }
+
 ]
