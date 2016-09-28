@@ -35,7 +35,7 @@
         <!--ListItem-->
 
         <!--Последнему li в каждом ul нужно присвоить class="last"-->
-        <li> <!--class="last"-->
+        <li  id="listItemId"> <!--class="last"-->
 
             <div class="grayLinesBlock">
                 <div class="listItemWrapper">
@@ -67,7 +67,7 @@
                     </div>
 
                     <!--если у элемента списка нет подстрок, то у ссылки <a> нужно убрать обработчик onclick="collapseElement(this.id) и в имя класса добавить commentInput-->
-                    <a id="listItemId" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Первый и последний элемент списка</a>
+                    <a id="listItemId_Item" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Первый и последний элемент списка</a>
                     <input id="listItemId_commentInput" class="commentInput" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
 
                 </div>
@@ -76,7 +76,7 @@
             <!--если есть вложенный список, то у ul в id указан listItemId управляющего элемента-->
             <ul id="listItemId_ChildrenUl" class="subList hidden">
 
-                <li>
+                <li  id="listItemId11">
 
                     <div class="grayLinesBlock">
                         <div class="listItemWrapper">
@@ -101,7 +101,7 @@
                                     <a class="dropLink priority5" href="#" id="listItemId11_dropLink5" onclick="setPriority(this.id)"></a>
                                 </div>
                             </div>
-                            <a id="listItemId11" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1</a>
+                            <a id="listItemId11_Item" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1</a>
                             <input id="listItemId11_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
 
                         </div>
@@ -110,7 +110,7 @@
                 </li>
 
 
-                <li class="last">
+                <li class="last"  id="listItemId12">
 
                     <div class="grayLinesBlock">
                         <div class="listItemWrapper">
@@ -135,7 +135,7 @@
                                     <a class="dropLink priority5" href="#" id="listItemId12_dropLink5" onclick="setPriority(this.id)"></a>
                                 </div>
                             </div>
-                            <a id="listItemId12" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
+                            <a id="listItemId12_Item" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
                             <input id="listItemId12_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
 
                         </div>

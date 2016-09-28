@@ -1,5 +1,5 @@
 function collapseElement(elementId) {
-    var listItemId = getListItemId(elementId);
+    var listItemId = getLiId(elementId);
     var ulId = getUlId(listItemId);
     var markerId = getMarkerId(listItemId);
 
@@ -33,7 +33,7 @@ function collapseAll() {
 
 function setPriority(elemId){
 
-    var listItemId = getListItemId(elemId);
+    var listItemId = getLiId(elemId);
     var dropButtonId = getDropButtonId(listItemId);
 
     var priorityClassName = document.getElementById(elemId).className;
@@ -44,7 +44,7 @@ function setPriority(elemId){
 }
 
 function switchDropdownList(elemId) {
-    var listItemId = getListItemId(elemId);
+    var listItemId = getLiId(elemId);
     var dropdownId = getDropdownId(listItemId);
 
     var className = document.getElementById(dropdownId).className;
@@ -75,12 +75,17 @@ function hideAllDropdownLists(event) {
 }
 
 function markChangedItem(controlId){
+    var liId = getLiId(controlId);
+    var itemId = getItemId(liId);
 
-    var itemId = getListItemId(controlId);
     document.getElementById(itemId).className += " changed";
 }
 
-function getListItemId(elemId) {
+function getItemId(liId){
+    return liId + "_Item";
+}
+
+function getLiId(elemId) {
     return elemId.split("_")[0];
 }
 
