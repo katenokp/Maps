@@ -77,8 +77,6 @@ function addComment(rootNodeId, id, data){
 
 //todo передавать в вызываемые функции ровно то, что нужно
 //todo например, id создаваемого элемента (т.е уже с постфиксом), data - только если нужна, иначе конкретное поле
-
-//todo вытащить наверх признак наличия дочерних элементов. передавать его в функции в готовом виде
 function drawBlock(rootNodeId, data, isLastElement){
     var li = document.getElementById(rootNodeId).appendChild(document.createElement("li"));
     var id = data.id;
@@ -100,10 +98,6 @@ function drawBlock(rootNodeId, data, isLastElement){
     checkbox.className = "checkbox";
     checkbox.checked = data.isDone;
     checkbox.onchange = function(){markChangedItem(this.id);};
-
-
-    <!--если у элемента списка нет подстрок, то к классу элемента em добавляем hidden-->
-    <!--если список свернут, то у класса должен быть close, если развернут убрать close-->
 
     var em = wrapper.appendChild(document.createElement("em"));
     em.id = id + "_Marker";
