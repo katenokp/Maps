@@ -18,23 +18,9 @@ function loadData() {
             }
             //window.allData = parsedText;
             drawBlockByAllFields("root", parsedText);
-            //getAllData(parsedText); todo
         }
     }
 }
-
-function getData(data) {
-    document.getElementById(data.id + "_Checkbox").checked = data.state;
-    document.getElementById(data.id + "_Priority").value = data.priority;
-    document.getElementById(data.id + "_Id").value = data.id;
-}
-
-function getAllData(parsedText) {
-    parsedText.forEach(function (item) {
-        getData(item);
-    })
-}
-
 
 function drawBlockByAllFields(blockParentId, data){
     data.forEach(function(item){
@@ -42,7 +28,9 @@ function drawBlockByAllFields(blockParentId, data){
         /*item.children.forEach(function(childItem){
             drawBlock(item.id, childItem, true);
         })*/
-    })
+    });
+
+    //todo после построения всей страницы добавлять last к последнему элементу
 }
 
 function addBlockName(rootNodeId, id, data){
@@ -107,6 +95,8 @@ function addComment(rootNodeId, id, data){
 
 //todo вернуть на родину маркер
 
+//todo для прозрачности зафигачивать json в объект js
+
 //todo передавать в вызываемые функции ровно то, что нужно
 //todo например, id создаваемого элемента (т.е уже с постфиксом), data - только если нужна, иначе конкретное поле
 function drawBlock(rootNodeId, data, isLastElement){
@@ -146,8 +136,6 @@ function drawBlock(rootNodeId, data, isLastElement){
     addBlockName(wrapper, id, data);
 
     addComment(wrapper, id, data);
-
-
 
     //строим дочерние элементы
 
