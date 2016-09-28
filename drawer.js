@@ -8,6 +8,8 @@ function drawBlockByAllFields(blockParentId, data){
         /*item.children.forEach(function(childItem){
          drawBlock(item.id, childItem, true);
          })*/
+
+
     });
 
     //todo после построения всей страницы добавлять last к последнему элементу
@@ -56,12 +58,20 @@ function addDropDown(rootNodeId, id, data){
 
 //todo сделать разные варианты: со шкалой и с числами
 function addProgressBar(rootNodeId, id, data){
-    var progress = rootNodeId.appendChild(document.createElement("progress"));
+    var hintContainer = rootNodeId.appendChild(document.createElement("div"));
+    hintContainer.className = "hintContainer";
+    hintContainer.id = id + "_HintContainer";
+
+    var progress = hintContainer.appendChild(document.createElement("progress"));
     progress.id = id + "_Progress";
     progress.className = "progressBar";
     progress.value = data.isDone ? 100 : 0; //todo вычислять по данным в базе
     progress.max = "100";
-    progress.innerHTML = "45%";
+
+    var hintText = hintContainer.appendChild(document.createElement("span"));
+    hintText.className = "hintText";
+    hintText.id = id + "_HintText";
+    hintText.innerHTML = data.isDone ? 100 : 0 + "/100";
 }
 
 function addComment(rootNodeId, id, data){
@@ -154,3 +164,5 @@ function getPriority(data){
     else
         return "priority" + data.priority;
 }
+
+
