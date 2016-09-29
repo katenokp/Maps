@@ -108,13 +108,16 @@ function markChangedItem(controlId){
 }
 
 function unmarkAllItems(){
-    var items = document.getElementsByClassName("listItemLink");
+    var linkControls = document.getElementsByTagName("a");
 
-    for (var i = 0; i < items.length; i++) {
-        var itemClass = items[i].className;
+    for (var i = 0; i < linkControls.length; i++) {
+        if(linkControls[i].id.search("_Item") == -1)
+            continue;
 
-        if(itemClass.search("changed") != -1)
-            items[i].className = items[i].className.replace(' changed', '');
+        var listItemClass = linkControls[i].className;
+
+        if(listItemClass.search("changed") != -1)
+            linkControls[i].className = linkControls[i].className.replace(' changed', '');
     }
 }
 
