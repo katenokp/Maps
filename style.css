@@ -212,10 +212,21 @@ a:focus{
 }
 
 .progressBar{
+    border: solid #a8a8a8 1px;
     margin: 0 0 3px 5px;
     height: 20px;
     width: 50px;
     vertical-align: middle;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e5e5e5;
+}
+progress::-webkit-progress-value {
+    background-color: #679deb;
+}
+progress::-moz-progress-bar {
+    background-color: #679deb;
 }
 
 .dropdownWrapper {
