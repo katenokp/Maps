@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html onclick="hideAllDropdownLists(event)">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -11,7 +11,7 @@
 <script>
     loadData();
 </script>
-<body onclick="hideAllDropdownLists(event)">
+<body>
 
 <div id="mainWrapper">
 
@@ -40,7 +40,7 @@
 
             <div class="grayLinesBlock">
                 <div class="listItemWrapper">
-                    
+
                     <input id="listItemId_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
 
                     <!--если у элемента списка нет подстрок, то к классу элемента em добавляем hidden-->
@@ -67,10 +67,12 @@
                         </div>
                     </div>
 
-                    <!--если у элемента списка нет подстрок, то у ссылки <a> нужно убрать обработчик onclick="collapseElement(this.id) и в имя класса добавить commentInput-->
+                    <!--если у элемента списка нет подстрок, то у ссылки <a> нужно убрать обработчик onclick="collapseElement(this.id) и в имя класса добавить listItemLink-->
                     <a id="listItemId_Item" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Первый и последний элемент списка</a>
-                    <input id="listItemId_commentInput" class="commentInput" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
+                    <input id="listItemId_commentInput" class="textInput comment" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
 
+                    <!--если у элемента списка нет подстрок, то для input убрать у класса hidden-->
+                    <input id="listItemId_indexInput" class="textInput index hidden" type="text" value="199/200" oninput="markChangedItem(this.id)">
                 </div>
             </div>
 
@@ -90,7 +92,6 @@
                             </div>
 
                             <div id="listItemId11_DropWrapper" class="dropdownWrapper">
-                                <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
                                 <button id="listItemId11_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
 
                                 <div id="listItemId11_PriorityDropDown" class="dropContent hidden">
@@ -102,8 +103,9 @@
                                     <a class="dropLink priority5" href="#" id="listItemId11_dropLink5" onclick="setPriority(this.id)"></a>
                                 </div>
                             </div>
-                            <a id="listItemId11_Item" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1</a>
-                            <input id="listItemId11_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
+                            <a id="listItemId11_Item" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1</a>
+                            <input id="listItemId11_commentInput" class="textInput comment" type="text" value=""  oninput="markChangedItem(this.id)">
+                            <input id="listItemId11_indexInput" class="textInput index" type="text" value="" oninput="markChangedItem(this.id)">
 
                         </div>
                     </div>
@@ -124,7 +126,6 @@
                             </div>
 
                             <div id="listItemId12_DropWrapper" class="dropdownWrapper">
-                                <!--кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5-->
                                 <button id="listItemId12_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
 
                                 <div id="listItemId12_PriorityDropDown" class="dropContent hidden">
@@ -136,8 +137,9 @@
                                     <a class="dropLink priority5" href="#" id="listItemId12_dropLink5" onclick="setPriority(this.id)"></a>
                                 </div>
                             </div>
-                            <a id="listItemId12_Item" class="listItemLink" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
-                            <input id="listItemId12_commentInput" class="commentInput" type="text" value=""  oninput="markChangedItem(this.id)">
+                            <a id="listItemId12_Item" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
+                            <input id="listItemId12_commentInput" class="textInput comment" type="text" value=""  oninput="markChangedItem(this.id)">
+                            <input id="listItemId12_indexInput" class="textInput index" type="text" value="1/30" oninput="markChangedItem(this.id)">
 
                         </div>
                     </div>

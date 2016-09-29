@@ -13,12 +13,6 @@ a {
     outline: none;
 }
 
-input:focus{
-    outline: 1px solid silver;
-    outline-offset: -1px;
-    background: #ffe;
-}
-
 #mainWrapper {
     font-size: 1.8em;
     position: relative;
@@ -68,10 +62,6 @@ input:focus{
     background-color: transparent;
     border: solid silver;
     border-width: 0 0 1px 1px;
-}
-
-.listItemLink{
-    margin: 0 0 0 5px;
 }
 
 .listItemLink:hover{
@@ -230,7 +220,7 @@ a:focus{
 
 .dropdownWrapper {
     padding:0;
-    margin: 0 0 0 7px;
+    margin: 0 5px 0 7px;
     height: 18px;
     width: 24px;
     vertical-align: middle;
@@ -296,10 +286,28 @@ a:focus{
     background:  url("images/5.ico") no-repeat center;
 }
 
-.commentInput {
+.listItemWrapper:hover .textInput{
+    outline: 1px solid silver;
+    outline-offset: -1px;
+    background: #ffe;
+}
+
+.textInput:focus{
+    outline: none;
+}
+
+.textInput {
     color: #878787;
     border: none;
     font-family: "Courier New",sans-serif;
+    padding: 0 0 0 3px;
     margin: 0 0 0 5px;
+}
+
+.textInput.comment {
     width: 200px;
+}
+
+.textInput.index {
+    width: 55px;
 }
