@@ -81,7 +81,9 @@ function switchDropdownList(elemId) {
 
 function hideAllDropdownLists(event) {
 
-    if(event.target.id.search("PriorityButton") != -1)
+    if (!event) event = window.event;
+
+    if((event.target || event.srcElement).id.search("PriorityButton") != -1)
         return;
 
     var dropLists = document.getElementsByClassName("dropContent");
