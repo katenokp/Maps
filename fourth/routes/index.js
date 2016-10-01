@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 });
 
 function readData(res){
-    fs.readFile(path.join(__dirname,'../data/data.json'), 'utf8', function(err, data){
+    fs.readFile(path.join(__dirname,'../data/ndflData.json'), 'utf8', function(err, data){
         if(err){
             throw err;
         }
@@ -21,16 +21,32 @@ function readData(res){
             var parsedData = JSON.parse(data);
             //return JSON.parse(data);
             //console.log()
-            parsedData.forEach(function(item){
-                calculateCompleteness(item);
-            });
+            calculateAllCompleteness(parsedData);
             res.render('index', {data: parsedData});
         }
     })
 
 }
 
-function calculateCompleteness(data){
+function calculateAllCompleteness(data){
+    var dataWithWeight = [];
+    calculateCompleteness(data, dataWithWeight)
+}
+
+function calculateCompleteness(data, result){
+
+    data.forEach(function(item) {
+        result.push({
+            id: item.id,
+            weight: calculateWeight(item)
+        });
+        if(item.children != null){
+            calculateCompleteness(item.children, result);
+        }
+    });
+}
+
+/*function calculateCompleteness(data){
     var result = {
         all: 0,
         done: 0
@@ -57,6 +73,34 @@ function calculateCompleteness(data){
     console.log("weight for %s: %d/%d", data.id, result.done, result.all);
     return result;
 
+}*/
+
+function calculateWeight(item){
+    var weight;
+    var children = item.children;
+    if(children == null){
+        if(item.weight == null){
+            weight = {
+                all: 1,
+                done: item.isDone ? 1: 0
+            };
+
+        } else{
+            weight = item.weight;
+        }
+    } else{
+        var doneChildrenCount = 0;
+        children.forEach(function(child){
+            if(child.isDone)
+                doneChildrenCount++;
+        });
+        weight = {
+            all: children.length,
+            done: doneChildrenCount
+        };
+    }
+    console.log("weight for %s: %d/%d", item.id, weight.done, weight.all);
+    return weight;
 }
 
 /* GET home page. */
