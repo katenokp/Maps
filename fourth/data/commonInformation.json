@@ -1,0 +1,9 @@
+[
+  {
+    "service":"ndfl",
+    "weight":{
+      "all":200,
+      "done":150
+    }
+  }
+]
