@@ -1,0 +1,21 @@
+doctype html
+html(onclick="hideAllDropdownLists(event)")
+    head(lang="en")
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='/styles/style.css')
+        script(src='/js/script.js')
+    body
+        #mainWrapper
+            .listItemWrapper
+                .topItemWrapper
+                    p.topItemText Пустой список
+                    p.counter
+                        | (
+                        span.value 100/120
+                        | )
+            .buttonsWrapper
+                div
+                    input.button.collapseAll(type='button', value='', onclick='collapseAll()')
+                    input.button.expandAll(type='button', value='', onclick='expandAll()')
+                    input.button.saveAll(type='submit', value='', onclick='unmarkAllItems()')
+            block content

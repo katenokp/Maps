@@ -1,0 +1,101 @@
+doctype html
+html(onclick='hideAllDropdownLists(event)')
+   head(lang='en')
+      meta(charset='UTF-8')
+      title= data.id
+      link(rel='stylesheet', href='/styles/style.css')
+      script(src='/js/script.js')
+      script(type='text/javascript', src='/js/reader.js')
+      script(type='text/javascript', src='/js/drawer.js')
+   script.
+      loadData();
+   body
+      #mainWrapper
+         .listItemWrapper
+            .topItemWrapper
+               p.topItemText Пустой список
+               p.counter
+                  | (
+                  span.value 100/120
+                  | )
+         .buttonsWrapper
+            div
+               input.button.collapseAll(type='button', value='', onclick='collapseAll()')
+               input.button.expandAll(type='button', value='', onclick='expandAll()')
+               input.button.saveAll(type='submit', value='', onclick='unmarkAllItems()')
+         ul#root
+            // сюда будем фигачить элементы при построении страницы
+            // ListItem
+            // Последнему li в каждом ul нужно присвоить class="last"
+            li#listItemId
+               // class="last"
+               .grayLinesBlock
+                  .listItemWrapper
+                     input#=data.id+"_Checkbox".checkbox(type='checkbox', onchange='markChangedItem(this.id)')
+                     // если у элемента списка нет подстрок, то к классу элемента em добавляем hidden
+                     // если список свернут, то у класса должен быть close, если развернут убрать close
+                     // если вложенного списка нет, то к классу добавлять hidden для progress
+                     em#listItemId_Marker.marker.close(onclick='collapseElement(this.id)')
+                     .hintContainer
+                        progress.progressBar(value='53', max='325')
+                        br
+                        span.hintText 53/325
+                     #listItemId_DropWrapper.dropdownWrapper
+                        // кнопке добавлять класс в зависимости от приритета: priorityDefault, priority1 .. priority5
+                        button#listItemId_PriorityButton.dropButton.priorityDefault(onclick='switchDropdownList(this.id)')
+                        #listItemId_PriorityDropDown.dropContent.hidden
+                           a#listItemId_dropLinkDefault.dropLink.priorityDefault(href='#', onclick='setPriority(this.id)')
+                           a#listItemId_dropLink1.dropLink.priority1(href='#', onclick='setPriority(this.id)')
+                           a#listItemId_dropLink2.dropLink.priority2(href='#', onclick='setPriority(this.id)')
+                           a#listItemId_dropLink3.dropLink.priority3(href='#', onclick='setPriority(this.id)')
+                           a#listItemId_dropLink4.dropLink.priority4(href='#', onclick='setPriority(this.id)')
+                           a#listItemId_dropLink5.dropLink.priority5(href='#', onclick='setPriority(this.id)')
+                     // если у элемента списка нет подстрок, то у ссылки <a> нужно убрать обработчик onclick="collapseElement(this.id) и в имя класса добавить listItemLink
+                     a#listItemId_Item.listItemLink(onclick='collapseElement(this.id)', onselectstart='return false', onmousedown='return false') Первый и последний элемент списка
+                     input#listItemId_commentInput.textInput.comment(type='text', value='ValidationTests.cs', oninput='markChangedItem(this.id)')
+                     // если у элемента списка нет подстрок, то для input убрать у класса hidden
+                     input#listItemId_indexInput.textInput.index.hidden(type='text', value='199/200', oninput='markChangedItem(this.id)')
+               // если есть вложенный список, то у ul в id указан listItemId управляющего элемента
+               ul#listItemId_ChildrenUl.subList.hidden
+                  li#listItemId11
+                     .grayLinesBlock
+                        .listItemWrapper
+                           input#listItemId11_Checkbox.checkbox(type='checkbox', onchange='markChangedItem(this.id)')
+                           em#listItemId11_Marker.marker.close.hidden(onclick='collapseElement(this.id)')
+                           .hintContainer
+                              progress.progressBar.hidden(value='0', max='100')
+                              br
+                              span.hintText 0/100
+                           #listItemId11_DropWrapper.dropdownWrapper
+                              button#listItemId11_PriorityButton.dropButton.priorityDefault(onclick='switchDropdownList(this.id)')
+                              #listItemId11_PriorityDropDown.dropContent.hidden
+                                 a#listItemId11_dropLinkDefault.dropLink.priorityDefault(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId11_dropLink1.dropLink.priority1(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId11_dropLink2.dropLink.priority2(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId11_dropLink3.dropLink.priority3(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId11_dropLink4.dropLink.priority4(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId11_dropLink5.dropLink.priority5(href='#', onclick='setPriority(this.id)')
+                           a#listItemId11_Item(onselectstart='return false', onmousedown='return false') Вложенный список. Элемент 1
+                           input#listItemId11_commentInput.textInput.comment(type='text', value='', oninput='markChangedItem(this.id)')
+                           input#listItemId11_indexInput.textInput.index(type='text', value='', oninput='markChangedItem(this.id)')
+                  li#listItemId12.last
+                     .grayLinesBlock
+                        .listItemWrapper
+                           input#listItemId12_Checkbox.checkbox(type='checkbox', onchange='markChangedItem(this.id)')
+                           em#listItemId12_Marker.marker.close.hidden(onclick='collapseElement(this.id)')
+                           .hintContainer
+                              progress.progressBar.hidden(value='100', max='100')
+                              br
+                              span.hintText 100/100
+                           #listItemId12_DropWrapper.dropdownWrapper
+                              button#listItemId12_PriorityButton.dropButton.priorityDefault(onclick='switchDropdownList(this.id)')
+                              #listItemId12_PriorityDropDown.dropContent.hidden
+                                 a#listItemId12_dropLinkDefault.dropLink.priorityDefault(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId12_dropLink1.dropLink.priority1(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId12_dropLink2.dropLink.priority2(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId12_dropLink3.dropLink.priority3(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId12_dropLink4.dropLink.priority4(href='#', onclick='setPriority(this.id)')
+                                 a#listItemId12_dropLink5.dropLink.priority5(href='#', onclick='setPriority(this.id)')
+                           a#listItemId12_Item(onselectstart='return false', onmousedown='return false') Вложенный список. Последний элемент
+                           input#listItemId12_commentInput.textInput.comment(type='text', value='', oninput='markChangedItem(this.id)')
+                           input#listItemId12_indexInput.textInput.index(type='text', value='1/30', oninput='markChangedItem(this.id)')
