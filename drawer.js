@@ -1,5 +1,12 @@
 //todo перетащить на сервер, убрать из скриптов клиента
 
+function calculateProgress(rootNodeId, data){
+    //todo пройтись по data.children
+
+}
+
+//todo запилить автопроставление чекбоксов. сейчас считаем, что у родителя чекбокс отмечен <=> отмечены чекбоксы у всех его детей
+
 //todo починить кнопку "свернуть всё"
 
 function drawBlockByAllFields(blockParentId, data){
@@ -12,7 +19,7 @@ function drawBlockByAllFields(blockParentId, data){
 
     });
 
-    //todo после построения всей страницы добавлять last к последнему элементу
+    //todo после построения очередного блока добавлять last к последнему элементу
 }
 
 function addBlockName(rootNodeId, id, data){
