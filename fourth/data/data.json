@@ -3,17 +3,7 @@
     "name": "Шапка",
     "id": "GlobalHeader",
     "comment": "GlobalHeader",
-    "idChildren": [
-      "ExternHeader",
-      "NDFLHeader"
-    ],
     "isDone": true,
-    "completeness": 1,
-    "completenessChildren": {
-      "isAutoValue": false,
-      "childrenCount": 2,
-      "completeChildrenCount": 1
-    },
     "priority": 3,
     "children": [
       {
@@ -21,17 +11,17 @@
         "id": "ExternHeader",
         "comment": "ExternHeader",
         "isDone": false,
-        "completeness": 1,
-        "completenessChildren": null,
-        "priority": 2
+        "priority": 2,
+        "weight": {
+          "all":10,
+          "done":5
+        }
       },
       {
         "name": "Шапка НДФЛ",
         "id": "NDFLHeader",
         "comment": "NDFLHeader",
         "isDone": true,
-        "completeness": 1,
-        "completenessChildren": null,
         "priority": 1,
         "children": [
           {
@@ -39,17 +29,17 @@
             "id": "ExternHeader3",
             "comment": "ExternHeader3",
             "isDone": false,
-            "completeness": 1,
-            "completenessChildren": null,
-            "priority": 1
+            "priority": 1,
+            "weight": {
+              "all":100,
+              "done":37
+            }
           },
           {
             "name": "Шапка НДФЛ3",
             "id": "NDFLHeader3",
             "comment": "NDFLHeader3",
             "isDone": false,
-            "completeness": 1,
-            "completenessChildren": null,
             "priority": 0
           }
         ]
@@ -65,12 +55,6 @@
       "NDFLHeader1"
     ],
     "isDone": true,
-    "completeness": 1,
-    "completenessChildren": {
-      "isAutoValue": false,
-      "childrenCount": 2,
-      "completeChildrenCount": 1
-    },
     "priority": 3,
     "children": [
       {
@@ -78,8 +62,6 @@
         "id": "ExternHeader1",
         "comment": "ExternHeader1",
         "isDone": false,
-        "completeness": 1,
-        "completenessChildren": null,
         "priority": 5
       },
       {
@@ -87,9 +69,11 @@
         "id": "NDFLHeader1",
         "comment": "NDFLHeader1",
         "isDone": true,
-        "completeness": 1,
-        "completenessChildren": null,
-        "priority": 0
+        "priority": 0,
+        "weight": {
+          "all":3,
+          "done":1
+        }
       }
     ]
   }
