@@ -18,11 +18,19 @@ function readData(res){
             throw err;
         }
         else{
-            var parsedData = JSON.parse(data);
-            //return JSON.parse(data);
-            //console.log()
-            calculateAllCompleteness(parsedData);
-            res.render('index', {data: parsedData});
+            fs.readFile(path.join(__dirname,'../data/commonInformation.json'), 'utf8', function(error, commonData){
+                if(error)
+                    throw error;
+                else{
+                    var parsedData = JSON.parse(data);
+                    var weight = JSON.parse(commonData)[0].weight; //todo запилить поиск по названию сервиса
+                    //return JSON.parse(data);
+                    //console.log()
+                    calculateAllCompleteness(parsedData);
+                    res.render('index', {data: parsedData, weight: weight});
+                }
+            })
+
         }
     })
 
