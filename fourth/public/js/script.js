@@ -142,8 +142,6 @@ function extensionGrayLines(){
     }
 }
 
-
-
 function getItemId(liId){
     return liId + "_Item";
 }
