@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var saveData = require('./public/js/saver');
 
 var app = express();
 
@@ -28,10 +29,11 @@ app.use('/', routes);
 app.use('/users', users);
 
 app.post('/save', function(req, res){
-    res.status = 200;
-    res.send("ok");
     var data = req.body;
     console.warn('post: %s', data.id);
+    saveData(data, "savedData.json");
+    res.status = 200;
+    res.send("saved");
 });
 
 // catch 404 and forward to error handler
