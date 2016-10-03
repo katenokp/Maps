@@ -15,7 +15,7 @@ function getItem(idItem){ //todo rename
 
 function getPriority(idItem){
     var button = document.getElementById(idItem + "_PriorityButton");
-    var priorityClass = button.className.replace("dropButton priority", "");
+    var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace("priority", "");
     if(priorityClass == "Default")
         return 0;
     return parseInt(priorityClass);
