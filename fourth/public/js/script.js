@@ -123,6 +123,15 @@ function unmarkAllItems(){
     }
 }
 
+function keyCodeSave(){
+    document.body.addEventListener('keydown', function (e) {
+        if ((e.keyCode === 83) && (e.ctrlKey)) {
+            e.preventDefault();
+            (console.log("ok"));
+        }
+    });
+}
+
 function extensionGrayLines(){
     var liElements = document.getElementsByTagName("li");
     var extensionValue = 0;
@@ -183,7 +192,7 @@ function getItem(idItem){ //todo rename
     {
         name: document.getElementById(idItem + '_Item').innerHTML,
         id: idItem,
-        state: (document.getElementById(idItem + '_Checkbox').value) == "on"
+        isDone: document.getElementById(idItem + '_Checkbox').checked
     });
 }
 
