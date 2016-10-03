@@ -7,7 +7,7 @@ function prepareFile(fileName){
             throw error;
         } else{
             var preparedData = getData(data);
-            save(preparedData, 'preparedData.json', ["name", "id", "isDone", "priority", "weight", "children", "all", "done"]);
+            save(preparedData, 'preparedData.json', ["name", "id", "isDone", "priority", "weight", "children", "done", "all"]);
         }
     })
 }
@@ -15,9 +15,8 @@ function prepareFile(fileName){
 function getData(data){
 
     var parsedData = JSON.parse(data);
-    var dataArray = [];
     parsedData.forEach(function(item){
-        prepareItem(item/*, dataArray*/);
+        prepareItem(item);
     });
     return parsedData;
 }
@@ -37,10 +36,26 @@ function prepareItem(item){
     }
 
     if(item.children != null){
+        var childrenWeightSum = {
+            done:0,
+            all:0
+        };
         item.children.forEach(function(childItem){
-            prepareItem(childItem);
-        })
+            var childWeight = prepareItem(childItem); //todo не очевидно, что childItem при этом тоже нормализуется
+            childrenWeightSum = {
+                done: childrenWeightSum.done + childWeight.done,
+                all: childrenWeightSum.all + childWeight.all
+            }
+        });
+        item.weight = childrenWeightSum;
+    } else{
+        item.weight = {
+            done:0,
+            all:1
+        };
     }
+
+    return item.weight;
 }
 
 function prepareData(data){
