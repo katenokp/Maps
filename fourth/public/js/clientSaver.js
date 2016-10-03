@@ -8,8 +8,17 @@ function getItem(idItem){ //todo rename
     {
         name: document.getElementById(idItem + '_Item').innerHTML,
         id: idItem,
-        isDone: document.getElementById(idItem + '_Checkbox').checked
+        isDone: document.getElementById(idItem + '_Checkbox').checked,
+        priority: getPriority(idItem)
     });
+}
+
+function getPriority(idItem){
+    var button = document.getElementById(idItem + "_PriorityButton");
+    var priorityClass = button.className.replace("dropButton priority", "");
+    if(priorityClass == "Default")
+        return 0;
+    return parseInt(priorityClass);
 }
 
 function save(){
