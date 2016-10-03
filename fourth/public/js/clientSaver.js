@@ -9,16 +9,23 @@ function getItem(idItem){ //todo rename
         name: document.getElementById(idItem + '_Item').innerHTML,
         id: idItem,
         isDone: document.getElementById(idItem + '_Checkbox').checked,
-        priority: getPriority(idItem)
+        priority: getPriority(idItem),
+        comment: document.getElementById(idItem + "_commentInput").value
     });
 }
 
 function getPriority(idItem){
     var button = document.getElementById(idItem + "_PriorityButton");
+    if(button.className.indexOf("priority") == -1)
+        return 0;
     var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace("priority", "");
     if(priorityClass == "Default")
         return 0;
     return parseInt(priorityClass);
+}
+
+function getWeight(idItem){
+
 }
 
 function save(){
