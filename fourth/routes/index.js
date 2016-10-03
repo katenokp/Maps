@@ -2,30 +2,31 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var path = require('path');
+var prepareData = require('../public/js/prepareData');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    //res.render('index', { title: 'Express' });
-    var data = readData(res);
-    //console.log(data);
-    //res.render('map', {data: data.id});
-    //todo сделать перед сохранением проверку на отсутствие одинаковых id
+
+    var commonInformationFileName = path.join(__dirname,'../data/commonInformation.json');
+    var dataFileName = path.join(__dirname,'../data/ndflData.json');
+    var dataFileNameToPrepare = path.join(__dirname,'../data/ndflData1.json'); //todo kill
+    prepareData(dataFileNameToPrepare);
+
+    readData(commonInformationFileName, dataFileName, res);
 });
 
-function readData(res){
-    fs.readFile(path.join(__dirname,'../data/ndflData.json'), 'utf8', function(err, data){
+function readData(commonInformationFileName, dataFileName, res){
+    fs.readFile(dataFileName, 'utf8', function(err, data){
         if(err){
             throw err;
         }
         else{
-            fs.readFile(path.join(__dirname,'../data/commonInformation.json'), 'utf8', function(error, commonData){
+            fs.readFile(commonInformationFileName, 'utf8', function(error, commonData){
                 if(error)
                     throw error;
                 else{
                     var parsedData = JSON.parse(data);
                     var weight = JSON.parse(commonData)[0].weight; //todo запилить поиск по названию сервиса
-                    //return JSON.parse(data);
-                    //console.log()
                     calculateAllCompleteness(parsedData);
                     res.render('index', {data: parsedData, weight: weight});
                 }
