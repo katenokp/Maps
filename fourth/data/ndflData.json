@@ -62,10 +62,6 @@
     "name": "Шапка1",
     "id": "GlobalHeader1",
     "comment": "GlobalHeader1",
-    "idChildren": [
-      "ExternHeader1",
-      "NDFLHeader1"
-    ],
     "isDone": true,
     "priority": 3,
     "weight": {
