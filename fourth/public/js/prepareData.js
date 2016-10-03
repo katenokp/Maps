@@ -7,7 +7,7 @@ function prepareFile(fileName){
             throw error;
         } else{
             var preparedData = getData(data);
-            save(preparedData, 'preparedData.json', ["name", "id", "isDone", "priority", "weight", "children"]);
+            save(preparedData, 'preparedData.json', ["name", "id", "isDone", "priority", "weight", "children", "all", "done"]);
         }
     })
 }
