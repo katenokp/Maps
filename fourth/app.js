@@ -31,9 +31,14 @@ app.use('/users', users);
 app.post('/save', function(req, res){
     var data = req.body;
     console.warn('post: %s', data.id);
-    saveData(data, "savedData.json");
-    res.status = 200;
-    res.send("saved");
+    var saveDataStatus = saveData(data, "savedData.json");
+    if(saveDataStatus){
+        res.status = 200;
+        res.send("saved")
+    } else{
+        res.status = 500;
+        res.send();
+    }
 });
 
 // catch 404 and forward to error handler

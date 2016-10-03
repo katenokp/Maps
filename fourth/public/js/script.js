@@ -152,7 +152,12 @@ function save(){
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
-            console.log(xhr.response);
+            if(xhr.status == 200) {
+                console.log(xhr.response);
+            }
+            else{
+                console.log("Error: can't save data")
+            }
         }
         /*xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(dataJson);
@@ -166,54 +171,6 @@ function save(){
         xhr.send(data);
     }
     catch(e){alert('error: '+ e)}*/
-}
-
-function testSaveAll(data) {
-
-    var boundary = String(Math.random()).slice(2);
-    var boundaryMiddle = '--' + boundary + '\r\n';
-    var boundaryLast = '--' + boundary + '--\r\n'
-
-    var body = ['\r\n'];
-    for (var key in data) {
-        // добавление поля
-        body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + data[key] + '\r\n');
-    }
-
-    body = body.join(boundaryMiddle) + boundaryLast;
-
-    // Тело запроса готово, отправляем
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/my.json', true);
-
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    //alert(body);
-
-    xhr.onreadystatechange = function () {
-        if (this.readyState != 4) return;
-
-        // alert(this.responseText);
-    };
-
-    xhr.send(body);
-
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "/my.json", true);
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState != 1) return;
-        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xmlhttp.send(data);
-        xmlhttp.end();
-
-        alert(this.responseText);
-    };
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    try{
-        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xmlhttp.send(data);
-    }
-    catch(e){alert('error: '+ e)}
 }
 
 function getDataForSave(){
