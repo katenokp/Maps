@@ -1,5 +1,11 @@
 {
 	"name": "Шапка",
 	"id": "GlobalHeader",
-	"state": true
+	"isDone": false,
+	"comment": "GlobalHeader",
+	"priority": 0,
+	"weight": {
+		"done": "1",
+		"all": "2"
+	}
 }

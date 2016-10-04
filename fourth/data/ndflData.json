@@ -3,7 +3,7 @@
     "name": "Шапка",
     "id": "GlobalHeader",
     "comment": "GlobalHeader",
-    "isDone": true,
+    "isDone": false,
     "priority": 3,
     "weight": {
       "done":1,
