@@ -30,7 +30,7 @@ app.use('/users', users);
 
 app.post('/save', function(req, res){
     var data = req.body;
-    console.warn('post: %s', data.id);
+    console.warn('post');
     var saveDataStatus = saveData(data, "savedData.json", ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]); //todo вынести формат файла в настройки
     if(saveDataStatus){
         res.status = 200;

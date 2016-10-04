@@ -62,12 +62,10 @@ function getIsDone(idItem){
     return document.getElementById(idItem + '_Checkbox').checked
 }
 
-function getChildren(idItem){
-    var children = document.querySelector('#'+ idItem +' > ul');
+function getChildren(idItem){ //todo упростить
+    var children = document.getElementById(idItem + "_ChildrenUl");
     if(children == undefined)
         return null;
-    if(children.id != idItem + '_ChildrenUl')
-        throw new error("Incorrect children %s for id %s", children.id, idItem);
     return children.id;
 }
 

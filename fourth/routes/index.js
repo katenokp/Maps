@@ -2,15 +2,15 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var path = require('path');
-var prepareData = require('../public/js/prepareData');
+var normalize = require('../public/js/prepareData');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
     var commonInformationFileName = path.join(__dirname,'../data/commonInformation.json');
-    var dataFileName = path.join(__dirname,'../data/ndflData.json');
-    var dataFileNameToPrepare = path.join(__dirname,'../data/ndflData1.json'); //todo kill
-    prepareData(dataFileNameToPrepare);
+    var dataFileName = path.join(__dirname,'../data/ndflData1.json');
+    //var dataFileNameToPrepare = path.join(__dirname,'../data/ndflData1.json'); //todo kill
+    //normalize(dataFileName);
 
     readData(commonInformationFileName, dataFileName, res);
 });
@@ -25,7 +25,14 @@ function readData(commonInformationFileName, dataFileName, res){
                 if(error)
                     throw error;
                 else{
-                    var parsedData = JSON.parse(data);
+                    var parsedData;
+                    if(true){ //todo need normalize
+                        parsedData = normalize(data);
+                        //var preparedData = normalizeData(data);
+                        //save(preparedData, fileName, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+                    } else {
+                        parsedData = JSON.parse(data);
+                    }
                     var weight = JSON.parse(commonData)[0].weight; //todo запилить поиск по названию сервиса
                     calculateAllCompleteness(parsedData);
                     res.render('index', {data: parsedData, weight: weight});
