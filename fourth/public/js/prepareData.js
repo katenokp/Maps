@@ -6,13 +6,13 @@ function prepareFile(fileName){
         if(error){
             throw error;
         } else{
-            var preparedData = getData(data);
-            save(preparedData, 'preparedData.json', ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+            var preparedData = normalizeData(data);
+            save(preparedData, fileName, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
         }
     })
 }
 
-function getData(data){
+function normalizeData(data){
 
     var parsedData = JSON.parse(data);
     parsedData.forEach(function(item){
