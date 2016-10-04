@@ -1,18 +1,30 @@
-function getDataForSave(){
-    var line = getItem(document.getElementById('root').children[0].id);
-    return line;
+function getDataForSave(ulId){
+    var lines = [];
+    var elements = getChildElements(ulId);
+    for(var i = 0; i<elements.length; i++){
+        lines.push(getItem(elements[i].id));
+    }
+    return lines;
 }
 
 function getItem(idItem){ //todo rename
-    return(
-    {
+    var parsedItem = {
         name: getNodeName(idItem),
         id: idItem,
         isDone: getIsDone(idItem),
         priority: getPriority(idItem),
         comment: document.getElementById(idItem + "_commentInput").value,
         weight: getWeight(idItem)
-    });
+    };
+    var childrenUlId = getChildren(idItem);
+    if(childrenUlId != null){
+        parsedItem.children = getDataForSave(childrenUlId);
+    }
+    return parsedItem;
+}
+
+function getChildElements(ulId){
+    return document.getElementById(ulId).children;
 }
 
 function getPriority(idItem){
@@ -35,12 +47,11 @@ function getWeight(idItem){
     var regexp = /(\d+?)[/\\;:&@](\d+?)/;
     var weightValues = weightText.match(regexp);
     if(weightValues.length != 3 || weightValues[1] > weightValues[2])
-        throw new Error("Incorrect weight %s for node %s", weightText, getNodeName(idItem));
+        console.log("Incorrect weight %s for node %s", weightText, getNodeName(idItem));
     return{
         done: weightValues[1],
         all: weightValues[2]
     }
-
 }
 
 function getNodeName(idItem){
@@ -51,8 +62,17 @@ function getIsDone(idItem){
     return document.getElementById(idItem + '_Checkbox').checked
 }
 
+function getChildren(idItem){
+    var children = document.querySelector('#'+ idItem +' > ul');
+    if(children == undefined)
+        return null;
+    if(children.id != idItem + '_ChildrenUl')
+        throw new error("Incorrect children %s for id %s", children.id, idItem);
+    return children.id;
+}
+
 function save(){
-    var data = getDataForSave();
+    var data = getDataForSave('root');
     var dataJson = JSON.stringify(data);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/save", true);
