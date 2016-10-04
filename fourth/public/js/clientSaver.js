@@ -29,7 +29,7 @@ function getChildElements(ulId){
 
 function getPriority(idItem){
     var button = document.getElementById(idItem + "_PriorityButton");
-    if(~button.className.indexOf("priority"))
+    if(button.className.indexOf("priority") == -1)
         return 0;
     var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace("priority", "");
     if(priorityClass == "Default")
@@ -49,8 +49,8 @@ function getWeight(idItem){
     if(weightValues.length != 3 || weightValues[1] > weightValues[2])
         console.log("Incorrect weight %s for node %s", weightText, getNodeName(idItem));
     return{
-        done: weightValues[1],
-        all: weightValues[2]
+        done: parseInt(weightValues[1]),
+        all: parseInt(weightValues[2])
     }
 }
 

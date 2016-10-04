@@ -6,8 +6,8 @@
     "isDone": false,
     "priority": 3,
     "weight": {
-      "done":1,
-      "all":2
+      "done": 1,
+      "all": 2
     },
     "children": [
       {
@@ -17,8 +17,8 @@
         "isDone": false,
         "priority": 2,
         "weight": {
-          "all":10,
-          "done":5
+          "all": 10,
+          "done": 5
         }
       },
       {
@@ -28,8 +28,8 @@
         "isDone": true,
         "priority": 1,
         "weight": {
-          "done":0,
-          "all":2
+          "done": 0,
+          "all": 2
         },
         "children": [
           {
@@ -39,8 +39,8 @@
             "isDone": false,
             "priority": 1,
             "weight": {
-              "done":37,
-              "all":100
+              "done": 37,
+              "all": 100
             }
           },
           {
@@ -50,8 +50,8 @@
             "isDone": false,
             "priority": 0,
             "weight": {
-              "done":0,
-              "all":1
+              "done": 0,
+              "all": 1
             }
           }
         ]
@@ -65,8 +65,8 @@
     "isDone": true,
     "priority": 3,
     "weight": {
-      "done":1,
-      "all":2
+      "done": 1,
+      "all": 2
     },
     "children": [
       {
@@ -76,8 +76,8 @@
         "isDone": false,
         "priority": 5,
         "weight": {
-          "done":0,
-          "all":1
+          "done": 0,
+          "all": 1
         }
       },
       {
@@ -87,8 +87,8 @@
         "isDone": true,
         "priority": 0,
         "weight": {
-          "done":1,
-          "all":3
+          "done": 1,
+          "all": 3
         }
       }
     ]
