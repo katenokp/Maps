@@ -44,7 +44,7 @@ function getWeight(idItem){
             done : getIsDone(idItem) ? 1: 0,
             all : 1
         };
-    var regexp = /(\d+?)[/\\;:&@](\d+?)/;
+    var regexp = /(\d+?)[/\\;:&@](\d+)/;
     var weightValues = weightText.match(regexp);
     if(weightValues.length != 3 || weightValues[1] > weightValues[2])
         console.log("Incorrect weight %s for node %s", weightText, getNodeName(idItem));
