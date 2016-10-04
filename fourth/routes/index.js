@@ -8,7 +8,7 @@ var normalize = require('../public/js/prepareData');
 router.get('/', function(req, res, next) {
 
     var commonInformationFileName = path.join(__dirname,'../data/commonInformation.json');
-    var dataFileName = path.join(__dirname,'../data/ndflData1.json');
+    var dataFileName = path.join(__dirname,'../data/ndflData.json');
     //var dataFileNameToPrepare = path.join(__dirname,'../data/ndflData1.json'); //todo kill
     //normalize(dataFileName);
 
