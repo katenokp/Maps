@@ -58,7 +58,7 @@ function calculateCompleteness(data, result){
     data.forEach(function(item) {
         result.push({
             id: item.id,
-            weight: calculateWeight(item)
+            weight: normalizeWeight(item)
         });
         if(item.children != null){
             calculateCompleteness(item.children, result);
@@ -95,7 +95,7 @@ function calculateCompleteness(data, result){
 
 }*/
 
-function calculateWeight(item){
+function normalizeWeight(item){
     var weight;
     var children = item.children;
     if(children == null){

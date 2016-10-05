@@ -11,6 +11,12 @@ function calculateAllWeightRecursive(idItem){
 
 }
 
+function recalculateWeightForItem(idItem){
+    var idWeight = getNodeId(idItem) + '_indexInput';
+    document.getElementById(idWeight).value = getWeightString(calculateWeight(idItem));
+
+}
+
 function calculateWeight(idItem){
     var children = getChildren(idItem);
 
