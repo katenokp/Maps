@@ -11,7 +11,7 @@ function calculateAllWeightRecursive(idItem){
 
 }
 
-function calculateAllWeight(idItem){
+function calculateWeight(idItem){
     var children = getChildren(idItem);
 
     if(children == null)

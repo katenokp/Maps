@@ -35,27 +35,9 @@ function prepareItem(item){
         item.isDone = false;
     }
 
-    if(item.children != null){
-        var childrenWeightSum = {
-            done:0,
-            all:0
-        };
-        item.children.forEach(function(childItem){
-            var childWeight = prepareItem(childItem); //todo не очевидно, что childItem при этом тоже нормализуется
-            childrenWeightSum = {
-                done: childrenWeightSum.done + childWeight.done,
-                all: childrenWeightSum.all + childWeight.all
-            }
-        });
-        item.weight = childrenWeightSum;
-    } else{
-        item.weight = {
-            done:0,
-            all:1
-        };
+    if(item.weight == null){
+        item.weight = calculateWeight(item.id);
     }
-
-    return item.weight;
 }
 
 function prepareData(data){
