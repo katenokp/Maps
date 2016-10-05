@@ -16,7 +16,7 @@ function getItem(idItem){ //todo rename
         comment: document.getElementById(idItem + "_commentInput").value,
         weight: getWeight(idItem)
     };
-    var childrenUlId = getChildren(idItem);
+    var childrenUlId = getAllChildren(idItem);
     if(childrenUlId != null){
         parsedItem.children = getDataForSave(childrenUlId);
     }
@@ -62,7 +62,7 @@ function getIsDone(idItem){
     return document.getElementById(idItem + '_Checkbox').checked
 }
 
-function getChildren(idItem){ //todo упростить
+function getAllChildren(idItem){ //todo упростить
     var children = document.getElementById(idItem + "_ChildrenUl");
     if(children == undefined)
         return null;

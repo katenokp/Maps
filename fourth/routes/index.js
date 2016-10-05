@@ -15,6 +15,10 @@ router.get('/', function(req, res, next) {
     readData(commonInformationFileName, dataFileName, res);
 });
 
+/*router.get('/normalize', function(req, res, err){
+    res.render()
+})*/
+
 function readData(commonInformationFileName, dataFileName, res){
     fs.readFile(dataFileName, 'utf8', function(err, data){
         if(err){

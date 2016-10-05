@@ -26,7 +26,7 @@ block content
             li(id=id, class="listItemId"+(index==data.length-1 ? " last" : "") )
                 .grayLinesBlock
                     .listItemWrapper
-                        input(id=id+"_Checkbox", class="checkbox", type="checkbox", onclick="markChangedItem(this.id); changeCheckboxes(this.id)", checked=item.isDone)
+                        input(id=id+"_Checkbox", class="checkbox", type="checkbox", onclick="markChangedItem(this.id); changeCheckboxes(this.id); calculateAllWeightRecursive(this.id)", checked=item.isDone)
                         em(id=id+"_Marker", class="marker close"+ (hasChildren!=true ? " hidden" : ""), onclick="collapseElement(this.id)")
                         .hintContainer
                             progress(class="progressBar", value=item.weight.done, max=item.weight.all)
