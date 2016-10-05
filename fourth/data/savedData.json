@@ -6,8 +6,8 @@
 		"comment": "GlobalHeader",
 		"priority": 3,
 		"weight": {
-			"done": 0,
-			"all": 3
+			"done": 1,
+			"all": 2
 		},
 		"children": [
 			{
@@ -17,8 +17,8 @@
 				"comment": "ExternHeader",
 				"priority": 2,
 				"weight": {
-					"done": 0,
-					"all": 1
+					"done": 5,
+					"all": 10
 				}
 			},
 			{
@@ -39,8 +39,8 @@
 						"comment": "ExternHeader3",
 						"priority": 1,
 						"weight": {
-							"done": 0,
-							"all": 1
+							"done": 37,
+							"all": 100
 						}
 					},
 					{
@@ -65,7 +65,7 @@
 		"comment": "GlobalHeader1",
 		"priority": 3,
 		"weight": {
-			"done": 0,
+			"done": 1,
 			"all": 2
 		},
 		"children": [
@@ -87,8 +87,8 @@
 				"comment": "NDFLHeader1",
 				"priority": 0,
 				"weight": {
-					"done": 0,
-					"all": 1
+					"done": 1,
+					"all": 3
 				}
 			}
 		]
