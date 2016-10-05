@@ -25,7 +25,7 @@
         "name": "Шапка НДФЛ",
         "id": "NDFLHeader",
         "comment": "NDFLHeader",
-        "isDone": true,
+        "isDone": false,
         "priority": 1,
         "weight": {
           "done": 0,
@@ -62,7 +62,7 @@
     "name": "Шапка1",
     "id": "GlobalHeader1",
     "comment": "GlobalHeader1",
-    "isDone": true,
+    "isDone": false,
     "priority": 3,
     "weight": {
       "done": 1,
@@ -84,7 +84,7 @@
         "name": "Шапка НДФЛ1",
         "id": "NDFLHeader1",
         "comment": "NDFLHeader1",
-        "isDone": true,
+        "isDone": false,
         "priority": 0,
         "weight": {
           "done": 1,

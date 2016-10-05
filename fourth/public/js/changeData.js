@@ -20,19 +20,3 @@ function isAllChildrenDone(parentUlId){
     }
     return isAllDone;
 }
-
-function getNodeId(id){
-    var matches = id.match('([a-z|0-9|A-Z]+)_[a-z|0-9|A-Z]+$');
-    if(matches == null)
-        return id;
-    return matches[matches.length-1];
-    //var prefixes = ['_Checkbox', '_PriorityButton', '_PriorityDropDown', '_Item', '_commentInput', '_indexInput'];
-
-}
-
-function getChildren(id){
-    var ulId = getNodeId(id) + 'ChildrenUl';
-    if(document.getElementById(ulId) == null)
-        return null;
-    return document.querySelectorAll('#' + ulId +' > li');
-}

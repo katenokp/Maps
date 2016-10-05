@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Шапка",
-		"id": "932e056f-abe1-4d28-b7b6-9b675c9b7b58",
+		"id": "005dad83-ffc6-4d75-6957-69eefd10f6ba",
 		"isDone": false,
 		"priority": 0,
 		"weight": {
@@ -21,7 +21,7 @@
 			},
 			{
 				"name": "Шапка НДФЛ",
-				"id": "bddb1616-9c07-46f2-334c-9549eea61b6f",
+				"id": "9e2eb32e-585b-4678-d2af-8a3152c92d2c",
 				"isDone": false,
 				"priority": 0,
 				"weight": {
@@ -55,8 +55,9 @@
 	},
 	{
 		"name": "Шапка1",
-		"id": "c319fd52-3f51-49ba-d234-ffa995b257ae",
+		"id": "c8721274-d909-4b75-1132-2980568f867e",
 		"isDone": true,
+		"comment": "GlobalHeader1",
 		"priority": 3,
 		"weight": {
 			"done": 0,
@@ -67,6 +68,7 @@
 				"name": "Шапка Экстерновская1",
 				"id": "ExternHeader1",
 				"isDone": false,
+				"comment": "ExternHeader1",
 				"priority": 5,
 				"weight": {
 					"done": 0,
@@ -77,6 +79,7 @@
 				"name": "Шапка НДФЛ1",
 				"id": "NDFLHeader1",
 				"isDone": true,
+				"comment": "NDFLHeader1",
 				"priority": 0,
 				"weight": {
 					"done": 0,
