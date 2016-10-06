@@ -6,8 +6,8 @@
 		"comment": "GlobalHeader",
 		"priority": 3,
 		"weight": {
-			"done": 1,
-			"all": 2
+			"done": 42,
+			"all": 111
 		},
 		"children": [
 			{
@@ -28,8 +28,8 @@
 				"comment": "NDFLHeader",
 				"priority": 1,
 				"weight": {
-					"done": 0,
-					"all": 2
+					"done": 37,
+					"all": 101
 				},
 				"children": [
 					{
@@ -66,7 +66,7 @@
 		"priority": 3,
 		"weight": {
 			"done": 1,
-			"all": 2
+			"all": 4
 		},
 		"children": [
 			{

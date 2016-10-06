@@ -38,7 +38,7 @@ function readData(commonInformationFileName, dataFileName, res){
                         parsedData = JSON.parse(data);
                     }
                     var weight = JSON.parse(commonData)[0].weight; //todo запилить поиск по названию сервиса
-                    calculateAllCompleteness(parsedData);
+                    weight = calculateAllCompleteness(parsedData);
                     res.render('index', {data: parsedData, weight: weight});
                 }
             })
@@ -50,7 +50,11 @@ function readData(commonInformationFileName, dataFileName, res){
 
 function calculateAllCompleteness(data){
     var dataWithWeight = [];
-    calculateCompleteness(data, dataWithWeight)
+    calculateCompleteness(data, dataWithWeight);
+    return {
+        done: 10,
+        all: 20
+    }
 }
 
 function calculateCompleteness(data, result){

@@ -24,7 +24,7 @@ function readItem(idItem){ //todo rename
 }
 
 function save(){
-    var data = readDataForSave('root');
+    var data = readDataForSave('root_ChildrenUl');
     var dataJson = JSON.stringify(data);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/save", true);
