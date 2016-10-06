@@ -23,7 +23,7 @@ function collapseAll() {
         var ulId = getUlId(liControls[i].id);
 
         if(document.getElementById(ulId) == null)
-            break;
+            continue;
 
         var initialUlClass = document.getElementById(ulId).className;
 
@@ -42,7 +42,7 @@ function expandAll() {
         var markerId = getMarkerId(liControls[i].id);
 
         if(document.getElementById(ulId) == null)
-            break;
+            continue;
 
         var initialUlClass = document.getElementById(ulId).className;
         var initialMarkerClass = document.getElementById(markerId).className;

@@ -18,9 +18,6 @@ router.get('/', function(req, res, next) {
 router.get('/ndfl', function(req, res, next) {
     var serviceName = "Ndfl";
 
-    var commonInformationFileName = path.join(__dirname,'../data/' + serviceName + '/commonInformation.json');
-    var dataFileName = path.join(__dirname,'../data/' + serviceName + '/data.json');
-
     buildPage(serviceName, res);
 });
 
@@ -42,22 +39,26 @@ function buildPage(serviceName, res){
                     throw error;
                 else{
                     var parsedData;
-                    if(true){ //todo need normalize
+                    if(needNormalization()){
                         parsedData = normalize(data);
                         //var preparedData = normalizeData(data);
                         //save(preparedData, fileName, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
                     } else {
                         parsedData = JSON.parse(data);
                     }
-                    var weight = JSON.parse(commonData)[0].weight; //todo запилить поиск по названию сервиса
+                    var weight = JSON.parse(commonData).weight; //todo запилить поиск по названию сервиса
                     weight = calculateAllCompleteness(parsedData);
-                    res.render('index', {data: parsedData, weight: weight});
+                    res.render('index', {data: parsedData, weight: weight, service: serviceName});
                 }
             })
 
         }
     })
 
+}
+
+function needNormalization(){
+    return true; //todo
 }
 
 function calculateAllCompleteness(data){

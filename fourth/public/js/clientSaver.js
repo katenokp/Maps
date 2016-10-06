@@ -24,8 +24,10 @@ function readItem(idItem){ //todo rename
 }
 
 function save(){
+    var serviceName = document.getElementById("saveButton").name;
     var data = readDataForSave('root_ChildrenUl');
-    var dataJson = JSON.stringify(data);
+    var dataJson = JSON.stringify({service: serviceName, data: data});
+
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/save", true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
