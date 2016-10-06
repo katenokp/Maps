@@ -1,96 +1,96 @@
 [
-  {
-    "name": "Шапка",
-    "id": "GlobalHeader",
-    "comment": "GlobalHeader",
-    "isDone": false,
-    "priority": 3,
-    "weight": {
-      "done": 1,
-      "all": 2
-    },
-    "children": [
-      {
-        "name": "Шапка Экстерновская",
-        "id": "ExternHeader",
-        "comment": "ExternHeader",
-        "isDone": false,
-        "priority": 2,
-        "weight": {
-          "all": 10,
-          "done": 5
-        }
-      },
-      {
-        "name": "Шапка НДФЛ",
-        "id": "NDFLHeader",
-        "comment": "NDFLHeader",
-        "isDone": false,
-        "priority": 1,
-        "weight": {
-          "done": 0,
-          "all": 2
-        },
-        "children": [
-          {
-            "name": "Шапка Экстерновская3",
-            "id": "ExternHeader3",
-            "comment": "ExternHeader3",
-            "isDone": false,
-            "priority": 1,
-            "weight": {
-              "done": 37,
-              "all": 100
-            }
-          },
-          {
-            "name": "Шапка НДФЛ3",
-            "id": "NDFLHeader3",
-            "comment": "NDFLHeader3",
-            "isDone": false,
-            "priority": 0,
-            "weight": {
-              "done": 0,
-              "all": 1
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Шапка1",
-    "id": "GlobalHeader1",
-    "comment": "GlobalHeader1",
-    "isDone": false,
-    "priority": 3,
-    "weight": {
-      "done": 1,
-      "all": 2
-    },
-    "children": [
-      {
-        "name": "Шапка Экстерновская1",
-        "id": "ExternHeader1",
-        "comment": "ExternHeader1",
-        "isDone": false,
-        "priority": 5,
-        "weight": {
-          "done": 0,
-          "all": 1
-        }
-      },
-      {
-        "name": "Шапка НДФЛ1",
-        "id": "NDFLHeader1",
-        "comment": "NDFLHeader1",
-        "isDone": false,
-        "priority": 0,
-        "weight": {
-          "done": 1,
-          "all": 3
-        }
-      }
-    ]
-  }
+	{
+		"name": "Шапка",
+		"id": "GlobalHeader",
+		"isDone": true,
+		"comment": "GlobalHeader",
+		"priority": 3,
+		"weight": {
+			"done": 52,
+			"all": 201
+		},
+		"children": [
+			{
+				"name": "Шапка Экстерновская",
+				"id": "ExternHeader",
+				"isDone": true,
+				"comment": "ExternHeader",
+				"priority": 2,
+				"weight": {
+					"done": 15,
+					"all": 100
+				}
+			},
+			{
+				"name": "Шапка НДФЛ",
+				"id": "NDFLHeader",
+				"isDone": true,
+				"comment": "NDFLHeader",
+				"priority": 1,
+				"weight": {
+					"done": 37,
+					"all": 101
+				},
+				"children": [
+					{
+						"name": "Шапка Экстерновская3",
+						"id": "ExternHeader3",
+						"isDone": false,
+						"comment": "ExternHeader3",
+						"priority": 1,
+						"weight": {
+							"done": 37,
+							"all": 100
+						}
+					},
+					{
+						"name": "Шапка НДФЛ3",
+						"id": "NDFLHeader3",
+						"isDone": false,
+						"comment": "NDFLHeader3",
+						"priority": 2,
+						"weight": {
+							"done": 0,
+							"all": 1
+						}
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Шапка1",
+		"id": "GlobalHeader1",
+		"isDone": false,
+		"comment": "GlobalHeader1",
+		"priority": 3,
+		"weight": {
+			"done": 2,
+			"all": 13
+		},
+		"children": [
+			{
+				"name": "Шапка Экстерновская1",
+				"id": "ExternHeader1",
+				"isDone": true,
+				"comment": "ExternHeader1",
+				"priority": 5,
+				"weight": {
+					"done": 1,
+					"all": 10
+				}
+			},
+			{
+				"name": "Шапка НДФЛ1",
+				"id": "NDFLHeader1",
+				"isDone": false,
+				"comment": "NDFLHeader1",
+				"priority": 1,
+				"weight": {
+					"done": 1,
+					"all": 3
+				}
+			}
+		]
+	}
 ]
