@@ -26,6 +26,10 @@ function normalizeData(data){
     return parsedData;
 }
 
+function calculateRootWeight(){
+
+}
+
 function prepareItem(item){
     if(item.id == null){
         item.id = 'id' + getNewGuid();
@@ -83,10 +87,6 @@ function sumWeights(firstWeight, secondWeight){
     if(secondWeight == null)
         secondWeight = new Weight(0, 0);
     return new Weight(firstWeight.done + secondWeight.done, firstWeight.all + secondWeight.all);
-}
-
-function prepareData(data){
-
 }
 
 /**

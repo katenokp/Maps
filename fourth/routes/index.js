@@ -63,7 +63,7 @@ function buildPage(service, res){
                         parsedData = JSON.parse(data);
                     }
                     var weight = JSON.parse(commonData).weight; //todo запилить поиск по названию сервиса
-                    weight = calculateAllCompleteness(parsedData);
+                    weight = calculateRootCompleteness(parsedData);
                     res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
                 }
             })
@@ -77,13 +77,15 @@ function needNormalization(){
     return true; //todo
 }
 
-function calculateAllCompleteness(data){
-    var dataWithWeight = [];
-    calculateCompleteness(data, dataWithWeight);
-    return {
-        done: 10,
-        all: 20
-    }
+function calculateRootCompleteness(data){
+    //var dataWithWeight = [];
+    var weight = {done:0, all:0};
+    //calculateCompleteness(data, dataWithWeight);
+    data.forEach(function(item){
+        weight.done += item.weight.done;
+        weight.all += item.weight.all;
+    });
+    return weight;
 }
 
 function calculateCompleteness(data, result){
