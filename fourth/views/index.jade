@@ -3,7 +3,7 @@ extends layout
 block content
     .listItemWrapper
         .topItemWrapper
-            p.topItemText Пустой список
+            p.topItemText #{serviceName}
             p.counter
                 | (
                 span(id="root_indexInput") #{weight.done}/#{weight.all}

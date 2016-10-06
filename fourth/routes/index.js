@@ -3,6 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 var path = require('path');
 var normalize = require('../public/js/prepareData');
+var serviceName = require('../servicesNames');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -25,9 +26,9 @@ router.get('/ndfl', function(req, res, next) {
     res.render()
 })*/
 
-function buildPage(serviceName, res){
-    var commonInformationFileName = path.join(__dirname,'../data/' + serviceName + '/commonInformation.json');
-    var dataFileName = path.join(__dirname,'../data/' + serviceName + '/data.json');
+function buildPage(service, res){
+    var commonInformationFileName = path.join(__dirname,'../data/' + service + '/commonInformation.json');
+    var dataFileName = path.join(__dirname,'../data/' + service + '/data.json');
 
     fs.readFile(dataFileName, 'utf8', function(err, data){
         if(err){
@@ -48,7 +49,7 @@ function buildPage(serviceName, res){
                     }
                     var weight = JSON.parse(commonData).weight; //todo запилить поиск по названию сервиса
                     weight = calculateAllCompleteness(parsedData);
-                    res.render('index', {data: parsedData, weight: weight, service: serviceName});
+                    res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
                 }
             })
 
