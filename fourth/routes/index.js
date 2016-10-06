@@ -7,19 +7,31 @@ var normalize = require('../public/js/prepareData');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    var commonInformationFileName = path.join(__dirname,'../data/commonInformation.json');
+    var commonInformationFileName = path.join(__dirname,'../data/commonInformationNdfl.json');
     var dataFileName = path.join(__dirname,'../data/ndflData.json');
     //var dataFileNameToPrepare = path.join(__dirname,'../data/ndflData1.json'); //todo kill
     //normalize(dataFileName);
 
-    readData(commonInformationFileName, dataFileName, res);
+    buildPage(commonInformationFileName, dataFileName, res);
+});
+
+router.get('/ndfl', function(req, res, next) {
+    var serviceName = "Ndfl";
+
+    var commonInformationFileName = path.join(__dirname,'../data/' + serviceName + '/commonInformation.json');
+    var dataFileName = path.join(__dirname,'../data/' + serviceName + '/data.json');
+
+    buildPage(serviceName, res);
 });
 
 /*router.get('/normalize', function(req, res, err){
     res.render()
 })*/
 
-function readData(commonInformationFileName, dataFileName, res){
+function buildPage(serviceName, res){
+    var commonInformationFileName = path.join(__dirname,'../data/' + serviceName + '/commonInformation.json');
+    var dataFileName = path.join(__dirname,'../data/' + serviceName + '/data.json');
+
     fs.readFile(dataFileName, 'utf8', function(err, data){
         if(err){
             throw err;
