@@ -7,19 +7,34 @@ var serviceName = require('../servicesNames');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-    var commonInformationFileName = path.join(__dirname,'../data/commonInformationNdfl.json');
-    var dataFileName = path.join(__dirname,'../data/ndflData.json');
-    //var dataFileNameToPrepare = path.join(__dirname,'../data/ndflData1.json'); //todo kill
-    //normalize(dataFileName);
-
-    buildPage(commonInformationFileName, dataFileName, res);
+    var serviceNamesArray = [];
+    for (property in serviceName){
+        serviceNamesArray.push({
+            name: serviceName[property],
+            code: property
+        })
+    }
+    res.render('start', {servicesNames: serviceNamesArray});
 });
 
 router.get('/ndfl', function(req, res, next) {
-    var serviceName = "Ndfl";
+    buildPage("Ndfl", res);
+});
 
-    buildPage(serviceName, res);
+router.get('/fss', function(req, res, next) {
+    buildPage("Fss", res);
+});
+
+router.get('/pfr', function(req, res, next) {
+    buildPage("Pfr", res);
+});
+
+router.get('/kopf', function(req, res, next) {
+    buildPage("Kopf", res);
+});
+
+router.get('/fms', function(req, res, next) {
+    buildPage("Fms", res);
 });
 
 /*router.get('/normalize', function(req, res, err){

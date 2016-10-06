@@ -1,51 +1,56 @@
 [
 	{
 		"name": "Шапка",
-		"id": "005dad83-ffc6-4d75-6957-69eefd10f6ba",
-		"isDone": false,
-		"priority": 0,
+		"id": "GlobalHeader",
+		"isDone": true,
+		"comment": "GlobalHeader",
+		"priority": 3,
 		"weight": {
-			"done": 0,
-			"all": 3
+			"done": 43,
+			"all": 201
 		},
 		"children": [
 			{
 				"name": "Шапка Экстерновская",
 				"id": "ExternHeader",
-				"isDone": false,
-				"priority": 0,
+				"isDone": true,
+				"comment": "ExternHeader",
+				"priority": 2,
 				"weight": {
-					"done": 0,
-					"all": 1
+					"done": 5,
+					"all": 100
 				}
 			},
 			{
 				"name": "Шапка НДФЛ",
-				"id": "9e2eb32e-585b-4678-d2af-8a3152c92d2c",
-				"isDone": false,
-				"priority": 0,
+				"id": "NDFLHeader",
+				"isDone": true,
+				"comment": "NDFLHeader",
+				"priority": 1,
 				"weight": {
-					"done": 0,
-					"all": 2
+					"done": 38,
+					"all": 101
 				},
 				"children": [
 					{
 						"name": "Шапка Экстерновская3",
 						"id": "ExternHeader3",
 						"isDone": false,
-						"priority": 0,
+						"comment": "ExternHeader3",
+						"priority": 1,
 						"weight": {
-							"done": 0,
-							"all": 1
+							"done": 37,
+							"all": 100
 						}
 					},
 					{
 						"name": "Шапка НДФЛ3",
 						"id": "NDFLHeader3",
-						"isDone": false,
-						"priority": 0,
+						"isDone": true,
+						"comment": "NDFLHeader3",
+						"priority": 2,
 						"weight": {
-							"done": 0,
+							"done": 1,
 							"all": 1
 						}
 					}
@@ -55,13 +60,13 @@
 	},
 	{
 		"name": "Шапка1",
-		"id": "c8721274-d909-4b75-1132-2980568f867e",
-		"isDone": true,
+		"id": "GlobalHeader1",
+		"isDone": false,
 		"comment": "GlobalHeader1",
 		"priority": 3,
 		"weight": {
-			"done": 0,
-			"all": 2
+			"done": 1,
+			"all": 18
 		},
 		"children": [
 			{
@@ -72,18 +77,18 @@
 				"priority": 5,
 				"weight": {
 					"done": 0,
-					"all": 1
+					"all": 15
 				}
 			},
 			{
 				"name": "Шапка НДФЛ1",
 				"id": "NDFLHeader1",
-				"isDone": true,
+				"isDone": false,
 				"comment": "NDFLHeader1",
-				"priority": 0,
+				"priority": 1,
 				"weight": {
-					"done": 0,
-					"all": 1
+					"done": 1,
+					"all": 3
 				}
 			}
 		]

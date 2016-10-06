@@ -1,0 +1,9 @@
+doctype html
+html
+   head(lang="en")
+       meta(charset='UTF-8')
+       script(src='/js/start.js')
+   body
+       each item in servicesNames
+           div
+           a(href='/'+item.code) #{item.name}

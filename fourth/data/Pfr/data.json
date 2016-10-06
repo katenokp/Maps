@@ -1,10 +1,10 @@
 [
 	{
-		"name": "Шапка",
+		"name": "ПФР",
 		"id": "GlobalHeader",
-		"isDone": false,
-		"comment": "Global",
-		"priority": 4,
+		"isDone": true,
+		"comment": "GlobalHeader",
+		"priority": 3,
 		"weight": {
 			"done": 43,
 			"all": 201
