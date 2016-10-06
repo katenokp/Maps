@@ -78,6 +78,10 @@ a {
     padding: 0 0.3em;
 }
 
+.listItemWrapper.noChild{
+    margin-left: 25px;
+}
+
 .changed{
     color: #b64dbe;
 }

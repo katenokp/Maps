@@ -82,7 +82,8 @@
                 <li  id="listItemId11">
 
                     <div class="grayLinesBlock">
-                        <div class="listItemWrapper">
+                        <!--Придется добавлять класс noChild если нет потомков, чтобы продлить серую линию и выровнять по горизонтали с другими элементами-->
+                        <div class="listItemWrapper noChild">
 
                             <input id="listItemId11_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
                             <em id="listItemId11_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
@@ -119,7 +120,7 @@
                         <div class="listItemWrapper">
 
                             <input id="listItemId12_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
-                            <em id="listItemId12_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
+                            <em id="listItemId12_Marker" class="marker close" onclick="collapseElement(this.id)"></em>
 
                             <div class="hintContainer">
                                 <progress class="progressBar hidden" value="100" max="100"></progress><br><span class="hintText">100/100</span>
