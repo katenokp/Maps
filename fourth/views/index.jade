@@ -12,7 +12,7 @@ block content
         div
             input.button.collapseAll(type='button', value='', onclick='collapseAll()')
             input.button.expandAll(type='button', value='', onclick='expandAll()')
-            input.button.saveAll(type='submit', value='', onclick='unmarkAllItems(); save()')
+            input.button.saveAll(id='saveButton', name=service, type='submit', value='', onclick='unmarkAllItems(); save()')
     mixin drawBlock(data)
         each item,index in data
             - var id=item.id
@@ -25,7 +25,7 @@ block content
 
             li(id=id, class="listItemId"+(index==data.length-1 ? " last" : "") )
                 .grayLinesBlock
-                    .listItemWrapper
+                    div(class="listItemWrapper" + (!hasChildren ? " noChild": ""))
                         input(id=id+"_Checkbox", class="checkbox", type="checkbox", onclick="markChangedItem(this.id); changeCheckboxes(this.id); changeWeights(this.id)", checked=item.isDone)
                         em(id=id+"_Marker", class="marker close"+ (hasChildren!=true ? " hidden" : ""), onclick="collapseElement(this.id)")
                         .hintContainer
