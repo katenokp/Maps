@@ -15,7 +15,7 @@
 				"id": "ExternHeader",
 				"isDone": true,
 				"comment": "ExternHeader",
-				"priority": 2,
+				"priority": 5,
 				"weight": {
 					"done": 5,
 					"all": 100
@@ -26,7 +26,7 @@
 				"id": "NDFLHeader",
 				"isDone": true,
 				"comment": "NDFLHeader",
-				"priority": 1,
+				"priority": 4,
 				"weight": {
 					"done": 38,
 					"all": 101
@@ -37,7 +37,7 @@
 						"id": "ExternHeader3",
 						"isDone": false,
 						"comment": "ExternHeader3",
-						"priority": 1,
+						"priority": 5,
 						"weight": {
 							"done": 37,
 							"all": 100
@@ -48,7 +48,7 @@
 						"id": "NDFLHeader3",
 						"isDone": true,
 						"comment": "NDFLHeader3",
-						"priority": 2,
+						"priority": 4,
 						"weight": {
 							"done": 1,
 							"all": 1
@@ -63,9 +63,9 @@
 		"id": "GlobalHeader1",
 		"isDone": false,
 		"comment": "GlobalHeader1",
-		"priority": 3,
+		"priority": 5,
 		"weight": {
-			"done": 1,
+			"done": 2,
 			"all": 18
 		},
 		"children": [
@@ -74,9 +74,9 @@
 				"id": "ExternHeader1",
 				"isDone": false,
 				"comment": "ExternHeader1",
-				"priority": 5,
+				"priority": 4,
 				"weight": {
-					"done": 0,
+					"done": 1,
 					"all": 15
 				}
 			},
@@ -85,7 +85,7 @@
 				"id": "NDFLHeader1",
 				"isDone": false,
 				"comment": "NDFLHeader1",
-				"priority": 1,
+				"priority": 5,
 				"weight": {
 					"done": 1,
 					"all": 3
