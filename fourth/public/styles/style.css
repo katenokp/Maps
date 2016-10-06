@@ -1,4 +1,4 @@
-body {
+﻿body {
     font-family: "segoe ui light",sans-serif;
     padding: 1em 5em 5em 5em;
     margin:0;
@@ -78,10 +78,6 @@ a {
     padding: 0 0.3em;
 }
 
-.listItemWrapper.noChild{
-    margin-left: 25px;
-}
-
 .changed{
     color: #b64dbe;
 }
@@ -103,7 +99,7 @@ a {
 .counter{
     display: inline-block;
     height: 25px;
-    margin: 0 0 0 -3px;
+    margin: 0 0 0 5px;
     padding-bottom: 1px;
     font-size: 14px;
     color: #878787;
@@ -217,7 +213,7 @@ a:focus{
 
 .progressBar{
     border: solid #a8a8a8 1px;
-    margin: 0 0 3px 5px;
+    margin: 0 0 3px 10px;
     height: 20px;
     width: 50px;
     vertical-align: middle;
@@ -236,8 +232,8 @@ progress::-moz-progress-bar {
 .dropdownWrapper {
     padding:0;
     margin: 0 5px 0 7px;
-    height: 22px;
-    width: 22px;
+    height: 18px;
+    width: 24px;
     vertical-align: middle;
     display: inline-block;
 }
@@ -245,12 +241,11 @@ progress::-moz-progress-bar {
 .dropButton{
     position: absolute;
     display: block;
-    padding: 9px 11px 10px 11px;
+    padding: 9px 12px 9px 12px;
+    margin: -2px 0 0 0 !important;
     border: none;
     cursor: pointer;
     text-align: center;
-    height: 22px;
-    margin: -1px 0 0 0!important;
 }
 
 .dropButton:focus{
@@ -261,19 +256,18 @@ progress::-moz-progress-bar {
     position: relative;
     text-align: center;
     background-color: #fdfdfd;
-    outline: 1px solid  #a8a8a8;
-    outline-offset: -1px;
-    margin: 18px 0 0 0;
-    width: 22px;
+    border: 1px solid  #a8a8a8;
+    margin: 17px 0 0 -1px;
+    width: 24px;
     z-index: 2;
     line-height: 24px;
 }
 
 .dropLink{
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 18px;
     display:block;
-    margin: 0 0 -2px 0;
+    margin: 0 0 3px 0;
 }
 
 .dropLink:active{
@@ -281,23 +275,26 @@ progress::-moz-progress-bar {
 }
 
 .priorityDefault{
-    background:  url("images/default.png") no-repeat top;
+    background:  url("images/default.png") no-repeat center;
+    outline: 1px solid #a8a8a8 !important;
+    outline-offset: 0;
 }
+
 .priority1 {
-    background:  url("images/1.png") no-repeat top;
+    background:  url("images/1.ico") no-repeat center;
 }
 
 .priority2 {
-    background:  url("images/2.png") no-repeat top;
+    background:  url("images/2.ico") no-repeat center;
 }
 .priority3 {
-    background:  url("images/3.png") no-repeat top;
+    background:  url("images/3.ico") no-repeat center;
 }
 .priority4 {
-    background:  url("images/4.png") no-repeat top;
+    background:  url("images/4.ico") no-repeat center;
 }
 .priority5 {
-    background:  url("images/5.png") no-repeat top;
+    background:  url("images/5.ico") no-repeat center;
 }
 
 .listItemWrapper:hover .textInput{

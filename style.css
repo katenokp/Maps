@@ -99,7 +99,7 @@ a {
 .counter{
     display: inline-block;
     height: 25px;
-    margin: 0 0 0 -3px;
+    margin: 0 0 0 5px;
     padding-bottom: 1px;
     font-size: 14px;
     color: #878787;
@@ -213,7 +213,7 @@ a:focus{
 
 .progressBar{
     border: solid #a8a8a8 1px;
-    margin: 0 0 3px 5px;
+    margin: 0 0 3px 10px;
     height: 20px;
     width: 50px;
     vertical-align: middle;
