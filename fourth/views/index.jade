@@ -6,7 +6,7 @@ block content
             p.topItemText Пустой список
             p.counter
                 | (
-                span.value #{weight.done}/#{weight.all}
+                span(id="root_indexInput") #{weight.done}/#{weight.all}
                 | )
     .buttonsWrapper
         div
@@ -44,5 +44,5 @@ block content
                     ul(id=item.id+"_ChildrenUl", class="subList hidden")
                         +drawBlock(item.children)
 
-    ul#root
+    ul#root_ChildrenUl
         +drawBlock(data)

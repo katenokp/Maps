@@ -6,7 +6,7 @@ function changeCheckboxes(idCheckbox){
         return;
 
     var parentUlId = document.getElementById(idCheckbox).closest('ul').id;
-    if(parentUlId == 'root')
+    if(parentUlId == 'root_ChildrenUl')
         return;
 
     var parentCheckboxId = parentUlId.replace('_ChildrenUl', '_Checkbox');
@@ -28,8 +28,10 @@ function changeWeightByCheckbox(idCheckbox){
 
 function changeWeights(idWeight){
     var parentUlId = document.getElementById(idWeight).closest('ul').id;
-    if(parentUlId == 'root')
+    if(parentUlId == 'root_ChildrenUl') {
+        recalculateRootWeight();
         return;
+    }
 
     var parentWeightId = parentUlId.replace('_ChildrenUl', '_indexInput');
     var parentWeightNode = document.getElementById(parentWeightId);
@@ -40,6 +42,11 @@ function changeWeights(idWeight){
     markChangedItem(parentWeightId);
 
     changeWeights(parentWeightId);
+}
+
+function recalculateRootWeight(){
+    var rootWeightId = "root_indexInput";
+    document.getElementById(rootWeightId).innerHTML = getWeightString(calculateWeight(rootWeightId));
 }
 
 function updateProgressBar(itemWeightId){
