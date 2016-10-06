@@ -43,21 +43,13 @@ function prepareItem(item){
 function calculateWeight(item){
     var children = item.children;
 
-    if(children == null)
-        return getWeight(item);
+    if(children == null) {
+        if(item.weight.all == 1 && item.weight.done == 0 && item.isDone)
+            item.weight.done = 1;
+        return item.weight;
+    }
 
     return sumWeightsAllChildren(children);
-}
-
-function getWeight(item){
-    if(item.weight == null)
-        return {
-            done : item.isDone ? 1: 0,
-            all : 1
-        };
-    else
-        return item.weight;
-
 }
 
 function Weight(done, all){

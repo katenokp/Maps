@@ -1,19 +1,33 @@
 function changeCheckboxes(idCheckbox){
+    if(getWeight(idCheckbox).all == 1)
+        changeWeightByCheckbox(idCheckbox);
+
     if(!document.getElementById(idCheckbox).checked)
         return;
+
     var parentUlId = document.getElementById(idCheckbox).closest('ul').id;
     if(parentUlId == 'root')
         return;
+
     var parentCheckboxId = parentUlId.replace('_ChildrenUl', '_Checkbox');
     var checkbox = document.getElementById(parentCheckboxId);
     checkbox.checked = checkbox.checked || isAllChildrenDone(parentUlId);
-    if(checkbox.checked)
+    if(checkbox.checked) {
         markChangedItem(checkbox.id);
+    }
     changeCheckboxes(parentCheckboxId);
 }
 
-function changeWeights(idWright){
-    var parentUlId = document.getElementById(idWright).closest('ul').id;
+function changeWeightByCheckbox(idCheckbox){
+    var weightId = getNodeId(idCheckbox) + "_indexInput";
+    var newWeight = (document.getElementById(idCheckbox).checked ? "1" : "0") + "/1";
+
+    document.getElementById(weightId).value = newWeight;
+    updateProgressBar(weightId);
+}
+
+function changeWeights(idWeight){
+    var parentUlId = document.getElementById(idWeight).closest('ul').id;
     if(parentUlId == 'root')
         return;
 
