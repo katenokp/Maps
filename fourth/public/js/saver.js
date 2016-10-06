@@ -5,7 +5,7 @@ function saveToFile(reqBody, replacer){
     var serviceName = reqBody.service;
 
     var dataFileName = path.join("./data/" + (serviceName + "/data.json")); //todo разобраться с правильным путём
-    var commonInformationFileName = path.join("./data/" + (serviceName + "/data.json"));
+    var commonInformationFileName = path.join("./data/" + (serviceName + "/commonInformation.json"));
 
     console.warn("file path: %s", dataFileName);
     fs.writeFile(dataFileName, JSON.stringify(reqBody.data, replacer, '\t'), {"encoding": 'utf8'}, function(error){
