@@ -35,9 +35,51 @@ function prepareItem(item){
         item.isDone = false;
     }
 
-    if(item.weight == null){
-        item.weight = calculateWeight(item.id);
+    if(item.weight == null || item.children != null){
+        item.weight = calculateWeight(item);
     }
+}
+
+function calculateWeight(item){
+    var children = item.children;
+
+    if(children == null)
+        return getWeight(item);
+
+    return sumWeightsAllChildren(children);
+}
+
+function getWeight(item){
+    if(item.weight == null)
+        return {
+            done : item.isDone ? 1: 0,
+            all : 1
+        };
+    else
+        return item.weight;
+
+}
+
+function Weight(done, all){
+    this.done = done;
+    this.all = all
+}
+
+function sumWeightsAllChildren(children){
+    var weight = new Weight(0, 0);
+    children.forEach(function (item) {
+        item.weight = calculateWeight(item);
+        weight = sumWeights(weight, item.weight);
+    });
+    return weight;
+}
+
+function sumWeights(firstWeight, secondWeight){
+    if(firstWeight == null)
+        firstWeight = new Weight(0, 0);
+    if(secondWeight == null)
+        secondWeight = new Weight(0, 0);
+    return new Weight(firstWeight.done + secondWeight.done, firstWeight.all + secondWeight.all);
 }
 
 function prepareData(data){
