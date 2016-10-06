@@ -26,7 +26,7 @@ function readItem(idItem){ //todo rename
 function save(){
     var serviceName = document.getElementById("saveButton").name;
     var data = readDataForSave('root_ChildrenUl');
-    var dataJson = JSON.stringify({service: serviceName, data: data});
+    var dataJson = JSON.stringify({service: serviceName, weight: getRootWeight(), data: data});
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/save", true);

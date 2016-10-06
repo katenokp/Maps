@@ -35,11 +35,20 @@ function getWeight(idItem){
             done : getIsDone(idNode) ? 1: 0,
             all : 1
         };
+    return parseWeight(weightText);
+}
+
+function parseWeight(weightText){
     var regexp = /(\d+?)[/\\;:&@](\d+)/;
     var weightValues = weightText.match(regexp);
     if(weightValues.length != 3 || parseInt(weightValues[1]) > parseInt(weightValues[2]))
         console.log("Incorrect weight %s for node %s", weightText, getNodeName(idItem));
     return new Weight(parseInt(weightValues[1]), parseInt(weightValues[2]));
+}
+
+function getRootWeight(){
+    var weightText = document.getElementById('root_indexInput').innerHTML;
+    return parseWeight(weightText);
 }
 
 function getNodeName(idItem){
