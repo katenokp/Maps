@@ -17,6 +17,11 @@ router.get('/', function(req, res, next) {
     res.render('start', {servicesNames: serviceNamesArray});
 });
 
+router.get('/converter', function(req, res, next){
+    res.render('converter');
+});
+
+
 router.get('/ndfl', function(req, res, next) {
     buildPage("Ndfl", res);
 });

@@ -321,3 +321,7 @@ progress::-moz-progress-bar {
 .textInput.index {
     width: 55px;
 }
+
+    width: 600px;
+    height: 700px;
+}
