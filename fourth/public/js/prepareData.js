@@ -15,19 +15,17 @@ function prepareFile(fileName){
 function normalizeData(data){
 
     var parsedData = JSON.parse(data);
-    parsedData.forEach(function(item){
-        prepareItem(item);
-        if(item.children != null){
-            item.children.forEach(function(childItem){
-                prepareItem(childItem);
-            })
-        }
-    });
+    normalizeItemsArray(parsedData);
     return parsedData;
 }
 
-function calculateRootWeight(){
-
+function normalizeItemsArray(itemsArray){
+    itemsArray.forEach(function(item){
+        prepareItem(item);
+        if(item.children != null){
+            normalizeItemsArray(item.children);
+        }
+    });
 }
 
 function prepareItem(item){

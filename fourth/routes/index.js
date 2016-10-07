@@ -78,9 +78,7 @@ function needNormalization(){
 }
 
 function calculateRootCompleteness(data){
-    //var dataWithWeight = [];
     var weight = {done:0, all:0};
-    //calculateCompleteness(data, dataWithWeight);
     data.forEach(function(item){
         weight.done += item.weight.done;
         weight.all += item.weight.all;
