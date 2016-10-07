@@ -300,14 +300,10 @@ progress::-moz-progress-bar {
     background:  url("../images/5.png") no-repeat top;
 }
 
-.listItemWrapper:hover .textInput{
+.textInput:focus{
     outline: 1px solid silver;
     outline-offset: -1px;
     background: #ffe;
-}
-
-.textInput:focus{
-    outline: none;
 }
 
 .textInput {
