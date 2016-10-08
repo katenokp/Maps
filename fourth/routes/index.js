@@ -67,7 +67,7 @@ function buildPage(service, res){
                     } else {
                         parsedData = JSON.parse(data);
                     }
-                    var weight = JSON.parse(commonData).weight; //todo запилить поиск по названию сервиса
+                    var weight = JSON.parse(commonData).weight;
                     weight = calculateRootCompleteness(parsedData);
                     res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
                 }
