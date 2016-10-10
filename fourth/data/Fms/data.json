@@ -1,94 +1,190 @@
 [
 	{
-		"name": "Шапка",
-		"id": "GlobalHeader",
-		"isDone": true,
-		"comment": "GlobalHeader",
-		"priority": 3,
+		"name": "Регистрационная информация",
+		"id": "id17a6ad8e-92a2-4f00-76fe-ac51a4a59731",
+		"isDone": false,
+		"comment": "",
+		"priority": 0,
 		"weight": {
-			"done": 43,
-			"all": 201
+			"done": 0,
+			"all": 9
 		},
 		"children": [
 			{
-				"name": "Шапка Экстерновская",
-				"id": "ExternHeader",
-				"isDone": true,
-				"comment": "ExternHeader",
-				"priority": 2,
+				"name": "Заполнение полей",
+				"id": "id438de976-e62d-455f-9ea9-edafd3e26435",
+				"isDone": false,
+				"comment": "",
+				"priority": 0,
 				"weight": {
-					"done": 5,
-					"all": 100
-				}
-			},
-			{
-				"name": "Шапка НДФЛ",
-				"id": "NDFLHeader",
-				"isDone": true,
-				"comment": "NDFLHeader",
-				"priority": 1,
-				"weight": {
-					"done": 38,
-					"all": 101
+					"done": 0,
+					"all": 3
 				},
 				"children": [
 					{
-						"name": "Шапка Экстерновская3",
-						"id": "ExternHeader3",
+						"name": "Положительные значения. Классы эквивалентности",
+						"id": "idedea3881-1402-4787-a5d2-ff3092c460a4",
 						"isDone": false,
-						"comment": "ExternHeader3",
-						"priority": 1,
+						"comment": "",
+						"priority": 0,
 						"weight": {
-							"done": 37,
-							"all": 100
+							"done": 0,
+							"all": 1
 						}
 					},
 					{
-						"name": "Шапка НДФЛ3",
-						"id": "NDFLHeader3",
-						"isDone": true,
-						"comment": "NDFLHeader3",
-						"priority": 2,
+						"name": "Валидации",
+						"id": "id96799587-083f-42d6-4fed-6da4757f21c8",
+						"isDone": false,
+						"comment": "",
+						"priority": 0,
 						"weight": {
-							"done": 1,
+							"done": 0,
+							"all": 2
+						},
+						"children": [
+							{
+								"name": "Форматные",
+								"id": "iddc26068d-c0d1-4fa1-fa6d-2f79469947b0",
+								"isDone": false,
+								"comment": "",
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								}
+							},
+							{
+								"name": "Логические",
+								"id": "idf3c98216-349b-4078-d060-33ee9f945414",
+								"isDone": false,
+								"comment": "",
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "Выбор сертификата",
+				"id": "ide10d1c98-ad00-4be6-b987-4d754391ae66",
+				"isDone": false,
+				"comment": "",
+				"priority": 0,
+				"weight": {
+					"done": 0,
+					"all": 3
+				},
+				"children": [
+					{
+						"name": "Проверка фильтра",
+						"id": "ida9bb59cd-4394-4bc6-0df9-9ba27ce307cf",
+						"isDone": false,
+						"comment": "",
+						"priority": 0,
+						"weight": {
+							"done": 0,
+							"all": 1
+						}
+					},
+					{
+						"name": "Проверка работы радиобаттона",
+						"id": "id38e0fd20-4a16-4f52-8b37-9cd299e93831",
+						"isDone": false,
+						"comment": "",
+						"priority": 0,
+						"weight": {
+							"done": 0,
+							"all": 1
+						}
+					},
+					{
+						"name": "Валидации",
+						"id": "id1abdfa6c-4687-4254-5a70-3bd527783709",
+						"isDone": false,
+						"comment": "",
+						"priority": 0,
+						"weight": {
+							"done": 0,
 							"all": 1
 						}
 					}
 				]
-			}
-		]
-	},
-	{
-		"name": "Шапка1",
-		"id": "GlobalHeader1",
-		"isDone": false,
-		"comment": "GlobalHeader1",
-		"priority": 3,
-		"weight": {
-			"done": 1,
-			"all": 18
-		},
-		"children": [
-			{
-				"name": "Шапка Экстерновская1",
-				"id": "ExternHeader1",
-				"isDone": false,
-				"comment": "ExternHeader1",
-				"priority": 5,
-				"weight": {
-					"done": 0,
-					"all": 15
-				}
 			},
 			{
-				"name": "Шапка НДФЛ1",
-				"id": "NDFLHeader1",
+				"name": "Отправка",
+				"id": "id5bfa863f-5074-4e64-8b60-aa367586e1f7",
 				"isDone": false,
-				"comment": "NDFLHeader1",
-				"priority": 1,
+				"comment": "",
+				"priority": 0,
 				"weight": {
-					"done": 1,
-					"all": 3
+					"done": 0,
+					"all": 2
+				},
+				"children": [
+					{
+						"name": "Положительный сценарий",
+						"id": "id1e8fc2f3-974e-47aa-eee5-de9585c184e2",
+						"isDone": false,
+						"comment": "",
+						"priority": 0,
+						"weight": {
+							"done": 0,
+							"all": 1
+						},
+						"children": [
+							{
+								"name": "Фэйковый сервис отправки",
+								"id": "ide5c690aa-0b14-40a0-9c0b-f8a7671da950",
+								"isDone": false,
+								"comment": "",
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								}
+							}
+						]
+					},
+					{
+						"name": "Ошибка отправки от dc.api",
+						"id": "id10d3a11e-8c04-4202-f26d-10d81812eefc",
+						"isDone": false,
+						"comment": "",
+						"priority": 0,
+						"weight": {
+							"done": 0,
+							"all": 1
+						},
+						"children": [
+							{
+								"name": "Фэйковый сервис отправки",
+								"id": "id418ac357-2133-4f43-745c-8354a3d9b701",
+								"isDone": false,
+								"comment": "",
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "Автозамена сертификата в регистрационной информации",
+				"id": "idfbe550bd-50d9-4a4f-c83f-63e890c1eacd",
+				"isDone": false,
+				"comment": "",
+				"priority": 0,
+				"weight": {
+					"done": 0,
+					"all": 1
 				}
 			}
 		]

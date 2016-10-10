@@ -47,19 +47,25 @@ app.use('/convert', bodyParser.urlencoded({
 }));
 
 app.post('/convert', function(req, res, next){
+    if(req.body.service == null)
+    {
+        res.status = 500;
+        res.send();
+    }
+
     var data = {
-        data: parser(req.body),
-        service: 'Pfr', //todo
+        data: parser(req.body.text),
+        service: req.body.service,
         weight: {
             all: 0,
             done: 0
         }
     };
 
-    var saveDataStatus = saveData(data, ["name", "children"]); //todo вынести формат файла в настройки
+    var saveDataStatus = saveData(data, ["name", "children"]);
     if(saveDataStatus){
         res.status = 200;
-        res.send("saved")
+        res.send(req.body.service)
     } else{
         res.status = 500;
         res.send();

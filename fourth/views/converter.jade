@@ -7,6 +7,22 @@ html
    body
        form(action="/convert", method="POST")
            textarea#converterTextField(type="text", name="text")
+           h1 Сервис
+           h2
+               input(type="radio", name="service", value="Ndfl")
+               НДФЛ
+           h2
+               input(type="radio", name="service", value="Fss")
+               ФСС
+           h2
+               input(type="radio", name="service", value="Pfr")
+               ПФР
+           h2
+               input(type="radio", name="service", value="Kopf")
+               КОПФ
+           h2
+               input(type="radio", name="service", value="Fms")
+               ФМС
            input(type="submit", value="send")
        //textarea#converterTextField
        //button(id=converterSubmitButton, onclick="submit()") submit

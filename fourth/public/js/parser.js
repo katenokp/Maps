@@ -3,7 +3,7 @@ var index;
 
 
 function parse(data){
-    var lines = data.text.split('\r\n');
+    var lines = data.split('\r\n');
     linesLevels = [];
     lines.forEach(function(line){
         linesLevels.push(getStringLevel(line));
@@ -11,7 +11,7 @@ function parse(data){
     return parseAll(linesLevels);
 }
 
-function parseAll(){ //todo rename
+function parseAll(){
     var result = [];
     if(linesLevels[0].level != 0)
         throw error('Bad structure on position 0');
@@ -33,19 +33,6 @@ function parseAll(){ //todo rename
     }
 
     return result;
-
-
-    /*while(index < linesLevels.length-1){
-        var relationship = getRelationship(linesLevels[index], linesLevels[index+1])
-        if(relationship == 'child'){
-
-
-        }
-    }
-    while(getRelationship(linesLevels[0], linesLevels[index]) == 'child')
-        index++;*/
-
-
 }
 
 function findAllChildrenOfItem(){
@@ -64,16 +51,10 @@ function findAllChildrenOfItem(){
             index--;
             children[children.length-1].children = findAllChildrenOfItem(linesLevels, index);
         }
-        else if(relationship == 'neighbor'){
+        else if(relationship == 'neighbor' || 'nextNode'){
             return children;
         }
     }
-    if(itemIndex+index==linesLevels.length)
-        return children;
-    if(getRelationship(linesLevels[itemIndex], linesLevels[itemIndex+index]) == 'child'){
-        children[index].children = findAllChildrenOfItem(linesLevels+index);
-    }
-
     return children;
 
 }
@@ -81,33 +62,34 @@ function findAllChildrenOfItem(){
 
 function getRelationship(firstItem, secondItem){
     var levelsDifferent = firstItem.level - secondItem.level;
-    if(levelsDifferent > 1 || levelsDifferent < -2)
-        throw error('Bad structure, firstItem: {%s, %d}, secondItem: {%s, %d}', firstItem.line, firstItem.level, secondItem.line, secondItem.level);
+    if(levelsDifferent < -2)
+        console.log('Bad structure, firstItem: {%s, %d}, secondItem: {%s, %d}', firstItem.line, firstItem.level, secondItem.line, secondItem.level);
     switch (levelsDifferent) {
         case  -1:
             return 'child';
         case  0:
             return 'neighbor';
-        case  1:
-            return 'nextNode';
         case -2:
             return "childOfChild";
+        default :
+            return 'nextNode';
     }
 }
 
 
 
 function getStringLevel(str){
-    var regexp = /^(\t+)([\S]+)$/;
+    var regexp = /^([ \t]+)[а-яА-Я\w].*$/;
     var matches = str.match(regexp);
     if(matches == null)
         return {
             level: 0,
             line: str
         };
+    //console.log("for line %s level %d", matches[0], matches[1].length);
     return {
         level: matches[1].length,
-        line: matches[2]
+        line: matches[0].replace('\t', '')
     }
 
 }
