@@ -97,7 +97,6 @@ a {
     background-color: #ffffff; /* закраска в цвет фона обязательна иначе будет видно линию */
     margin: 0 0 3px .7em; /* делаем промежуток между узлами, отодвигаем левее  */
     padding: 0 0 0 6px;
-    width: 41px;
 }
 
 .topItemWrapper {
