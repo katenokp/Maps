@@ -1,18 +1,19 @@
 extends layout
 
 block content
-    .listItemWrapper
-        .topItemWrapper
-            p.topItemText #{serviceName}
-            p.counter
-                | (
-                span(id="root_indexInput") #{weight.done}/#{weight.all}
-                | )
-    .buttonsWrapper
-        div
-            input.button.collapseAll(type='button', value='', onclick='collapseAll()')
-            input.button.expandAll(type='button', value='', onclick='expandAll()')
-            input.button.saveAll(id='saveButton', name=service, type='submit', value='', onclick='unmarkAllItems(); save()')
+    .headerWrapper
+        .listItemWrapper
+            .topItemWrapper
+                p.topItemText #{serviceName}
+                p.counter
+                    | (
+                    span(id="root_indexInput") #{weight.done}/#{weight.all}
+                    | )
+        .buttonsWrapper
+            div
+                input.button.collapseAll(type='button', value='', onclick='collapseAll()')
+                input.button.expandAll(type='button', value='', onclick='expandAll()')
+                input.button.saveAll(id='saveButton', name=service, type='submit', value='', onclick='unmarkAllItems(); save()')
     mixin drawBlock(data)
         each item,index in data
             - var id=item.id
@@ -45,6 +46,6 @@ block content
                 if item.children
                     ul(id=item.id+"_ChildrenUl", class="subList hidden")
                         +drawBlock(item.children)
-
-    ul#root_ChildrenUl
-        +drawBlock(data)
+    #mainWrapper
+        ul#root_ChildrenUl
+            +drawBlock(data)
