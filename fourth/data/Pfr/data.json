@@ -1,96 +1,27 @@
 [
 	{
-		"name": "ПФР",
-		"id": "GlobalHeader",
-		"isDone": true,
-		"comment": "GlobalHeader",
-		"priority": 3,
-		"weight": {
-			"done": 43,
-			"all": 201
-		},
+		"name": "ntrc",
 		"children": [
 			{
-				"name": "Шапка Экстерновская",
-				"id": "ExternHeader",
-				"isDone": true,
-				"comment": "ExternHeader",
-				"priority": 2,
-				"weight": {
-					"done": 5,
-					"all": 100
-				}
+				"name": "jfsdkfjksdf"
 			},
 			{
-				"name": "Шапка НДФЛ",
-				"id": "NDFLHeader",
-				"isDone": true,
-				"comment": "NDFLHeader",
-				"priority": 1,
-				"weight": {
-					"done": 38,
-					"all": 101
-				},
+				"name": "jfsdkfjsdkfjsdkfj",
 				"children": [
 					{
-						"name": "Шапка Экстерновская3",
-						"id": "ExternHeader3",
-						"isDone": false,
-						"comment": "ExternHeader3",
-						"priority": 1,
-						"weight": {
-							"done": 37,
-							"all": 100
-						}
+						"name": "sdfsdfsdf"
 					},
 					{
-						"name": "Шапка НДФЛ3",
-						"id": "NDFLHeader3",
-						"isDone": true,
-						"comment": "NDFLHeader3",
-						"priority": 2,
-						"weight": {
-							"done": 1,
-							"all": 1
-						}
+						"name": "sdfsdfsd"
 					}
 				]
+			},
+			{
+				"name": "sdfsdfsdf"
 			}
 		]
 	},
 	{
-		"name": "Шапка1",
-		"id": "GlobalHeader1",
-		"isDone": false,
-		"comment": "GlobalHeader1",
-		"priority": 3,
-		"weight": {
-			"done": 1,
-			"all": 18
-		},
-		"children": [
-			{
-				"name": "Шапка Экстерновская1",
-				"id": "ExternHeader1",
-				"isDone": false,
-				"comment": "ExternHeader1",
-				"priority": 5,
-				"weight": {
-					"done": 0,
-					"all": 15
-				}
-			},
-			{
-				"name": "Шапка НДФЛ1",
-				"id": "NDFLHeader1",
-				"isDone": false,
-				"comment": "NDFLHeader1",
-				"priority": 1,
-				"weight": {
-					"done": 1,
-					"all": 3
-				}
-			}
-		]
+		"name": "sdfdsfsdf"
 	}
 ]

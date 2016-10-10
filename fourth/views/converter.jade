@@ -5,5 +5,8 @@ html
       link(rel='stylesheet', href='/styles/style.css')
       script(src='/js/converter.js')
    body
-       textarea#converterTextField
-       button(id=converterSubmitButton, onclick="submit()") submit
+       form(action="/convert", method="POST")
+           textarea#converterTextField(type="text", name="text")
+           input(type="submit", value="send")
+       //textarea#converterTextField
+       //button(id=converterSubmitButton, onclick="submit()") submit

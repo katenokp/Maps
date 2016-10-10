@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var saveData = require('./public/js/saver');
+var parser = require('./public/js/parser');
 
 var app = express();
 
@@ -15,7 +16,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-//app.locals.pretty = true; //чтобы html не пихался в одну строку
+//app.locals.pretty = true; //С‡С‚РѕР±С‹ html РЅРµ РїРёС…Р°Р»СЃСЏ РІ РѕРґРЅСѓ СЃС‚СЂРѕРєСѓ
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -31,7 +32,7 @@ app.use('/users', users);
 app.post('/save', function(req, res){
     //var data = req.body;
     console.warn('post');
-    var saveDataStatus = saveData(req.body, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]); //todo вынести формат файла в настройки
+    var saveDataStatus = saveData(req.body, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]); //todo РІС‹РЅРµСЃС‚Рё С„РѕСЂРјР°С‚ С„Р°Р№Р»Р° РІ РЅР°СЃС‚СЂРѕР№РєРё
     if(saveDataStatus){
         res.status = 200;
         res.send("saved")
@@ -41,8 +42,28 @@ app.post('/save', function(req, res){
     }
 });
 
-app.post('/convert', function(req, res){
-    var reqBody = req.body;
+app.use('/convert', bodyParser.urlencoded({
+    extended: true
+}));
+
+app.post('/convert', function(req, res, next){
+    var data = {
+        data: parser(req.body),
+        service: 'Pfr', //todo
+        weight: {
+            all: 0,
+            done: 0
+        }
+    };
+
+    var saveDataStatus = saveData(data, ["name", "children"]); //todo РІС‹РЅРµСЃС‚Рё С„РѕСЂРјР°С‚ С„Р°Р№Р»Р° РІ РЅР°СЃС‚СЂРѕР№РєРё
+    if(saveDataStatus){
+        res.status = 200;
+        res.send("saved")
+    } else{
+        res.status = 500;
+        res.send();
+    }
 });
 
 // catch 404 and forward to error handler

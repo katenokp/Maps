@@ -1,11 +1,3 @@
-function getStringLevel(str){
-    var regexp = /^(\t+)[\S]+$/;
-    var matches = str.match(regexp);
-    if(matches == null)
-        return 0;
-    return matches[1].length;
-}
-
 function submit(){
     var textField = document.getElementById('converterTextField');
     var formData = new FormData();
