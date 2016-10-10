@@ -7,7 +7,6 @@
 }
 
 a {
-    display: inline-block;
     color: black;
     text-decoration: none;
     outline: none;
@@ -62,6 +61,7 @@ a {
     background-color: transparent;
     border: solid silver;
     border-width: 0 0 1px 1px;
+    height:32px;
 }
 
 .listItemLink:hover{
@@ -73,17 +73,31 @@ a {
     display: block;
     position: relative;
     top: .95em; /* смещаем узел на середину линии */
-    background-color: #ffffff; /* закраска в цвет фона обязательна иначе будет видно линию */
-    margin: 0 0 3px .7em; /* делаем промежуток между узлами, отодвигаем левее  */
-    padding: 0 0.3em;
 }
 
 .listItemWrapper.noChild{
-    margin-left: 25px;
+    margin-left: 12px;
+}
+
+.itemMessageWrapper{
+    display:inline-block;
+    position: absolute;
+    min-width: 97%;
+    padding: 0 0 0 7px;
+    background-color: #ffffff; /* закраска в цвет фона обязательна иначе будет видно линию */
 }
 
 .changed{
     color: #b64dbe;
+}
+
+.checkboxAndMarkerWrapper{
+    vertical-align: top;
+    display: inline-block;
+    background-color: #ffffff; /* закраска в цвет фона обязательна иначе будет видно линию */
+    margin: 0 0 3px .7em; /* делаем промежуток между узлами, отодвигаем левее  */
+    padding: 0 0 0 6px;
+    width: 41px;
 }
 
 .topItemWrapper {
@@ -182,8 +196,8 @@ a:focus{
 }
 
 .checkbox{
-    vertical-align: middle;
-    margin: 0 0 2px 5px;
+    vertical-align: top;
+    margin: 8px 0 2px 5px;
 }
 
 .checkbox:focus{
@@ -217,7 +231,7 @@ a:focus{
 
 .progressBar{
     border: solid #a8a8a8 1px;
-    margin: 0 0 3px 7px;
+    margin: 0 0 3px 0;
     height: 20px;
     width: 50px;
     vertical-align: middle;
