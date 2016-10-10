@@ -3,7 +3,6 @@
     padding: 1em 5em 5em 5em;
     margin:0;
     font-size: 62.5%;
-    min-width: 1024px;
 }
 
 a {
@@ -13,7 +12,8 @@ a {
 }
 
 #mainWrapper {
-    font-size: 1.8em;
+    margin-top: 70px;
+    font-size: 18px;
     position: relative;
 }
 
@@ -21,7 +21,7 @@ a {
     position: absolute;
     width: 100%;
     text-align: right;
-    margin: -45px 0 0 -20px;
+    margin: -30px 0 0 -20px;
 }
 
 .button{
@@ -64,6 +64,17 @@ a {
     height:32px;
 }
 
+.headerWrapper{
+    position:fixed;
+    background-color: #ffffff;
+    width: 95%;
+    min-width: 1024px;
+    z-index:3;
+    margin: 0 0 0 -10px;
+    padding: 20px 0 15px 8px;
+    border-bottom: 1px solid silver;
+}
+
 .listItemLink:hover{
     text-decoration: underline;
     cursor: default;
@@ -82,7 +93,7 @@ a {
 .itemMessageWrapper{
     display:inline-block;
     position: absolute;
-    min-width: 97%;
+    min-width: 98%;
     padding: 0 0 0 7px;
     background-color: #ffffff; /* закраска в цвет фона обязательна иначе будет видно линию */
 }
@@ -100,12 +111,8 @@ a {
 }
 
 .topItemWrapper {
-    font-size: 1.2em;
+    font-size: 22px;
     font-weight: bold;
-    line-height: 2.4em;
-    margin: 0 0 0.8em -0.4em;
-    padding: 0 .25em;
-    border-bottom: 1px solid silver;
 }
 
 .topItemText{
