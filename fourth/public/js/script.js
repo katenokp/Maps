@@ -132,25 +132,6 @@ function keyCodeSave(){
     });
 }
 
-function extensionGrayLines(){
-    var liElements = document.getElementsByTagName("li");
-    var extensionValue = 0;
-
-    for (var i = 1; i < liElements.length; i++) {
-        var previousLi = liElements[i - 1];
-        var currentLi = liElements[i];
-
-        var previousLiStyles = window.getComputedStyle(previousLi, null);
-        var previousA = window.$(previousLiStyles + " a");
-        var previousLiTextStyles = window.getComputedStyle(previousA, null);
-
-        extensionValue = parseInt(previousLiStyles.height) - parseInt(previousLiTextStyles.height);
-
-        if(extensionValue != 0)
-            currentLi.firstChild.style = "padding-top: " + extensionValue + "px";
-    }
-}
-
 function getItemId(liId){
     return liId + "_Item";
 }
