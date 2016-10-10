@@ -36,7 +36,7 @@ block content
                             button(id=id+"_PriorityButton", class="dropButton "+ priority, onclick="switchDropdownList(this.id)")
                             div(id=id+"_PriorityDropDown", class="dropContent hidden")
                                 each val, index in {0:'Default', 1:'1', 2:'2', 3:'3', 4:'4', 5:'5'}
-                                    a(id=id+"_dropLink"+val, class="dropLink priority"+val, href="#", onclick="setPriority(this.id)")
+                                    a(id=id+"_dropLink"+val, class="dropLink priority"+val, onclick="setPriority(this.id)")
                         a(id=id+"_Item", class="listItemLink", onclick=hasChildren ? "collapseElement(this.id)" :"", onselectstart="return false", onmousedown="return false") #{item.name}
                         input(id=id+"_commentInput", class="textInput comment", type="text", value=item.comment, oninput="markChangedItem(this.id)")
                         input(id=id+"_indexInput", class="textInput index" + (hasChildren==true ? " hidden" : ""), type="text", value=item.weight.done+"/"+item.weight.all, onchange="updateProgressBar(this.id); changeWeights(this.id); markChangedItem(this.id)")
