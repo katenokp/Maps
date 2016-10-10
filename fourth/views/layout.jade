@@ -8,7 +8,35 @@ html(onclick="hideAllDropdownLists(event)")
         script(src='/js/changeData.js')
         script(src='/js/calculations.js')
         script(src='/js/getters.js')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
     body
+        script.
+            $(document).ready(init)
+            $(window).resize(extendGrayLines)
+
+            function init(){
+                expandAll();
+                extendGrayLines();
+                collapseAll();
+            }
+
+            function extendGrayLines() {
+                var previousElem = null;
+                var currentElem = null;
+
+                var defaultHeight = 28;
+                var delta = 0;
+
+                var listItems = window.$("li");
+
+                for (var i = listItems.length - 1; i > 0 ; i--) {
+                    previousElem = window.$("#" + listItems[i - 1].id + " .itemMessageWrapper")[0];
+                    delta = $(previousElem).height() - defaultHeight;
+
+                    currentElem = window.$("#" + listItems[i].id + " .grayLinesBlock")[0];
+                    $(currentElem).css("padding", delta + "px 0 0 0");
+                };
+            };
         #mainWrapper
             //keyCodeSave()
             block content
