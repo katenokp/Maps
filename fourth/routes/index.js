@@ -21,6 +21,9 @@ router.get('/converter', function(req, res, next){
     res.render('converter');
 });
 
+router.get('/test', function(req, res, next) {
+    buildPage("Test", res);
+});
 
 router.get('/ndfl', function(req, res, next) {
     buildPage("Ndfl", res);

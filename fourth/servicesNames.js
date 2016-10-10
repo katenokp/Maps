@@ -3,7 +3,8 @@ var services = {
     Fss: "ФСС",
     Pfr: "ПФР",
     Kopf: "КОПФ",
-    Fms: "ФМС"
+    Fms: "ФМС",
+    //Test: "Test"
 };
 
 module.exports = services;
