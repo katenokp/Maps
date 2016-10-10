@@ -147,7 +147,7 @@ ul li ul li ul li ul li ul li {
     border-left: 1px solid silver;
 }
 
-ul li.last ul li {/* последний узел, соединительную линию к след. узлу убираем */
+li.last > ul > li {/* последний узел, соединительную линию к след. узлу убираем */
     border: none;
 }
 
