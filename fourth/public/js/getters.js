@@ -68,7 +68,7 @@ function getWeightString(weight){
 }
 
 function getNodeId(id){
-    var matches = id.match('(id[a-z|0-9|A-Z]+)_[a-z|0-9|A-Z]+$');
+    var matches = id.match('(id.+)_[^_]+$');
     if(matches == null)
         return id;
     return matches[matches.length-1];
