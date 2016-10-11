@@ -30,7 +30,7 @@ function normalizeItemsArray(itemsArray){
 
 function prepareItem(item){
     if(item.id == null){
-        item.id = 'id' + getNewGuid();
+        item.id = getNewGuid();
     }
 
     var priority = item.priority;
