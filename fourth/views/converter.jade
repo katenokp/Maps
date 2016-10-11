@@ -5,24 +5,30 @@ html
       link(rel='stylesheet', href='/styles/style.css')
       script(src='/js/converter.js')
    body
-       form(action="/convert", method="POST")
+       form.converterForm(action="/convert", method="POST")
            textarea#converterTextField(type="text", name="text")
-           h1 Сервис
-           h2
-               input(type="radio", name="service", value="Ndfl")
-               |НДФЛ
-           h2
-               input(type="radio", name="service", value="Fss")
-               |ФСС
-           h2
-               input(type="radio", name="service", value="Pfr")
-               |ПФР
-           h2
-               input(type="radio", name="service", value="Kopf")
-               |КОПФ
-           h2
-               input(type="radio", name="service", value="Fms")
-               |ФМС
-           input(type="submit", value="send")
-       //textarea#converterTextField
-       //button(id=converterSubmitButton, onclick="submit()") submit
+           .converterSettingsWrapper
+               input#listItemId_Checkbox(type="checkbox")
+               label(for="listItemId_Checkbox") Перезаписать существующие данные?
+               br
+               .servicesBtns
+                    p.topItemWrapper Сервис
+                    p
+                        input(type="radio", name="service", value="Ndfl")
+                        |НДФЛ
+                    p
+                        input(type="radio", name="service", value="Ndfl")
+                        |НДФЛ
+                    p
+                        input(type="radio", name="service", value="Fss")
+                        |ФСС
+                    p
+                        input(type="radio", name="service", value="Pfr")
+                        |ПФР
+                    p
+                        input(type="radio", name="service", value="Kopf")
+                        |КОПФ
+                    p
+                        input(type="radio", name="service", value="Fms")
+                        |ФМС
+                input.sendButton(type="submit", value="send")
