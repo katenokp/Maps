@@ -341,7 +341,39 @@ progress::-moz-progress-bar {
 .textInput.index {
     width: 55px;
 }
+
+
+.converterForm{
+    width: 100%;
+    padding-top: 45px;
+    font-size:18px;
+}
+
+.converterSettingsWrapper{
+    width: 500px;
+    display: inline-block;
+    padding: 0 0 0 30px;
+}
+
 #converterTextField{
     width: 600px;
     height: 700px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.servicesBtns{
+    padding: 15px 0 15px 5px;
+    transition: .5s;
+    display: none;
+}
+
+#listItemId_Checkbox:checked ~ .servicesBtns{
+    display: block;
+}
+
+.sendButton{
+    margin: 20px 0 0 4px;
+    height: 25px;
+    width: 60px;
 }

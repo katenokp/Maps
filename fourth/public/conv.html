@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://k1406010:1337/converter -->
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<form action="http://k1406010:1337/convert" method="POST" class="converterForm">
+
+    <textarea id="converterTextField" type="text" name="text"></textarea>
+
+    <div class="converterSettingsWrapper">
+        <input id="listItemId_Checkbox" type="checkbox">
+        <label for="listItemId_Checkbox">Перезаписать существующие данные?</label><br>
+
+        <div class="servicesBtns">
+
+            <p class="topItemWrapper">Сервис</p>
+            <p>
+                <input type="radio" name="service" value="Ndfl">НДФЛ
+            </p>
+            <p>
+                <input type="radio" name="service" value="Fss">ФСС
+            </p>
+            <p>
+                <input type="radio" name="service" value="Pfr">ПФР
+            </p>
+            <p>
+                <input type="radio" name="service" value="Kopf">КОПФ
+            </p>
+            <p>
+                <input type="radio" name="service" value="Fms">ФМС
+            </p>
+        </div>
+
+        <input type="submit" value="send" class="sendButton">
+    </div>
+</form>
+<!--textarea#converterTextField-->
+<!--button(id=converterSubmitButton, onclick="submit()") submit-->
+</body>
+</html>
