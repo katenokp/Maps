@@ -42,33 +42,40 @@ app.post('/save', function(req, res){
     }
 });
 
-app.use('/convert', bodyParser.urlencoded({
+app.use('/converter', bodyParser.urlencoded({
     extended: true
 }));
 
-app.post('/convert', function(req, res, next){
+app.post('/converter', function(req, res, next){
     if(req.body.service == null)
     {
-        res.status = 500;
-        res.send();
+        var result = JSON.stringify(parser(req.body.text), ["name", "children"], '\t');
+        //res.status = 200;
+        //res.render('convert', {data: result});
+        res.send(result);
     }
 
-    var data = {
-        data: parser(req.body.text),
-        service: req.body.service,
-        weight: {
-            all: 0,
-            done: 0
-        }
-    };
+    else {
+        var data = {
+            data: parser(req.body.text),
+            service: req.body.service,
+            weight: {
+                all: 0,
+                done: 0
+            }
+        };
 
-    var saveDataStatus = saveData(data, ["name", "children"]);
-    if(saveDataStatus){
-        res.status = 200;
-        res.send(req.body.service)
-    } else{
-        res.status = 500;
-        res.send();
+        var saveDataStatus = saveData(data, ["name", "children"], function(){
+            res.status = 200;
+            res.send();
+        });
+        /*if (saveDataStatus) {
+            res.status = 200;
+            res.send();
+        } else {
+            res.status = 500;
+            res.send();
+        }*/
     }
 });
 

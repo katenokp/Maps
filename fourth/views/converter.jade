@@ -5,7 +5,7 @@ html
       link(rel='stylesheet', href='/styles/style.css')
       script(src='/js/converter.js')
    body
-       form.converterForm(action="/convert", method="POST")
+       form.converterForm(action="/converter", method="POST")
            textarea#converterTextField(type="text", name="text")
            .converterSettingsWrapper
                input#listItemId_Checkbox(type="checkbox")
