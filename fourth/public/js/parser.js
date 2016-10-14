@@ -44,7 +44,8 @@ function findAllChildrenOfItem(){
         var relationship = getRelationship(linesLevels[itemIndex], linesLevels[index]);
         if(relationship == 'child') {
             children.push({
-                name: linesLevels[index].line
+                name: linesLevels[index].line,
+                comment: linesLevels[index].comment
             });
             index++;
         }
@@ -80,7 +81,7 @@ function getRelationship(firstItem, secondItem){
 
 
 function getStringLevel(str){
-    var regexp = /^([ \t]+)(['"+-@#_!%а-яА-Я\w].*)$/;
+    var regexp = /^([ \t]+)([\d'"+-@#_!%а-яА-Я\w].*)(?:->(['"+-@#_!%а-яА-Я\w].*))?$/;
     var matches = str.match(regexp);
     if(matches == null)
         return {
@@ -90,7 +91,8 @@ function getStringLevel(str){
     //console.log("for line %s level %d", matches[0], matches[1].length);
     return {
         level: matches[1].length,
-        line: matches[2]
+        line: matches[2],
+        comment: matches[3]
     }
 
 }

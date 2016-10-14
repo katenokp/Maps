@@ -1,181 +1,53 @@
 [
 	{
-		"name": "Шапка: GlobalHeader",
-		"id": "idaf45fc01-d67b-4da3-c989-c7cc34609b84",
-		"isDone": false,
-		"comment": "",
-		"priority": 0,
-		"weight": {
-			"done": 0,
-			"all": 12
-		},
+		"name": "Шапка->GlobalHeader",
 		"children": [
 			{
-				"name": "Шапка Экстерновская (сервисы, личный кабинет, выход)",
-				"id": "id1327951a-50ad-4e81-47de-7504b5d2975c",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				}
+				"name": "Шапка Экстерновская (сервисы, личный кабинет, выход)"
 			},
 			{
-				"name": "Шапка НДФЛ (настройки, помощь и пр): NDFLHeader",
-				"id": "id5792c584-2557-40ba-05e2-8a1022d5938e",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 11
-				},
+				"name": "Шапка НДФЛ (настройки, помощь и пр)->NDFLHeader",
 				"children": [
 					{
-						"name": "Переход в КЭ",
-						"id": "ideef9cf50-1534-445c-e438-b633017cd44a",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Переход в КЭ"
 					},
 					{
-						"name": "Смена организаций + ChangeOrganization",
-						"id": "id82912921-e3a2-41a1-c09e-e04d2bb749fc",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Смена организаций->ChangeOrganization"
 					},
 					{
-						"name": "ИНН-КПП организации",
-						"id": "iddf01548e-371e-4f5d-d611-fa3442889b05",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "ИНН-КПП организации"
 					},
 					{
-						"name": "Реквизиты и настройки: RequisitesAndPreferences",
-						"id": "id84a3d864-32e5-4bcf-7b60-9134863eb8c4",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 2
-						},
+						"name": "Реквизиты и настройки->RequisitesAndPreferences",
 						"children": [
 							{
-								"name": "Реквизиты плательщика",
-								"id": "id1a09adbb-01ce-4c99-35a3-75980b1a1e9b",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Реквизиты плательщика"
 							},
 							{
-								"name": "Сообщение о представительстве",
-								"id": "idfa9e8073-d4f5-4d60-134a-67a604f73d1b",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Сообщение о представительстве"
 							}
 						]
 					},
 					{
-						"name": "Помощь: GlobalHelpLink  box",
-						"id": "ided64f7b3-8f43-4c74-b45f-6481778309c9",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 6
-						},
+						"name": "Помощь->GlobalHelpLink  box",
 						"children": [
 							{
-								"name": "Номер Call-центра",
-								"id": "id948fee3c-d69d-4a9a-2ea5-ef54409434ea",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Номер Call-центра"
 							},
 							{
-								"name": "Диагностика",
-								"id": "id1fe13144-be90-403c-b208-486049449934",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Диагностика"
 							},
 							{
-								"name": "Дистанционная помощь",
-								"id": "id1b81e078-86ce-4614-7077-41f64ebb4b75",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Дистанционная помощь"
 							},
 							{
-								"name": "Перенос справок из старого сервиса",
-								"id": "id6e57a4b3-4299-44b8-dcaf-a7df53b03203",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Перенос справок из старого сервиса"
 							},
 							{
-								"name": "Видео про заполнение отчёта",
-								"id": "ida027c58c-db6e-465c-4eed-7100dad1a141",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Видео про заполнение отчёта"
 							},
 							{
-								"name": "Видео про импорт отчёта",
-								"id": "id0d45c0d1-4f1f-4816-43ef-5093995cbf29",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Видео про импорт отчёта"
 							}
 						]
 					}
@@ -184,217 +56,65 @@
 		]
 	},
 	{
-		"name": "Список и прочее: InquiryListPage",
-		"id": "id387a8376-1b10-41e6-1715-28a5a3cc3c59",
-		"isDone": false,
-		"comment": "",
-		"priority": 0,
-		"weight": {
-			"done": 0,
-			"all": 42
-		},
+		"name": "Список и прочее->InquiryListPage",
 		"children": [
 			{
-				"name": "Шапка с реквизитами PageHeader",
-				"id": "id6eb07bfb-5a4d-4342-d29c-751ce970ef72",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 13
-				},
+				"name": "Шапка с реквизитами->PageHeader",
 				"children": [
 					{
-						"name": "Год",
-						"id": "id2f728d48-83b0-4d49-fece-a8efacb01098",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Год"
 					},
 					{
-						"name": "Формат",
-						"id": "id19f733d5-fd0b-42ff-0703-4058bab4b17d",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Формат"
 					},
 					{
-						"name": "Реквизиты",
-						"id": "id39bdcebe-2c4e-432d-18e6-f773a4d2b2b7",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Реквизиты"
 					},
 					{
-						"name": "Редактирование реквизитов Requisites",
-						"id": "id58e77300-8008-4826-c1f9-93785cc826ba",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 10
-						},
+						"name": "Редактирование реквизитов->Requisites",
 						"children": [
 							{
-								"name": "Валидации на ссылке \"Изменить\"",
-								"id": "ide4d7f39b-c17f-4bb0-cd67-553ac3a491ca",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Валидации на ссылке \"Изменить\""
 							},
 							{
-								"name": "Лайтбокс EditRequisitesLightbox",
-								"id": "id1a18b6e0-4c2e-4648-e184-d1dd7d158891",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 9
-								},
+								"name": "Лайтбокс->EditRequisitesLightbox",
 								"children": [
 									{
-										"name": "Поля общие CommonRequisites",
-										"id": "id7018d3aa-953e-4d54-f2e5-c2ab45dd02c6",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 6
-										},
+										"name": "Поля общие->CommonRequisites",
 										"children": [
 											{
-												"name": "ИФНС/МРИ",
-												"id": "id784e3c57-bfe3-4a72-cc73-c3cd590194b9",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "ИФНС/МРИ"
 											},
 											{
-												"name": "ОКТМО",
-												"id": "id2c7829cb-be92-4ce4-c739-5f8358c0a7eb",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "ОКТМО"
 											},
 											{
-												"name": "ИНН",
-												"id": "idd40ade75-25e9-4e5f-b1a1-221699beafe6",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "ИНН"
 											},
 											{
-												"name": "КПП",
-												"id": "id634c4eba-7460-4df4-1234-7183d4fe8b32",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "КПП"
 											},
 											{
-												"name": "Наименование организации",
-												"id": "id881cb9ff-5cf6-4c49-4483-ad3f0d20127e",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "Наименование организации"
 											},
 											{
-												"name": "Телефон",
-												"id": "idee29c4d0-d9e8-47d7-b37f-a37f0b586c41",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "Телефон"
 											}
 										]
 									},
 									{
-										"name": "Поля 5.04 Format504Requisitest",
-										"id": "idb81fe95c-6762-4cfd-e7d9-f435ac7c31d5",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 2
-										},
+										"name": "Поля 5.04->Format504Requisitest",
 										"children": [
 											{
-												"name": "Руководитель (ФИО)",
-												"id": "id6da98144-c03c-4875-f3af-15586099d4be",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "Руководитель (ФИО)"
 											},
 											{
-												"name": "Признак подписанта",
-												"id": "ida932cf2b-cd02-43e8-bed1-f3c76d394b2a",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
+												"name": "Признак подписанта"
 											}
 										]
 									},
 									{
-										"name": "Поведение лайтбокса",
-										"id": "id34586a3c-dfbc-42e3-b9a0-df172d214ca0",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
+										"name": "Поведение лайтбокса"
 									}
 								]
 							}
@@ -404,422 +124,126 @@
 			},
 			{
 				"name": "Шапка с действиями ActionsHeader",
-				"id": "ide819e214-7117-4042-c9b6-c80b11df4478",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 16
-				},
 				"children": [
 					{
-						"name": "Чекбокс",
-						"id": "id1ec01b51-2afc-4f94-b5e8-030b879afe26",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Чекбокс"
 					},
 					{
-						"name": "Создать справку",
-						"id": "ide2830243-db1d-49fd-dc4d-7b8a034d0d78",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Создать справку"
 					},
 					{
-						"name": "Действия Actions",
-						"id": "id9bb3a9e8-7ee0-4ec5-9940-2f633bf75155",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Действия->Actions"
 					},
 					{
 						"name": "Общие CommonActions",
-						"id": "id3391f695-6b01-427f-8a91-9206ba7603c4",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						},
 						"children": [
 							{
-								"name": "Импорт",
-								"id": "ida09cfac3-063e-4217-76a5-a3f6cb888226",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Импорт"
 							}
 						]
 					},
 					{
-						"name": "Для выбранных справок CheckedInquiriesActions",
-						"id": "idd55f4574-c8b1-48b5-d22e-645c97440c18",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 6
-						},
+						"name": "Для выбранных справок->CheckedInquiriesActions",
 						"children": [
 							{
-								"name": "Перенумеровать",
-								"id": "id0653c406-c971-4d23-4cdd-f388bd19092d",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Перенумеровать"
 							},
 							{
-								"name": "Включить авторасчет общих сумм налога и дохода",
-								"id": "id167db206-505b-49b2-ab62-ae77847cef79",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Включить авторасчет общих сумм налога и дохода"
 							},
 							{
-								"name": "Изменить тип справок",
-								"id": "id6db3f989-c496-4f11-530c-86c45dede82a",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Изменить тип справок"
 							},
 							{
-								"name": "Напечатать справки",
-								"id": "id7d4285dd-d9da-4a12-bd10-42bad489fd00",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Напечатать справки"
 							},
 							{
-								"name": "Напечатать реестр",
-								"id": "id7eceb215-76c5-40e6-2641-d85dd2faf627",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Напечатать реестр"
 							},
 							{
-								"name": "Удалить",
-								"id": "idc22ac4c0-a430-4351-6944-c7b7bc4f3c8b",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Удалить"
 							}
 						]
 					},
 					{
 						"name": "Фильтр PersonSampling",
-						"id": "idc61cab07-cbef-44a3-deba-d7eb13992b6e",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 5
-						},
 						"children": [
 							{
-								"name": "Все справки",
-								"id": "id07a710f3-0dcf-4988-4cb1-87721f20023b",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Все справки"
 							},
 							{
-								"name": "По удержанному НДФЛ",
-								"id": "id9ee01bcd-627c-43b7-8d5a-ac36193b897b",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "По удержанному НДФЛ"
 							},
 							{
-								"name": "По неудержанному НДФЛ",
-								"id": "id5b794f49-008a-4472-5cfb-b07e47d05534",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "По неудержанному НДФЛ"
 							},
 							{
-								"name": "Выбранные справки",
-								"id": "id651aa719-4d2c-48f1-13d4-fe7f25f19c0e",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Выбранные справки"
 							},
 							{
-								"name": "С ошибками/предупреждениями",
-								"id": "iddd6a8638-4577-4884-31ef-337d6d7f8913",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "С ошибками/предупреждениями"
 							}
 						]
 					},
 					{
-						"name": "Поиск",
-						"id": "idd4048fdb-2322-4b29-f49f-586e47c4d41b",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Поиск"
 					}
 				]
 			},
 			{
-				"name": "Список InquiryList",
-				"id": "idf65ce259-94e1-446b-bd6d-9fc31934f44d",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 8
-				},
+				"name": "Список->InquiryList",
 				"children": [
 					{
-						"name": "Чекбокс",
-						"id": "idde17f543-7175-41be-e65a-5adac7789c15",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Чекбокс"
 					},
 					{
-						"name": "Номер",
-						"id": "idf62427b1-a978-4a0c-1e19-5ff3c973f297",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Номер"
 					},
 					{
-						"name": "ФИО",
-						"id": "idc55e24be-48f9-44e1-31b0-1596bee3676b",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "ФИО"
 					},
 					{
-						"name": "Валилации",
-						"id": "id22759cdc-dafe-403b-a5c0-e230c7e68bcf",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Валилации"
 					},
 					{
-						"name": "Суммы InquiryListSums",
-						"id": "id1b10e673-84fe-4b3a-4401-504a9d6ef6fb",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 4
-						},
+						"name": "Суммы->InquiryListSums",
 						"children": [
 							{
-								"name": "Дохода",
-								"id": "idcb5e3a3e-b0c7-44b1-df75-e917a0a2edea",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Дохода"
 							},
 							{
-								"name": "Исчислено",
-								"id": "id92b98a91-db86-450c-57fd-63f5dd5e7b6e",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Исчислено"
 							},
 							{
-								"name": "Удержано",
-								"id": "id3c7862dd-cd8a-476e-194c-2de2b9ee0e14",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Удержано"
 							},
 							{
-								"name": "Перечислено",
-								"id": "id8c11a055-0d59-4da5-ae78-af55c3d816b2",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Перечислено"
 							}
 						]
 					}
 				]
 			},
 			{
-				"name": "Футтер InquiryListFooter",
-				"id": "id4171eae2-84b9-454f-f297-9b873909ce9f",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 5
-				},
+				"name": "Футтер->InquiryListFooter",
 				"children": [
 					{
-						"name": "Проверить и отправить отчёт SendReportButton",
-						"id": "idd0555afa-3832-491c-6624-d3daf5be6214",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Проверить и отправить отчёт->SendReportButton"
 					},
 					{
-						"name": "Итоговые суммы CommonSums",
-						"id": "id7333e302-c486-4d16-3927-5a748b13570b",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 4
-						},
+						"name": "Итоговые суммы->CommonSums",
 						"children": [
 							{
-								"name": "Дохода",
-								"id": "idb875d94c-fbc7-4f80-3797-22476956bf78",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Дохода"
 							},
 							{
-								"name": "Исчислено",
-								"id": "ide140bece-69e9-45ca-81f2-3fd1852ba212",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Исчислено"
 							},
 							{
-								"name": "Удержано",
-								"id": "id1eeb8a10-4a60-4ef9-7dd3-620f5f18a796",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Удержано"
 							},
 							{
-								"name": "Перечислено",
-								"id": "id08b20a1e-ca23-43aa-92f9-c4782190571f",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Перечислено"
 							}
 						]
 					}
@@ -828,706 +252,210 @@
 		]
 	},
 	{
-		"name": "Справка на редактировании InquiryPage",
-		"id": "id3a9cc56d-1f54-444d-d9c0-6156a3b9df0b",
-		"isDone": false,
-		"comment": "",
-		"priority": 0,
-		"weight": {
-			"done": 0,
-			"all": 51
-		},
+		"name": "Справка на редактировании->InquiryPage",
 		"children": [
 			{
-				"name": "Инфо о справке + действия InquiryRequisites",
-				"id": "id85975835-3cb7-4c2c-a00e-c66381c74adb",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 13
-				},
+				"name": "Инфо о справке + действия->InquiryRequisites",
 				"children": [
 					{
 						"name": "Реквизиты справки:",
-						"id": "id6be328df-d776-4c39-e43f-bdda055fcef5",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 5
-						},
 						"children": [
 							{
-								"name": "Номер:",
-								"id": "id00bce080-f0cd-432b-3758-b0e8db1b4429",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Номер:"
 							},
 							{
-								"name": "Автопроставление при создании справки",
-								"id": "idbff80b48-ff30-4fa5-b37c-f7d8fc1fdced",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Автопроставление при создании справки"
 							},
 							{
-								"name": "Ограничение на длину",
-								"id": "ide65ef0a2-7867-4461-b2ee-4e40e97f8cbc",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Ограничение на длину"
 							},
 							{
-								"name": "Валидации на корректность",
-								"id": "id9aa5eafe-eb35-4b86-7622-65c1e68df169",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Валидации на корректность"
 							},
 							{
-								"name": "Валидация на отсутствие",
-								"id": "id35859049-56e4-41f9-0b70-fd2a5a3e4c36",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Валидация на отсутствие"
 							}
 						]
 					},
 					{
 						"name": "Тип:",
-						"id": "idb71e328e-536a-4ea6-9da9-13e4083d0200",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						},
 						"children": [
 							{
-								"name": "Автопроставление",
-								"id": "id3fd0b3d5-7a90-4d85-8875-007f69ca3ec5",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Автопроставление"
 							}
 						]
 					},
 					{
 						"name": "Номер корректировки:",
-						"id": "id13b09fb3-73f0-438f-69fc-e31f3d95e26d",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 3
-						},
 						"children": [
 							{
-								"name": "Автопроставление",
-								"id": "idc3ea6c41-5ff4-457e-c415-dbea0830553a",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Автопроставление"
 							},
 							{
-								"name": "Запрет ввода некорректных номеров",
-								"id": "id5e6ba2a3-ea58-4243-862f-7d4c2d5a3ff0",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Запрет ввода некорректных номеров"
 							},
 							{
-								"name": "Валидация на отсутствие",
-								"id": "id6e17dd92-3402-48c1-c67b-b7eb162a0306",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Валидация на отсутствие"
 							}
 						]
 					},
 					{
 						"name": "Печать справок:",
-						"id": "id5a574d5d-29c3-44d9-2977-5700f9ba1661",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 4
-						},
 						"children": [
 							{
-								"name": "Печать работает",
-								"id": "idb2b2ffab-8f43-4f0c-5639-1b845a44b3e7",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Печать работает"
 							},
 							{
-								"name": "Лайтбокс при печати:",
-								"id": "id7b37dcd9-3cf4-4478-8fcb-e17a964e6c5c",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Лайтбокс при печати:"
 							},
 							{
-								"name": "ФИО",
-								"id": "id3c981a74-45b3-48b2-919b-3ea6252a824b",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "ФИО"
 							},
 							{
-								"name": "Дата (проставляется)",
-								"id": "id37611ff5-7dac-4e16-f056-90ed1f3252b0",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Дата (проставляется)"
 							}
 						]
 					}
 				]
 			},
 			{
-				"name": "Удаление справки из карточки",
-				"id": "idf74630bc-d01a-4fb3-5f8f-b0c4b0094c4a",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				}
+				"name": "Удаление справки из карточки"
 			},
 			{
-				"name": "Импорт реквизитов",
-				"id": "id0f2c6477-abc9-4be4-6ec1-4f89705951b8",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				}
+				"name": "Импорт реквизитов"
 			},
 			{
 				"name": "Личные данные Person",
-				"id": "ida396b957-c291-4745-05b5-87427b614178",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 9
-				},
 				"children": [
 					{
-						"name": "ФИО",
-						"id": "idabde7712-376d-46e1-c245-3f368083e8a7",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "ФИО"
 					},
 					{
-						"name": "ИННФЛ",
-						"id": "ide6437b68-e214-4162-0c9a-7bddabd56a2d",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "ИННФЛ"
 					},
 					{
-						"name": "Дата рождения",
-						"id": "id4475098f-60c7-4c79-3be5-647af26465af",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Дата рождения"
 					},
 					{
-						"name": "Статус налогоплательщика",
-						"id": "id407b2690-2acd-4c20-ec74-0e6b030c67cd",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Статус налогоплательщика"
 					},
 					{
-						"name": "Гражданство",
-						"id": "id21fdb0ff-aac0-4293-1a71-0b939cab45b7",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Гражданство"
 					},
 					{
-						"name": "ИНН в стране гражданства",
-						"id": "iddf483865-9f0d-4b82-7ef6-2922eccd2596",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "ИНН в стране гражданства"
 					},
 					{
-						"name": "Документ",
-						"id": "idbc48dbec-f53e-4036-b3ed-1d1d253eac7a",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Документ"
 					},
 					{
-						"name": "Место жительства в РФ",
-						"id": "idb1afc1e3-c765-4d5f-c50f-5a6022809bc5",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Место жительства в РФ"
 					},
 					{
-						"name": "Адрес в стране проживания",
-						"id": "id29de54b4-5361-43fa-b0c5-b5ec5a293b4a",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Адрес в стране проживания"
 					}
 				]
 			},
 			{
 				"name": "Доходы по ставке",
-				"id": "id3f67d456-2a19-434a-a02d-87bf7f92252c",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 12
-				},
 				"children": [
 					{
 						"name": "Ставка",
-						"id": "id06d6ccc9-35ad-4ed6-9389-44b4c87b7ef7",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 2
-						},
 						"children": [
 							{
-								"name": "Дивиденды",
-								"id": "ida337a19e-073e-4213-bddd-c327bd9fe181",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Дивиденды"
 							},
 							{
-								"name": "ч...",
-								"id": "idfab860b5-130d-4e76-e90d-c278fa2bd9af",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "#..."
 							}
 						]
 					},
 					{
-						"name": "\"Добавить ставку\"",
-						"id": "id68512b0f-1676-423f-c024-04c42793584d",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "\"Добавить ставку\""
 					},
 					{
-						"name": "Валидация на отсутствие доходов",
-						"id": "idce8cb6ef-e433-40e8-ea57-bb36ca496103",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Валидация на отсутствие доходов"
 					},
 					{
 						"name": "Доходы по месяцам:",
-						"id": "id9997576b-8d58-4eac-8b4b-f2c0bc94c57d",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 7
-						},
 						"children": [
 							{
-								"name": "Код дохода",
-								"id": "idb68c7160-00b3-459f-d187-7e7cef4c94d5",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Код дохода"
 							},
 							{
-								"name": "Сумма дохода",
-								"id": "iddec431a4-26c5-42f1-b575-4107c123ba89",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Сумма дохода"
 							},
 							{
-								"name": "Удалить код дохода",
-								"id": "idd251114b-3811-43c8-7640-f3eb0071f0a6",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Удалить код дохода"
 							},
 							{
-								"name": "Код вычета",
-								"id": "idedb6ac28-c2f9-4d62-c3a3-fe4517c13c69",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Код вычета"
 							},
 							{
-								"name": "Сумма вычета",
-								"id": "idc7efd911-c858-4c20-abc2-5c5a5376736f",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Сумма вычета"
 							},
 							{
-								"name": "Добавить код",
-								"id": "id4b63fd91-af06-47f7-892d-33a581ef47f2",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Добавить код"
 							},
 							{
-								"name": "Удалить код вычета",
-								"id": "idd5afa4ba-ab68-4672-43c2-e8d527bf61ed",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Удалить код вычета"
 							}
 						]
 					},
 					{
-						"name": "Вычеты",
-						"id": "idae34ed0a-13b5-43a3-330d-e2ffb037bd4c",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Вычеты"
 					}
 				]
 			},
 			{
 				"name": "Вычеты",
-				"id": "id9433dcf0-7c53-458f-0f18-d2e22892a723",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				},
 				"children": [
 					{
-						"name": "ч...",
-						"id": "id12983fb8-3b5a-4160-fbe4-4be0c25c7aef",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "#..."
 					}
 				]
 			},
 			{
 				"name": "Общие суммы",
-				"id": "ida1c015ef-7281-44b5-794d-fb7f1a2ea9e1",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 12
-				},
 				"children": [
 					{
-						"name": "Рассчёты",
-						"id": "idcdbedf02-36ad-4c8f-31e2-6a16fe1a6cbf",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Рассчёты"
 					},
 					{
-						"name": "Валидации",
-						"id": "idb4fa6523-e361-468e-968a-3d590744baf7",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Валидации"
 					},
 					{
-						"name": "Импорт (режим) - лучше в импорте",
-						"id": "id71b2ac68-7264-42db-fe92-30ca18f30f58",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Импорт (режим) - лучше в импорте"
 					},
 					{
-						"name": "Режимы",
-						"id": "id25fbcf25-55c9-44ae-49b7-f64f83e3d490",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Режимы"
 					},
 					{
 						"name": "Поля",
-						"id": "ideba53235-a9ff-434d-e700-5072cd21c4e6",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 8
-						},
 						"children": [
 							{
-								"name": "Общая сумма дохода",
-								"id": "id082e8d6b-d445-4766-3e0e-52db16210ac7",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Общая сумма дохода"
 							},
 							{
-								"name": "Налоговая база",
-								"id": "ide4b986bd-49a8-489b-5477-4dc2848b5caa",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Налоговая база"
 							},
 							{
-								"name": "Исчисленный налог",
-								"id": "id19033852-9fe6-4cb4-4fd3-cfd09018c5ee",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Исчисленный налог"
 							},
 							{
-								"name": "Фиксированные авансовые платежи",
-								"id": "id4cd10ab7-9547-492b-2897-5e0ee374f4b8",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Фиксированные авансовые платежи"
 							},
 							{
-								"name": "Удержанный налог",
-								"id": "idcef57c37-6834-4d56-07d6-07e71f1e781d",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Удержанный налог"
 							},
 							{
-								"name": "Перечисленный налог",
-								"id": "idd3861d51-31d2-4ee2-7727-b6df7e350e50",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Перечисленный налог"
 							},
 							{
-								"name": "Излишне удержанный",
-								"id": "id91c19ec6-1b85-4108-4c7a-6adb68cdf86f",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Излишне удержанный"
 							},
 							{
-								"name": "Не удержанный",
-								"id": "id19c97fd7-6b86-471f-ddaa-e655fdb42cc8",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
+								"name": "Не удержанный"
 							}
 						]
 					}
@@ -1535,119 +463,39 @@
 			},
 			{
 				"name": "Фиксированные авансовые платежи",
-				"id": "idd79adf24-8864-45c9-eaaf-e31bb763f291",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 2
-				},
 				"children": [
 					{
-						"name": "Наличие в зависимости от ставки",
-						"id": "idc9622fbf-4d4d-4a6f-2ad4-2e6435b540ff",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Наличие в зависимости от ставки"
 					},
 					{
-						"name": "Валидации",
-						"id": "idde39dd89-b77c-4fe6-5597-9aef52660864",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
+						"name": "Валидации"
 					}
 				]
 			}
 		]
 	},
 	{
-		"name": "Страница отправки SendReportPage",
-		"id": "ida7d32dca-195d-4c79-2c79-d4326ffff84e",
-		"isDone": false,
-		"comment": "",
-		"priority": 0,
-		"weight": {
-			"done": 0,
-			"all": 0
-		},
+		"name": "Страница отправки->SendReportPage",
 		"children": []
 	},
 	{
-		"name": "Футтер экстерновский GlobalFooter",
-		"id": "id372231e1-1162-4340-ef5a-fc0c22a982be",
-		"isDone": false,
-		"comment": "",
-		"priority": 0,
-		"weight": {
-			"done": 0,
-			"all": 4
-		},
+		"name": "Футтер экстерновский->GlobalFooter",
 		"children": [
 			{
-				"name": "Ссылки на сервисы",
-				"id": "id24e5d87a-899a-404f-47a9-932b41cdcd84",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				}
+				"name": "Ссылки на сервисы"
 			},
 			{
-				"name": "Время сервера",
-				"id": "id335f7b5d-09cb-408c-b348-193f8ece8fc6",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				}
+				"name": "Время сервера"
 			},
 			{
-				"name": "О системе",
-				"id": "id60073d85-73a4-4976-586c-48cbd589ef2d",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				}
+				"name": "О системе"
 			},
 			{
-				"name": "Письмо в техподдержку + SendFeedbackTest",
-				"id": "idc5d0c18d-3e7a-40e0-3f79-54b8987d338f",
-				"isDone": false,
-				"comment": "",
-				"priority": 0,
-				"weight": {
-					"done": 0,
-					"all": 1
-				}
+				"name": "Письмо в техподдержку->SendFeedbackTest"
 			}
 		]
 	},
 	{
-		"name": "Импорт Import",
-		"id": "id38a79955-0613-4d38-1c57-9e0ca2899d4b",
-		"isDone": false,
-		"comment": "",
-		"priority": 0,
-		"weight": {
-			"done": 0,
-			"all": 1
-		}
+		"name": "Импорт->Import"
 	}
 ]
