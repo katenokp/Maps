@@ -7,7 +7,7 @@
 		"priority": 0,
 		"weight": {
 			"done": 0,
-			"all": 9
+			"all": 22
 		},
 		"children": [
 			{
@@ -18,7 +18,7 @@
 				"priority": 0,
 				"weight": {
 					"done": 0,
-					"all": 3
+					"all": 16
 				},
 				"children": [
 					{
@@ -40,7 +40,7 @@
 						"priority": 0,
 						"weight": {
 							"done": 0,
-							"all": 2
+							"all": 15
 						},
 						"children": [
 							{
@@ -51,8 +51,65 @@
 								"priority": 0,
 								"weight": {
 									"done": 0,
-									"all": 1
-								}
+									"all": 5
+								},
+								"children": [
+									{
+										"name": "Тест 1. Заполнение Рег инфы. Поле кода УПФР",
+										"id": "id768bfc9a-41b6-4b34-be50-bf01fed512b4",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 2. Заполнение Рег инфы. Поле кода УПФР для пенсионных дел",
+										"id": "idc63bfb05-9247-4915-5086-e3765a195551",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 3. Заполнение Рег.инфы. Поле Регистрационный номер",
+										"id": "id5fff5cd2-764a-4c9f-5659-7f2820c72753",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 4. Заполнение Рег. инфы. Блок Cоглашение об обмене электронными документами с ПФР",
+										"id": "id8f1474bf-ab82-48fa-3a21-75b0224fbb2c",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 5. Отправка регистрационной информации",
+										"id": "id56ce0be5-750b-4513-5572-67bbd7d03b2e",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									}
+								]
 							},
 							{
 								"name": "Логические",
@@ -62,8 +119,120 @@
 								"priority": 0,
 								"weight": {
 									"done": 0,
-									"all": 1
-								}
+									"all": 10
+								},
+								"children": [
+									{
+										"name": "Тест 6. Проверка заполненности рег.информации",
+										"id": "id73e3e6b4-3ef5-457e-5080-3d7d20cbd81e",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 7. Проверка совпадения рег.номеров",
+										"id": "id610bb205-b91e-4c60-ad65-5d6742e5b6f3",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 8. Проверка действительности сертификата",
+										"id": "id78453612-acf9-4e18-8aff-65af0edb02f8",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 9. Проверка заполненности кода УПФР для пенсионных дел.",
+										"id": "idbb870e13-09f5-43c5-622f-ed1583f04464",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 10. Проверка активности кода УПФР",
+										"id": "idb3186271-4e4b-465f-1273-a80f058198a0",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 11. Проверка активности кода УПРФ для пенсионных дел",
+										"id": "idd1260010-cfbc-454b-bb75-4e4d825a9a42",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 12. Проверка совпадения кодов УПФР",
+										"id": "id886e7589-639e-4d42-d320-f839f9f086bf",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 13. Проверка наличия других ошибок в рег.инфе",
+										"id": "id34201b92-ac94-4942-73e3-6b3103750a95",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 14. Проверка активности учетной записи",
+										"id": "id4e3c994f-9532-4fff-e25e-463ea3a6cbba",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Тест 15. Проверка тестового УПФР",
+										"id": "id0290a433-d6bb-4875-21b7-9510458d4f05",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									}
+								]
 							}
 						]
 					}
@@ -991,7 +1160,7 @@
 														},
 														"children": [
 															{
-																"name": "Формат отчета в файле не соответствует формату отчетности за &amp;amp;amp;amp;lt;период&amp;amp;amp;amp;gt;.",
+																"name": "Формат отчета в файле не соответствует формату отчетности за &amp;amp;amp;amp;amp;amp;amp;lt;период&amp;amp;amp;amp;amp;amp;amp;gt;.",
 																"id": "id854e6a0f-b7fa-4d16-61a7-0b393b886d99",
 																"isDone": false,
 																"comment": "",
@@ -1015,7 +1184,7 @@
 														},
 														"children": [
 															{
-																"name": "В файле &amp;amp;amp;amp;lt;имя первого файла с такой ошибкой&amp;amp;amp;amp;gt; отсутствует ИНН. Исправьте ошибку и повторите загрузку.",
+																"name": "В файле &amp;amp;amp;amp;amp;amp;amp;lt;имя первого файла с такой ошибкой&amp;amp;amp;amp;amp;amp;amp;gt; отсутствует ИНН. Исправьте ошибку и повторите загрузку.",
 																"id": "idb3fc2f69-2a92-43ef-97f1-497cbf119b50",
 																"isDone": false,
 																"comment": "",
@@ -1039,7 +1208,7 @@
 														},
 														"children": [
 															{
-																"name": "В файле &amp;amp;amp;amp;lt;имя первого файла с такой ошибкой&amp;amp;amp;amp;gt; отсутствует КПП. Исправьте ошибку и повторите загрузку.",
+																"name": "В файле &amp;amp;amp;amp;amp;amp;amp;lt;имя первого файла с такой ошибкой&amp;amp;amp;amp;amp;amp;amp;gt; отсутствует КПП. Исправьте ошибку и повторите загрузку.",
 																"id": "id1b0fbd23-683e-4807-f926-20520c30198c",
 																"isDone": false,
 																"comment": "",
@@ -1063,7 +1232,7 @@
 														},
 														"children": [
 															{
-																"name": "Отчет не был загружен, так как превышено допустимое общее количество сотрудников в организации {максимум &amp;amp;amp;amp;lt;максимум&amp;amp;amp;amp;gt;}. Обратитесь в сервисный центр.",
+																"name": "Отчет не был загружен, так как превышено допустимое общее количество сотрудников в организации {максимум &amp;amp;amp;amp;amp;amp;amp;lt;максимум&amp;amp;amp;amp;amp;amp;amp;gt;}. Обратитесь в сервисный центр.",
 																"id": "id9380ee86-ca8e-467c-d6be-e4242cea70d5",
 																"isDone": false,
 																"comment": "",
@@ -2836,7 +3005,7 @@
 										}
 									},
 									{
-										"name": "Когда поле становится высотой в 9 строк -&amp;amp;amp;amp;gt; поле не растет, но появляется скролл внутри",
+										"name": "Когда поле становится высотой в 9 строк -&amp;amp;amp;amp;amp;amp;amp;gt; поле не растет, но появляется скролл внутри",
 										"id": "idf143ba57-64d4-4262-2e63-9e5da22e032d",
 										"isDone": false,
 										"comment": "",
@@ -8187,7 +8356,7 @@
 										},
 										"children": [
 											{
-												"name": "Текст ошибки \"Не удалось подтвердить получение: &amp;amp;amp;amp;lt;текст ошибки&amp;amp;amp;amp;gt;. Попробуйте еще раз или обратитесь в техническую поддержку\"",
+												"name": "Текст ошибки \"Не удалось подтвердить получение: &amp;amp;amp;amp;amp;amp;amp;lt;текст ошибки&amp;amp;amp;amp;amp;amp;amp;gt;. Попробуйте еще раз или обратитесь в техническую поддержку\"",
 												"id": "id11f08420-5342-4bd4-2c50-3c6bca23ed85",
 												"isDone": false,
 												"comment": "",
