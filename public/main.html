@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html onclick="hideAllDropdownLists(event)">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+<!--Добавить немного jQuery-->
+<script>
+    $(document).ready(init);
+    $(window).resize(extendGrayLines);
+
+    function init(){
+        expandAll();
+        extendGrayLines();
+        collapseAll();
+    }
+
+    function extendGrayLines() {
+        var previousElem = null;
+        var currentElem = null;
+
+        var defaultHeight = 28;
+        var delta = 0;
+
+        var listItems = window.$("li");
+
+        for (var i = listItems.length - 1; i > 0 ; i--) {
+            previousElem = window.$("#" + listItems[i - 1].id + " .itemMessageWrapper")[0];
+            delta = $(previousElem).height() - defaultHeight;
+
+            currentElem = window.$("#" + listItems[i].id + " .grayLinesBlock")[0];
+            $(currentElem).css("padding", delta + "px 0 0 0");
+        }
+    };
+</script>
+
+
+<div class="headerWrapper">
+    <div class="listItemWrapper">
+        <div class="topItemWrapper"><p class="topItemText">Пустой список</p>
+            <p class="counter">(<span class="value">100/120</span>)</p>
+        </div>
+    </div>
+
+    <div  class="buttonsWrapper">
+        <div>
+            <input type="button" class="button collapseAll" value="" onclick="collapseAll()">
+            <input type="button" class="button expandAll" value="" onclick="expandAll()">
+            <input type="submit" class="button saveAll" value="" onclick="unmarkAllItems()">
+        </div>
+    </div>
+</div>
+
+
+<div id="mainWrapper">
+
+
+    <ul id="root">
+
+
+        <li  id="listItemId">
+
+            <div class="grayLinesBlock">
+                <div class="listItemWrapper">
+
+                    <!--обернуть чекбокс и маркер в checkboxAndMarkerWrapper-->
+                    <div class="checkboxAndMarkerWrapper">
+
+                        <input id="listItemId_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
+                        <em id="listItemId_Marker" class="marker close" onclick="collapseElement(this.id)"></em>
+
+                    </div>
+
+                    <!--обернуть остальные элементы строки в itemMessageWrapper-->
+                    <div class="itemMessageWrapper">
+                        <div class="hintContainer">
+                            <progress class="progressBar" value="53" max="325"></progress><br><span class="hintText">53/325</span>
+                        </div>
+
+                        <div id="listItemId_DropWrapper" class="dropdownWrapper">
+                            <button id="listItemId_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
+
+                            <div id="listItemId_PriorityDropDown" class="dropContent hidden">
+                                <a class="dropLink priorityDefault" href="#" id="listItemId_dropLinkDefault" onclick="setPriority(this.id)"></a>
+                                <a class="dropLink priority1" id="listItemId_dropLink1" href="#" onclick="setPriority(this.id)"></a>
+                                <a class="dropLink priority2" href="#" id="listItemId_dropLink2" onclick="setPriority(this.id)"></a>
+                                <a class="dropLink priority3" href="#" id="listItemId_dropLink3" onclick="setPriority(this.id)"></a>
+                                <a class="dropLink priority4" href="#" id="listItemId_dropLink4" onclick="setPriority(this.id)"></a>
+                                <a class="dropLink priority5" href="#" id="listItemId_dropLink5" onclick="setPriority(this.id)"></a>
+                            </div>
+                        </div>
+
+
+                        <a id="listItemId_Item" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam magna purus, vel interdum lacus fermentum quis. Cras et nibh at sapien tincidunt malesuada sit amet quis tortor. Ut vitae vulputate lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</a>
+                        <input id="listItemId_commentInput" class="textInput comment" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
+                        <input id="listItemId_indexInput" class="textInput index hidden" type="text" value="199/200" oninput="markChangedItem(this.id)"></div>
+                </div>
+            </div>
+
+
+            <ul id="listItemId_ChildrenUl" class="subList hidden">
+
+                <li  id="listItemId11">
+
+                    <div class="grayLinesBlock">
+                        <div class="listItemWrapper">
+
+                            <div class="checkboxAndMarkerWrapper">
+                                <input id="listItemId11_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
+                                <em id="listItemId11_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
+                            </div><div class="itemMessageWrapper">
+
+                            <div class="hintContainer">
+                                <progress class="progressBar hidden" value="0" max="100"></progress><br><span class="hintText">0/100</span>
+                            </div>
+
+                            <div id="listItemId11_DropWrapper" class="dropdownWrapper">
+                                <button id="listItemId11_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
+
+                                <div id="listItemId11_PriorityDropDown" class="dropContent hidden">
+                                    <a class="dropLink priorityDefault" href="#" id="listItemId11_dropLinkDefault" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority1" id="listItemId11_dropLink1" href="#" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority2" href="#" id="listItemId11_dropLink2" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority3" href="#" id="listItemId11_dropLink3" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority4" href="#" id="listItemId11_dropLink4" onclick="setPriority(this.id)"></a>
+                                    <a class="dropLink priority5" href="#" id="listItemId11_dropLink5" onclick="setPriority(this.id)"></a>
+                                </div>
+                            </div>
+                            <a id="listItemId11_Item" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1Вложенный список. Элемент 1</a>
+                            <input id="listItemId11_commentInput" class="textInput comment" type="text" value=""  oninput="markChangedItem(this.id)">
+                            <input id="listItemId11_indexInput" class="textInput index" type="text" value="" oninput="markChangedItem(this.id)">
+                        </div>
+
+                        </div>
+                    </div>
+
+                </li>
+
+
+                <li class="last"  id="listItemId12">
+
+                    <div class="grayLinesBlock">
+                        <div class="listItemWrapper">
+
+                            <div class="checkboxAndMarkerWrapper">
+                                <input id="listItemId12_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
+                                <em id="listItemId12_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
+                            </div><div class="itemMessageWrapper">
+
+                                <div class="hintContainer">
+                                    <progress class="progressBar hidden" value="100" max="100"></progress><br><span class="hintText">100/100</span>
+                                </div>
+
+                                <div id="listItemId12_DropWrapper" class="dropdownWrapper">
+                                    <button id="listItemId12_PriorityButton"class="dropButton priorityDefault" onclick="switchDropdownList(this.id)"></button>
+
+                                    <div id="listItemId12_PriorityDropDown" class="dropContent hidden">
+                                        <a class="dropLink priorityDefault" href="#" id="listItemId12_dropLinkDefault" onclick="setPriority(this.id)"></a>
+                                        <a class="dropLink priority1" id="listItemId12_dropLink1" href="#" onclick="setPriority(this.id)"></a>
+                                        <a class="dropLink priority2" href="#" id="listItemId12_dropLink2" onclick="setPriority(this.id)"></a>
+                                        <a class="dropLink priority3" href="#" id="listItemId12_dropLink3" onclick="setPriority(this.id)"></a>
+                                        <a class="dropLink priority4" href="#" id="listItemId12_dropLink4" onclick="setPriority(this.id)"></a>
+                                        <a class="dropLink priority5" href="#" id="listItemId12_dropLink5" onclick="setPriority(this.id)"></a>
+                                    </div>
+                                </div>
+                                <a id="listItemId12_Item" class="" onselectstart="return false" onmousedown="return false">Вложенный список. Последний элемент</a>
+                                <input id="listItemId12_commentInput" class="textInput comment" type="text" value=""  oninput="markChangedItem(this.id)">
+                                <input id="listItemId12_indexInput" class="textInput index" type="text" value="1/30" oninput="markChangedItem(this.id)">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </li>
+
+            </ul>
+            
+        </li>
+    </ul>
+</div>
+</body>
+</html>
