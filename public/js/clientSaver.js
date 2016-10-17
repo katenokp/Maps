@@ -23,10 +23,30 @@ function readItem(idItem){ //todo rename
     return parsedItem;
 }
 
+function getOldData(){
+    navigator.webkitPersistentStorage.requestQuota(1000 * 1024, function (bytes) {
+        window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
+            fs.root.getDirectory('Pfr', {create:true}, function(directory){
+                directory.getFile('oldData.json', {}, function(fileEntry){
+                    fileEntry.file(function(file){
+                        var reader = new FileReader();
+                        reader.onloadend = function(error){
+                            return this.result;
+                        }
+                    })
+                })
+            })
+        }, function(err){if(err)
+            console.log(err)});
+    }, function(err){if(err)
+        console.log(err)});
+}
+
 function save(){
     var serviceName = document.getElementById("saveButton").name;
     var data = readDataForSave('root_ChildrenUl');
-    var dataJson = JSON.stringify({service: serviceName, weight: getRootWeight(), data: data});
+    var oldData = getOldData();
+    var dataJson = JSON.stringify({service: serviceName, weight: getRootWeight(), data: data, oldData: oldData});
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/save", true);

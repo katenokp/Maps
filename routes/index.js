@@ -58,6 +58,7 @@ function buildPage(service, res){
             throw err;
         }
         else{
+            var file = data;
             fs.readFile(commonInformationFileName, 'utf8', function(error, commonData){
                 if(error)
                     throw error;

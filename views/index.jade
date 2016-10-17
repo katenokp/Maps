@@ -1,6 +1,32 @@
 extends layout
 
 block content
+    -var parsedData = JSON.stringify(data, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+    script.
+        navigator.webkitPersistentStorage.requestQuota(1000 * 1024, function (bytes) {
+            window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
+                console.log("storage is ready");
+                fs.root.getDirectory('Pfr', {create:true}, function(directory){
+                    directory.getFile('oldData.json', {create: true}, function(file){
+                        file.createWriter(function(writer){
+                            writer.onwriteend = function(error){
+                                if(error)
+                                    console.log(error);
+                                else{
+                                    console.log("done");
+                                }
+                            };
+
+
+                            var blob = new Blob(['!{parsedData}'], {type: 'application/json'});
+                            writer.write(blob);
+                        })
+                    })
+                })
+            }, function(err){if(err)
+                console.log(err)});
+        }, function(err){if(err)
+            console.log(err)});
     .headerWrapper
         .listItemWrapper
             .topItemWrapper
