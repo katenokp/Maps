@@ -1,13 +1,14 @@
 extends layout
 
 block content
-    -var parsedData = JSON.stringify(data, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+    -var parsedData = JSON.stringify(data, replacer);
     script.
-        navigator.webkitPersistentStorage.requestQuota(1000 * 1024, function (bytes) {
+        navigator.webkitPersistentStorage.requestQuota(10*1024*1024, function (bytes) {
             window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
                 console.log("storage is ready");
                 fs.root.getDirectory('Pfr', {create:true}, function(directory){
                     directory.getFile('oldData.json', {create: true}, function(file){
+                        //file.remove(function(){});
                         file.createWriter(function(writer){
                             writer.onwriteend = function(error){
                                 if(error)

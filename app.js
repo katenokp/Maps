@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var saveData = require('./public/js/saver');
 var parser = require('./public/js/parser');
+var replacer = require('./public/js/replacer');
 
 var app = express();
 
@@ -32,7 +33,7 @@ app.use('/users', users);
 app.post('/save', function(req, res){
     //var data = req.body;
     console.warn('post');
-    var saveDataStatus = saveData(req.body, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]); //todo вынести формат файла в настройки
+    var saveDataStatus = saveData(req.body, replacer);
     if(saveDataStatus){
         res.status = 200;
         res.send("saved")

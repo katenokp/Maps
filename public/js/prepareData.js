@@ -1,5 +1,6 @@
 var fs = require('fs');
 var save = require('./saver');
+var replacer = require('./replacer');
 
 function prepareFile(fileName){
     fs.readFile(fileName, 'utf8', function(error, data){
@@ -7,7 +8,7 @@ function prepareFile(fileName){
             throw error;
         } else{
             var preparedData = normalizeData(data);
-            save(preparedData, fileName, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+            save(preparedData, fileName, replacer);
         }
     })
 }

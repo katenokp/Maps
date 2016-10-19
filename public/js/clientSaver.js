@@ -23,44 +23,96 @@ function readItem(idItem){ //todo rename
     return parsedItem;
 }
 
-function getOldData(){
-    navigator.webkitPersistentStorage.requestQuota(1000 * 1024, function (bytes) {
-        window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
-            fs.root.getDirectory('Pfr', {create:true}, function(directory){
-                directory.getFile('oldData.json', {}, function(fileEntry){
-                    fileEntry.file(function(file){
-                        var reader = new FileReader();
-                        reader.onloadend = function(error){
-                            return this.result;
+
+
+
+function errorHandler(e) {
+    /*var msg = '';
+    switch (e.code) {
+        case FileError.QUOTA_EXCEEDED_ERR:
+            msg = 'QUOTA_EXCEEDED_ERR';
+            break;
+        case FileError.NOT_FOUND_ERR:
+            msg = 'NOT_FOUND_ERR';
+            break;
+        case FileError.SECURITY_ERR:
+            msg = 'SECURITY_ERR';
+            break;
+        case FileError.INVALID_MODIFICATION_ERR:
+            msg = 'INVALID_MODIFICATION_ERR';
+            break;
+        case FileError.INVALID_STATE_ERR:
+            msg = 'INVALID_STATE_ERR';
+            break;
+        default:
+            msg = 'Unknown Error';
+            break;
+    }
+    console.log('Error: ' + msg);*/
+    console.log(e);
+}
+
+function readOldData(fs){
+    var serviceName = this.serviceName;
+    var newData = this.newData;
+    console.log("service name = " + serviceName);
+    fs.root.getFile(serviceName+"/oldData.json", {}, function(fileEntity){
+        fileEntity.file(function(file){
+            var reader = new FileReader();
+            var oldData;
+            reader.onloadend = function(e){
+                oldData = JSON.parse(this.result);
+
+                var dataJson = JSON.stringify({service: serviceName, weight: getRootWeight(), data: newData, oldData: oldData});
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/save", true);
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.send(dataJson);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            console.log(xhr.response);
                         }
-                    })
-                })
-            })
-        }, function(err){if(err)
-            console.log(err)});
-    }, function(err){if(err)
-        console.log(err)});
+                        else {
+                            console.log("Error: can't save data")
+                        }
+                    }
+                }
+
+            };
+            var rr =  reader.readAsText(file);
+            //return rr;
+        }, errorHandler);
+    }, errorHandler);
+
+    /*fs.root.getDirectory(serviceName, {}, function(directory){
+        var dirReader = directory.createReader();
+        dirReader.readEntries(function(entries){
+            console.log("name = " + entries[0].name);
+            entries[0].remove(function() {
+                    console.log("removed");
+                }
+            )
+        })
+    }, errorHandler)*/
+}
+
+function getOldData(serviceName, data){
+    this.serviceName = serviceName;
+    this.newData = data;
+    window.webkitRequestFileSystem(window.PERSISTENT, 10*1024*1024, readOldData, errorHandler);
+}
+
+function sendData(){
+
 }
 
 function save(){
     var serviceName = document.getElementById("saveButton").name;
     var data = readDataForSave('root_ChildrenUl');
-    var oldData = getOldData();
-    var dataJson = JSON.stringify({service: serviceName, weight: getRootWeight(), data: data, oldData: oldData});
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/save", true);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.send(dataJson);
+    getOldData(serviceName, data);
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
-                console.log(xhr.response);
-            }
-            else {
-                console.log("Error: can't save data")
-            }
-        }
-    }
 }
