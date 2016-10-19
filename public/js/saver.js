@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var diff3 = require('node-diff3').diff;
 
-function saveToFile(reqBody, replacer, callback){
+function saveToFile(reqBody, replacer){
     var serviceName = reqBody.service;
 
     var dataFileName = path.join("./data/" + (serviceName + "/data.json")); //todo разобраться с правильным путём
@@ -20,13 +20,14 @@ function saveToFile(reqBody, replacer, callback){
 
             actualData = diff3.patch(actualData, patch);
 
-            fs.writeFile(dataFileName, actualData, {"encoding": 'utf8'}, function(error){
+            fs.writeFile(dataFileName, actualData.join('\n'), {"encoding": 'utf8'}, function(error){
                 if(error){
                     console.error(error);
+                    return false
                 } else{
                     console.log("New data saved to file %s", dataFileName);
 
-                    saveCommonInformation(reqBody.weight, commonInformationFileName, callback);
+                    return saveCommonInformation(reqBody.weight, commonInformationFileName);
                 }
             });
         }
@@ -59,15 +60,14 @@ function merge(oldDataFileName, newDataFileName){
     console.log(diff3.diffIndices(first, second).length);
 }
 
-function saveCommonInformation(data, fileName, callback){
+function saveCommonInformation(data, fileName){
     fs.writeFile(fileName, JSON.stringify(data, ["weight", "done", "all"], '\t'), {"encoding": 'utf8'}, function(error) {
         if (error) {
             console.error(error);
             return false;
         } else {
             console.log("Data saved to file %s", fileName);
-            if(callback!=null)
-                callback();
+            return true;
         }
     });
 }

@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var normalize = require('../public/js/prepareData');
 var serviceName = require('../servicesNames');
+var replacer = require('../public/js/replacer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -66,14 +67,20 @@ function buildPage(service, res){
                     var parsedData;
                     if(needNormalization()){
                         parsedData = normalize(data);
-                        //var preparedData = normalizeData(data);
-                        //save(preparedData, fileName, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+                        fs.writeFile(dataFileName, JSON.stringify(parsedData, replacer, '\t'), {"encoding": 'utf8'}, function(error){
+                            if(error)
+                                throw error;
+                            else{
+                                console.log('saved normalized data, file %s', dataFileName);
+                                var weight = JSON.parse(commonData).weight;
+                                weight = calculateRootCompleteness(parsedData);
+                                res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
+                            }
+                        });
                     } else {
                         parsedData = JSON.parse(data);
                     }
-                    var weight = JSON.parse(commonData).weight;
-                    weight = calculateRootCompleteness(parsedData);
-                    res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
+
                 }
             })
 
@@ -81,6 +88,7 @@ function buildPage(service, res){
     })
 
 }
+
 
 function needNormalization(){
     return true; //todo

@@ -6,7 +6,7 @@ block content
         navigator.webkitPersistentStorage.requestQuota(10*1024*1024, function (bytes) {
             window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
                 console.log("storage is ready");
-                fs.root.getDirectory('Pfr', {create:true}, function(directory){
+                fs.root.getDirectory('#{serviceName}', {create:true}, function(directory){
                     directory.getFile('oldData.json', {create: true}, function(file){
                         //file.remove(function(){});
                         file.createWriter(function(writer){

@@ -8,9 +8,14 @@ function prepareFile(fileName){
             throw error;
         } else{
             var preparedData = normalizeData(data);
-            save(preparedData, fileName, replacer);
+            saveNormalizedData(preparedData, fileName, replacer);
         }
     })
+}
+
+
+function saveNormalizedData(preparedData, dataFileName, replacer){
+
 }
 
 function normalizeData(data){

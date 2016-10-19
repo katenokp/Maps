@@ -74,6 +74,13 @@ function readOldData(fs){
                     if (xhr.readyState == 4) {
                         if (xhr.status == 200) {
                             console.log(xhr.response);
+                            fs.root.getFile(serviceName+"/oldData.json", {}, function(oldFile){
+                                oldFile.remove(function(){
+                                    var newXhr = new XMLHttpRequest();
+                                    newXhr.open("GET", '/'+serviceName, true);
+                                    newXhr.send();
+                                });
+                            })
                         }
                         else {
                             console.log("Error: can't save data")
@@ -103,10 +110,6 @@ function getOldData(serviceName, data){
     this.serviceName = serviceName;
     this.newData = data;
     window.webkitRequestFileSystem(window.PERSISTENT, 10*1024*1024, readOldData, errorHandler);
-}
-
-function sendData(){
-
 }
 
 function save(){

@@ -4,7 +4,7 @@ var services = {
     Pfr: "ПФР",
     Kopf: "КОПФ",
     Fms: "ФМС",
-    //Test: "Test"
+    Test: "Test"
 };
 
 module.exports = services;

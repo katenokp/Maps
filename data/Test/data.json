@@ -1,50 +1,50 @@
 [
-  {
-    "name": "Регистрационная информация",
-    "id": "id175519a9-863c-4b2c-dd94-0cd01289493f",
-    "isDone": false,
-    "comment": "",
-    "priority": 1,
-    "weight": {
-      "done": 0,
-      "all": 9
-    },
-    "children": [
-      {
-        "name": "Заполнение полей",
-        "id": "id1bb51733-b7cc-4595-ffb2-10dc138c92b4",
-        "isDone": false,
-        "comment": "",
-        "priority": 0,
-        "weight": {
-          "done": 0,
-          "all": 3
-        },
-        "children": [
-          {
-            "name": "Положительные значения. Классы эквивалентности",
-            "id": "id44a114bf-9e1e-4d81-0696-e2f5637a7502",
-            "isDone": false,
-            "comment": "",
-            "priority": 0,
-            "weight": {
-              "done": 0,
-              "all": 1
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Внеотчетная часть",
-    "id": "ida4b48353-65f9-410e-5a89-03923ee72dfe",
-    "isDone": false,
-    "comment": "",
-    "priority": 2,
-    "weight": {
-      "done": 4,
-      "all": 5
-    }
-  }
+	{
+		"name": "Регистрационная информация",
+		"id": "id175519a9-863c-4b2c-dd94-0cd01289493f",
+		"isDone": true,
+		"comment": "",
+		"priority": 1,
+		"weight": {
+			"done": 1,
+			"all": 1
+		},
+		"children": [
+			{
+				"name": "Заполнение полей",
+				"id": "id1bb51733-b7cc-4595-ffb2-10dc138c92b4",
+				"isDone": true,
+				"comment": "",
+				"priority": 0,
+				"weight": {
+					"done": 1,
+					"all": 1
+				},
+				"children": [
+					{
+						"name": "Положительные значения. Классы эквивалентности",
+						"id": "id44a114bf-9e1e-4d81-0696-e2f5637a7502",
+						"isDone": true,
+						"comment": "",
+						"priority": 0,
+						"weight": {
+							"done": 1,
+							"all": 1
+						}
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Внеотчетная часть",
+		"id": "ida4b48353-65f9-410e-5a89-03923ee72dfe",
+		"isDone": false,
+		"comment": "",
+		"priority": 2,
+		"weight": {
+			"done": 4,
+			"all": 5
+		}
+	}
 ]
