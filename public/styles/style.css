@@ -1,6 +1,6 @@
 ﻿body {
     font-family: "segoe ui light",sans-serif;
-    padding: 0 5em 5em 3em;
+    padding: 1em 5em 5em 3em;
     margin:0;
     font-size: 62.5%;
 }
@@ -12,7 +12,7 @@ a {
 }
 
 #mainWrapper {
-    margin-top: 65px;
+    margin-top: 55px;
     font-size: 18px;
     position: relative;
 }
@@ -74,7 +74,7 @@ a {
     width: 95%;
     min-width: 1024px;
     z-index:3;
-    margin: -15px 0 0 0;
+    margin: -25px 0 0 0;
     padding: 30px 0 15px 8px;
     border-bottom: 1px solid silver;
 }
