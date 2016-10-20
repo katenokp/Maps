@@ -25,8 +25,8 @@
 						"name": "Положительные значения. Классы эквивалентности",
 						"id": "id44a114bf-9e1e-4d81-0696-e2f5637a7502",
 						"isDone": true,
-						"comment": "",
-						"priority": 0,
+						"comment": "erwerrwerwr",
+						"priority": 1,
 						"weight": {
 							"done": 1,
 							"all": 1
@@ -41,7 +41,7 @@
 		"id": "ida4b48353-65f9-410e-5a89-03923ee72dfe",
 		"isDone": false,
 		"comment": "",
-		"priority": 2,
+		"priority": 1,
 		"weight": {
 			"done": 4,
 			"all": 5

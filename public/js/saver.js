@@ -18,6 +18,8 @@ function saveToFile(reqBody, replacer){
 
             var patch = diff3.diffPatch(oldData, newData);
 
+            //isDataOnServiceChanged = diff3.diffComm(oldData, actualData).length == 0;
+
             actualData = diff3.patch(actualData, patch);
 
             fs.writeFile(dataFileName, actualData.join('\n'), {"encoding": 'utf8'}, function(error){

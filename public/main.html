@@ -72,7 +72,7 @@
                     <div class="checkboxAndMarkerWrapper">
 
                         <input id="listItemId_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
-                        <em id="listItemId_Marker" class="marker close" onclick="collapseElement(this.id)"></em>
+                        <em id="listItemId_Marker" class="marker close" onclick="collapseElementAndChangeState(this.id)"></em>
 
                     </div>
 
@@ -96,7 +96,7 @@
                         </div>
 
 
-                        <a id="listItemId_Item" class="listItemLink" onclick="collapseElement(this.id)" onselectstart="return false" onmousedown="return false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam magna purus, vel interdum lacus fermentum quis. Cras et nibh at sapien tincidunt malesuada sit amet quis tortor. Ut vitae vulputate lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</a>
+                        <a id="listItemId_Item" class="listItemLink" onclick="collapseElementAndChangeState(this.id)" onselectstart="return false" onmousedown="return false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam magna purus, vel interdum lacus fermentum quis. Cras et nibh at sapien tincidunt malesuada sit amet quis tortor. Ut vitae vulputate lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</a>
                         <input id="listItemId_commentInput" class="textInput comment" type="text" value="ValidationTests.cs" oninput="markChangedItem(this.id)">
                         <input id="listItemId_indexInput" class="textInput index hidden" type="text" value="199/200" oninput="markChangedItem(this.id)"></div>
                 </div>
@@ -112,7 +112,7 @@
 
                             <div class="checkboxAndMarkerWrapper">
                                 <input id="listItemId11_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
-                                <em id="listItemId11_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
+                                <em id="listItemId11_Marker" class="marker close hidden" onclick="collapseElementAndChangeState(this.id)"></em>
                             </div><div class="itemMessageWrapper">
 
                             <div class="hintContainer">
@@ -149,7 +149,7 @@
 
                             <div class="checkboxAndMarkerWrapper">
                                 <input id="listItemId12_Checkbox" class="checkbox" type="checkbox" onchange="markChangedItem(this.id)">
-                                <em id="listItemId12_Marker" class="marker close hidden" onclick="collapseElement(this.id)"></em>
+                                <em id="listItemId12_Marker" class="marker close hidden" onclick="collapseElementAndChangeState(this.id)"></em>
                             </div><div class="itemMessageWrapper">
 
                                 <div class="hintContainer">

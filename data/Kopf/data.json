@@ -4,7 +4,7 @@
 		"id": "GlobalHeader",
 		"isDone": true,
 		"comment": "GlobalHeader",
-		"priority": 3,
+		"priority": 4,
 		"weight": {
 			"done": 43,
 			"all": 201

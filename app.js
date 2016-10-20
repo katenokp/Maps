@@ -33,10 +33,11 @@ app.use('/users', users);
 app.post('/save', function(req, res){
     //var data = req.body;
     console.warn('post');
+    var isDataOnServiceChanged = false;
     var saveDataStatus = saveData(req.body, replacer);
     //if(saveDataStatus){
         res.status = 200;
-        res.send("saved")
+        res.send("saved");
     //} else{
         //res.status = 500;
         //res.send();

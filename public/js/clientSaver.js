@@ -52,11 +52,23 @@ function errorHandler(e) {
     console.log(e);
 }
 
+function parseServiceName(serviceName){
+    var services = {
+        Ndfl: "НДФЛ",
+        Fss: "ФСС",
+        Pfr: "ПФР",
+        Kopf: "Kopf",
+        Fms: "ФМС",
+        Test: "Test"
+    };
+    return services[serviceName];
+}
+
 function readOldData(fs){
     var serviceName = this.serviceName;
     var newData = this.newData;
     console.log("service name = " + serviceName);
-    fs.root.getFile(serviceName+"/oldData.json", {}, function(fileEntity){
+    fs.root.getFile(parseServiceName(serviceName)+"/oldData.json", {}, function(fileEntity){
         fileEntity.file(function(file){
             var reader = new FileReader();
             var oldData;
@@ -74,10 +86,11 @@ function readOldData(fs){
                     if (xhr.readyState == 4) {
                         if (xhr.status == 200) {
                             console.log(xhr.response);
-                            fs.root.getFile(serviceName+"/oldData.json", {}, function(oldFile){
+                            fs.root.getFile(parseServiceName(serviceName)+"/oldData.json", {}, function(oldFile){
                                 oldFile.remove(function(){
                                     console.log("file removed from storage");
                                     location.reload();
+                                    console.log("refreshed");
                                 });
                             })
                         }
