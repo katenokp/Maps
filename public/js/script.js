@@ -86,6 +86,10 @@ function expandAll() {
     }
 }
 
+function editDataFile(){
+
+}
+
 function expandAllByClick(){
     var service = localStorage.getItem("service");
     var listState = JSON.parse(localStorage.getItem(service + "_listState"));
