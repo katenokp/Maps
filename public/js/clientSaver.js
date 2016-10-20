@@ -76,9 +76,8 @@ function readOldData(fs){
                             console.log(xhr.response);
                             fs.root.getFile(serviceName+"/oldData.json", {}, function(oldFile){
                                 oldFile.remove(function(){
-                                    var newXhr = new XMLHttpRequest();
-                                    newXhr.open("GET", '/'+serviceName, true);
-                                    newXhr.send();
+                                    console.log("file removed from storage");
+                                    location.reload();
                                 });
                             })
                         }
@@ -112,7 +111,7 @@ function getOldData(serviceName, data){
     window.webkitRequestFileSystem(window.PERSISTENT, 10*1024*1024, readOldData, errorHandler);
 }
 
-function save(){
+function saveByButton(){
     var serviceName = document.getElementById("saveButton").name;
     var data = readDataForSave('root_ChildrenUl');
 

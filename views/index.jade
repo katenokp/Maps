@@ -40,7 +40,7 @@ block content
             div
                 input.button.collapseAll(type='button', value='', onclick='collapseAll()')
                 input.button.expandAll(type='button', value='', onclick='expandAll()')
-                input.button.saveAll(id='saveButton', name=service, type='submit', value='', onclick='unmarkAllItems(); save()')
+                input.button.saveAll(id='saveButton', name=service, type='submit', value='', onclick='unmarkAllItems(); saveByButton()')
     mixin drawBlock(data)
         each item,index in data
             - var id=item.id

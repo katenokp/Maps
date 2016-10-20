@@ -4,7 +4,7 @@
 		"id": "id175519a9-863c-4b2c-dd94-0cd01289493f",
 		"isDone": true,
 		"comment": "",
-		"priority": 1,
+		"priority": 4,
 		"weight": {
 			"done": 1,
 			"all": 1
@@ -15,7 +15,7 @@
 				"id": "id1bb51733-b7cc-4595-ffb2-10dc138c92b4",
 				"isDone": true,
 				"comment": "",
-				"priority": 0,
+				"priority": 1,
 				"weight": {
 					"done": 1,
 					"all": 1

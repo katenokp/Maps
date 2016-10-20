@@ -34,13 +34,13 @@ app.post('/save', function(req, res){
     //var data = req.body;
     console.warn('post');
     var saveDataStatus = saveData(req.body, replacer);
-    if(saveDataStatus){
+    //if(saveDataStatus){
         res.status = 200;
         res.send("saved")
-    } else{
-        res.status = 500;
-        res.send();
-    }
+    //} else{
+        //res.status = 500;
+        //res.send();
+    //}
 });
 
 app.use('/converter', bodyParser.urlencoded({
