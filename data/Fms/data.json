@@ -1,32 +1,95 @@
 [
 	{
 		"name": "Письма",
+		"id": "id8b54b1a4-5301-42df-ce6d-98de250b6f3b",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 7
+		},
 		"children": [
 			{
 				"name": "Создание нового письма",
+				"id": "id23f428af-fce9-4176-2d97-5ccf1849c3d1",
+				"isDone": false,
+				"priority": 0,
+				"weight": {
+					"done": 0,
+					"all": 7
+				},
 				"children": [
 					{
 						"name": "\tПроверки при загрузке страницы",
+						"id": "ided007e7f-b64c-4f34-07c6-a45bd91004a9",
+						"isDone": false,
+						"priority": 0,
+						"weight": {
+							"done": 0,
+							"all": 4
+						},
 						"children": [
 							{
 								"name": "\t\tЕсли все поля регинфы заполнены корректно",
+								"id": "id48d05600-e2bb-4f43-0f1f-da8418f017b3",
+								"isDone": false,
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 2
+								},
 								"children": [
 									{
-										"name": "\t\t\tВ разделе \"Написать письмо\" - поле Получатель заполняется автоматически из поля \"УПФР\" рег. информации ПФР\t\t\t\t\t"
+										"name": "\t\t\tВ разделе \"Написать письмо\" - поле Получатель заполняется автоматически из поля \"УПФР\" рег. информации ПФР\t\t\t\t\t",
+										"id": "ida7ad1aa9-5ccd-41d7-4b55-0cb990417c05",
+										"isDone": false,
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
 									},
 									{
-										"name": "\t\t\tВсе поля ввода информации подсвечиваются красным\t\t\t\t\t"
+										"name": "\t\t\tВсе поля ввода информации подсвечиваются красным\t\t\t\t\t",
+										"id": "id478630ba-97e2-4ccc-558b-c96ed5ef2999",
+										"isDone": false,
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
 									}
 								]
 							},
 							{
 								"name": "\t\tЕсли есть ошибки в регинфе ИЛИ вся регинфа не заполнена",
+								"id": "idf4cef0fa-0f40-42d9-e0fd-91c9020b2ed0",
+								"isDone": false,
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								},
 								"children": [
 									{
 										"name": "\t\t\tПлашка с ошибкой \"В регистрационной информации ПФР есть ошибки. Исправьте их и повторите отправку. Перейти к регистрационной информации ПФР\"",
+										"id": "id807c533f-439c-4595-94f5-be2fa0e271eb",
+										"isDone": false,
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										},
 										"children": [
 											{
-												"name": "\t\t\t\tСсылка открывает страницу рег. информации ПФР в этой же вкладке браузера."
+												"name": "\t\t\t\tСсылка открывает страницу рег. информации ПФР в этой же вкладке браузера.",
+												"id": "id53aef6eb-d275-4982-0a22-fb1351a6ecc3",
+												"isDone": false,
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 1
+												}
 											}
 										]
 									}
@@ -34,9 +97,23 @@
 							},
 							{
 								"name": "\t\tЕсли УПФР в регинфе не указан, все остальное заполнено корректно",
+								"id": "idf6173b22-a63a-4164-a6d0-c3636154593f",
+								"isDone": false,
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								},
 								"children": [
 									{
-										"name": "\t\t\tВ поле Получатель - \"Не указан\"\t\t\t\t\t"
+										"name": "\t\t\tВ поле Получатель - \"Не указан\"\t\t\t\t\t",
+										"id": "id382fd54b-5ae7-4bcc-5934-d5790ba6a69f",
+										"isDone": false,
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
 									}
 								]
 							}
@@ -44,30 +121,79 @@
 					},
 					{
 						"name": "\tЗаполнение полей",
+						"id": "id39647cd7-0ce2-46fc-e910-44147281dc21",
+						"isDone": false,
+						"priority": 0,
+						"weight": {
+							"done": 0,
+							"all": 3
+						},
 						"children": [
 							{
 								"name": "\t\tПолучатель",
+								"id": "id671d577c-0fd2-4f28-c0fe-24e7b93c2298",
+								"isDone": false,
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								},
 								"children": [
 									{
-										"name": "\t\t\tтекст в формате \"XXX-XXX Название УПФР\", автоматически из поля \"Код УПФР\" рег. информации ПФР.\t\t\t\t\t"
+										"name": "\t\t\tтекст в формате \"XXX-XXX Название УПФР\", автоматически из поля \"Код УПФР\" рег. информации ПФР.\t\t\t\t\t",
+										"id": "id9e650d8f-e69a-4afb-7f49-ad13bd553b32",
+										"isDone": false,
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
 									}
 								]
 							},
 							{
 								"name": "\t\tРегистрационный номер отправителя для ИП",
+								"id": "id04518611-b4eb-4805-e799-1a5245ead0af",
+								"isDone": false,
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								},
 								"children": [
 									{
 										"name": "\t\t\tВыбор номер ИП/КФХ",
+										"id": "iddd7f7460-830a-49e2-64bc-06f3cbcb496b",
+										"isDone": false,
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										},
 										"children": [
 											{
-												"name": "\t\t\t\tПо умолчанию номер работодателя\t\t\t\t\t\t"
+												"name": "\t\t\t\tПо умолчанию номер работодателя\t\t\t\t\t\t",
+												"id": "idd7514ef5-e80e-4b0c-7d81-84ae8c5e4ba3",
+												"isDone": false,
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 1
+												}
 											}
 										]
 									}
 								]
 							},
 							{
-								"name": "\t\tТема"
+								"name": "\t\tТема",
+								"id": "id4eb764b0-5916-49e1-5c14-486cdeb9479a",
+								"isDone": false,
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 1
+								}
 							}
 						]
 					}
@@ -77,46 +203,130 @@
 	},
 	{
 		"name": "\t\t\t\t\"Введите тему письма\"\t\t\t\t\t",
+		"id": "id024ddb1d-388b-4ef9-edd3-34fea560fb89",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 0
+		},
 		"children": []
 	},
 	{
 		"name": "\t\t\tЕсли тема длиннее поля, то отображается столько, сколько влезет\t\t\t\t\t ",
+		"id": "ide97bbccc-326e-4c9e-b1cd-c69eecd63d19",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 0
+		},
 		"children": []
 	},
 	{
 		"name": "\t\tТекст",
+		"id": "id90924e4a-9c02-4dda-1a26-241149e80b66",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 0
+		},
 		"children": []
 	},
 	{
 		"name": "\t\t\t\t\"Введите текст письма\"\t\t\t\t\t",
+		"id": "id4b200324-b4a4-4d98-0a9d-c759f22696ce",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 0
+		},
 		"children": []
 	},
 	{
 		"name": "\t\t\tКогда поле становится высотой в 9 строк - поле не растет, но появляется скролл внутри\t\t\t\t\t",
+		"id": "id5a563632-563b-4785-a969-310a8940315f",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 0
+		},
 		"children": []
 	},
 	{
 		"name": "\t\tВложения",
+		"id": "id343389d3-a696-4c05-1a31-6a2dd3b6a96a",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 3
+		},
 		"children": [
 			{
-				"name": "\t\t\tМожно выбрать сразу несколько файлов.\t\t\t\t\t"
+				"name": "\t\t\tМожно выбрать сразу несколько файлов.\t\t\t\t\t",
+				"id": "id2eed9903-41e6-45f5-0a83-d078f0d90b9b",
+				"isDone": false,
+				"priority": 0,
+				"weight": {
+					"done": 0,
+					"all": 1
+				}
 			},
 			{
-				"name": "\t\t\tОбщий объем не более 20 Мб\t\t\t\t\t"
+				"name": "\t\t\tОбщий объем не более 20 Мб\t\t\t\t\t",
+				"id": "idd45b20f0-a05a-4771-54cd-b7154eb0f195",
+				"isDone": false,
+				"priority": 0,
+				"weight": {
+					"done": 0,
+					"all": 1
+				}
 			},
 			{
-				"name": "\t\t\tЗагруженные вложения можно удалять\t\t\t\t\t"
+				"name": "\t\t\tЗагруженные вложения можно удалять\t\t\t\t\t",
+				"id": "idbcf28006-0ee3-4738-4121-2e4d2a91ef2d",
+				"isDone": false,
+				"priority": 0,
+				"weight": {
+					"done": 0,
+					"all": 1
+				}
 			}
 		]
 	},
 	{
 		"name": "\t\tИзменение данных регинфы {в соседнем окне браузера} на другие корректные",
+		"id": "id95eeb7ac-a8c1-4b0c-5cf8-77f244c6b8e7",
+		"isDone": false,
+		"priority": 0,
+		"weight": {
+			"done": 0,
+			"all": 1
+		},
 		"children": [
 			{
 				"name": "\t\t\tОбновляем данные письма новыми данными регинфы",
+				"id": "id0395cbf6-66a6-4774-e4b6-f509e79a320d",
+				"isDone": false,
+				"priority": 0,
+				"weight": {
+					"done": 0,
+					"all": 1
+				},
 				"children": [
 					{
-						"name": "\t\t\t\tИзменение данных поля \"Получатель\" в письме при обновлении страницы"
+						"name": "\t\t\t\tИзменение данных поля \"Получатель\" в письме при обновлении страницы",
+						"id": "id48d95830-c5b8-4c9c-b5cd-3cfedd6722f3",
+						"isDone": false,
+						"priority": 0,
+						"weight": {
+							"done": 0,
+							"all": 1
+						}
 					}
 				]
 			}

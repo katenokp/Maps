@@ -1160,7 +1160,7 @@
 														},
 														"children": [
 															{
-																"name": "Формат отчета в файле не соответствует формату отчетности за &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;период&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;.",
+																"name": "Формат отчета в файле не соответствует формату отчетности за период.",
 																"id": "id854e6a0f-b7fa-4d16-61a7-0b393b886d99",
 																"isDone": false,
 																"comment": "",
@@ -1184,7 +1184,7 @@
 														},
 														"children": [
 															{
-																"name": "В файле &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;имя первого файла с такой ошибкой&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; отсутствует ИНН. Исправьте ошибку и повторите загрузку.",
+																"name": "В файле имя первого файла с такой ошибкой отсутствует ИНН. Исправьте ошибку и повторите загрузку.",
 																"id": "idb3fc2f69-2a92-43ef-97f1-497cbf119b50",
 																"isDone": false,
 																"comment": "",
@@ -1208,7 +1208,7 @@
 														},
 														"children": [
 															{
-																"name": "В файле &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;имя первого файла с такой ошибкой&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; отсутствует КПП. Исправьте ошибку и повторите загрузку.",
+																"name": "В файле имя первого файла с такой ошибкой отсутствует КПП. Исправьте ошибку и повторите загрузку.",
 																"id": "id1b0fbd23-683e-4807-f926-20520c30198c",
 																"isDone": false,
 																"comment": "",
@@ -1232,7 +1232,7 @@
 														},
 														"children": [
 															{
-																"name": "Отчет не был загружен, так как превышено допустимое общее количество сотрудников в организации {максимум &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;максимум&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;}. Обратитесь в сервисный центр.",
+																"name": "Отчет не был загружен, так как превышено допустимое общее количество сотрудников в организации {максимум максимум}. Обратитесь в сервисный центр.",
 																"id": "id9380ee86-ca8e-467c-d6be-e4242cea70d5",
 																"isDone": false,
 																"comment": "",
@@ -3005,7 +3005,7 @@
 										}
 									},
 									{
-										"name": "Когда поле становится высотой в 9 строк -&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; поле не растет, но появляется скролл внутри",
+										"name": "Когда поле становится высотой в 9 строк - поле не растет, но появляется скролл внутри",
 										"id": "idf143ba57-64d4-4262-2e63-9e5da22e032d",
 										"isDone": false,
 										"comment": "",
@@ -8356,7 +8356,7 @@
 										},
 										"children": [
 											{
-												"name": "Текст ошибки «Не удалось подтвердить получение: &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;текст ошибки&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;. Попробуйте еще раз или обратитесь в техническую поддержку»",
+												"name": "Текст ошибки «Не удалось подтвердить получение: (текст ошибки). Попробуйте еще раз или обратитесь в техническую поддержку»",
 												"id": "id11f08420-5342-4bd4-2c50-3c6bca23ed85",
 												"isDone": false,
 												"comment": "",

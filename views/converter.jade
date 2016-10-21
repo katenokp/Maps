@@ -4,31 +4,31 @@ html
       meta(charset='UTF-8')
       link(rel='stylesheet', href='/styles/style.css')
       script(src='/js/converter.js')
-   body
+   body(onload= "setService('#{service}', '#{data}')")
        form.converterForm(action="/converter", method="POST")
            textarea#converterTextField(type="text", name="text")
            .converterSettingsWrapper
                input#listItemId_Checkbox(type="checkbox")
-               label(for="listItemId_Checkbox") Перезаписать существующие данные?
+               label(for="listItemId_Checkbox") Перезаписать данные
                br
                .servicesBtns
                     p.topItemWrapper Сервис
                     p
-                        input(type="radio", name="service", value="Ndfl")
+                        input#serviceNameRadioButton_ndfl(type="radio", name="service", value="Ndfl")
                         |НДФЛ
                     p
-                        input(type="radio", name="service", value="Ndfl")
-                        |НДФЛ
-                    p
-                        input(type="radio", name="service", value="Fss")
+                        input#serviceNameRadioButton_fss(type="radio", name="service", value="Fss")
                         |ФСС
                     p
-                        input(type="radio", name="service", value="Pfr")
+                        input#serviceNameRadioButton_pfr(type="radio", name="service", value="Pfr")
                         |ПФР
                     p
-                        input(type="radio", name="service", value="Kopf")
+                        input#serviceNameRadioButton_kopf(type="radio", name="service", value="Kopf")
                         |КОПФ
                     p
-                        input(type="radio", name="service", value="Fms")
+                        input#serviceNameRadioButton_fms(type="radio", name="service", value="Fms")
                         |ФМС
+                    p
+                        input#serviceNameRadioButton_test(type="radio", name="service", value="Test")
+                        |Тестовый
                 input.sendButton(type="submit", value="send")
