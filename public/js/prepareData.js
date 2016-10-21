@@ -28,6 +28,8 @@ function normalizeData(data){
 function normalizeItemsArray(itemsArray){
     itemsArray.forEach(function(item){
         prepareItem(item);
+        if(item.children == [])
+            item.children = null;
         if(item.children != null){
             normalizeItemsArray(item.children);
         }

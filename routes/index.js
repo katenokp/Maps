@@ -86,20 +86,24 @@ function buildPage(service, res){
                 if(error)
                     throw error;
                 else{
-                    var parsedData;
+                    var parsedData, weight;
                     if(needNormalization()){
                         parsedData = normalize(data);
+                        weight = calculateRootCompleteness(parsedData);
                     } else {
                         parsedData = JSON.parse(data);
+                        weight = JSON.parse(commonData).weight;
                     }
                     fs.writeFile(dataFileName, JSON.stringify(parsedData, replacer, '\t'), {"encoding": 'utf8'}, function(error){
                         if(error)
                             throw error;
                         else{
                             console.log('saved normalized data, file %s', dataFileName);
-                            var weight = JSON.parse(commonData).weight;
-                            weight = calculateRootCompleteness(parsedData);
-                            res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
+                            fs.writeFile(commonInformationFileName, JSON.stringify(weight, ["all", "done"], "\t"), {"encoding":"utf8"}, function(error){
+                                if(error)
+                                    throw error;
+                                else{res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});}
+                            })
                         }
                     });
 
