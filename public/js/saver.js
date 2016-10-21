@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var diff3 = require('node-diff3').diff;
 
-function saveToFile(reqBody, replacer){
+function saveToFile(reqBody, replacer, callback){
     var serviceName = reqBody.service;
 
     var dataFileName = path.join("./data/" + (serviceName + "/data.json")); //todo разобраться с правильным путём
@@ -13,7 +13,9 @@ function saveToFile(reqBody, replacer){
             throw error;
         else{
             var actualData = actualDataFile.split('\n');
-            var oldData = JSON.stringify(reqBody.oldData, replacer, '\t').split('\n');
+            var oldData = reqBody.oldData != null ?
+                JSON.stringify(reqBody.oldData, replacer, '\t').split('\n') :
+                actualData;
             var newData = JSON.stringify(reqBody.data, replacer, '\t').split('\n');
 
             var patch = diff3.diffPatch(oldData, newData);
@@ -28,7 +30,8 @@ function saveToFile(reqBody, replacer){
                     return false
                 } else{
                     console.log("New data saved to file %s", dataFileName);
-
+                    if(callback!=null)
+                        callback();
                     return saveCommonInformation(reqBody.weight, commonInformationFileName);
                 }
             });

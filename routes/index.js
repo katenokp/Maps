@@ -19,7 +19,29 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/converter', function(req, res, next){
-    res.render('converter');
+    var service = req.headers.referer != null ?
+        req.headers.referer.replace(req.headers.host + "/", "").split("//")[1].toLowerCase() :
+        null;
+    if(service == '')
+        service = null;
+    if(service == null) {
+        res.render('converter', {service: service, data: null});
+    } else {
+        var dataFileName = path.join(__dirname, '../data/' + service + '/data.json');
+        fs.readFile(dataFileName, 'utf8', function (err, data) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    if(needNormalization()){
+                        data = JSON.stringify(normalize(data));
+                    }
+                    res.render('converter', {service: service, data: data});
+                }
+            }
+        )
+    }
+
 });
 
 router.get('/test', function(req, res, next) {
@@ -67,19 +89,19 @@ function buildPage(service, res){
                     var parsedData;
                     if(needNormalization()){
                         parsedData = normalize(data);
-                        fs.writeFile(dataFileName, JSON.stringify(parsedData, replacer, '\t'), {"encoding": 'utf8'}, function(error){
-                            if(error)
-                                throw error;
-                            else{
-                                console.log('saved normalized data, file %s', dataFileName);
-                                var weight = JSON.parse(commonData).weight;
-                                weight = calculateRootCompleteness(parsedData);
-                                res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
-                            }
-                        });
                     } else {
                         parsedData = JSON.parse(data);
                     }
+                    fs.writeFile(dataFileName, JSON.stringify(parsedData, replacer, '\t'), {"encoding": 'utf8'}, function(error){
+                        if(error)
+                            throw error;
+                        else{
+                            console.log('saved normalized data, file %s', dataFileName);
+                            var weight = JSON.parse(commonData).weight;
+                            weight = calculateRootCompleteness(parsedData);
+                            res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
+                        }
+                    });
 
                 }
             })

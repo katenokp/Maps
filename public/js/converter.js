@@ -1,7 +1,8 @@
 function submit(){
     var textField = document.getElementById('converterTextField');
     var formData = new FormData();
-    formData.append('data', textField.value);
+    var data = JSON.stringify(JSON.parse(textField.value));
+    formData.append('data', data);
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/converter", true);
@@ -17,6 +18,14 @@ function submit(){
                 console.log("Error: can't convert data")
             }
         }
+    }
+}
+
+function setService(service, data) {
+    if (service != 'null') {
+        document.getElementById("listItemId_Checkbox").checked = true;
+        document.getElementById("serviceNameRadioButton_" + service).checked = true;
+        document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data),["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
     }
 }
 

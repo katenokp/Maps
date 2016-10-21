@@ -87,7 +87,19 @@ function expandAll() {
 }
 
 function editDataFile(){
+    var service = localStorage.getItem("service");
 
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/converter?service=" + service, true);
+    xhr.send();
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                location.href = "/converter";
+            }
+        }
+    }
 }
 
 function expandAllByClick(){

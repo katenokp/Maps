@@ -53,14 +53,21 @@ app.post('/converter', function(req, res, next){
     if(req.body.service == null)
     {
         var result = JSON.stringify(parser(req.body.text), ["name", "children"], '\t');
-        //res.status = 200;
+        res.status = 200;
         //res.render('convert', {data: result});
         res.send(result);
     }
 
     else {
+        var parsedData;
+        if(req.body.text[0] =='[' || req.body.text[0] == '{'){
+            parsedData = req.body.text;
+        } else {
+            parsedData = parser(req.body.text)
+        }
+
         var data = {
-            data: parser(req.body.text),
+            data: parsedData,
             service: req.body.service,
             weight: {
                 all: 0,
@@ -68,10 +75,12 @@ app.post('/converter', function(req, res, next){
             }
         };
 
-        var saveDataStatus = saveData(data, ["name", "children"], function(){
+        var saveDataStatus = saveData(data, replacer, function(){
             res.status = 200;
-            res.send();
+            res.send(req.body.service);
         });
+
+
         /*if (saveDataStatus) {
             res.status = 200;
             res.send();
