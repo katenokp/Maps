@@ -61,7 +61,7 @@ app.post('/converter', function(req, res, next){
     else {
         var parsedData;
         if(req.body.text[0] =='[' || req.body.text[0] == '{'){
-            parsedData = req.body.text;
+            parsedData = JSON.parse(req.body.text);
         } else {
             parsedData = parser(req.body.text)
         }

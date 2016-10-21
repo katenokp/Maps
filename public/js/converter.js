@@ -1,6 +1,20 @@
 function submit(){
+    console.log("submit");
     var textField = document.getElementById('converterTextField');
-    var formData = new FormData();
+
+    try {
+        var preparedData = JSON.parse(textField.value)
+    } catch (e){
+        alert(e.message);
+        return false;
+    }
+
+    textField.value = JSON.stringify(preparedData);
+    document.getElementById("converterForm").submit();
+
+
+
+    /*var formData = new FormData();
     var data = JSON.stringify(JSON.parse(textField.value));
     formData.append('data', data);
 
@@ -18,7 +32,11 @@ function submit(){
                 console.log("Error: can't convert data")
             }
         }
-    }
+    }*/
+}
+
+function prepareData(){
+
 }
 
 function setService(service, data) {
