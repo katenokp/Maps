@@ -1,7 +1,8 @@
 function validate() {
     var service = document.forms['converterForm'].elements['service'].value;
-    if (service != '') {
-        var textField = document.getElementById('converterTextField');
+    var textField = document.getElementById('converterTextField');
+    if (service != '' && (textField.value[0]=='[' || textField.value[0]=='{' )) {
+
         try {
             var preparedData = JSON.parse(textField.value)
         } catch (e) {
@@ -12,7 +13,7 @@ function validate() {
         textField.value = JSON.stringify(preparedData);
     }
     document.getElementById("converterForm").submit();
-    location.href = location.href.replace('converter', service);
+    setTimeout(function(){location.href = location.href.replace('converter', service)}, 1000);
 
 
     /*var formData = new FormData();
