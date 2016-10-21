@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var saveData = require('./public/js/saver');
 var parser = require('./public/js/parser');
 var replacer = require('./public/js/replacer');
+var servicesNames = require('./servicesNames');
 
 var app = express();
 
@@ -77,8 +78,8 @@ app.post('/converter', function(req, res, next){
         };
 
         var saveDataStatus = saveData(data, replacer, function(){
-            res.status = 200;
-            res.send(req.body.service);
+            //res.status = 200;
+            res.render('index', {data: data.data, weight: {all:0, done:0}, service: data.service, serviceName: servicesNames[data.service]})
         });
 
 

@@ -1,50 +1,113 @@
 [
 	{
-		"name": "Регистрационная информация",
-		"id": "id175519a9-863c-4b2c-dd94-0cd01289493f",
+		"name": "sdgfasghf",
+		"id": "ide1d83516-aab4-4887-e31a-8648599c5761",
 		"isDone": true,
 		"comment": "",
-		"priority": 4,
+		"priority": 2,
+		"weight": {
+			"done": 1,
+			"all": 2
+		},
+		"children": [
+			{
+				"name": "sjhdfjsdhfj«sdfsdf»",
+				"id": "id1bfe8f5a-9ed0-4ddd-db46-f9d374269626",
+				"isDone": false,
+				"comment": "",
+				"priority": 1,
+				"weight": {
+					"done": 0,
+					"all": 1
+				}
+			},
+			{
+				"name": "123",
+				"id": "id6decc256-843d-4bf2-9a82-fd30e44145c7",
+				"isDone": true,
+				"comment": "",
+				"priority": 0,
+				"weight": {
+					"done": 1,
+					"all": 1
+				}
+			}
+		]
+	},
+	{
+		"name": "dhfsjfh«afasddasf»",
+		"id": "id4f0a9cc2-73f9-43f9-4c70-8d29178c135b",
+		"isDone": true,
+		"comment": "",
+		"priority": 2,
 		"weight": {
 			"done": 1,
 			"all": 1
 		},
 		"children": [
 			{
-				"name": "Заполнение полей",
-				"id": "id1bb51733-b7cc-4595-ffb2-10dc138c92b4",
+				"name": "sjdhajd«dfsf»",
+				"id": "idedef1eb8-5c66-456e-0183-4392c0d95cee",
 				"isDone": true,
 				"comment": "",
-				"priority": 1,
+				"priority": 0,
 				"weight": {
 					"done": 1,
 					"all": 1
 				},
 				"children": [
 					{
-						"name": "Положительные значения. Классы эквивалентности",
-						"id": "id44a114bf-9e1e-4d81-0696-e2f5637a7502",
+						"name": "gsgaskjsdklf",
+						"id": "id458a20cd-2dc5-4628-267a-bcd425dab38f",
 						"isDone": true,
-						"comment": "erwerrwerwr",
-						"priority": 1,
+						"comment": "",
+						"priority": 0,
 						"weight": {
 							"done": 1,
 							"all": 1
-						}
+						},
+						"children": [
+							{
+								"name": "xcfvxfs",
+								"id": "id9b489af1-6938-496a-4284-7bc1ec4cf708",
+								"isDone": true,
+								"comment": "",
+								"priority": 4,
+								"weight": {
+									"done": 1,
+									"all": 1
+								},
+								"children": [
+									{
+										"name": "kfgldfkgldf",
+										"id": "idff052595-fdb7-4cbc-9e02-d7d8ce1c1811",
+										"isDone": true,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 1,
+											"all": 1
+										},
+										"children": [
+											{
+												"name": "kgdflgkdflgk",
+												"id": "id3a0f134f-46cd-460a-c057-d813e0f1996b",
+												"isDone": true,
+												"comment": "",
+												"priority": 0,
+												"weight": {
+													"done": 1,
+													"all": 1
+												}
+											}
+										]
+									}
+								]
+							}
+						]
 					}
 				]
 			}
 		]
-	},
-	{
-		"name": "Внеотчетная часть",
-		"id": "ida4b48353-65f9-410e-5a89-03923ee72dfe",
-		"isDone": false,
-		"comment": "",
-		"priority": 1,
-		"weight": {
-			"done": 4,
-			"all": 5
-		}
 	}
 ]

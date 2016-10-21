@@ -5,7 +5,7 @@ html
       link(rel='stylesheet', href='/styles/style.css')
       script(src='/js/converter.js')
    body(onload= "setService('#{service}', '#{data}')")
-       form.converterForm(action="/converter", method="POST")
+       form.converterForm#converterForm(action="/converter", method="POST", onsubmit="submit()")
            textarea#converterTextField(type="text", name="text")
            .converterSettingsWrapper
                input#listItemId_Checkbox(type="checkbox")
@@ -31,4 +31,4 @@ html
                     p
                         input#serviceNameRadioButton_test(type="radio", name="service", value="Test")
                         |Тестовый
-                input.sendButton(type="submit", value="send")
+                input.sendButton(type="button", value="send", onclick="validate()")

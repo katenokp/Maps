@@ -4,6 +4,8 @@ block content
     -var parsedData = JSON.stringify(data, replacer);
     script.
         var service = '#{serviceName}';
+        if(location.href.indexOf('converter') != -1)
+            location.href = location.href.replace('converter', service);
         localStorage.setItem("service", service);
         if(localStorage.getItem(service + "_collapses") == null)
             localStorage.setItem(service + "_collapses", JSON.stringify({ids : []}));
