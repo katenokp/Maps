@@ -4,14 +4,14 @@ html
     meta(charset='UTF-8')
     link(rel='stylesheet', href='/styles/style.css')
   body
-    div.errorInformationWrapper
+    .errorInformationWrapper
       p.errorMessage
         span.h1 Ошибка
-          br
-            br
+        br
+        br
         span.h2= message
-            br
+        br
         span.h2= error.status
-            br
+        br
         pre.p = #{error.stack}
-    div.errorImage
+      div.errorImage
