@@ -397,7 +397,7 @@ progress::-moz-progress-bar {
 
 .errorMessage{
     display: inline-block;
-    width: 800px;
+    width: 600px;
     margin: 0 0 0 70px;
     vertical-align: middle;
 }
