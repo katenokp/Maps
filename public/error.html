@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://k1406010:1337/converter -->
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="errorInformationWrapper">
+        <p class="errorMessage">
+            <span class="h1">Ошибка</span><br><br>
+            <span class="h2">d:\JS\repo\views\index.jade:75
+                73|                         .itemMessageWrapper
+                74|                             .hintContainer
+            </span><br><br>
+            <span class="p">TypeError: d:\JS\repo\views\index.jade:75
+                    73|                         .itemMessageWrapper
+                    74|                             .hintContainer
+                  &gt; 75|                                 progress(id=id+"_ProgressBar", class="progressBar", value=item.weight.done, max=item.weight.all)
+                    76|                                 br
+                    77|                                 span(id=id+"_Hint", span class="hintText") #{item.weight.done}/#{item.weight.all}
+                    78|                             div(id=id+"_DropWrapper", class="dropdownWrapper")
+
+                Cannot read property 'done' of undefined
+            </span>
+        </p>
+        <div class="errorImage">
+
+        </div>
+    </div>
+
+</body>
+</html>

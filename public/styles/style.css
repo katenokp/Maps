@@ -380,3 +380,36 @@ progress::-moz-progress-bar {
     height: 25px;
     width: 60px;
 }
+
+
+.errorInformationWrapper{
+    margin: 10% 0 0 0;
+}
+
+.errorImage{
+    display: inline-block;
+    vertical-align: middle;
+    height: 315px;
+    width: 183px;
+    margin: 0 0 0 50px;
+    background:  url("../images/errorImg.png") no-repeat top;
+}
+
+.errorMessage{
+    display: inline-block;
+    width: 800px;
+    margin: 0 20px 0 50px;
+    vertical-align: middle;
+}
+
+.errorMessage .h1{
+    font-size: 22px;
+}
+
+.errorMessage .h2{
+    font-size: 18px;
+}
+
+.errorMessage .p{
+    font-size: 14px;
+}
