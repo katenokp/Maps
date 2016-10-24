@@ -14,4 +14,5 @@ html
         br
         span.h2= error.status
         br
-        span.p = #{error.stack}
+        each line in error.stack.split('\n')
+            span.p= line
