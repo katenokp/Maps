@@ -15,4 +15,4 @@ html
         span.h2= error.status
         br
         each line in error.stack.split('\n')
-            span.p= line
+            span.p= line.replace(dirname, '..')
