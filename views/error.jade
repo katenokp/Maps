@@ -5,6 +5,7 @@ html
     link(rel='stylesheet', href='/styles/style.css')
   body
     .errorInformationWrapper
+      div.errorImage
       p.errorMessage
         span.h1 Ошибка
         br
@@ -14,4 +15,3 @@ html
         span.h2= error.status
         br
         span.p = #{error.stack}
-      div.errorImage
