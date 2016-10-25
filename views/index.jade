@@ -22,18 +22,22 @@ block content
                 console.log("storage is ready");
                 fs.root.getDirectory('#{serviceName}', {create:true}, function(directory){
                     directory.getFile('oldData.json', {create: true}, function(file){
-                        //file.remove(function(){});
-                        file.createWriter(function(writer){
-                            writer.onwriteend = function(error){
-                                if(error)
-                                    console.log(error);
-                                else{
-                                    console.log("done");
-                                }
-                            };
-                            var blob = new Blob(['!{parsedData}'], {type: 'application/json'});
-                            writer.write(blob);
-                        })
+                        file.remove(function(){
+                            directory.getFile('oldData.json', {create: true}, function(newFile) {
+                                newFile.createWriter(function(writer){
+                                    writer.onwriteend = function(error){
+                                        if(error)
+                                            console.log(error);
+                                        else{
+                                            console.log("done");
+                                        }
+                                    };
+                                    var blob = new Blob(['!{parsedData}'], {type: 'application/json'});
+                                    writer.write(blob);
+                                })
+                            })
+                        });
+
                     })
                 })
             }, function(err){if(err)

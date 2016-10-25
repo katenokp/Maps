@@ -23,9 +23,6 @@ function readItem(idItem){ //todo rename
     return parsedItem;
 }
 
-
-
-
 function errorHandler(e) {
     /*var msg = '';
     switch (e.code) {
