@@ -692,7 +692,7 @@
 														}
 													},
 													{
-														"name": "Представитель\t\t\t\t\t\t",
+														"name": "Представитель",
 														"id": "id3ed06227-62bc-4f96-aaf4-83cbf9946cd6",
 														"isDone": false,
 														"priority": 0,
@@ -878,7 +878,7 @@
 								]
 							},
 							{
-								"name": "Факт отправки\t\t\t",
+								"name": "Факт отправки",
 								"id": "id5ec8fca3-d4f5-4acd-e019-01d3522c27a9",
 								"isDone": false,
 								"priority": 0,
@@ -888,7 +888,7 @@
 								}
 							},
 							{
-								"name": "Отправленные данные\t\t\t\t\t",
+								"name": "Отправленные данные",
 								"id": "id511e8b2e-80f3-4c1b-69b6-2da27e2431ca",
 								"isDone": false,
 								"priority": 0,
@@ -1221,8 +1221,7 @@
 		"weight": {
 			"done": 0,
 			"all": 0
-		},
-		"children": []
+		}
 	},
 	{
 		"name": "Снятие с учета",
