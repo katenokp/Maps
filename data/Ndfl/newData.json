@@ -1,6 +1,6 @@
 [
 	{
-		"name": "Шапка-&gt;GlobalHeader",
+		"name": "Шапка-&amp;gt;GlobalHeader",
 		"id": "ida4ac7283-718b-40e2-ebf3-fa732868af1b",
 		"isDone": false,
 		"comment": "",
@@ -22,7 +22,7 @@
 				}
 			},
 			{
-				"name": "Шапка НДФЛ (настройки, помощь и пр)-&gt;NDFLHeader",
+				"name": "Шапка НДФЛ (настройки, помощь и пр)-&amp;gt;NDFLHeader",
 				"id": "idf0cae8e1-54c5-4e75-db67-4efa55ddb549",
 				"isDone": false,
 				"comment": "",
@@ -44,7 +44,7 @@
 						}
 					},
 					{
-						"name": "Смена организаций-&gt;ChangeOrganization",
+						"name": "Смена организаций-&amp;gt;ChangeOrganization",
 						"id": "id9e44697f-a153-4fe4-cf6f-df1df9210c00",
 						"isDone": false,
 						"comment": "",
@@ -66,7 +66,7 @@
 						}
 					},
 					{
-						"name": "Реквизиты и настройки-&gt;RequisitesAndPreferences",
+						"name": "Реквизиты и настройки-&amp;gt;RequisitesAndPreferences",
 						"id": "idabe1cb15-c62c-479c-7364-2cfe73e751a4",
 						"isDone": false,
 						"comment": "",
@@ -101,7 +101,7 @@
 						]
 					},
 					{
-						"name": "Помощь-&gt;GlobalHelpLink  box",
+						"name": "Помощь-&amp;gt;GlobalHelpLink  box",
 						"id": "idc332bd11-dbca-47fc-0ee0-4809e92d4410",
 						"isDone": false,
 						"comment": "",
@@ -184,7 +184,7 @@
 		]
 	},
 	{
-		"name": "Список и прочее-&gt;InquiryListPage",
+		"name": "Список и прочее-&amp;gt;InquiryListPage",
 		"id": "id08d0a7bc-f5b6-4692-ec6a-89ad217faf9b",
 		"isDone": false,
 		"comment": "",
@@ -195,7 +195,7 @@
 		},
 		"children": [
 			{
-				"name": "Шапка с реквизитами-&gt;PageHeader",
+				"name": "Шапка с реквизитами-&amp;gt;PageHeader",
 				"id": "ide9167a27-3e67-459e-5697-f75a4e29324e",
 				"isDone": false,
 				"comment": "",
@@ -239,7 +239,7 @@
 						}
 					},
 					{
-						"name": "Редактирование реквизитов-&gt;Requisites",
+						"name": "Редактирование реквизитов-&amp;gt;Requisites",
 						"id": "id536dc195-d95c-457f-5550-d7f10fcc4bd9",
 						"isDone": false,
 						"comment": "",
@@ -261,7 +261,7 @@
 								}
 							},
 							{
-								"name": "Лайтбокс-&gt;EditRequisitesLightbox",
+								"name": "Лайтбокс-&amp;gt;EditRequisitesLightbox",
 								"id": "ida52d3339-fcb5-4691-8011-99f17e86923e",
 								"isDone": false,
 								"comment": "",
@@ -272,7 +272,7 @@
 								},
 								"children": [
 									{
-										"name": "Поля общие-&gt;CommonRequisites",
+										"name": "Поля общие-&amp;gt;CommonRequisites",
 										"id": "idf64b696a-eef9-4692-689e-3e420570201b",
 										"isDone": false,
 										"comment": "",
@@ -351,7 +351,7 @@
 										]
 									},
 									{
-										"name": "Поля 5.04-&gt;Format504Requisitest",
+										"name": "Поля 5.04-&amp;gt;Format504Requisitest",
 										"id": "id7b4f332a-72ae-448b-ec8c-03bdd11d2dcf",
 										"isDone": false,
 										"comment": "",
@@ -436,7 +436,7 @@
 						}
 					},
 					{
-						"name": "Действия-&gt;Actions",
+						"name": "Действия-&amp;gt;Actions",
 						"id": "id4529f6b7-297b-4452-6564-00062845426c",
 						"isDone": false,
 						"comment": "",
@@ -471,7 +471,7 @@
 						]
 					},
 					{
-						"name": "Для выбранных справок-&gt;CheckedInquiriesActions",
+						"name": "Для выбранных справок-&amp;gt;CheckedInquiriesActions",
 						"id": "id464ca177-35f0-4118-4437-fbe08c51b4af",
 						"isDone": false,
 						"comment": "",
@@ -631,7 +631,7 @@
 				]
 			},
 			{
-				"name": "Список-&gt;InquiryList",
+				"name": "Список-&amp;gt;InquiryList",
 				"id": "id518cdc8f-669c-4e0f-b69f-57973dbf3d1c",
 				"isDone": false,
 				"comment": "",
@@ -686,7 +686,7 @@
 						}
 					},
 					{
-						"name": "Суммы-&gt;InquiryListSums",
+						"name": "Суммы-&amp;gt;InquiryListSums",
 						"id": "idc0de35bc-8713-401f-dc69-be210a61669b",
 						"isDone": false,
 						"comment": "",
@@ -745,7 +745,7 @@
 				]
 			},
 			{
-				"name": "Футтер-&gt;InquiryListFooter",
+				"name": "Футтер-&amp;gt;InquiryListFooter",
 				"id": "idd0e808e9-34e3-40af-a387-3abc345f572a",
 				"isDone": false,
 				"comment": "",
@@ -756,7 +756,7 @@
 				},
 				"children": [
 					{
-						"name": "Проверить и отправить отчёт-&gt;SendReportButton",
+						"name": "Проверить и отправить отчёт-&amp;gt;SendReportButton",
 						"id": "id13894408-7acd-46f1-261b-f0ff468357af",
 						"isDone": false,
 						"comment": "",
@@ -767,7 +767,7 @@
 						}
 					},
 					{
-						"name": "Итоговые суммы-&gt;CommonSums",
+						"name": "Итоговые суммы-&amp;gt;CommonSums",
 						"id": "id1bfaf0ed-50a8-4e1e-4d1d-8c1eba692104",
 						"isDone": false,
 						"comment": "",
@@ -828,7 +828,7 @@
 		]
 	},
 	{
-		"name": "Справка на редактировании-&gt;InquiryPage",
+		"name": "Справка на редактировании-&amp;gt;InquiryPage",
 		"id": "ida48f223c-dfdb-4310-f042-250f32be4c1a",
 		"isDone": false,
 		"comment": "",
@@ -839,7 +839,7 @@
 		},
 		"children": [
 			{
-				"name": "Инфо о справке + действия-&gt;InquiryRequisites",
+				"name": "Инфо о справке + действия-&amp;gt;InquiryRequisites",
 				"id": "id31cbe1cc-a6a2-4f70-8aab-fd4d24271cc2",
 				"isDone": false,
 				"comment": "",
@@ -1571,7 +1571,7 @@
 		]
 	},
 	{
-		"name": "Страница отправки-&gt;SendReportPage",
+		"name": "Страница отправки-&amp;gt;SendReportPage",
 		"id": "idace21220-e7ee-47bf-1834-69dd2097ebad",
 		"isDone": false,
 		"comment": "",
@@ -1583,7 +1583,7 @@
 		"children": []
 	},
 	{
-		"name": "Футтер экстерновский-&gt;GlobalFooter",
+		"name": "Футтер экстерновский-&amp;gt;GlobalFooter",
 		"id": "id39541f83-c93a-41c0-5b6a-fecc5ac01188",
 		"isDone": false,
 		"comment": "",
@@ -1627,7 +1627,7 @@
 				}
 			},
 			{
-				"name": "Письмо в техподдержку-&gt;SendFeedbackTest",
+				"name": "Письмо в техподдержку-&amp;gt;SendFeedbackTest",
 				"id": "id6af627be-9176-4d84-4b2f-9da8bc2d2f6c",
 				"isDone": false,
 				"comment": "",
@@ -1640,7 +1640,7 @@
 		]
 	},
 	{
-		"name": "Импорт-&gt;Import",
+		"name": "Импорт-&amp;gt;Import",
 		"id": "id699ca41c-d56a-468a-77d3-3f3899dfaf7f",
 		"isDone": false,
 		"comment": "",

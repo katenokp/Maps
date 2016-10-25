@@ -1,5 +1,6 @@
 var fs = require('fs');
 var save = require('./saver');
+var replacer = require('./replacer');
 
 function prepareFile(fileName){
     fs.readFile(fileName, 'utf8', function(error, data){
@@ -7,9 +8,14 @@ function prepareFile(fileName){
             throw error;
         } else{
             var preparedData = normalizeData(data);
-            save(preparedData, fileName, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+            saveNormalizedData(preparedData, fileName, replacer);
         }
     })
+}
+
+
+function saveNormalizedData(preparedData, dataFileName, replacer){
+
 }
 
 function normalizeData(data){
@@ -22,6 +28,8 @@ function normalizeData(data){
 function normalizeItemsArray(itemsArray){
     itemsArray.forEach(function(item){
         prepareItem(item);
+        if(item.children == [])
+            item.children = null;
         if(item.children != null){
             normalizeItemsArray(item.children);
         }
@@ -33,9 +41,13 @@ function prepareItem(item){
         item.id = 'id' + getNewGuid();
     }
 
+    item.name = changeQuotes(item.name);
+    if(item.comment != undefined)
+        item.comment = changeQuotes(item.comment);
+
     var priority = item.priority;
     if(priority == null || priority > 5 || priority<0){
-        item.priority = 0; //todo âûêèíóòü ýòó ïðîâåðêó èç ðåíäåðèíãà
+        item.priority = 0; //todo Ð²Ñ‹ÐºÐ¸Ð½ÑƒÑ‚ÑŒ ÑÑ‚Ñƒ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÑƒ Ð¸Ð· Ñ€ÐµÐ½Ð´ÐµÑ€Ð¸Ð½Ð³Ð°
     }
 
     if(item.isDone == null){
@@ -45,6 +57,13 @@ function prepareItem(item){
     if(item.weight == null || item.children != null){
         item.weight = calculateWeight(item);
     }
+}
+
+function changeQuotes(str){
+    if(str == null)
+        return null;
+    return str.replace(/'([^']*)'/g, "Â«$1Â»").replace("'", "Â«").
+        replace(/"([^"]*)"/g, "Â«$1Â»").replace('"', "Â«");
 }
 
 function calculateWeight(item){

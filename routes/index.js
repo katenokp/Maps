@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var normalize = require('../public/js/prepareData');
 var serviceName = require('../servicesNames');
+var replacer = require('../public/js/replacer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -18,7 +19,29 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/converter', function(req, res, next){
-    res.render('converter');
+    var service = req.headers.referer != null ?
+        req.headers.referer.replace(req.headers.host + "/", "").split("//")[1].toLowerCase() :
+        null;
+    if(service == '')
+        service = null;
+    if(service == null) {
+        res.render('converter', {service: service, data: null});
+    } else {
+        var dataFileName = path.join(__dirname, '../data/' + service + '/data.json');
+        fs.readFile(dataFileName, 'utf8', function (err, data) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    if(needNormalization()){
+                        data = JSON.stringify(normalize(data));
+                    }
+                    res.render('converter', {service: service, data: data});
+                }
+            }
+        )
+    }
+
 });
 
 router.get('/test', function(req, res, next) {
@@ -58,21 +81,32 @@ function buildPage(service, res){
             throw err;
         }
         else{
+            var file = data;
             fs.readFile(commonInformationFileName, 'utf8', function(error, commonData){
                 if(error)
                     throw error;
                 else{
-                    var parsedData;
+                    var parsedData, weight;
                     if(needNormalization()){
                         parsedData = normalize(data);
-                        //var preparedData = normalizeData(data);
-                        //save(preparedData, fileName, ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"]);
+                        weight = calculateRootCompleteness(parsedData);
                     } else {
                         parsedData = JSON.parse(data);
+                        weight = JSON.parse(commonData).weight;
                     }
-                    var weight = JSON.parse(commonData).weight;
-                    weight = calculateRootCompleteness(parsedData);
-                    res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});
+                    fs.writeFile(dataFileName, JSON.stringify(parsedData, replacer, '\t'), {"encoding": 'utf8'}, function(error){
+                        if(error)
+                            throw error;
+                        else{
+                            console.log('saved normalized data, file %s', dataFileName);
+                            fs.writeFile(commonInformationFileName, JSON.stringify(weight, ["all", "done"], "\t"), {"encoding":"utf8"}, function(error){
+                                if(error)
+                                    throw error;
+                                else{res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});}
+                            })
+                        }
+                    });
+
                 }
             })
 
@@ -80,6 +114,7 @@ function buildPage(service, res){
     })
 
 }
+
 
 function needNormalization(){
     return true; //todo

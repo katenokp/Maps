@@ -1,27 +1,56 @@
-function submit(){
+function validate() {
+    var service = document.forms['converterForm'].elements['service'].value;
     var textField = document.getElementById('converterTextField');
-    var formData = new FormData();
-    formData.append('data', textField.value);
+    if (service != '' && (textField.value[0]=='[' || textField.value[0]=='{' )) {
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/converter", true);
-    xhr.send(formData);
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
-                console.log(xhr.response);
-                document.location.href('/Pfr');
-            }
-            else {
-                console.log("Error: can't convert data")
-            }
+        try {
+            var preparedData = JSON.parse(textField.value)
+        } catch (e) {
+            alert(e.message);
+            return false;
         }
+
+        textField.value = JSON.stringify(preparedData);
+    }
+    document.getElementById("converterForm").submit();
+    setTimeout(function(){location.href = location.href.replace('converter', service)}, 1000);
+
+
+    /*var formData = new FormData();
+     var data = JSON.stringify(JSON.parse(textField.value));
+     formData.append('data', data);
+
+     var xhr = new XMLHttpRequest();
+     xhr.open("POST", "/converter", true);
+     xhr.send(formData);
+
+     xhr.onreadystatechange = function () {
+     if (xhr.readyState == 4) {
+     if (xhr.status == 200) {
+     console.log(xhr.response);
+     document.location.href('/Pfr');
+     }
+     else {
+     console.log("Error: can't convert data")
+     }
+     }
+     }*/
+}
+
+function prepareData() {
+
+}
+
+function setService(service, data) {
+    if (service != 'null') {
+        document.getElementById("listItemId_Checkbox").checked = true;
+        document.getElementById("serviceNameRadioButton_" + service).checked = true;
+        document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
     }
 }
 
-function goToService(serviceName){
+function goToService(serviceName) {
     //setTimeout(function(serviceName){
-        document.location.href = '/'+serviceName;
+    document.location.href = '/' + serviceName;
     //},100)
 }

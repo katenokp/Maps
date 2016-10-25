@@ -1,6 +1,18 @@
-extends layout
-
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+doctype html
+html
+  head(lang="en")
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='/styles/style.css')
+  body
+    .errorInformationWrapper
+      .errorImage
+      p.errorMessage
+        span.h1 Ошибка
+        br
+        br
+        span.h2= message
+        br
+        span.h2= error.status
+        br
+        each line in error.stack.split('\n')
+            span.p= line.replace(dirname, '..')
