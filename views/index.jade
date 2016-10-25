@@ -3,7 +3,8 @@ extends layout
 block content
     -var parsedData = JSON.stringify(data, replacer);
     script.
-        var service = '#{serviceName}';
+        var serviceName = '#{serviceName}';
+        var service = '#{service}'
         if(location.href.indexOf('converter') != -1)
             location.href = location.href.replace('converter', service);
         localStorage.setItem("service", service);
@@ -20,7 +21,7 @@ block content
         navigator.webkitPersistentStorage.requestQuota(10*1024*1024, function (bytes) {
             window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
                 console.log("storage is ready");
-                fs.root.getDirectory('#{serviceName}', {create:true}, function(directory){
+                fs.root.getDirectory(serviceName, {create:true}, function(directory){
                     directory.getFile('oldData.json', {create: true}, function(file){
                         file.remove(function(){
                             directory.getFile('oldData.json', {create: true}, function(newFile) {
@@ -57,7 +58,7 @@ block content
                 input.button.collapseAll(type='button', value='', onclick='collapseAllByClick()')
                 input.button.expandAll(type='button', value='', onclick='expandAllByClick()')
                 input.button.edit(type='button', value='', onclick='editDataFile()')
-                input.button.saveAll(id='saveButton', name=service, type='submit', value='', onclick='unmarkAllItems(); saveByButton()')
+                input.button.saveAll(id='saveButton', name=serviceName, type='submit', value='', onclick='unmarkAllItems(); saveByButton()')
     mixin drawBlock(data)
         each item,index in data
             - var id=item.id
