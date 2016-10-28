@@ -2,11 +2,11 @@ var fs = require('fs');
 var save = require('./saver');
 var replacer = require('./replacer');
 
-function prepareFile(fileName){
-    fs.readFile(fileName, 'utf8', function(error, data){
-        if(error){
+function prepareFile(fileName) {
+    fs.readFile(fileName, 'utf8', function (error, data) {
+        if (error) {
             throw error;
-        } else{
+        } else {
             var preparedData = normalizeData(data);
             saveNormalizedData(preparedData, fileName, replacer);
         }
@@ -14,69 +14,76 @@ function prepareFile(fileName){
 }
 
 
-function saveNormalizedData(preparedData, dataFileName, replacer){
+function saveNormalizedData(preparedData, dataFileName, replacer) {
 
 }
 
-function normalizeData(data){
+function normalizeData(data) {
 
     var parsedData = JSON.parse(data);
     normalizeItemsArray(parsedData);
     return parsedData;
 }
 
-function normalizeItemsArray(itemsArray){
-    itemsArray.forEach(function(item){
+function normalizeItemsArray(itemsArray) {
+    itemsArray.forEach(function (item) {
         prepareItem(item);
-        if(item.children == [])
-            item.children = null;
-        if(item.children != null){
+        if (item.children != null && item.children.length == 0)
+            item.children = undefined;
+        if (item.children != undefined) {
             normalizeItemsArray(item.children);
         }
     });
 }
 
-function prepareItem(item){
-    if(item.id == null){
+function prepareItem(item) {
+    if (item.id == null || item.id.trim() == "") {
         item.id = 'id' + getNewGuid();
     }
 
     item.name = changeQuotes(item.name);
-    if(item.comment != undefined)
+    if (item.comment != undefined && item.comment.trim() != "" && item.comment != null)
         item.comment = changeQuotes(item.comment);
 
     var priority = item.priority;
-    if(priority == null || priority > 5 || priority<0){
+    if (priority == null || priority > 5 || priority < 0) {
         item.priority = 0; //todo выкинуть эту проверку из рендеринга
     }
 
-    if(item.isDone == null){
+    if (item.isDone == null) {
         item.isDone = false;
     }
 
-    if(item.weight == null || item.children != null){
-        item.weight = calculateWeight(item);
+    if (item.weight == null) {
+        if (item.children == null) {
+            item.weight = new Weight(1, 0);
+        } else {
+            item.weight = calculateWeight(item);
+        }
     }
+
+    if(item.children != undefined && item.children.length == 0)
+        item.children = undefined;
 }
 
-function changeQuotes(str){
-    if(str == null)
+function changeQuotes(str) {
+    if (str == null)
         return null;
     return str.replace(/'([^']*)'/g, "«$1»").replace("'", "«").
         replace(/"([^"]*)"/g, "«$1»").replace('"', "«");
 }
 
-function calculateWeight(item){
+function calculateWeight(item) {
     var children = item.children;
 
-    if(children == null) {
-        if(item.weight == null){
+    if (children == null) {
+        if (item.weight == null) {
             return {
                 done: item.isDone ? 1 : 0,
                 all: 1
             }
         }
-        if(item.weight.all == 1 && item.weight.done == 0 && item.isDone)
+        if (item.weight.all == 1 && item.weight.done == 0 && item.isDone)
             item.weight.done = 1;
         return item.weight;
     }
@@ -84,12 +91,12 @@ function calculateWeight(item){
     return sumWeightsAllChildren(children);
 }
 
-function Weight(done, all){
+function Weight(done, all) {
     this.done = done;
     this.all = all
 }
 
-function sumWeightsAllChildren(children){
+function sumWeightsAllChildren(children) {
     var weight = new Weight(0, 0);
     children.forEach(function (item) {
         item.weight = calculateWeight(item);
@@ -98,10 +105,10 @@ function sumWeightsAllChildren(children){
     return weight;
 }
 
-function sumWeights(firstWeight, secondWeight){
-    if(firstWeight == null)
+function sumWeights(firstWeight, secondWeight) {
+    if (firstWeight == null)
         firstWeight = new Weight(0, 0);
-    if(secondWeight == null)
+    if (secondWeight == null)
         secondWeight = new Weight(0, 0);
     return new Weight(firstWeight.done + secondWeight.done, firstWeight.all + secondWeight.all);
 }
@@ -110,7 +117,7 @@ function sumWeights(firstWeight, secondWeight){
  * @return {string}
  */
 function S4() {
-    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
 }
 
 function getNewGuid() {
