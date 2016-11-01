@@ -26,7 +26,7 @@
 						"id": "id7d936ba8-3511-4ad1-ca1c-28ad99c71f34",
 						"isDone": false,
 						"comment": "",
-						"priority": 0,
+						"priority": 2,
 						"weight": {
 							"done": 0,
 							"all": 1
@@ -37,7 +37,7 @@
 						"id": "id7ca88535-f099-4df6-42a6-240b2e3f1f56",
 						"isDone": false,
 						"comment": "",
-						"priority": 0,
+						"priority": 1,
 						"weight": {
 							"done": 0,
 							"all": 15
@@ -48,7 +48,7 @@
 								"id": "idc6f0c336-a147-4798-3127-9cc62dfb2e22",
 								"isDone": false,
 								"comment": "https://wiki.skbkontur.ru/pages/viewpage.action?pageId=143822263#id-РегистрационнаяинформацияПФР-Валидацииполей:",
-								"priority": 0,
+								"priority": 1,
 								"weight": {
 									"done": 0,
 									"all": 5
@@ -116,7 +116,7 @@
 								"id": "idded3cb37-28a2-4922-9d83-89ef61a78500",
 								"isDone": false,
 								"comment": "https://wiki.skbkontur.ru/pages/viewpage.action?pageId=143822263#id-РегистрационнаяинформацияПФР-Проверкисистемыприобращениикрегинформации:",
-								"priority": 0,
+								"priority": 2,
 								"weight": {
 									"done": 0,
 									"all": 10
@@ -366,7 +366,7 @@
 		"priority": 2,
 		"weight": {
 			"done": 0,
-			"all": 337
+			"all": 336
 		},
 		"children": [
 			{
@@ -606,7 +606,7 @@
 						"id": "idb98a8ae3-1438-4ee8-0da3-2b1c6db54287",
 						"isDone": false,
 						"comment": "",
-						"priority": 0,
+						"priority": 1,
 						"weight": {
 							"done": 0,
 							"all": 14
@@ -617,7 +617,7 @@
 								"id": "id7aaa3c71-003b-4adf-6aaf-6d1a386e9a3c",
 								"isDone": false,
 								"comment": "",
-								"priority": 0,
+								"priority": 1,
 								"weight": {
 									"done": 0,
 									"all": 4
@@ -726,7 +726,7 @@
 								"id": "id1fb04225-f989-433a-bc5f-cc5f39a31f39",
 								"isDone": false,
 								"comment": "",
-								"priority": 0,
+								"priority": 2,
 								"weight": {
 									"done": 0,
 									"all": 10
@@ -6118,7 +6118,7 @@
 				"priority": 0,
 				"weight": {
 					"done": 0,
-					"all": 68
+					"all": 67
 				},
 				"children": [
 					{
@@ -6129,7 +6129,7 @@
 						"priority": 0,
 						"weight": {
 							"done": 0,
-							"all": 40
+							"all": 39
 						},
 						"children": [
 							{
@@ -6168,7 +6168,7 @@
 										]
 									},
 									{
-										"name": "Проверки рег инфы (без заполненного УПФР в рег инфе - нет выписок)",
+										"name": "Проверки рег инфы",
 										"id": "id32e2cc61-6c2c-47ca-3f21-0cbb5b9fe0d6",
 										"isDone": false,
 										"comment": "",
@@ -6179,7 +6179,7 @@
 										},
 										"children": [
 											{
-												"name": "Действительность сертификата",
+												"name": "Регистрационная информация не заполнена",
 												"id": "id59001cfb-260b-4a82-cc58-5af821a6d321",
 												"isDone": false,
 												"comment": "",
@@ -6190,7 +6190,7 @@
 												},
 												"children": [
 													{
-														"name": "Плашка с ошибкой",
+														"name": "Нет выписок",
 														"id": "idd7833f36-3a38-43a6-4a4b-5e722053685b",
 														"isDone": false,
 														"comment": "",
@@ -6203,7 +6203,31 @@
 												]
 											},
 											{
-												"name": "Код УПФР заполнен",
+												"name": "Недействительный сертификат",
+												"id": "id59001cfb-260b-4a82-cc58-5af821a6d381",
+												"isDone": false,
+												"comment": "",
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 1
+												},
+												"children": [
+													{
+														"name": "Плашка с ошибкой",
+														"id": "idd7833f36-3a38-43a6-4a4b-5e722051685b",
+														"isDone": false,
+														"comment": "",
+														"priority": 0,
+														"weight": {
+															"done": 0,
+															"all": 1
+														}
+													}
+												]
+											},
+											{
+												"name": "Код УПФР не заполнен",
 												"id": "idaf902267-3108-4d58-e28b-71cb9d5f7354",
 												"isDone": false,
 												"comment": "",
@@ -6288,30 +6312,6 @@
 													{
 														"name": "Плашка с ошибкой",
 														"id": "id8784c6a9-ea9d-4121-a8bf-490703ef30c6",
-														"isDone": false,
-														"comment": "",
-														"priority": 0,
-														"weight": {
-															"done": 0,
-															"all": 1
-														}
-													}
-												]
-											},
-											{
-												"name": "Другие ошибки",
-												"id": "idb0c8ace7-beaf-429b-2c53-2694a4bb7c75",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												},
-												"children": [
-													{
-														"name": "Плашка с ошибкой",
-														"id": "idc3e2f88e-0473-4152-3365-5a4075e530cf",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -6893,7 +6893,7 @@
 								"priority": 0,
 								"weight": {
 									"done": 0,
-									"all": 7
+									"all": 6
 								},
 								"children": [
 									{
@@ -6928,7 +6928,7 @@
 										"priority": 0,
 										"weight": {
 											"done": 0,
-											"all": 5
+											"all": 4
 										},
 										"children": [
 											{
@@ -6993,30 +6993,6 @@
 													{
 														"name": "Хинт на кнопке отправки",
 														"id": "id79110ab9-d143-4dbe-dfda-f95e0cfc3b90",
-														"isDone": false,
-														"comment": "",
-														"priority": 0,
-														"weight": {
-															"done": 0,
-															"all": 1
-														}
-													}
-												]
-											},
-											{
-												"name": "Другие ошибки",
-												"id": "id8a642bec-e4bf-4a48-f7fc-471239bb6ff8",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												},
-												"children": [
-													{
-														"name": "Хинт на кнопке отправки",
-														"id": "id1d7a366f-e3b1-4c6f-0e91-47ee48fa7a70",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
