@@ -84,4 +84,5 @@ function clearFoundResult() {
     localStorage.removeItem("foundElementsIds");
     localStorage.removeItem("searchValue");
     localStorage.removeItem("viewedResultNumber");
+    unmarkAllItems();
 }
