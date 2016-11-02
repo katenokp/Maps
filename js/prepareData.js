@@ -56,19 +56,15 @@ function prepareItem(item) {
 
     if (item.children != undefined && item.children.length == 0) {
         item.children = undefined;
-        item.weight = undefined;
+        item.weight = calculateWeight(item);
     }
 
     if (item.children == undefined){
-        item.weight = undefined;
+        item.weight = calculateWeight(item);
     }
 
     if (item.weight == null) {
-        if (item.children == null) {
-            item.weight = new Weight(0, 1);
-        } else {
-            item.weight = calculateWeight(item);
-        }
+        item.weight = calculateWeight(item);
     }
 
 
