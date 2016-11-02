@@ -1,6 +1,6 @@
 var fs = require('fs');
 var save = require('./saver');
-var replacer = require('./replacer');
+var replacer = require('./replacerForJSON');
 
 function prepareFile(fileName) {
     fs.readFile(fileName, 'utf8', function (error, data) {

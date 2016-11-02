@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var path = require('path');
-var normalize = require('../public/js/prepareData');
+var normalize = require('../js/prepareData');
 var serviceName = require('../servicesNames');
-var replacer = require('../public/js/replacer');
+var replacer = require('../js/replacerForJSON');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

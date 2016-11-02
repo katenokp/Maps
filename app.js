@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var saveData = require('./public/js/saver');
-var parser = require('./public/js/parser');
-var replacer = require('./public/js/replacer');
+var saveData = require('./js/saver');
+var parser = require('./js/parser');
+var replacer = require('./js/replacerForJSON');
 var servicesNames = require('./servicesNames');
 
 var app = express();
