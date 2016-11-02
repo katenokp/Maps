@@ -10,6 +10,7 @@ block content
         localStorage.setItem("service", service);
         if(localStorage.getItem(service + "_collapses") == null)
             localStorage.setItem(service + "_collapses", JSON.stringify({ids : []}));
+        clearFoundResult();
         if(localStorage.getItem(service + "_listState") == null)
             localStorage.setItem(service + "_listState",JSON.stringify(
                     {
