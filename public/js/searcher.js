@@ -33,6 +33,8 @@ function expandFoundElement(foundElementId) {
             changedElementsIds.push(item);
         }
     });
+    document.getElementById(foundElementId).scrollIntoView();
+    markChangedItem(foundElementId);
     localStorage.setItem("changedElementsIds", JSON.stringify(changedElementsIds));
 }
 
@@ -41,7 +43,6 @@ function restorePreviousState() {
         changedElementsIds.forEach(function (item) {
             collapseElementIfNeed(item);
         });
-
     localStorage.removeItem("changedElementsIds");
 }
 
