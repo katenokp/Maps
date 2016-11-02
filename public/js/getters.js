@@ -75,3 +75,21 @@ function getNodeId(id){
     //var prefixes = ['_Checkbox', '_PriorityButton', '_PriorityDropDown', '_Item', '_commentInput', '_indexInput'];
 }
 
+function getParentUlId(nodeId){
+    return document.getElementById(nodeId).closest('ul').id;
+}
+
+function getParentId(nodeId){
+    return getNodeId(getParentUlId(nodeId));
+}
+
+function getAllParentsIds(id){
+    var parentsIds = [];
+    var parentId = getParentId(id);
+    while(parentId != "root"){
+        parentsIds.push(parentId);
+        parentId = getParentId(parentId);
+    }
+    return parentsIds;
+}
+

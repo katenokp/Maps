@@ -15,18 +15,22 @@ function search(event){
         foundElementsIds = JSON.parse(localStorage.getItem("foundElementsIds"));
     }
     var currentFoundElementId = nextValue(foundElementsIds);
-
-
-
+    expandFoundElement(currentFoundElementId);
 }
 
-function uncollapseFoundElement(){
-
+function expandFoundElement(foundElementId){
+    var parentIds = getAllParentsIds(foundElementId);
+    var changedElementsIds = [];
+    parentIds.forEach(function(item){
+        var isElementChanged = expandElementIfNeed(item);
+        if(isElementChanged){
+            changedElementsIds.push(item);
+        }
+    });
+    localStorage.setItem("changedElementsIds", JSON.stringify(changedElementsIds));
 }
 
-function getAllParentsIds(){
 
-}
 
 function nextValue(foundElementsIds){
     var foundElementsCount = foundElementsIds.length;

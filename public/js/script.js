@@ -122,7 +122,7 @@ function collapseAllByClick(){
     var listState = JSON.parse(localStorage.getItem(service + "_listState"));
 
     if(listState.collapsed) {
-        restoreUncollapsedState();
+        restoreExpandedState();
     } else {
         collapseAll();
     }
@@ -143,7 +143,7 @@ function restoreState(){
         expandAll();
         return;
     }
-    restoreUncollapsedState();
+    restoreExpandedState();
 }
 
 function restoreUnexpandedState(){
@@ -155,13 +155,44 @@ function restoreUnexpandedState(){
     })
 }
 
-function restoreUncollapsedState(){
+function restoreExpandedState(){
     var collapsesStates = getCollapsesStates();
     collapsesStates.forEach(function(item){
         if(item.isExpanded){
             collapseElement(item.id);
         }
     })
+}
+
+function expandElementIfNeed(id){
+    var listItemId = getNodeId(id);
+    var ulId = getUlId(listItemId);
+    var markerId = getMarkerId(listItemId);
+
+    var initialUlClass = document.getElementById(ulId).className;
+    var initialMarkerClass = document.getElementById(markerId).className;
+
+    if (initialUlClass.search("hidden") != -1) {
+        document.getElementById(ulId).className = initialUlClass.replace(' hidden', '');
+        document.getElementById(markerId).className = initialMarkerClass.replace(' close', '');
+        return true;
+    }
+    return false;
+}
+
+function collapseElementIfNeed(id){
+    var listItemId = getNodeId(id);
+    var ulId = getUlId(listItemId);
+    var markerId = getMarkerId(listItemId);
+
+    var initialUlClass = document.getElementById(ulId).className;
+
+    if (initialUlClass.search("hidden") == -1) {
+        document.getElementById(ulId).className += ' hidden';
+        document.getElementById(markerId).className += ' close';
+        return true;
+    }
+    return false;
 }
 
 function collapseElement(id){
@@ -180,8 +211,6 @@ function collapseElement(id){
         document.getElementById(markerId).className = initialMarkerClass.replace(' close', '');
     }
 }
-
-
 
 function setPriority(elemId){
 
