@@ -77,7 +77,7 @@ function nodeNameContainsStr(node, str) {
 }
 
 function normalizeStr(str) {
-    return str.toLowerCase().trim().replace(/ /g, '');
+    return str.toLowerCase().trim();//.replace(/ /g, '');
 }
 
 function clearFoundResult() {

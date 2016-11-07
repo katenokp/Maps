@@ -63,11 +63,9 @@ function prepareItem(item) {
         item.weight = calculateWeight(item);
     }
 
-    if (item.weight == null) {
+    if (item.weight == undefined) {
         item.weight = calculateWeight(item);
     }
-
-
 }
 
 function changeQuotes(str) {

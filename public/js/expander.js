@@ -20,6 +20,7 @@ function collapseElementAndChangeState(elementId) {
     }
 
     localStorage.setItem(service + "_collapses", JSON.stringify({ids: collapsedElementsIds}));
+    localStorage.setItem(service + "_listState", JSON.stringify({expanded: false, collapsed: false}))
 }
 
 function getCollapsesStates(){
