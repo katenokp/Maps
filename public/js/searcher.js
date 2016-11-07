@@ -13,6 +13,8 @@ function search(event) {
     var foundElementsIds;
     if (viewedResultNumber == null) {
         foundElementsIds = searchAllElements(value);
+        if(foundElementsIds.length == 0)
+            return;
         localStorage.setItem("foundElementsIds", JSON.stringify(foundElementsIds));
         localStorage.setItem("searchValue", value);
         localStorage.setItem("viewedResultNumber", "0"); //todo
@@ -44,8 +46,18 @@ function restorePreviousState() {
             collapseElementIfNeed(item);
         });
     localStorage.removeItem("changedElementsIds");
+
+    unmarkPreviousFoundElement();
 }
 
+function unmarkPreviousFoundElement(){
+    var foundElementsIds = JSON.parse(localStorage.getItem("foundElementsIds"));
+
+    var previousFoundValueNumber = parseInt(localStorage.getItem("viewedResultNumber"))-1;
+    if(previousFoundValueNumber == -1)
+        previousFoundValueNumber = foundElementsIds.length-1;
+    markFoundItem(foundElementsIds[previousFoundValueNumber]);
+}
 
 function nextValue(foundElementsIds) {
     var foundElementsCount = foundElementsIds.length;
@@ -81,10 +93,10 @@ function normalizeStr(str) {
 }
 
 function clearFoundResult() {
+    restorePreviousState();
     localStorage.removeItem("foundElementsIds");
     localStorage.removeItem("searchValue");
     localStorage.removeItem("viewedResultNumber");
-    unmarkAllItems(); //todo
 }
 
 function markFoundItem(controlId){
@@ -95,6 +107,6 @@ function switchClass(id, className){
     if(document.getElementById(id).className.indexOf(className) == -1){
         document.getElementById(id).className +=  ' ' + className;
     } else{
-        document.getElementById(id).className = itemClass.replace(' ' + className, '');
+        document.getElementById(id).className = document.getElementById(id).className.replace(className, '').trim();
     }
 }

@@ -9,7 +9,7 @@ function getChildren(id){
     return document.querySelectorAll('#' + ulId +' > li');
 }
 
-function getAllChildren(idItem){ //todo упростить
+function getAllChildren(idItem){ //todo СѓРїСЂРѕСЃС‚РёС‚СЊ
     var children = document.getElementById(idItem + "_ChildrenUl");
     if(children == undefined)
         return null;
