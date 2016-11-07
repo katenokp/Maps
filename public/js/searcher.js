@@ -1,5 +1,5 @@
 function search(event) {
-    if (event.keyCode != 13)
+    if (event != null && event.keyCode != 13)
         return;
     var value = document.getElementById("Search").value;
     if (value.trim() == "") {
@@ -34,7 +34,7 @@ function expandFoundElement(foundElementId) {
         }
     });
     document.getElementById(foundElementId).scrollIntoView();
-    markChangedItem(foundElementId);
+    markFoundItem(foundElementId);
     localStorage.setItem("changedElementsIds", JSON.stringify(changedElementsIds));
 }
 
@@ -84,5 +84,17 @@ function clearFoundResult() {
     localStorage.removeItem("foundElementsIds");
     localStorage.removeItem("searchValue");
     localStorage.removeItem("viewedResultNumber");
-    unmarkAllItems();
+    unmarkAllItems(); //todo
+}
+
+function markFoundItem(controlId){
+    switchClass(getItemId(getNodeId(controlId)), 'highlight');
+}
+
+function switchClass(id, className){
+    if(document.getElementById(id).className.indexOf(className) == -1){
+        document.getElementById(id).className +=  ' ' + className;
+    } else{
+        document.getElementById(id).className = itemClass.replace(' ' + className, '');
+    }
 }
