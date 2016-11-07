@@ -56,12 +56,13 @@ block content
                     | )
         .buttonsWrapper
             div
-                input#Search(onkeypress="search(event)")
-                button#NextValueButton(onclick="nextValue()")
                 input.button.collapseAll(type='button', value='', onclick='collapseAllByClick()')
                 input.button.expandAll(type='button', value='', onclick='expandAllByClick()')
                 input.button.edit(type='button', value='', onclick='editDataFile()')
                 input.button.saveAll(id='saveButton', name=serviceName, type='submit', value='', onclick='unmarkAllItems(); saveByButton()')
+                .searchWrapper
+                    input#Search(onkeypress="search(event)")
+                    input.button.search(id='NextValueButton', type='button', value='', onclick="nextValue()")
     mixin drawBlock(data)
         each item,index in data
             - var id=item.id

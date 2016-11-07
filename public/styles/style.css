@@ -47,8 +47,29 @@ a {
     background: url("../images/saveAll.png");
 }
 
+.button.search{
+    background: url("../images/search.png");
+}
+
+#search{
+    vertical-align: top;
+    margin-top: 3px;
+    height: 26px;
+    border: 1px solid #818181;
+    padding: 0 0 0 5px;
+}
+
+#search:focus{
+    outline:none;
+}
+
 .button:focus{
     outline: none;
+}
+
+.searchWrapper{
+    display: inline-block;
+    margin: 0 0 0 50px;
 }
 
 .button:hover{
