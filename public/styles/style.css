@@ -51,7 +51,7 @@ a {
     background: url("../images/search.png");
 }
 
-#search{
+#Search{
     vertical-align: top;
     margin-top: 3px;
     height: 26px;
@@ -59,7 +59,7 @@ a {
     padding: 0 0 0 5px;
 }
 
-#search:focus{
+#Search:focus{
     outline:none;
 }
 
