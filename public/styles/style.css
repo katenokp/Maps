@@ -36,15 +36,15 @@ a {
 }
 
 .button:hover{
-    background-color: #f5f5f5;
+    background-color: #f5f5f5 !important;
 }
 
 .button:active {
-    background-color: #e2e2e2;
+    background-color: #e2e2e2 !important;
 }
 
 .active{
-    background-color: #e2e2e2;
+    background-color: #e2e2e2 !important;
 }
 
 .button.collapseAll{
