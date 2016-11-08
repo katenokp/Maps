@@ -13,7 +13,7 @@ function search(event) {
     var foundElementsIds;
     if (viewedResultNumber == null) {
         foundElementsIds = searchAllElements(value);
-        if(foundElementsIds.length == 0)
+        if (foundElementsIds.length == 0)
             return;
         localStorage.setItem("foundElementsIds", JSON.stringify(foundElementsIds));
         localStorage.setItem("searchValue", value);
@@ -42,20 +42,22 @@ function expandFoundElement(foundElementId) {
 
 function restorePreviousState() {
     var changedElementsIds = JSON.parse(localStorage.getItem("changedElementsIds"));
-        changedElementsIds.forEach(function (item) {
-            collapseElementIfNeed(item);
-        });
+    if (changedElementsIds == null)
+        return;
+    changedElementsIds.forEach(function (item) {
+        collapseElementIfNeed(item);
+    });
     localStorage.removeItem("changedElementsIds");
 
     unmarkPreviousFoundElement();
 }
 
-function unmarkPreviousFoundElement(){
+function unmarkPreviousFoundElement() {
     var foundElementsIds = JSON.parse(localStorage.getItem("foundElementsIds"));
 
-    var previousFoundValueNumber = parseInt(localStorage.getItem("viewedResultNumber"))-1;
-    if(previousFoundValueNumber == -1)
-        previousFoundValueNumber = foundElementsIds.length-1;
+    var previousFoundValueNumber = parseInt(localStorage.getItem("viewedResultNumber")) - 1;
+    if (previousFoundValueNumber == -1)
+        previousFoundValueNumber = foundElementsIds.length - 1;
     markFoundItem(foundElementsIds[previousFoundValueNumber]);
 }
 
@@ -94,19 +96,24 @@ function normalizeStr(str) {
 
 function clearFoundResult() {
     restorePreviousState();
+    fixateExpandedState();
+    clearFoundResultsFromStorage();
+}
+
+function clearFoundResultsFromStorage(){
     localStorage.removeItem("foundElementsIds");
     localStorage.removeItem("searchValue");
     localStorage.removeItem("viewedResultNumber");
 }
 
-function markFoundItem(controlId){
+function markFoundItem(controlId) {
     switchClass(getItemId(getNodeId(controlId)), 'highlight');
 }
 
-function switchClass(id, className){
-    if(document.getElementById(id).className.indexOf(className) == -1){
-        document.getElementById(id).className +=  ' ' + className;
-    } else{
+function switchClass(id, className) {
+    if (document.getElementById(id).className.indexOf(className) == -1) {
+        document.getElementById(id).className += ' ' + className;
+    } else {
         document.getElementById(id).className = document.getElementById(id).className.replace(className, '').trim();
     }
 }

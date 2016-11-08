@@ -23,17 +23,19 @@ function collapseElementAndChangeState(elementId) {
     localStorage.setItem(service + "_listState", JSON.stringify({expanded: false, collapsed: false}))
 }
 
-function getCollapsesStates(){
+function getCollapsesStatesFromStorage(){
     var service = localStorage.getItem("service");
     var allElementsIds = getAllItemsIds();
     var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_collapses")).ids;
+    if(collapsedElementsIds == null || allElementsIds.length == 0)
+        return;
     var collapsesStates = [];
 
     allElementsIds.forEach(function(id){
         if(document.getElementById(id+"_ChildrenUl") != null)
             collapsesStates.push({
                 id: id,
-                isExpanded: collapsedElementsIds.indexOf(id) != -1
+                isCollapsed: collapsedElementsIds.indexOf(id) != -1
             })
     });
 
@@ -132,18 +134,20 @@ function restoreState(){
 }
 
 function restoreUnexpandedState(){
-    var collapsesStates = getCollapsesStates();
+    var collapsesStates = getCollapsesStatesFromStorage();
     collapsesStates.forEach(function(item){
-        if(!item.isExpanded){
+        if(!item.isCollapsed){
             collapseElement(item.id);
         }
     })
 }
 
 function restoreExpandedState(){
-    var collapsesStates = getCollapsesStates();
+    var collapsesStates = getCollapsesStatesFromStorage();
+    if(collapsesStates.length == 0)
+        return;
     collapsesStates.forEach(function(item){
-        if(item.isExpanded){
+        if(item.isCollapsed){
             collapseElement(item.id);
         }
     })
@@ -199,4 +203,25 @@ function collapseElement(id){
 
 function expandAllChildren(id){
     //todo
+}
+
+function fixateExpandedState(){
+    var service = localStorage.getItem("service");
+    var collapsesStates = getCollapsesStatesFromPage();
+    localStorage.setItem(service + "_collapses", JSON.stringify({ids: collapsesStates}));
+}
+
+function getCollapsesStatesFromPage(){
+    var allItemsIds = getAllItemsIds();
+    var collapses = [];
+
+    allItemsIds.forEach(function(item){
+        var ulId = getUlId(item);
+
+        if (document.getElementById(ulId) != null && document.getElementById(ulId).className.search("hidden") != -1) {
+            collapses.push(item);
+        }
+    });
+
+    return collapses;
 }
