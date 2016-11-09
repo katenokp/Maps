@@ -1227,51 +1227,51 @@
 		"comment": "HotelInformationPageTests",
 		"priority": 1,
 		"weight": {
-			"done": 4,
-			"all": 8
+			"done": 14,
+			"all": 15
 		},
 		"children": [
 			{
 				"name": "Валидации",
 				"id": "id14ca07c2-4079-4767-1396-135ac9a6f8ff",
-				"isDone": false,
-				"comment": "тесты нужно обновить",
-				"priority": 1,
+				"isDone": true,
+				"comment": "HotelValidationTests",
+				"priority": 0,
 				"weight": {
-					"done": 3,
-					"all": 6
+					"done": 13,
+					"all": 13
 				},
 				"children": [
 					{
 						"name": "На недопустимое значение",
 						"id": "id325f0945-3aa0-46a1-afe5-b451b7d2803d",
-						"isDone": false,
-						"comment": "",
+						"isDone": true,
+						"comment": "HotelIllegalValueValidationTests",
 						"priority": 0,
 						"weight": {
-							"done": 1,
-							"all": 2
+							"done": 6,
+							"all": 6
 						}
 					},
 					{
 						"name": "На пустое значение",
 						"id": "idde0b064c-a920-4441-183f-8b3251cc7ccc",
-						"isDone": false,
-						"comment": "",
+						"isDone": true,
+						"comment": "HotelRequiredInformationValidationTests",
 						"priority": 0,
 						"weight": {
-							"done": 1,
-							"all": 2
+							"done": 5,
+							"all": 5
 						}
 					},
 					{
 						"name": "Остальные (на логику)",
 						"id": "id18252166-1c7c-46e7-dfdb-290ca4800de6",
-						"isDone": false,
-						"comment": "",
+						"isDone": true,
+						"comment": "HotelSenseValidationTests",
 						"priority": 0,
 						"weight": {
-							"done": 1,
+							"done": 2,
 							"all": 2
 						}
 					}
