@@ -6,8 +6,13 @@ function collapseElementAndChangeState(elementId) {
     var initialUlClass = document.getElementById(ulId).className;
     var initialMarkerClass = document.getElementById(markerId).className;
 
+    if(localStorage.getItem("found") == true){
+        fixateExpandedState();
+        localStorage.removeItem("found");
+    }
+
     var service = localStorage.getItem("service");
-    var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_collapses")).ids;
+    var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_expanded")).ids;
 
     if (initialUlClass.search("hidden") == -1) {
         document.getElementById(ulId).className += ' hidden';
@@ -19,20 +24,32 @@ function collapseElementAndChangeState(elementId) {
         collapsedElementsIds.push(listItemId);
     }
 
-    localStorage.setItem(service + "_collapses", JSON.stringify({ids: collapsedElementsIds}));
-    localStorage.setItem(service + "_listState", JSON.stringify({expanded: false, collapsed: false}))
+    var currentListState = JSON.parse(localStorage.getItem(service + "_listState"));
+    if (currentListState.collapsed || currentListState.expanded) {
+        resetCollapseAndExpandState(service);
+    } else {
+        localStorage.setItem(service + "_expanded", JSON.stringify({ids: collapsedElementsIds}));
+    }
+
 }
 
-function getCollapsesStatesFromStorage(){
+function resetCollapseAndExpandState(service){
+    localStorage.setItem(service + "_listState", JSON.stringify({expanded: false, collapsed: false}));
+    resetAllocationButton("collapseAllButton");
+    resetAllocationButton("expandAllButton");
+    localStorage.setItem(service + "_expanded", JSON.stringify({ids: getExpandStatesFromPage()}));
+}
+
+function getCollapsesStatesFromStorage() {
     var service = localStorage.getItem("service");
     var allElementsIds = getAllItemsIds();
-    var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_collapses")).ids;
-    if(collapsedElementsIds == null || allElementsIds.length == 0)
+    var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_expanded")).ids;
+    if (collapsedElementsIds == null || allElementsIds.length == 0)
         return;
     var collapsesStates = [];
 
-    allElementsIds.forEach(function(id){
-        if(document.getElementById(id+"_ChildrenUl") != null)
+    allElementsIds.forEach(function (id) {
+        if (document.getElementById(id + "_ChildrenUl") != null)
             collapsesStates.push({
                 id: id,
                 isCollapsed: collapsedElementsIds.indexOf(id) != -1
@@ -42,10 +59,10 @@ function getCollapsesStatesFromStorage(){
     return collapsesStates;
 }
 
-function getAllItemsIds(){
+function getAllItemsIds() {
     var allElements = document.getElementsByClassName("listItemId");
     var allElementsIds = [];
-    for(var i=0; i<allElements.length; i++)
+    for (var i = 0; i < allElements.length; i++)
         allElementsIds.push(allElements[i].id);
     return allElementsIds;
 }
@@ -57,7 +74,7 @@ function collapseAll() {
         var markerId = getMarkerId(liControls[i].id);
         var ulId = getUlId(liControls[i].id);
 
-        if(document.getElementById(ulId) == null)
+        if (document.getElementById(ulId) == null)
             continue;
 
         var initialUlClass = document.getElementById(ulId).className;
@@ -67,6 +84,7 @@ function collapseAll() {
             document.getElementById(markerId).className += ' close';
         }
     }
+    //changeButtonIconByClick("collapse");
 }
 
 function expandAll() {
@@ -76,7 +94,7 @@ function expandAll() {
         var ulId = getUlId(liControls[i].id);
         var markerId = getMarkerId(liControls[i].id);
 
-        if(document.getElementById(ulId) == null)
+        if (document.getElementById(ulId) == null)
             continue;
 
         var initialUlClass = document.getElementById(ulId).className;
@@ -87,16 +105,19 @@ function expandAll() {
             document.getElementById(markerId).className = initialMarkerClass.replace(' close', '');
         }
     }
+    //changeButtonIconByClick("expand");
 }
 
-function expandAllByClick(){
+function expandAllByClick() {
     var service = localStorage.getItem("service");
     var listState = JSON.parse(localStorage.getItem(service + "_listState"));
 
-    if(listState.expanded) {
+    if (listState.expanded) {
         restoreUnexpandedState();
+        resetAllocationButton("expandAllButton")
     } else {
         expandAll();
+        allocateButton("expandAllButton");
     }
     listState.expanded = !listState.expanded;
     listState.collapsed = false;
@@ -104,14 +125,16 @@ function expandAllByClick(){
     localStorage.setItem(service + "_listState", JSON.stringify(listState));
 }
 
-function collapseAllByClick(){
+function collapseAllByClick() {
     var service = localStorage.getItem("service");
     var listState = JSON.parse(localStorage.getItem(service + "_listState"));
 
-    if(listState.collapsed) {
+    if (listState.collapsed) {
         restoreExpandedState();
+        resetAllocationButton("collapseAllButton")
     } else {
         collapseAll();
+        allocateButton("collapseAllButton");
     }
     listState.collapsed = !listState.collapsed;
     listState.expanded = false;
@@ -119,41 +142,41 @@ function collapseAllByClick(){
     localStorage.setItem(service + "_listState", JSON.stringify(listState));
 }
 
-function restoreState(){
+function restoreState() {
     var service = localStorage.getItem("service");
-    var state = JSON.parse(localStorage.getItem(service+"_listState"));
-    if(state.collapsed) {
+    var state = JSON.parse(localStorage.getItem(service + "_listState"));
+    if (state.collapsed) {
         collapseAll();
         return;
     }
-    if(state.expanded) {
+    if (state.expanded) {
         expandAll();
         return;
     }
     restoreExpandedState();
 }
 
-function restoreUnexpandedState(){
+function restoreUnexpandedState() {
     var collapsesStates = getCollapsesStatesFromStorage();
-    collapsesStates.forEach(function(item){
-        if(!item.isCollapsed){
+    collapsesStates.forEach(function (item) {
+        if (!item.isCollapsed) {
             collapseElement(item.id);
         }
     })
 }
 
-function restoreExpandedState(){
+function restoreExpandedState() {
     var collapsesStates = getCollapsesStatesFromStorage();
-    if(collapsesStates.length == 0)
+    if (collapsesStates.length == 0)
         return;
-    collapsesStates.forEach(function(item){
-        if(item.isCollapsed){
+    collapsesStates.forEach(function (item) {
+        if (item.isCollapsed) {
             collapseElement(item.id);
         }
     })
 }
 
-function expandElementIfNeed(id){
+function expandElementIfNeed(id) {
     var listItemId = getNodeId(id);
     var ulId = getUlId(listItemId);
     var markerId = getMarkerId(listItemId);
@@ -169,7 +192,7 @@ function expandElementIfNeed(id){
     return false;
 }
 
-function collapseElementIfNeed(id){
+function collapseElementIfNeed(id) {
     var listItemId = getNodeId(id);
     var ulId = getUlId(listItemId);
     var markerId = getMarkerId(listItemId);
@@ -184,7 +207,7 @@ function collapseElementIfNeed(id){
     return false;
 }
 
-function collapseElement(id){
+function collapseElement(id) {
     var listItemId = getNodeId(id);
     var ulId = getUlId(listItemId);
     var markerId = getMarkerId(listItemId);
@@ -201,27 +224,76 @@ function collapseElement(id){
     }
 }
 
-function expandAllChildren(id){
+function expandAllChildren(id) {
     //todo
 }
 
-function fixateExpandedState(){
+function fixateExpandedState() {
     var service = localStorage.getItem("service");
-    var collapsesStates = getCollapsesStatesFromPage();
-    localStorage.setItem(service + "_collapses", JSON.stringify({ids: collapsesStates}));
+    var collapsesStates = getExpandStatesFromPage();
+    localStorage.setItem(service + "_expanded", JSON.stringify({ids: collapsesStates}));
 }
 
-function getCollapsesStatesFromPage(){
+function getExpandStatesFromPage() {
     var allItemsIds = getAllItemsIds();
     var collapses = [];
 
-    allItemsIds.forEach(function(item){
+    allItemsIds.forEach(function (item) {
         var ulId = getUlId(item);
 
-        if (document.getElementById(ulId) != null && document.getElementById(ulId).className.search("hidden") != -1) {
+        if (document.getElementById(ulId) != null && document.getElementById(ulId).className.search("hidden") == -1) {
             collapses.push(item);
         }
     });
 
     return collapses;
+}
+
+/*function changeButtonIconByClick(actionName) {
+    var id;
+    switch (actionName) {
+        case "collapse":
+            id = "collapseAllButton";
+            break;
+        case "expand":
+            id = "expandAllButton";
+            break;
+        default :
+            console.error("incorrect action " + actionName);
+    }
+    switchClass(id, "active");
+}*/
+
+function createListState(service){
+    if(location.href.indexOf('converter') != -1)
+        location.href = location.href.replace('converter', service);
+    localStorage.setItem("service", service);
+    if(localStorage.getItem(service + "_expanded") == null)
+        localStorage.setItem(service + "_expanded", JSON.stringify({ids : []}));
+    clearFoundResultsFromStorage();
+    if(localStorage.getItem(service + "_listState") == null)
+        localStorage.setItem(service + "_listState",JSON.stringify(
+            {
+                collapsed: false,
+                expanded: false
+            }
+        ));
+}
+
+function clearActivateClass(){ //hack
+    var state = JSON.parse(localStorage.getItem(service + "_listState"));
+    if(!state.collapsed){
+        resetAllocationButton("collapseAllButton");
+    }
+    if(!state.expanded){
+        resetAllocationButton("expandAllButton")
+    }
+}
+
+function resetAllocationButton(buttonId){
+    document.getElementById(buttonId).className = document.getElementById(buttonId).className.replace('active').trim();
+}
+
+function allocateButton(buttonId){
+    document.getElementById(buttonId).className += ' active';
 }

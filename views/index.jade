@@ -4,20 +4,8 @@ block content
     -var parsedData = JSON.stringify(data, replacer);
     script.
         var serviceName = '#{serviceName}';
-        var service = '#{service}'
-        if(location.href.indexOf('converter') != -1)
-            location.href = location.href.replace('converter', service);
-        localStorage.setItem("service", service);
-        if(localStorage.getItem(service + "_collapses") == null)
-            localStorage.setItem(service + "_collapses", JSON.stringify({ids : []}));
-        clearFoundResultsFromStorage();
-        if(localStorage.getItem(service + "_listState") == null)
-            localStorage.setItem(service + "_listState",JSON.stringify(
-                    {
-                        collapsed: false,
-                        expanded: false
-                    }
-            ));
+        var service = '#{service}';
+        createListState(service);
 
         navigator.webkitPersistentStorage.requestQuota(10*1024*1024, function (bytes) {
             window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
@@ -59,8 +47,8 @@ block content
                 .searchWrapper
                     input#Search(onkeypress="search(event)")
                     input.button.search(id='NextValueButton', type='button', value='', onclick="search()")
-                input.button.collapseAll(type='button', value='', onclick='collapseAllByClick()')
-                input.button.expandAll(type='button', value='', onclick='expandAllByClick()')
+                input#collapseAllButton.button.collapseAll(type='button', value='', onclick='collapseAllByClick()')
+                input#expandAllButton.button.expandAll(type='button', value='', onclick='expandAllByClick()')
                 input.button.edit(type='button', value='', onclick='editDataFile()')
                 input.button.saveAll(id='saveButton', name=serviceName, type='submit', value='', onclick='unmarkAllItems(); saveByButton()')
     mixin drawBlock(data)

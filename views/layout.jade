@@ -11,7 +11,7 @@ html(onclick="hideAllDropdownLists(event)")
         script(src='/js/searcher.js')
         script(src='/js/expander.js')
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
-    body(onload="restoreState()")
+    body(onload="restoreState(); clearActivateClass()")
         script.
             $(document).ready(init)
             $(window).resize(extendGrayLines)

@@ -6,6 +6,7 @@ function search(event) {
         clearFoundResult();
         return;
     }
+    resetCollapseAndExpandState(localStorage.getItem("service"));
     if (localStorage.getItem("searchValue") != null && value != localStorage.getItem("searchValue")) {
         clearFoundResult();
     }
@@ -15,9 +16,10 @@ function search(event) {
         foundElementsIds = searchAllElements(value);
         if (foundElementsIds.length == 0)
             return;
+        localStorage.setItem("found", "true");
         localStorage.setItem("foundElementsIds", JSON.stringify(foundElementsIds));
         localStorage.setItem("searchValue", value);
-        localStorage.setItem("viewedResultNumber", "0"); //todo
+        localStorage.setItem("viewedResultNumber", "0");
     } else {
         foundElementsIds = JSON.parse(localStorage.getItem("foundElementsIds"));
         restorePreviousState();
@@ -35,8 +37,9 @@ function expandFoundElement(foundElementId) {
             changedElementsIds.push(item);
         }
     });
-    document.getElementById(foundElementId).scrollIntoView();
     markFoundItem(foundElementId);
+    console.log(document.getElementById(getItemId(foundElementId)).innerHTML);
+    document.getElementById(foundElementId).scrollIntoView();
     localStorage.setItem("changedElementsIds", JSON.stringify(changedElementsIds));
 }
 
@@ -104,6 +107,7 @@ function clearFoundResultsFromStorage(){
     localStorage.removeItem("foundElementsIds");
     localStorage.removeItem("searchValue");
     localStorage.removeItem("viewedResultNumber");
+    localstorage.removeItem("found");
 }
 
 function markFoundItem(controlId) {
