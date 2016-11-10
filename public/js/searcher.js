@@ -107,7 +107,7 @@ function clearFoundResultsFromStorage(){
     localStorage.removeItem("foundElementsIds");
     localStorage.removeItem("searchValue");
     localStorage.removeItem("viewedResultNumber");
-    localstorage.removeItem("found");
+    localStorage.removeItem("found");
 }
 
 function markFoundItem(controlId) {

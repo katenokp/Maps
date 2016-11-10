@@ -6,34 +6,37 @@ function collapseElementAndChangeState(elementId) {
     var initialUlClass = document.getElementById(ulId).className;
     var initialMarkerClass = document.getElementById(markerId).className;
 
-    if(localStorage.getItem("found") == true){
+    if (localStorage.getItem("found") == true) {
         fixateExpandedState();
         localStorage.removeItem("found");
     }
 
+    var isCollapsed;
     var service = localStorage.getItem("service");
-    var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_expanded")).ids;
+    var expandedElementsIds = JSON.parse(localStorage.getItem(service + "_expanded")).ids;
 
-    if (initialUlClass.search("hidden") == -1) {
+    if (initialUlClass.search("hidden") == -1) {//collapse
         document.getElementById(ulId).className += ' hidden';
         document.getElementById(markerId).className += ' close';
-        collapsedElementsIds.splice(collapsedElementsIds.indexOf(listItemId), 1);
-    } else {
+        expandedElementsIds.splice(expandedElementsIds.indexOf(listItemId), 1);
+        isCollapsed = true;
+    } else {//expand
         document.getElementById(ulId).className = initialUlClass.replace(' hidden', '');
         document.getElementById(markerId).className = initialMarkerClass.replace(' close', '');
-        collapsedElementsIds.push(listItemId);
+        expandedElementsIds.push(listItemId);
+        isCollapsed = false;
     }
 
     var currentListState = JSON.parse(localStorage.getItem(service + "_listState"));
     if (currentListState.collapsed || currentListState.expanded) {
         resetCollapseAndExpandState(service);
     } else {
-        localStorage.setItem(service + "_expanded", JSON.stringify({ids: collapsedElementsIds}));
+        localStorage.setItem(service + "_expanded", JSON.stringify({ids: expandedElementsIds}));
     }
-
+    return isCollapsed;
 }
 
-function resetCollapseAndExpandState(service){
+function resetCollapseAndExpandState(service) {
     localStorage.setItem(service + "_listState", JSON.stringify({expanded: false, collapsed: false}));
     resetAllocationButton("collapseAllButton");
     resetAllocationButton("expandAllButton");
@@ -250,29 +253,29 @@ function getExpandStatesFromPage() {
 }
 
 /*function changeButtonIconByClick(actionName) {
-    var id;
-    switch (actionName) {
-        case "collapse":
-            id = "collapseAllButton";
-            break;
-        case "expand":
-            id = "expandAllButton";
-            break;
-        default :
-            console.error("incorrect action " + actionName);
-    }
-    switchClass(id, "active");
-}*/
+ var id;
+ switch (actionName) {
+ case "collapse":
+ id = "collapseAllButton";
+ break;
+ case "expand":
+ id = "expandAllButton";
+ break;
+ default :
+ console.error("incorrect action " + actionName);
+ }
+ switchClass(id, "active");
+ }*/
 
-function createListState(service){
-    if(location.href.indexOf('converter') != -1)
+function createListState(service) {
+    if (location.href.indexOf('converter') != -1)
         location.href = location.href.replace('converter', service);
     localStorage.setItem("service", service);
-    if(localStorage.getItem(service + "_expanded") == null)
-        localStorage.setItem(service + "_expanded", JSON.stringify({ids : []}));
+    if (localStorage.getItem(service + "_expanded") == null)
+        localStorage.setItem(service + "_expanded", JSON.stringify({ids: []}));
     clearFoundResultsFromStorage();
-    if(localStorage.getItem(service + "_listState") == null)
-        localStorage.setItem(service + "_listState",JSON.stringify(
+    if (localStorage.getItem(service + "_listState") == null)
+        localStorage.setItem(service + "_listState", JSON.stringify(
             {
                 collapsed: false,
                 expanded: false
@@ -280,20 +283,60 @@ function createListState(service){
         ));
 }
 
-function clearActivateClass(){ //hack
+function clearActivateClass() { //hack
     var state = JSON.parse(localStorage.getItem(service + "_listState"));
-    if(!state.collapsed){
+    if (!state.collapsed) {
         resetAllocationButton("collapseAllButton");
     }
-    if(!state.expanded){
+    if (!state.expanded) {
         resetAllocationButton("expandAllButton")
     }
 }
 
-function resetAllocationButton(buttonId){
+function resetAllocationButton(buttonId) {
     document.getElementById(buttonId).className = document.getElementById(buttonId).className.replace('active').trim();
 }
 
-function allocateButton(buttonId){
+function allocateButton(buttonId) {
     document.getElementById(buttonId).className += ' active';
+}
+
+function collapseOrExpandWithChildren(id, isCollapsed) {
+    var childrenIds = getChildren(getNodeId(id));
+    childrenIds.forEach(function (item) {
+        if (document.getElementById(getUlId(getNodeId(item.id))) != null) {
+            if(isCollapsed) {
+                collapseElementIfNeedAndChangeState(item.id);
+            }
+            else{
+                expandElementIfNeedAndChangeState(item.id);
+            }
+            collapseOrExpandWithChildren(item.id, isCollapsed);
+        }
+    })
+}
+
+function collapseOrExpandElementByClick(id, event) {
+    var isCollapsed = collapseElementAndChangeState(id);
+    if (event.ctrlKey) {
+        collapseOrExpandWithChildren(id, isCollapsed);
+    }
+}
+
+function collapseElementIfNeedAndChangeState(id) {
+    if (collapseElementIfNeed(id)) {
+        var service = localStorage.getItem("service");
+        var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_expanded")).ids;
+        collapsedElementsIds.splice(collapsedElementsIds.indexOf(id), 1);
+        localStorage.setItem(service + "_expanded", JSON.stringify({ids: collapsedElementsIds}));
+    }
+}
+
+function expandElementIfNeedAndChangeState(id) {
+    if (expandElementIfNeed(id)) {
+        var service = localStorage.getItem("service");
+        var collapsedElementsIds = JSON.parse(localStorage.getItem(service + "_expanded")).ids;
+        collapsedElementsIds.push(collapsedElementsIds.indexOf(id));
+        localStorage.setItem(service + "_expanded", JSON.stringify({ids: collapsedElementsIds}));
+    }
 }
