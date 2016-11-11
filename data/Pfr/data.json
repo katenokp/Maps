@@ -366,7 +366,7 @@
 		"priority": 2,
 		"weight": {
 			"done": 0,
-			"all": 336
+			"all": 327
 		},
 		"children": [
 			{
@@ -377,77 +377,9 @@
 				"priority": 0,
 				"weight": {
 					"done": 0,
-					"all": 95
+					"all": 90
 				},
 				"children": [
-					{
-						"name": "Обозначения",
-						"id": "id19158a25-076c-4ada-c255-4b19f1906de5",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 5
-						},
-						"children": [
-							{
-								"name": "Позитивный тест",
-								"id": "id1ed82301-55bd-41e3-3a05-96f102b6ddff",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
-							{
-								"name": "Негативный тест",
-								"id": "ide160c9b7-3fda-4136-5524-af3f41920466",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
-							{
-								"name": "Всплывающая ошибка",
-								"id": "ida1d6023b-57af-43e5-7e57-05fbd7e64873",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
-							{
-								"name": "Действие оператора",
-								"id": "idc71d36cc-5602-4765-964a-0afb8b0e4ab6",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
-							{
-								"name": "Установка системы по умолчанию",
-								"id": "id880d0931-b635-4dce-e7c3-22c01d951d63",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							}
-						]
-					},
 					{
 						"name": "Отображение",
 						"id": "id49646053-f323-4a10-0ece-507a9dfbff2f",
@@ -2488,7 +2420,7 @@
 				"priority": 0,
 				"weight": {
 					"done": 0,
-					"all": 64
+					"all": 62
 				},
 				"children": [
 					{
@@ -2499,31 +2431,9 @@
 						"priority": 0,
 						"weight": {
 							"done": 0,
-							"all": 7
+							"all": 5
 						},
 						"children": [
-							{
-								"name": "Позитивный тест",
-								"id": "idbfce8c1f-2ce2-4aa2-b039-80d7c765e7bf",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
-							{
-								"name": "Негативный тест",
-								"id": "idaa43b592-53a5-4dbd-e725-434ff51144d9",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
 							{
 								"name": "Всплывающая ошибка",
 								"id": "id66b263a8-e40e-4d79-614a-f2af6f5f179a",
@@ -3868,7 +3778,7 @@
 				"priority": 0,
 				"weight": {
 					"done": 0,
-					"all": 110
+					"all": 108
 				},
 				"children": [
 					{
@@ -3879,31 +3789,9 @@
 						"priority": 0,
 						"weight": {
 							"done": 0,
-							"all": 7
+							"all": 5
 						},
 						"children": [
-							{
-								"name": "Позитивный тест",
-								"id": "id23b330a6-4fbd-481d-1245-c98b798f40f8",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
-							{
-								"name": "Негативный тест",
-								"id": "id77a20e5a-33c4-4551-98ae-2efb8f6e6e2d",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 1
-								}
-							},
 							{
 								"name": "Всплывающая ошибка",
 								"id": "id392aaea1-4111-4b2d-4ed1-515b0d5fcb13",
@@ -9309,7 +9197,7 @@
 		"priority": 0,
 		"weight": {
 			"done": 0,
-			"all": 249
+			"all": 240
 		},
 		"children": [
 			{
@@ -9320,31 +9208,9 @@
 				"priority": 0,
 				"weight": {
 					"done": 0,
-					"all": 6
+					"all": 4
 				},
 				"children": [
-					{
-						"name": "Позитивный тест",
-						"id": "id4edd4c1a-186a-47b7-301f-4e4058734ab6",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
-					},
-					{
-						"name": "Негативный тест",
-						"id": "id9a76a108-c0b7-45e6-a70a-ce4b9986a823",
-						"isDone": false,
-						"comment": "",
-						"priority": 0,
-						"weight": {
-							"done": 0,
-							"all": 1
-						}
-					},
 					{
 						"name": "Всплывающая ошибка {кнопка отправки НЕАКТИВНА}",
 						"id": "id20546194-212b-4eea-fe01-2ca5d612c225",
@@ -10805,7 +10671,7 @@
 				"priority": 0,
 				"weight": {
 					"done": 0,
-					"all": 177
+					"all": 170
 				},
 				"children": [
 					{
@@ -12255,99 +12121,9 @@
 						"priority": 0,
 						"weight": {
 							"done": 0,
-							"all": 110
+							"all": 103
 						},
 						"children": [
-							{
-								"name": "Обозначения",
-								"id": "ide95ec973-2925-45bd-9b7b-b0a1f536f938",
-								"isDone": false,
-								"comment": "",
-								"priority": 0,
-								"weight": {
-									"done": 0,
-									"all": 7
-								},
-								"children": [
-									{
-										"name": "Позитивный тест",
-										"id": "id23b330a6-4fbd-481d-1245-c98b798f40f8",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									},
-									{
-										"name": "Негативный тест",
-										"id": "id77a20e5a-33c4-4551-98ae-2efb8f6e6e2d",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									},
-									{
-										"name": "Всплывающая ошибка",
-										"id": "id392aaea1-4111-4b2d-4ed1-515b0d5fcb13",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									},
-									{
-										"name": "Всплывающая подсказка",
-										"id": "id9f02a6c4-0cfe-46a6-8eb3-3506a4d92bbf",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									},
-									{
-										"name": "Действие оператора",
-										"id": "id583920ad-21e8-4c41-cb85-b052924302ba",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									},
-									{
-										"name": "Установка системы по умолчанию",
-										"id": "id8a12609e-bcf7-44c4-5a53-d5b708b48ac8",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									},
-									{
-										"name": "Это надо смотреть при проверках",
-										"id": "ideeee1264-c8c8-4a38-37be-848c3ea22fff",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									}
-								]
-							},
 							{
 								"name": "Отображение",
 								"id": "idf644aad8-9106-4ff5-1530-e79bd8322a54",
