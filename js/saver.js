@@ -25,6 +25,12 @@ function saveToFile(reqBody, replacer, callback){
             actualData = diff3.patch(actualData, patch);
 
             fs.writeFile(dataFileName, actualData.join('\n'), {"encoding": 'utf8'}, function(error){
+                var date = new Date();
+                console.log(
+                    [date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds()].join('-')
+                );
+                var dateTime = [date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds()].join('-');
+                fs.createReadStream(dataFileName).pipe(fs.createWriteStream(dataFileName.replace('.json', dateTime + '.json')));
                 if(error){
                     console.error(error);
                     return false
