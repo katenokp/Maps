@@ -11,10 +11,30 @@ function parse(data) {
         linesLevels.push(getStringLevel(line));
     });
     var result = parseAll(linesLevels);
-    return {weight: calculateWeights(result), children: result};
+    return {weight: calculateWeight(result), children: result};
 }
 
-function calculateCompleteness(data, result) {
+function calculateWeight(itemsArray, currentCommonWeight){
+    if(currentCommonWeight == undefined)
+        currentCommonWeight = {all: 0, done: 0};
+    itemsArray.forEach(function(item){
+        if(item.children == null){
+            item.weight = {all: 1, done: 0};
+        }
+        else if(item.children.length == 0){
+            item.children = undefined;
+            item.weight = {all: 1, done: 0};
+        }
+        else{
+            item.weight = calculateWeight(item.children);
+        }
+        currentCommonWeight.all += item.weight.all;
+    });
+    return currentCommonWeight;
+}
+
+
+/*function calculateCompleteness(data, result) {
 
     data.forEach(function (item) {
         result.push({
@@ -29,26 +49,24 @@ function calculateCompleteness(data, result) {
 }
 
 function sumWeights(item) {
-    if(item.children == null){
-        item.weight = {all : 1, done : 0};
-        return;
+    if (item.children == null) {
+        return {all: 1, done: 0};
     }
-    if(item.children.length == 0)
-    {
+    if (item.children.length == 0) {
         item.children = undefined;
-        item.weight = {all : 1, done : 0};
-        return;
+        return {all: 1, done: 0};
     }
-    item.weight = sumWeights(item);
+    return calculateWeights(item.children);
 }
 
 function calculateWeights(itemsArray) {
     var weight = {all: 0, done: 0};
     itemsArray.forEach(function (item) {
-        sumWeights(item);
+        var itemWeight = sumWeights(item);
+        item.weight = itemWeight;
         weight.all += item.weight.all;
     })
-}
+}*/
 
 /*function calculateCompleteness(data){
  var result = {
