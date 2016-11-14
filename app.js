@@ -50,22 +50,22 @@ app.use('/converter', bodyParser.urlencoded({
     extended: true
 }));
 
-
 app.post('/converter', function (req, res, next) {
     if (req.body.service == null) {
-        var result = JSON.stringify(parser(req.body.text), replacer, '\t');
+
+        var preparedData = prepareData(req.body.text);
+        if(preparedData == null)
+            preparedData = parser(req.body.text);
+        var result = JSON.stringify(preparedData, replacer, '\t');
         res.status = 200;
         //res.render('convert', {data: result});
         res.send(result.substr(1, result.length-2));
     }
 
     else {
-        var parsedData;
-        if (req.body.text[0] == '[' || req.body.text[0] == '{') {
-            parsedData = JSON.parse(req.body.text);
-        } else {
-            parsedData = parser(req.body.text)
-        }
+        var parsedData = prepareData(req.body.text);
+        if(parsedData == null)
+            parsedData = parser(req.body.text);
 
         var data = {
             data: parsedData,
@@ -132,5 +132,23 @@ app.use(function (err, req, res, next) {
     });
 });
 
+
+function prepareData(data){
+    if(data[0] != '[' && data[0] != '{'){
+        return null;
+    }
+    var parsedData = JSON.parse(data);
+    clearIds(parsedData);
+    return parsedData;
+}
+
+
+function clearIds(itemsArray){
+    itemsArray.forEach(function(item){
+        item.id = undefined;
+        if(item.children != undefined)
+            clearIds(item.children);
+    })
+}
 
 module.exports = app;
