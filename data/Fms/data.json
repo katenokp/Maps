@@ -296,7 +296,7 @@
 		"priority": 2,
 		"weight": {
 			"done": 36,
-			"all": 63
+			"all": 67
 		},
 		"children": [
 			{
@@ -526,7 +526,7 @@
 				"priority": 1,
 				"weight": {
 					"done": 13,
-					"all": 37
+					"all": 41
 				},
 				"children": [
 					{
@@ -537,7 +537,7 @@
 						"priority": 0,
 						"weight": {
 							"done": 5,
-							"all": 22
+							"all": 26
 						},
 						"children": [
 							{
@@ -703,7 +703,7 @@
 								]
 							},
 							{
-								"name": "Импорт данных из файлов (csv и xml)",
+								"name": "Подтягивание данных при импорте",
 								"id": "id7435a4fe-e657-4c52-8c4b-912cc6fcd913",
 								"isDone": false,
 								"comment": "",
@@ -924,12 +924,82 @@
 										]
 									}
 								]
+							},
+							{
+								"name": "Форматы импорта",
+								"id": "id9a5a65bf-3011-445a-741c-81ed95a718bj",
+								"isDone": false,
+								"comment": "",
+								"priority": 0,
+								"weight": {
+									"done": 0,
+									"all": 4
+								},
+								"children": [
+									{
+										"name": "CSV",
+										"id": "id9a5a65bf-3011-445a-741c-81ed95a718bp",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 2
+										},
+										"children": [
+											{
+												"name": "Версия 1.0",
+												"id": "id9a5a65bf-3011-445a-741c-81ed95a718bv",
+												"isDone": false,
+												"comment": "",
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 1
+												}
+											},
+											{
+												"name": "Версия 2.0",
+												"id": "id9a5a65bf-3011-445a-741c-81ed95a728bb",
+												"isDone": false,
+												"comment": "",
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 1
+												}
+											}
+										]
+									},
+									{
+										"name": "XML",
+										"id": "id9a5a65bf-3011-445a-741c-81ed95a718bo",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									},
+									{
+										"name": "Zip-архив",
+										"id": "id9a5a65bf-3011-445a-741c-81ed95a718bf",
+										"isDone": false,
+										"comment": "",
+										"priority": 0,
+										"weight": {
+											"done": 0,
+											"all": 1
+										}
+									}
+								]
 							}
 						]
 					},
 					{
 						"name": "Отправка",
-						"id": "id9a5a65bf-3011-445a-741c-81ed95a718bf",
+						"id": "id9a5a65bf-3012-445a-741c-81ed95a718bf",
 						"isDone": false,
 						"comment": "нуждается в рефакторинге",
 						"priority": 0,
@@ -1050,10 +1120,10 @@
 		"id": "id4a3a7ab1-eac0-4a7a-252d-e6d951634975",
 		"isDone": true,
 		"comment": "",
-		"priority": 0,
+		"priority": 2,
 		"weight": {
 			"done": 87,
-			"all": 87
+			"all": 92
 		},
 		"children": [
 			{
@@ -1064,7 +1134,7 @@
 				"priority": 0,
 				"weight": {
 					"done": 53,
-					"all": 53
+					"all": 58
 				},
 				"children": [
 					{
@@ -1128,11 +1198,11 @@
 						"name": "Контент страницы",
 						"id": "id1dc9e6cd-9eaa-4c6c-d1ea-8940985091f9",
 						"isDone": true,
-						"comment": "FnPageContentsTests.cs",
+						"comment": "K_Auto-538 FnPageContentsTests.cs",
 						"priority": 0,
 						"weight": {
 							"done": 25,
-							"all": 25
+							"all": 30
 						}
 					}
 				]
