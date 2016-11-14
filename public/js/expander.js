@@ -118,6 +118,12 @@ function expandAllByClick() {
     if (listState.expanded) {
         restoreUnexpandedState();
         resetAllocationButton("expandAllButton")
+    } else if (listState.collapsed) {
+        listState.collapsed = false;
+        resetAllocationButton("collapseAllButton");
+        fixateExpandedState();
+        expandAll();
+        allocateButton("expandAllButton");
     } else {
         expandAll();
         allocateButton("expandAllButton");
@@ -135,6 +141,12 @@ function collapseAllByClick() {
     if (listState.collapsed) {
         restoreExpandedState();
         resetAllocationButton("collapseAllButton")
+    } else if (listState.expanded) {
+        listState.expanded = false;
+        resetAllocationButton("expandAllButton");
+        fixateExpandedState();
+        collapseAll();
+        allocateButton("collapseAllButton");
     } else {
         collapseAll();
         allocateButton("collapseAllButton");
@@ -305,10 +317,10 @@ function collapseOrExpandWithChildren(id, isCollapsed) {
     var childrenIds = getChildren(getNodeId(id));
     childrenIds.forEach(function (item) {
         if (document.getElementById(getUlId(getNodeId(item.id))) != null) {
-            if(isCollapsed) {
+            if (isCollapsed) {
                 collapseElementIfNeedAndChangeState(item.id);
             }
-            else{
+            else {
                 expandElementIfNeedAndChangeState(item.id);
             }
             collapseOrExpandWithChildren(item.id, isCollapsed);
