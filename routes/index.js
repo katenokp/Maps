@@ -34,7 +34,7 @@ router.get('/converter', function(req, res, next){
                 }
                 else {
                     if(needNormalization()){
-                        data = JSON.stringify(normalize(data));
+                        data = JSON.stringify(normalize.normalizeData(data));
                     }
                     res.render('converter', {service: service, data: data});
                 }
@@ -88,7 +88,7 @@ function buildPage(service, res){
                 else{
                     var parsedData, weight;
                     if(needNormalization()){
-                        parsedData = normalize(data);
+                        parsedData = normalize.normalizeData(data);
                         weight = calculateRootCompleteness(parsedData);
                     } else {
                         parsedData = JSON.parse(data);
@@ -129,75 +129,7 @@ function calculateRootCompleteness(data){
     return weight;
 }
 
-function calculateCompleteness(data, result){
 
-    data.forEach(function(item) {
-        result.push({
-            id: item.id,
-            weight: normalizeWeight(item)
-        });
-        if(item.children != null){
-            calculateCompleteness(item.children, result);
-        }
-    });
-}
-
-/*function calculateCompleteness(data){
-    var result = {
-        all: 0,
-        done: 0
-    };
-    if(data.children == null){
-        if(data.weight == null){
-             result = {
-                all: 1,
-                done: data.isDone ? 1: 0
-            };
-
-        } else{
-            result = data.weight;
-        }
-    } else{
-        data.children.forEach(function(child){
-            var childrenWeight = calculateCompleteness(child);
-            result = {
-                all: result.all + childrenWeight.all,
-                done: result.done + childrenWeight.done
-            }
-        })
-    }
-    console.log("weight for %s: %d/%d", data.id, result.done, result.all);
-    return result;
-
-}*/
-
-function normalizeWeight(item){
-    var weight;
-    var children = item.children;
-    if(children == null){
-        if(item.weight == null){
-            weight = {
-                all: 1,
-                done: item.isDone ? 1: 0
-            };
-
-        } else{
-            weight = item.weight;
-        }
-    } else{
-        var doneChildrenCount = 0;
-        children.forEach(function(child){
-            if(child.isDone)
-                doneChildrenCount++;
-        });
-        weight = {
-            all: children.length,
-            done: doneChildrenCount
-        };
-    }
-    console.log("weight for %s: %d/%d", item.id, weight.done, weight.all);
-    return weight;
-}
 
 /* GET home page. */
 /*router.get('/', function(req, res, next) {

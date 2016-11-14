@@ -53,10 +53,10 @@ app.use('/converter', bodyParser.urlencoded({
 
 app.post('/converter', function (req, res, next) {
     if (req.body.service == null) {
-        var result = JSON.stringify(parser(req.body.text), ["name", "children"], '\t');
+        var result = JSON.stringify(parser(req.body.text), replacer, '\t');
         res.status = 200;
         //res.render('convert', {data: result});
-        res.send(result);
+        res.send(result.substr(1, result.length-2));
     }
 
     else {
