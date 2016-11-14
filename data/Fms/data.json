@@ -314,7 +314,7 @@
 						"name": "Футер",
 						"id": "idf63f7135-33d3-469c-1047-71fc6ad6c9fc",
 						"isDone": true,
-						"comment": "MainPageFooterContentTests.cs",
+						"comment": "MpFooterContentTests.cs",
 						"priority": 0,
 						"weight": {
 							"done": 3,
@@ -325,7 +325,7 @@
 						"name": "Шапка",
 						"id": "id099621d2-1790-477e-df4e-ee1fd892dc09",
 						"isDone": true,
-						"comment": "MainPageHeaderContentTests.cs",
+						"comment": "MpHeaderContentTests.cs",
 						"priority": 0,
 						"weight": {
 							"done": 3,
@@ -347,7 +347,7 @@
 								"name": "Пэйджинг",
 								"id": "id10a7d6a7-30f5-477a-f92e-9c2217246302",
 								"isDone": true,
-								"comment": "MainPagePagingTests.cs",
+								"comment": "MpPagingTests.cs",
 								"priority": 0,
 								"weight": {
 									"done": 3,
@@ -358,7 +358,7 @@
 								"name": "Блок уведомления",
 								"id": "id43caf35f-910b-422e-2d2c-b7af4ef1c78e",
 								"isDone": true,
-								"comment": "NotificationRowTests.cs",
+								"comment": "MpNotificationRowTests.cs",
 								"priority": 0,
 								"weight": {
 									"done": 6,
@@ -369,7 +369,7 @@
 										"name": "Контент",
 										"id": "id69094b56-c9bc-484d-0eea-6dec3753885e",
 										"isDone": true,
-										"comment": "TestNotificationRowContent, TestMainPageNotificationStatuses",
+										"comment": "TestNotificationRowContent.cs, TestMainPageNotificationStatuses.cs",
 										"priority": 0,
 										"weight": {
 											"done": 2,
@@ -380,7 +380,7 @@
 										"name": "Функционал",
 										"id": "idc9c8192a-c2c2-4e59-71a3-549abe3d46aa",
 										"isDone": true,
-										"comment": "NotificationRowTests.TestAction, ",
+										"comment": "TestAction.cs",
 										"priority": 0,
 										"weight": {
 											"done": 4,
@@ -450,7 +450,7 @@
 								"name": "Фильтры",
 								"id": "id3a053920-0ee3-4200-999a-cd60e5f67992",
 								"isDone": true,
-								"comment": "NotificationSelectionAndFilterTests.cs",
+								"comment": "MpSelectionAndFilterTests",
 								"priority": 0,
 								"weight": {
 									"done": 3,
@@ -461,7 +461,7 @@
 								"name": "Выборки",
 								"id": "id2ba8e079-9a94-40a3-a81e-b15c9656d986",
 								"isDone": true,
-								"comment": "NotificationSelectionAndFilterTests.cs",
+								"comment": "MpSelectionAndFilterTests",
 								"priority": 0,
 								"weight": {
 									"done": 2,
@@ -472,7 +472,7 @@
 								"name": "Пустой список",
 								"id": "id1a29edb2-b650-45eb-d017-58d504dfc63b",
 								"isDone": true,
-								"comment": "MainPageContentWithoutItemsTests",
+								"comment": "MpEmptyPageTests.cs",
 								"priority": 0,
 								"weight": {
 									"done": 2,
@@ -533,7 +533,7 @@
 						"name": "Импорт",
 						"id": "id2542037f-90db-46dc-94be-884e5502ca57",
 						"isDone": false,
-						"comment": "",
+						"comment": "ImportTests",
 						"priority": 0,
 						"weight": {
 							"done": 5,
@@ -1119,7 +1119,7 @@
 		"name": "Уведомления",
 		"id": "id4a3a7ab1-eac0-4a7a-252d-e6d951634975",
 		"isDone": true,
-		"comment": "",
+		"comment": "FnPageTests, RnPageTests",
 		"priority": 2,
 		"weight": {
 			"done": 87,
@@ -1130,7 +1130,7 @@
 				"name": "Иностранный гражданин",
 				"id": "idcdf08d38-66b9-464b-9147-e2d0d89182bc",
 				"isDone": true,
-				"comment": "ForeignNotificationPageTests",
+				"comment": "FnPageTests",
 				"priority": 0,
 				"weight": {
 					"done": 53,
@@ -1211,7 +1211,7 @@
 				"name": "Гражданин РФ",
 				"id": "idac36a287-2de1-4b41-8801-07d4dc002c02",
 				"isDone": true,
-				"comment": "RussianNotificationPageTests",
+				"comment": "RnPageTests",
 				"priority": 0,
 				"weight": {
 					"done": 34,
@@ -1294,7 +1294,7 @@
 		"name": "Реквизиты организации",
 		"id": "idc22ff5ce-db9a-45e9-c73b-6559810b6d85",
 		"isDone": false,
-		"comment": "HotelInformationPageTests",
+		"comment": "HotelPageTests",
 		"priority": 1,
 		"weight": {
 			"done": 14,
@@ -1375,7 +1375,7 @@
 				"name": "Отображение иконки конверта",
 				"id": "id3de5c803-e1dd-4da4-fe7d-36f9c491fbeb",
 				"isDone": true,
-				"comment": "TestNewsEnvelopeIconVisibility",
+				"comment": "TestNewsEnvelopeIconVisibility.cs",
 				"priority": 0,
 				"weight": {
 					"done": 1,
