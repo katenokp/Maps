@@ -55,8 +55,8 @@
 										},
 										"children": [
 											{
-												"name": "Вывалился справочник",
-												"id": "id30f31e13-9541-4262-a360-27b99325ce6b",
+												"name": "Проверка валидации _Заполните под УПФР_",
+												"id": "id77a6dc5c-e08a-401c-b098-fd515b3f83cb",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -66,31 +66,7 @@
 												}
 											},
 											{
-												"name": "Не вводим ничего и убираем фокус",
-												"id": "id77a6dc5c-e08a-401c-b098-fd515b3f83cb",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												},
-												"children": [
-													{
-														"name": "Заполните код УПФР",
-														"id": "id9ef75ccc-49a8-479b-d572-bfd1c3652746",
-														"isDone": false,
-														"comment": "",
-														"priority": 0,
-														"weight": {
-															"done": 0,
-															"all": 1
-														}
-													}
-												]
-											},
-											{
-												"name": "Автокомплит - по коду УПФР и по названию.",
+												"name": "Проверка автокомплита",
 												"id": "id07d1a458-4fdc-4f2a-a856-f305fbbac50e",
 												"isDone": false,
 												"comment": "",
@@ -101,117 +77,8 @@
 												},
 												"children": [
 													{
-														"name": "Частичный ввод верного кода УПФР",
+														"name": "Частичный ввод верного кода УПФР - подтягивается значение целиком",
 														"id": "idc816c485-7e03-414e-9261-a7a4d595f3b6",
-														"isDone": false,
-														"comment": "",
-														"priority": 0,
-														"weight": {
-															"done": 0,
-															"all": 1
-														},
-														"children": [
-															{
-																"name": "подтягивается все значение целиком",
-																"id": "idb5e75d99-0039-4c62-90f0-6ccb105f7da1",
-																"isDone": false,
-																"comment": "",
-																"priority": 0,
-																"weight": {
-																	"done": 0,
-																	"all": 1
-																}
-															}
-														]
-													},
-													{
-														"name": "Частичный ввод верного названия УПФР",
-														"id": "ide499ad8f-79b3-4283-267a-14816da2a2a3",
-														"isDone": false,
-														"comment": "",
-														"priority": 0,
-														"weight": {
-															"done": 0,
-															"all": 1
-														},
-														"children": [
-															{
-																"name": "подтягивается все значение целиком",
-																"id": "id98245f39-769e-45fa-1beb-bdc714ac97c7",
-																"isDone": false,
-																"comment": "",
-																"priority": 0,
-																"weight": {
-																	"done": 0,
-																	"all": 1
-																}
-															}
-														]
-													},
-													{
-														"name": "Ввод вручную полного названия из выпадающего справочника",
-														"id": "id2b9203ec-72de-42ab-920e-22003d4d2e4c",
-														"isDone": false,
-														"comment": "",
-														"priority": 0,
-														"weight": {
-															"done": 0,
-															"all": 1
-														},
-														"children": [
-															{
-																"name": "выбралось то что надо",
-																"id": "id406ba6cc-6d20-4356-6c3d-62c56db7d74d",
-																"isDone": false,
-																"comment": "",
-																"priority": 0,
-																"weight": {
-																	"done": 0,
-																	"all": 1
-																}
-															}
-														]
-													},
-													{
-														"name": "Выбираем значение из справочника",
-														"id": "id655842c9-e385-4008-ce7a-6313a82f6094",
-														"isDone": false,
-														"comment": "",
-														"priority": 0,
-														"weight": {
-															"done": 0,
-															"all": 1
-														},
-														"children": [
-															{
-																"name": "выбралось то что надо",
-																"id": "idc966499f-0b39-43be-abef-5841df9bc39e",
-																"isDone": false,
-																"comment": "",
-																"priority": 0,
-																"weight": {
-																	"done": 0,
-																	"all": 1
-																}
-															}
-														]
-													}
-												]
-											},
-											{
-												"name": "Ввод названия не из справочника {или значение из справочника, но УПФР не активен }",
-												"id": "id51e28746-c727-4b8d-10e1-0f1b93a0bbed",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 2
-												},
-												"children": [
-													{
-														"name": "сбрасываем значение при потере полем фокуса",
-														"id": "idf00ed652-e80b-4a08-327c-32c42488072d",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -221,8 +88,30 @@
 														}
 													},
 													{
-														"name": "УПФР с таким кодом не найден в справочнике",
-														"id": "id91817c95-b74d-4e83-33af-ffb11ac7ff82",
+														"name": "Частичный ввод верного названия УПФР - подтягивается значение целиком",
+														"id": "ide499ad8f-79b3-4283-267a-14816da2a2a3",
+														"isDone": false,
+														"comment": "",
+														"priority": 0,
+														"weight": {
+															"done": 0,
+															"all": 1
+														}
+													},
+													{
+														"name": "Значение из выпадающего справочника",
+														"id": "id655842c9-e385-4008-ce7a-6313a82f6094",
+														"isDone": false,
+														"comment": "",
+														"priority": 0,
+														"weight": {
+															"done": 0,
+															"all": 1
+														}
+													},
+													{
+														"name": "Ввод значения не из справочника - значение сбрасывается при потере полем фокуса. Ошибка _Заполните код УПФР_",
+														"id": "ide401cd76-6339-4841-5bc8-19c93b378ee9",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -243,8 +132,82 @@
 										"priority": 0,
 										"weight": {
 											"done": 0,
-											"all": 1
-										}
+											"all": 7
+										},
+										"children": [
+											{
+												"name": "Проверка появления поля УПФР для пенсионных дел (префикс в настройке pensionPfrPrefixes",
+												"id": "id79430f5a-733f-47e5-c3bc-16f3d7b09722",
+												"isDone": false,
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 1
+												}
+											},
+											{
+												"name": "Отсутствие валидаций на заполнение кода для пенсионных дел",
+												"id": "idcf7ff9f5-b0c6-4524-ec18-88d22ef4a32d",
+												"isDone": false,
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 1
+												}
+											},
+											{
+												"name": "Проверка автокомплита",
+												"id": "id561011af-ce3c-4167-8077-720f9e206288",
+												"isDone": false,
+												"priority": 0,
+												"weight": {
+													"done": 0,
+													"all": 4
+												},
+												"children": [
+													{
+														"name": "Частичный ввод верного кода УПФР для пенсионных дел - подтягивается значение",
+														"id": "id155dfce7-1528-4816-b684-c0bfb0ade951",
+														"isDone": false,
+														"priority": 0,
+														"weight": {
+															"done": 0,
+															"all": 1
+														}
+													},
+													{
+														"name": "Частичный ввод верного названия УПФР для пенсионных дел - подтягивается значение",
+														"id": "idb14a2b7d-0426-481d-583c-7f31a3cf7053",
+														"isDone": false,
+														"priority": 0,
+														"weight": {
+															"done": 0,
+															"all": 1
+														}
+													},
+													{
+														"name": "Значение из выпадающего справочника",
+														"id": "id346afecb-76d2-426f-8911-e1515c1c68e2",
+														"isDone": false,
+														"priority": 0,
+														"weight": {
+															"done": 0,
+															"all": 1
+														}
+													},
+													{
+														"name": "Ввод значения не из справочника - значение сбрасывается",
+														"id": "id8446df51-b949-4cb5-b0ee-8cd1072572c6",
+														"isDone": false,
+														"priority": 0,
+														"weight": {
+															"done": 0,
+															"all": 1
+														}
+													}
+												]
+											}
+										]
 									},
 									{
 										"name": "Тест 3. Заполнение Рег.инфы. Поле Регистрационный номер",
@@ -289,12 +252,12 @@
 								"priority": 2,
 								"weight": {
 									"done": 0,
-									"all": 10
+									"all": 9
 								},
 								"children": [
 									{
 										"name": "Тест 6. Проверка заполненности рег.информации",
-										"id": "id73e3e6b4-3ef5-457e-5080-3d7d20cbd81e",
+										"id": "id7b141ee4-1df7-450f-b040-a4413a7dba5f",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -305,7 +268,7 @@
 									},
 									{
 										"name": "Тест 7. Проверка совпадения рег.номеров",
-										"id": "id610bb205-b91e-4c60-ad65-5d6742e5b6f3",
+										"id": "idfc44e4a3-8128-4256-9e88-8c7addd71d2c",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -316,7 +279,7 @@
 									},
 									{
 										"name": "Тест 8. Проверка действительности сертификата",
-										"id": "id78453612-acf9-4e18-8aff-65af0edb02f8",
+										"id": "id93468bfe-da6f-4d96-62b9-32410dabf6c0",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -326,8 +289,8 @@
 										}
 									},
 									{
-										"name": "Тест 9. Проверка заполненности кода УПФР для пенсионных дел.",
-										"id": "idbb870e13-09f5-43c5-622f-ed1583f04464",
+										"name": "Тест 9. Проверка заполненности кода УПФР для пенсионных дел",
+										"id": "iddb4886d0-9cea-44d1-0423-465d534c3937",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -338,7 +301,7 @@
 									},
 									{
 										"name": "Тест 10. Проверка активности кода УПФР",
-										"id": "idb3186271-4e4b-465f-1273-a80f058198a0",
+										"id": "id9bef7563-c4e0-43e1-17fb-d865ab96d1ae",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -348,8 +311,8 @@
 										}
 									},
 									{
-										"name": "Тест 11. Проверка активности кода УПРФ для пенсионных дел",
-										"id": "idd1260010-cfbc-454b-bb75-4e4d825a9a42",
+										"name": "Тест 11. Проверка активности кода УПРФ для пенсионных дел ",
+										"id": "id19c18d6b-97a7-4997-0f57-390bb7fbeb6c",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -360,7 +323,7 @@
 									},
 									{
 										"name": "Тест 12. Проверка совпадения кодов УПФР",
-										"id": "id886e7589-639e-4d42-d320-f839f9f086bf",
+										"id": "id157b3029-d22a-492e-ea6a-2f7d2502ab6d",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -370,8 +333,8 @@
 										}
 									},
 									{
-										"name": "Тест 13. Проверка наличия других ошибок в рег.инфе",
-										"id": "id34201b92-ac94-4942-73e3-6b3103750a95",
+										"name": "Тест 13. Проверка активности учетной записи ",
+										"id": "ideb9747af-e7da-4add-882a-43eaa817b832",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -381,19 +344,8 @@
 										}
 									},
 									{
-										"name": "Тест 14. Проверка активности учетной записи",
-										"id": "id4e3c994f-9532-4fff-e25e-463ea3a6cbba",
-										"isDone": false,
-										"comment": "",
-										"priority": 0,
-										"weight": {
-											"done": 0,
-											"all": 1
-										}
-									},
-									{
-										"name": "Тест 15. Проверка тестового УПФР",
-										"id": "id0290a433-d6bb-4875-21b7-9510458d4f05",
+										"name": "Тест 14. Проверка тестового УПФР",
+										"id": "id5058f209-4ec6-4516-4c1f-73f5a3e7a956",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
