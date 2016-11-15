@@ -1,6 +1,10 @@
 function validate() {
     var service = document.forms['converterForm'].elements['service'].value;
     var textField = document.getElementById('converterTextField');
+    var checkbox = document.getElementById('listItemId_Checkbox');
+    if(service != '' && !checkbox.checked){
+        service = '';
+    }
     if (service != '' && (textField.value[0]=='[' || textField.value[0]=='{' )) {
 
         try {
@@ -47,6 +51,11 @@ function setService(service, data) {
         document.getElementById("serviceNameRadioButton_" + service).checked = true;
         document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
     }
+}
+function resetServiceInConverter(){
+    ['ndfl', 'fss', 'pfr', 'kopf', 'fms', 'test'].forEach(function(item){
+        document.getElementById('serviceNameRadioButton_' + item).checked = false;
+    })
 }
 
 function goToService(serviceName) {

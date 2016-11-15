@@ -8,7 +8,7 @@ html
        form.converterForm#converterForm(action="/converter", method="POST", onsubmit="submit()")
            textarea#converterTextField(type="text", name="text")
            .converterSettingsWrapper
-               input#listItemId_Checkbox(type="checkbox")
+               input#listItemId_Checkbox(type="checkbox", onchange="resetServiceInConverter()")
                label(for="listItemId_Checkbox") Перезаписать данные
                br
                .servicesBtns
