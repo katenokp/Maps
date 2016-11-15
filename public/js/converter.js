@@ -3,7 +3,7 @@ function validate() {
     var textField = document.getElementById('converterTextField');
     var checkbox = document.getElementById('listItemId_Checkbox');
     if(service != '' && !checkbox.checked){
-        service = '';
+        document.getElementById('serviceNameRadioButton_' + service.toLowerCase()).checked = false;
     }
     if (service != '' && (textField.value[0]=='[' || textField.value[0]=='{' )) {
 
@@ -56,6 +56,12 @@ function resetServiceInConverter(){
     ['ndfl', 'fss', 'pfr', 'kopf', 'fms', 'test'].forEach(function(item){
         document.getElementById('serviceNameRadioButton_' + item).checked = false;
     })
+}
+
+function resetServiceInConverter(){
+    /*['ndfl', 'fss', 'pfr', 'kopf', 'fms', 'test'].forEach(function(item){
+        document.getElementById('serviceNameRadioButton_' + item).checked = false;
+    })*/
 }
 
 function goToService(serviceName) {

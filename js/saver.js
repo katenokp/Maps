@@ -35,6 +35,12 @@ function saveToFile(reqBody, replacer, callback){
                     console.error(error);
                     return false
                 } else{
+                    var date = new Date();
+                    console.log(
+                        [date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds()].join('-')
+                    );
+                    var dateTime = [date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds()].join('-');
+                    fs.createReadStream(dataFileName).pipe(fs.createWriteStream(dataFileName.replace('.json', dateTime + '.json')));
                     console.log("New data saved to file %s", dataFileName);
                     if(callback!=null)
                         callback();
