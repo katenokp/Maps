@@ -53,7 +53,7 @@ app.use('/converter', bodyParser.urlencoded({
 app.post('/converter', function (req, res, next) {
     if (req.body.service == null) {
 
-        var preparedData = prepareData(req.body.text);
+        var preparedData = prepareData(req.body.text, true);
         if(preparedData == null)
             preparedData = parser(req.body.text);
         var result = JSON.stringify(preparedData, replacer, '\t');
@@ -63,7 +63,7 @@ app.post('/converter', function (req, res, next) {
     }
 
     else {
-        var parsedData = prepareData(req.body.text);
+        var parsedData = prepareData(req.body.text, false);
         if(parsedData == null)
             parsedData = parser(req.body.text);
 
@@ -133,12 +133,13 @@ app.use(function (err, req, res, next) {
 });
 
 
-function prepareData(data){
+function prepareData(data, needClearIds){
     if(data[0] != '[' && data[0] != '{'){
         return null;
     }
     var parsedData = JSON.parse(data);
-    clearIds(parsedData);
+    if(needClearIds)
+        clearIds(parsedData);
     return parsedData;
 }
 

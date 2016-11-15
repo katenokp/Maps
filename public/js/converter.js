@@ -63,11 +63,6 @@ function resetServiceInConverter(){
     })
 }
 
-function resetServiceInConverter(){
-    /*['ndfl', 'fss', 'pfr', 'kopf', 'fms', 'test'].forEach(function(item){
-        document.getElementById('serviceNameRadioButton_' + item).checked = false;
-    })*/
-}
 
 function goToService(serviceName) {
     //setTimeout(function(serviceName){
