@@ -49,7 +49,12 @@ function setService(service, data) {
     if (service != 'null') {
         document.getElementById("listItemId_Checkbox").checked = true;
         document.getElementById("serviceNameRadioButton_" + service).checked = true;
-        document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
+        try{
+            document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
+        } catch (error){
+            document.getElementById("converterTextField").value = data;
+            alert(error.message);
+        }
     }
 }
 function resetServiceInConverter(){
