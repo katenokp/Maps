@@ -52,8 +52,13 @@ function setService(service, data) {
         try{
             document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
         } catch (error){
-            document.getElementById("converterTextField").value = data;
-            alert(error.message);
+            data.replace(/\t/g, '');
+            try{
+                document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
+            } catch (error) {
+                document.getElementById("converterTextField").value = data;
+                alert(error.message);
+            }
         }
     }
 }
@@ -62,7 +67,6 @@ function resetServiceInConverter(){
         document.getElementById('serviceNameRadioButton_' + item).checked = false;
     })
 }
-
 
 function goToService(serviceName) {
     //setTimeout(function(serviceName){
