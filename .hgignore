@@ -3,3 +3,4 @@ syntax: glob
 data/*
 testServiceData/
 serviceData/
+bin/settings.json

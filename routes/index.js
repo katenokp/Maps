@@ -5,6 +5,7 @@ var path = require('path');
 var normalize = require('../js/prepareData');
 var serviceName = require('../servicesNames');
 var replacer = require('../js/replacerForJSON');
+var settings = require('../bin/settings.json');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -27,7 +28,8 @@ router.get('/converter', function(req, res, next){
     if(service == null) {
         res.render('converter', {service: service, data: null});
     } else {
-        var dataFileName = path.join(__dirname, '../data/' + service + '/data.json');
+        //var dataFileName = path.join(__dirname, '../data/' + service + '/data.json');
+        var dataFileName = path.join(settings.dataFolderPath, service, 'data.json');
         fs.readFile(dataFileName, 'utf8', function (err, data) {
                 if (err) {
                     throw err;
@@ -73,8 +75,10 @@ router.get('/fms', function(req, res, next) {
 })*/
 
 function buildPage(service, res){
-    var commonInformationFileName = path.join(__dirname,'../data/' + service + '/commonInformation.json');
-    var dataFileName = path.join(__dirname,'../data/' + service + '/data.json');
+    var commonInformationFileName = path.join(settings.dataFolderPath, service, 'commonInformation.json');
+    //var commonInformationFileName = path.join(__dirname,'../data/' + service + '/commonInformation.json');
+    //var dataFileName = path.join(__dirname,'../data/' + service + '/data.json');
+    var dataFileName = path.join(settings.dataFolderPath, service, 'data.json');
 
     fs.readFile(dataFileName, 'utf8', function(err, data){
         if(err){

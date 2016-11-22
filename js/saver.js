@@ -1,12 +1,15 @@
 var fs = require('fs');
 var path = require('path');
 var diff3 = require('node-diff3').diff;
+var settings = require('../bin/settings.json');
 
 function saveToFile(reqBody, replacer, callback){
     var serviceName = reqBody.service;
 
-    var dataFileName = path.join("./data/" + (serviceName + "/data.json")); //todo разобраться с правильным путём
-    var commonInformationFileName = path.join("./data/" + (serviceName + "/commonInformation.json"));
+    var dataFileName = path.join(settings.dataFolderPath, serviceName, 'data.json');
+    //var dataFileName = path.join("./data/" + (serviceName + "/data.json"));
+    //var commonInformationFileName = path.join("./data/" + (serviceName + "/commonInformation.json"));
+    var commonInformationFileName = path.join(settings.dataFolderPath, serviceName, "commonInformation.json");
 
     fs.readFile(dataFileName, 'utf8', function(error, actualDataFile){
         if(error)
@@ -35,11 +38,11 @@ function saveToFile(reqBody, replacer, callback){
                     console.error(error);
                     return false
                 } else{
-                    var date = new Date();
+                    date = new Date();
                     console.log(
                         [date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds()].join('-')
                     );
-                    var dateTime = [date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds()].join('-');
+                    dateTime = [date.getMonth(), date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds()].join('-');
                     fs.createReadStream(dataFileName).pipe(fs.createWriteStream(dataFileName.replace('.json', dateTime + '.json')));
                     console.log("New data saved to file %s", dataFileName);
                     if(callback!=null)
