@@ -9678,8 +9678,8 @@
 		"comment": "",
 		"priority": 0,
 		"weight": {
-			"done": 57,
-			"all": 106
+			"done": 67,
+			"all": 107
 		},
 		"children": [
 			{
@@ -9689,8 +9689,8 @@
 				"comment": "",
 				"priority": 0,
 				"weight": {
-					"done": 55,
-					"all": 104
+					"done": 65,
+					"all": 105
 				},
 				"children": [
 					{
@@ -10204,7 +10204,7 @@
 						"comment": "",
 						"priority": 0,
 						"weight": {
-							"done": 4,
+							"done": 8,
 							"all": 17
 						},
 						"children": [
@@ -10250,7 +10250,7 @@
 								"comment": "",
 								"priority": 0,
 								"weight": {
-									"done": 2,
+									"done": 6,
 									"all": 15
 								},
 								"children": [
@@ -10261,29 +10261,29 @@
 										"comment": "",
 										"priority": 0,
 										"weight": {
-											"done": 1,
+											"done": 3,
 											"all": 7
 										},
 										"children": [
 											{
 												"name": "Входящие письма",
 												"id": "id4d3991c1-6b1b-4a62-5f27-a5478e44acdb",
-												"isDone": false,
+												"isDone": true,
 												"comment": "",
 												"priority": 0,
 												"weight": {
-													"done": 0,
+													"done": 1,
 													"all": 1
 												}
 											},
 											{
 												"name": "Входящие ретроконверсии",
 												"id": "ida4f59acb-1972-43de-ef7c-45f6a6c3db8b",
-												"isDone": false,
+												"isDone": true,
 												"comment": "",
 												"priority": 0,
 												"weight": {
-													"done": 0,
+													"done": 1,
 													"all": 1
 												}
 											},
@@ -10351,29 +10351,29 @@
 										"comment": "",
 										"priority": 0,
 										"weight": {
-											"done": 1,
+											"done": 3,
 											"all": 7
 										},
 										"children": [
 											{
 												"name": "Входящие письма",
 												"id": "idbd4cd601-4364-4638-0bd8-f7e7f34a34ee",
-												"isDone": false,
+												"isDone": true,
 												"comment": "",
 												"priority": 0,
 												"weight": {
-													"done": 0,
+													"done": 1,
 													"all": 1
 												}
 											},
 											{
 												"name": "Входящие ретроконверсии",
 												"id": "id04969ebd-77d4-4e09-b383-31838a629d11",
-												"isDone": false,
+												"isDone": true,
 												"comment": "",
 												"priority": 0,
 												"weight": {
-													"done": 0,
+													"done": 1,
 													"all": 1
 												}
 											},
@@ -10704,44 +10704,44 @@
 					{
 						"name": "5 - Своя организация - чужой серт",
 						"id": "id168b1988-8d48-4ce4-45b6-0e38a634bb9f",
-						"isDone": false,
+						"isDone": true,
 						"comment": "",
 						"priority": 0,
 						"weight": {
-							"done": 0,
+							"done": 3,
 							"all": 17
 						},
 						"children": [
 							{
 								"name": "Отчетность - проверки по клику на ссылки (Сохранить все..., Подтверждение получения, Протокол контроля, Приложения, Описание отчетности, Напечатать, Сохранить) и на кнопку _Подписать Протокол и Приложения_",
 								"id": "id05614c04-98c5-4aff-aa0b-293da48dada9",
-								"isDone": false,
+								"isDone": true,
 								"comment": "",
 								"priority": 0,
 								"weight": {
-									"done": 0,
+									"done": 2,
 									"all": 2
 								},
 								"children": [
 									{
 										"name": "с закрытым ключом",
 										"id": "id9223a424-accb-4327-0356-8643497b4a67",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
-											"done": 0,
+											"done": 1,
 											"all": 1
 										}
 									},
 									{
 										"name": "без закрытого ключа - ошибки",
 										"id": "id0a843f24-6be9-43f6-9954-b781fea4ea1f",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
-											"done": 0,
+											"done": 1,
 											"all": 1
 										}
 									}
@@ -10750,18 +10750,18 @@
 							{
 								"name": "Неотчетность - проверки при входе на страницу (Контент письма + вложения, Сохранить все..., Напечатать, Подтверждение получения и на кнопку Подтвердить получение)",
 								"id": "id30e76ef0-0157-448a-aecb-7285bdbf8191",
-								"isDone": false,
+								"isDone": true,
 								"comment": "",
 								"priority": 0,
 								"weight": {
-									"done": 0,
+									"done": 1,
 									"all": 15
 								},
 								"children": [
 									{
 										"name": "с закрытым ключом",
 										"id": "idcd92fabf-fdbc-4d6d-5ff1-143c7e7c5a2c",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
@@ -10851,7 +10851,7 @@
 									{
 										"name": "без закрытого ключа",
 										"id": "id6de6b714-019f-4a4f-9d9c-30df55551252",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
@@ -10941,11 +10941,11 @@
 									{
 										"name": "Перезагрузка страницы ДО с текстом и вложениями , если права доступа не проверены в момент входя на страницу ДО, а проверены по клику по ссылкам.",
 										"id": "id3f807fd5-d086-4f9e-f0c3-c2639d7fbafc",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
-											"done": 0,
+											"done": 1,
 											"all": 1
 										}
 									}
@@ -10954,46 +10954,46 @@
 						]
 					},
 					{
-						"name": "6 - Чужая организация - чужой серт",
+						"name": "6 - Чужая организация - чужой серт (под железным сертом - посмотреть cloud отчеты",
 						"id": "id5e8a76c6-7e15-4a1a-4407-75617943c2c8",
-						"isDone": false,
+						"isDone": true,
 						"comment": "",
 						"priority": 0,
 						"weight": {
-							"done": 0,
+							"done": 2,
 							"all": 17
 						},
 						"children": [
 							{
 								"name": "Отчетность - проверки по клику на ссылки (Сохранить все..., Подтверждение получения, Протокол контроля, Приложения, Описание отчетности, Напечатать, Сохранить) и на кнопку _Подписать Протокол и Приложения_",
 								"id": "id8b547000-5e11-4336-8535-29ab31e0df45",
-								"isDone": false,
+								"isDone": true,
 								"comment": "",
 								"priority": 0,
 								"weight": {
-									"done": 0,
+									"done": 2,
 									"all": 2
 								},
 								"children": [
 									{
 										"name": "с закрытым ключом",
 										"id": "idb541816e-d2de-4654-51f9-b16bfe912553",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
-											"done": 0,
+											"done": 1,
 											"all": 1
 										}
 									},
 									{
 										"name": "без закрытого ключа - ошибки",
 										"id": "id4c8279ba-81f4-4e77-c051-285326917c10",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
-											"done": 0,
+											"done": 1,
 											"all": 1
 										}
 									}
@@ -11002,7 +11002,7 @@
 							{
 								"name": "Неотчетность - проверки при входе на страницу (Контент письма + вложения, Сохранить все..., Напечатать, Подтверждение получения и на кнопку Подтвердить получение)",
 								"id": "id7b45af5e-21e8-4b58-55ea-6b8b29709b0e",
-								"isDone": false,
+								"isDone": true,
 								"comment": "",
 								"priority": 0,
 								"weight": {
@@ -11013,182 +11013,24 @@
 									{
 										"name": "с закрытым ключом",
 										"id": "idd54ed09b-298d-4864-9127-ff934a7405d3",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
 											"done": 0,
 											"all": 7
-										},
-										"children": [
-											{
-												"name": "Входящие письма",
-												"id": "idf2310b3a-67b5-404d-eb97-9bdfc31c0ac1",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Входящие ретроконверсии",
-												"id": "iddb597ade-faaf-449b-fbe9-debd1ac7f72f",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Отправленные новые письма",
-												"id": "idcaeb8711-52d6-45fa-15d4-108ca1b85f22",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Ответ на входящие письма",
-												"id": "id8aa7d401-8fcd-4d34-de24-18a656f95fe6",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Отправленные макеты",
-												"id": "id4511a11b-1031-442b-90cc-11da2f08846b",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Заявления ",
-												"id": "ida092c31b-561c-4930-6f74-0e80a24e5a53",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Отправленная ретроконверсия",
-												"id": "id8d2ae847-c404-440d-0c7e-ee63605cf8e3",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											}
-										]
+										}
 									},
 									{
 										"name": "без закрытого ключа",
 										"id": "idf110432b-e792-440f-e694-a0bc274f3779",
-										"isDone": false,
+										"isDone": true,
 										"comment": "",
 										"priority": 0,
 										"weight": {
 											"done": 0,
 											"all": 7
-										},
-										"children": [
-											{
-												"name": "Входящие письма",
-												"id": "idabc75118-d7c8-4432-e8ae-16f02ecc55da",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Входящие ретроконверсии",
-												"id": "id0f87de74-6dd9-4a85-adcc-277c05bd5d5d",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Отправленные новые письма",
-												"id": "idefcbd729-7942-46ab-7355-31cb011cb74d",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Ответ на входящие письма",
-												"id": "id59cf3256-ae31-4f28-5174-a1cf6a029975",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Отправленные макеты",
-												"id": "id77efc478-52a4-46f5-6d13-497d6f29f141",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Заявления ",
-												"id": "id58ce68a3-e1e0-4a88-035f-476d9bd51473",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
-												"name": "Отправленная ретроконверсия",
-												"id": "id2f4d5915-f119-4d16-d410-a164ba4487c1",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											}
-										]
+										}
 									},
 									{
 										"name": "Перезагрузка страницы ДО с текстом и вложениями , если права доступа не проверены в момент входя на страницу ДО, а проверены по клику по ссылкам.",
@@ -11208,6 +11050,17 @@
 					{
 						"name": "7 - Расшифрованное ДО",
 						"id": "id9d13048b-a2c2-442f-fb88-05e529362f4e",
+						"isDone": true,
+						"comment": "",
+						"priority": 0,
+						"weight": {
+							"done": 1,
+							"all": 1
+						}
+					},
+					{
+						"name": "8 - Нерасшифрованное ДО",
+						"id": "id6c385a4f-adc5-4b23-0045-b2ea56c041fa",
 						"isDone": true,
 						"comment": "",
 						"priority": 0,
