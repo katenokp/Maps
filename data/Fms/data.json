@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Вход",
-		"id": "id8cb3ca5a-b79d-4788-617e-b215b81f13ab",
+		"id": "id7298356e-0278-4f37-d65c-cd24775a04c7",
 		"isDone": false,
 		"comment": "",
 		"priority": 4,
@@ -12,7 +12,7 @@
 		"children": [
 			{
 				"name": "Тип пользователя",
-				"id": "ide49b8c9b-34cb-4ae5-c88d-39ad3f253fc4",
+				"id": "id61b8deb8-1a53-43e1-06e6-789c369be36a",
 				"isDone": false,
 				"comment": "",
 				"priority": 0,
@@ -23,7 +23,7 @@
 				"children": [
 					{
 						"name": "Логин-парольный",
-						"id": "id9267dbf4-1e33-4ed7-a9e4-997e5f04ecc5",
+						"id": "idd75b6711-7075-428f-d6d0-c039ab99fc6b",
 						"isDone": false,
 						"comment": "",
 						"priority": 0,
@@ -34,7 +34,7 @@
 					},
 					{
 						"name": "Сертификатный",
-						"id": "idf8a0a248-2c95-4629-3dd8-dfc0c694cd69",
+						"id": "id3ebdda4d-6e5f-468e-fca8-2bedcab717b8",
 						"isDone": true,
 						"comment": "",
 						"priority": 0,
@@ -45,7 +45,7 @@
 					},
 					{
 						"name": "Демо",
-						"id": "id09371325-1024-46fa-0e97-0d748836de16",
+						"id": "ida63c84a4-78ae-4951-3682-08383ac9230c",
 						"isDone": false,
 						"comment": "",
 						"priority": 0,
@@ -58,7 +58,7 @@
 			},
 			{
 				"name": "Многопользовательский режим и разграничение прав",
-				"id": "id2105f701-2cfd-4e58-5d87-674cf2365ff6",
+				"id": "id05237161-9d83-45dc-1f22-6839eb6a2469",
 				"isDone": false,
 				"comment": "",
 				"priority": 0,
@@ -69,7 +69,7 @@
 				"children": [
 					{
 						"name": "Админ",
-						"id": "idfad9baa5-af5c-455a-15bb-dc1d7c34a1ea",
+						"id": "id13949775-39ff-49f6-8ec0-a77697c58b9f",
 						"isDone": true,
 						"comment": "",
 						"priority": 0,
@@ -80,7 +80,7 @@
 					},
 					{
 						"name": "Рядовой",
-						"id": "id44c080cb-1d14-4604-9635-25721e127242",
+						"id": "idbc3c354e-2c47-4f7a-09c3-4442701568bf",
 						"isDone": false,
 						"comment": "",
 						"priority": 0,
@@ -93,7 +93,7 @@
 			},
 			{
 				"name": "Форма выбора организации",
-				"id": "id233de916-9e4f-4668-0449-b6b0a4149ee5",
+				"id": "id2dd2722e-0321-41e9-bb66-ca73fad9bcf8",
 				"isDone": false,
 				"comment": "",
 				"priority": 0,
@@ -104,7 +104,7 @@
 			},
 			{
 				"name": "Форма создания организации",
-				"id": "id1aae8b72-9206-44f3-934f-ec6fe8b2cf28",
+				"id": "id3d2b5aa3-518f-487c-3275-b65c15a6c062",
 				"isDone": false,
 				"comment": "",
 				"priority": 0,
@@ -117,7 +117,7 @@
 	},
 	{
 		"name": "Общие компоненты страниц сервиса",
-		"id": "id1e02fe05-4560-48d3-bb98-1d9f9a58c5ed",
+		"id": "idad28074b-50ac-4211-03da-37a5b433b3e1",
 		"isDone": false,
 		"comment": "CommonTests",
 		"priority": 3,
@@ -128,7 +128,7 @@
 		"children": [
 			{
 				"name": "Интерфейс",
-				"id": "ide2fe1c79-b092-4b73-38d4-062f01c11bcd",
+				"id": "id4bd88fd3-68ad-44c6-a0da-d432973fbebf",
 				"isDone": false,
 				"comment": "CommonTests",
 				"priority": 0,
@@ -139,7 +139,7 @@
 				"children": [
 					{
 						"name": "Проверка прав",
-						"id": "id97eba2b3-3c39-4414-2794-6ebc9fc99664",
+						"id": "id1977d124-05d7-4a8b-e8b0-d8a69980000d",
 						"isDone": false,
 						"comment": "",
 						"priority": 0,
@@ -150,7 +150,7 @@
 					},
 					{
 						"name": "Шапка",
-						"id": "ida3d100f7-21f1-4cdb-6f39-36254f9b4804",
+						"id": "ided72fd3c-1bc5-4b8b-ba6d-79779430d730",
 						"isDone": false,
 						"comment": "GlobalHeaderTests",
 						"priority": 0,
@@ -161,7 +161,7 @@
 						"children": [
 							{
 								"name": "Список организаций",
-								"id": "ideea7e30d-e099-4f65-9dfb-0fa1d57fbc1f",
+								"id": "id56df3b16-cfe6-46b6-70a1-ce298894a54c",
 								"isDone": true,
 								"comment": "TestGlobalHeaderContent_OrganizationDropdown",
 								"priority": 0,
@@ -172,7 +172,7 @@
 							},
 							{
 								"name": "«Реквизиты и настройки»",
-								"id": "id0e1f7619-a43e-443e-78dd-ae74324b1628",
+								"id": "id5ff24454-4cfa-40e9-8abf-2943a140e76e",
 								"isDone": false,
 								"comment": "TestGlobalHeaderContent_RequisitesAndPreferencesDropDown, TestInvitationLightbox, TestEnterProlongationCodeLightbox, ",
 								"priority": 0,
@@ -183,7 +183,7 @@
 							},
 							{
 								"name": "«Помощь»",
-								"id": "id526ed2a3-e5d6-46eb-e327-4bebeca678d3",
+								"id": "id8dcf5712-1d82-42c0-b266-00e55ab115f4",
 								"isDone": false,
 								"comment": "TestHelpDropDown, TestSendFeedbackLightbox, TestHowToStartVideoLightbox",
 								"priority": 0,
@@ -194,7 +194,7 @@
 							},
 							{
 								"name": "TopLine",
-								"id": "id0f9d00c2-dd82-4788-9ac4-8cf3be608162",
+								"id": "id8584f194-b35a-4bdd-1138-b7bdffe01f57",
 								"isDone": true,
 								"comment": "TestGlobalHeaderTopLineContent",
 								"priority": 0,
@@ -205,7 +205,7 @@
 							},
 							{
 								"name": "Логотип",
-								"id": "idfdf63ee3-901c-43f1-a43c-634b9de31366",
+								"id": "id9b77332d-04d0-4f02-aa89-1afa0b0fe4a8",
 								"isDone": true,
 								"comment": "TestGlobalHeaderContent_LogoLink",
 								"priority": 0,
@@ -218,7 +218,7 @@
 					},
 					{
 						"name": "Футер",
-						"id": "id5dc185d2-6261-4595-b9a9-0853d5e8b6c2",
+						"id": "id50c4609c-0452-4f01-43fa-6abae76dad70",
 						"isDone": true,
 						"comment": "GlobaFooterTests.cs",
 						"priority": 0,
@@ -229,7 +229,7 @@
 					},
 					{
 						"name": "Левая панель",
-						"id": "id99666bb2-3d24-409a-57b4-a4ddc852c19f",
+						"id": "id0e498937-3550-49c4-babd-d49ba17278af",
 						"isDone": false,
 						"comment": "LeftPanelTests.cs",
 						"priority": 0,
@@ -242,7 +242,7 @@
 			},
 			{
 				"name": "Функционал",
-				"id": "ida92217cd-fafb-4652-1108-85332e52367e",
+				"id": "ida29a605d-b220-4d61-a425-d1c202f8e1f9",
 				"isDone": false,
 				"comment": "",
 				"priority": 0,
@@ -253,7 +253,7 @@
 				"children": [
 					{
 						"name": "Добавление пользователя",
-						"id": "id07e1e1ac-624a-4208-2439-de13eac5dd93",
+						"id": "id81a403d5-50f5-461c-7fb0-2960974686c2",
 						"isDone": false,
 						"comment": "",
 						"priority": 0,
@@ -264,7 +264,7 @@
 					},
 					{
 						"name": "Добавление, смена организации",
-						"id": "ideb1ab21c-d144-4b50-85f7-574a37bf1c76",
+						"id": "id3ebeeb90-bcc8-4f54-85bc-1046ddfc7c97",
 						"isDone": true,
 						"comment": "",
 						"priority": 0,
@@ -275,7 +275,7 @@
 					},
 					{
 						"name": "Продление",
-						"id": "id68c89580-4674-44e0-be52-cdc78aa8e68d",
+						"id": "ida0b9a435-9347-4d8e-2ee5-59d6030c7346",
 						"isDone": false,
 						"comment": "TestGlobalHeaderContent_RequisitesAndPreferencesDropDown",
 						"priority": 0,
@@ -290,7 +290,7 @@
 	},
 	{
 		"name": "Постановка на учет",
-		"id": "id6ea0dbb1-9254-4be8-8b08-dcb071b16e01",
+		"id": "idd0aaba47-006b-4b47-0782-74395ba8f6ea",
 		"isDone": false,
 		"comment": "MainPageTests",
 		"priority": 2,
@@ -301,7 +301,7 @@
 		"children": [
 			{
 				"name": "Интерфейс",
-				"id": "idc6d6df0d-b590-4fe9-0bbd-a0a6c2c04708",
+				"id": "idaf45a312-b97f-4708-958e-77642fd8ea9b",
 				"isDone": false,
 				"comment": "",
 				"priority": 2,
@@ -312,7 +312,7 @@
 				"children": [
 					{
 						"name": "Футер",
-						"id": "ide19d3c4e-ca0c-4aa2-cab7-d2744ba37265",
+						"id": "idd9cfc747-f2e5-457d-cd4c-7f4ea87d8aff",
 						"isDone": true,
 						"comment": "MpFooterContentTests.cs",
 						"priority": 0,
@@ -323,7 +323,7 @@
 					},
 					{
 						"name": "Шапка",
-						"id": "id290b980c-52ef-40cf-3266-c89fabfd795b",
+						"id": "idb16e1e42-bb7a-46e2-1c8b-baaa7d79a856",
 						"isDone": true,
 						"comment": "MpHeaderContentTests.cs",
 						"priority": 0,
@@ -334,7 +334,7 @@
 					},
 					{
 						"name": "Список уведомлений",
-						"id": "id2f9967c6-7706-419e-e4d4-5bc18775f626",
+						"id": "id9dfd10af-e17e-4fb3-4d6f-812ec22da252",
 						"isDone": false,
 						"comment": "",
 						"priority": 0,
@@ -345,7 +345,7 @@
 						"children": [
 							{
 								"name": "Пэйджинг",
-								"id": "id86e226e7-b259-4125-71f5-e76466aaf40e",
+								"id": "id254115f0-9151-430c-15bd-c0fa12684855",
 								"isDone": true,
 								"comment": "MpPagingTests.cs",
 								"priority": 0,
@@ -356,7 +356,7 @@
 							},
 							{
 								"name": "Блок уведомления",
-								"id": "idc5adc43e-c05a-4438-e9ee-963d33bd6c33",
+								"id": "id90a77fc4-5902-4cf3-2313-d1906e5692b8",
 								"isDone": true,
 								"comment": "MpNotificationRowTests.cs",
 								"priority": 0,
@@ -367,7 +367,7 @@
 								"children": [
 									{
 										"name": "Контент",
-										"id": "id8a376337-6c48-429e-7d53-e0b85d2fbc0f",
+										"id": "id8089aa1e-0248-4385-4edd-0cd178eb4cc8",
 										"isDone": true,
 										"comment": "TestNotificationRowContent.cs, TestMainPageNotificationStatuses.cs",
 										"priority": 0,
@@ -378,7 +378,7 @@
 									},
 									{
 										"name": "Функционал",
-										"id": "id9896e532-02bc-4734-d506-7b42b0cada1e",
+										"id": "id9936fa2d-bd07-4352-6c6d-2adf9bb11e54",
 										"isDone": true,
 										"comment": "TestAction.cs",
 										"priority": 0,
@@ -389,7 +389,7 @@
 										"children": [
 											{
 												"name": "Редактировать уведомение",
-												"id": "id211a7cba-cec1-4eee-886d-bf6c63f5dfe5",
+												"id": "idbd345a7f-4550-45cc-637b-869ed1137479",
 												"isDone": true,
 												"comment": "",
 												"priority": 0,
@@ -400,7 +400,7 @@
 											},
 											{
 												"name": "Печать",
-												"id": "id80c20922-f074-405f-759e-8472e605f741",
+												"id": "id1f276b6b-debf-4e34-06d4-110e814af6c8",
 												"isDone": true,
 												"comment": "",
 												"priority": 0,
@@ -411,7 +411,7 @@
 											},
 											{
 												"name": "Приложения",
-												"id": "idc4276de7-c2d3-448f-8a38-93a0e0ec25d2",
+												"id": "id2a77bf6c-0742-40fa-acff-f105a083df94",
 												"isDone": true,
 												"comment": "",
 												"priority": 0,
@@ -422,7 +422,7 @@
 											},
 											{
 												"name": "Удаление уведомления",
-												"id": "idfcbc30da-d101-4410-2d8c-4ecced2e5cee",
+												"id": "id9d0f7f90-e1cd-4525-5d1d-419722a985de",
 												"isDone": true,
 												"comment": "",
 												"priority": 0,
@@ -437,7 +437,7 @@
 							},
 							{
 								"name": "Массовые действия",
-								"id": "id4a02c827-13e0-411d-d940-12491f301ed6",
+								"id": "id876e5106-367d-449b-ac06-300aa0fb0cfc",
 								"isDone": false,
 								"comment": "",
 								"priority": 0,
@@ -448,7 +448,7 @@
 							},
 							{
 								"name": "Фильтры",
-								"id": "id3c64d130-e574-408e-ea5f-e3ee4d62a1fb",
+								"id": "id82be4c08-fa52-4a14-5ad4-8882e68900cc",
 								"isDone": true,
 								"comment": "MpSelectionAndFilterTests",
 								"priority": 0,
@@ -459,7 +459,7 @@
 							},
 							{
 								"name": "Выборки",
-								"id": "id7f46161f-d1bd-46c4-71f4-a9dd151928ab",
+								"id": "id0ed9fb13-e433-4d52-f1b0-4f13ccb7125b",
 								"isDone": true,
 								"comment": "MpSelectionAndFilterTests",
 								"priority": 0,
@@ -470,7 +470,7 @@
 							},
 							{
 								"name": "Пустой список",
-								"id": "id3013009a-d80f-4e43-f3c7-8e2519967836",
+								"id": "id1b337e43-e3e4-4651-35ac-468a4235d86e",
 								"isDone": true,
 								"comment": "MpEmptyPageTests.cs",
 								"priority": 0,
@@ -483,7 +483,7 @@
 					},
 					{
 						"name": "Блоки сообщений",
-						"id": "id63817f81-7003-4d21-cfb9-db0c2ec9f405",
+						"id": "id4563d01b-8ecf-4778-3e02-8d79f03db790",
 						"isDone": false,
 						"comment": "",
 						"priority": 0,
@@ -494,7 +494,7 @@
 						"children": [
 							{
 								"name": "Сообщение наличия протоколов ошибок",
-								"id": "idce711395-8a68-40cc-ecac-a1c8b4ee4fb2",
+								"id": "id18a2ee1e-62d5-4634-0707-57203f8bfb94",
 								"isDone": false,
 								"comment": "",
 								"priority": 0,
@@ -505,7 +505,7 @@
 							},
 							{
 								"name": "Блок новости",
-								"id": "id239c74e5-ff96-4c14-ef18-10b90f0bed66",
+								"id": "id84fab10f-54c4-4dc0-912c-3bf2055a3431",
 								"isDone": true,
 								"comment": "NewsPageTests.TestNewsWarningVisibility",
 								"priority": 0,
@@ -520,7 +520,7 @@
 			},
 			{
 				"name": "Функционал",
-				"id": "id6fd17633-7f6f-4c0b-c815-5aad10abeaeb",
+				"id": "id06b1a3df-154b-4fc6-4862-0b894aeb3cee",
 				"isDone": false,
 				"comment": "",
 				"priority": 1,
@@ -531,7 +531,7 @@
 				"children": [
 					{
 						"name": "Импорт",
-						"id": "id8a1fd723-d1ca-4518-b14c-b3d0c93cc245",
+						"id": "id675812a7-1755-42d7-eebc-dd383f40b0d4",
 						"isDone": false,
 						"comment": "ImportTests",
 						"priority": 0,
@@ -542,7 +542,7 @@
 						"children": [
 							{
 								"name": "Интерфейс импорта",
-								"id": "id36f0e33e-41f5-463f-ea72-e9a75167ccce",
+								"id": "id5ed2a644-88bb-409c-dd03-98b5f14a040a",
 								"isDone": false,
 								"comment": "",
 								"priority": 0,
@@ -553,7 +553,7 @@
 								"children": [
 									{
 										"name": "Лайтбокс результата импорта",
-										"id": "id5465e297-0e53-4355-6df9-0eef70dfe22e",
+										"id": "idc956f197-f2dc-47fb-ef1f-ff903b5e1deb",
 										"isDone": true,
 										"comment": "",
 										"priority": 0,
@@ -564,7 +564,7 @@
 										"children": [
 											{
 												"name": "Импорт без ошибок",
-												"id": "idff91de4c-1e28-453a-f19c-6db3cff64364",
+												"id": "idb0ede035-915e-45ae-0b27-f3c2eba9f652",
 												"isDone": true,
 												"comment": "TestResultImportLightbox_OnlySuccessful",
 												"priority": 0,
@@ -575,7 +575,7 @@
 											},
 											{
 												"name": "Импорт только с ошибками",
-												"id": "idc6a12b5f-8c31-4226-79ff-6286f45f00c5",
+												"id": "ide1997979-eaba-496a-02df-1afcd0ae66c2",
 												"isDone": true,
 												"comment": "TestResultImportLightbox_OnlyFailed",
 												"priority": 0,
@@ -586,7 +586,7 @@
 											},
 											{
 												"name": "Импорт с ошибками и корректно загруженными файлами",
-												"id": "id76a609c8-53c3-46f5-c256-26bfd04df7c9",
+												"id": "idb59453d3-db18-4764-602a-7c4e0ab099d2",
 												"isDone": true,
 												"comment": "TestResultImportLightbox_SuccessfulAndFailed",
 												"priority": 0,
@@ -599,7 +599,7 @@
 									},
 									{
 										"name": "Лайтбокс ошибки импорта",
-										"id": "id2c0677d4-07be-4717-9b51-198c349f3486",
+										"id": "id1322ac98-7a3f-4533-fe66-33394a101235",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -610,7 +610,7 @@
 										"children": [
 											{
 												"name": "Некорректный файл",
-												"id": "idd2e041aa-f7df-4d9f-479a-fbbe5c11e135",
+												"id": "idc09ebe43-eafe-474b-505c-bdb5f5ac1f5a",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -621,7 +621,7 @@
 												"children": [
 													{
 														"name": "Некорректная структура",
-														"id": "id05b020aa-524a-4d18-14cd-4de4f3eeded7",
+														"id": "id3fc374a7-2ca3-4125-483b-9ef2421bf68b",
 														"isDone": true,
 														"comment": "TestResultImportLightbox_IncorrectFileStructure",
 														"priority": 0,
@@ -632,7 +632,7 @@
 													},
 													{
 														"name": "Некорректный формат файла",
-														"id": "id04094f7a-f860-490b-c967-59a1b9792012",
+														"id": "ida2f46685-b731-46b8-dbf8-a5ee49206f2c",
 														"isDone": true,
 														"comment": "TestFailedImportLightbox_IncorrectFormat",
 														"priority": 0,
@@ -643,7 +643,7 @@
 													},
 													{
 														"name": "Пустой файл",
-														"id": "idfcfc7ed7-25dd-4b49-e075-1fb799abf43a",
+														"id": "id534a903e-36f9-4254-3ae1-3712b54cf199",
 														"isDone": false,
 														"comment": "FMS-1368",
 														"priority": 0,
@@ -654,7 +654,7 @@
 													},
 													{
 														"name": "Отсутствуют фамилия и имя",
-														"id": "id05be72d6-7629-4823-d549-c8957a4f26f9",
+														"id": "idca4bdaed-774f-4205-7f79-d41e825b0cd6",
 														"isDone": true,
 														"comment": "TestResultImportLightbox_EmptyFio",
 														"priority": 0,
@@ -666,19 +666,8 @@
 												]
 											},
 											{
-												"name": "Превышено ограничение по размеру",
-												"id": "idbe16433b-4aad-40ae-4be7-dd277913ced3",
-												"isDone": false,
-												"comment": "",
-												"priority": 0,
-												"weight": {
-													"done": 0,
-													"all": 1
-												}
-											},
-											{
 												"name": "Ошибка системы",
-												"id": "id25d106c5-7e2e-440c-45a0-1d6c948578b3",
+												"id": "id5dce8b56-aaa4-44d2-becc-9917248a16cd",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -691,7 +680,7 @@
 									},
 									{
 										"name": "Лайтбокс выбора ответственного лица",
-										"id": "id008691d3-0e27-4267-3296-65903c4648d1",
+										"id": "id718960d4-aa26-4cf8-beb8-28da52341ceb",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -704,7 +693,7 @@
 							},
 							{
 								"name": "Подтягивание данных при импорте",
-								"id": "idc48cd122-80a8-48e9-ec23-cddc724ca273",
+								"id": "idf42d2dae-fd57-4a46-5083-07ae587fd839",
 								"isDone": false,
 								"comment": "",
 								"priority": 0,
@@ -715,7 +704,7 @@
 								"children": [
 									{
 										"name": "ИГ",
-										"id": "id03163b45-248c-4738-ad84-3a3978455dd4",
+										"id": "id4b6a0ad6-9f88-4ea9-4aa1-4cdaf1c9498b",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -726,7 +715,7 @@
 										"children": [
 											{
 												"name": "Данные уведомления",
-												"id": "idbd3caa57-e1f0-4db2-f1a1-a4b86a2ebf5f",
+												"id": "id1240f7fa-6cc4-4bb0-543d-5f114864a04c",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -737,7 +726,7 @@
 												"children": [
 													{
 														"name": "Просто данные",
-														"id": "id17d088a0-fb56-45d2-c059-a5a635bdbf81",
+														"id": "id41facd27-ae8b-4af2-066d-72f85e10c2bf",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -748,7 +737,7 @@
 													},
 													{
 														"name": "Специальные значения (фио, адрес?)",
-														"id": "id591e0d47-aea1-42ed-d638-85cc761710c9",
+														"id": "id95b47f54-e5c2-4d1d-7d26-0623fefbe7cc",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -759,7 +748,7 @@
 													},
 													{
 														"name": "Заполнение чекбоксов включения блоков в отчет",
-														"id": "ide3525abd-c596-463c-3671-b57c8dc367d4",
+														"id": "idc1a4b361-f76d-406c-e2e7-a60db44ec5e5",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -772,7 +761,7 @@
 											},
 											{
 												"name": "Вложения",
-												"id": "ida38e192f-063f-43e0-992d-08676b2c739a",
+												"id": "idba5ce7fd-d062-4b5a-280c-77247e644ef4",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -783,7 +772,7 @@
 											},
 											{
 												"name": "Адрес",
-												"id": "idb4d91dce-745f-44de-ee6d-a561e1efdff2",
+												"id": "id8a4a4dab-e497-448e-41fe-1fe2a3e89028",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -794,7 +783,7 @@
 												"children": [
 													{
 														"name": "Неформализованная строка",
-														"id": "id5bdd7f34-793e-4187-2fa3-382344e3802e",
+														"id": "idf0f14e96-7528-4304-2604-539fcc9f3f0c",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -805,7 +794,7 @@
 													},
 													{
 														"name": "guid ФИАС",
-														"id": "ida1eb8d1b-49c6-4b31-bd70-3c7417e06483",
+														"id": "id3478a895-f504-460f-30e6-a450dd0de33d",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -818,7 +807,7 @@
 											},
 											{
 												"name": "Импорт признака «отсутствует» у полей ФИО",
-												"id": "id2250e629-a85f-412a-e740-25e65650e58b",
+												"id": "ida53317cc-47ea-4175-b10a-3e5412f685ff",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -829,7 +818,7 @@
 												"children": [
 													{
 														"name": "Гость",
-														"id": "idba025873-c411-464f-e50d-03cae25783e1",
+														"id": "id2c1e41e5-17ec-4260-532b-95b2a65bdefa",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -840,7 +829,7 @@
 													},
 													{
 														"name": "Представитель",
-														"id": "idf9f4169c-3b99-4a07-9416-fc8646257f8c",
+														"id": "id0bca6445-5abe-4f83-9f0c-5aee0ebaf764",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -853,7 +842,7 @@
 											},
 											{
 												"name": "Ответственное лицо",
-												"id": "id6115f892-bcd5-49ae-697c-5b6472c53c28",
+												"id": "id3c9d6c5b-9e24-4389-f134-0bcd81a9dbde",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -866,7 +855,7 @@
 									},
 									{
 										"name": "РФ",
-										"id": "id828d792a-047a-4fb6-d3ff-1960117197c5",
+										"id": "idf58806cb-4d90-4937-02aa-e49a3aade51a",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -877,7 +866,7 @@
 										"children": [
 											{
 												"name": "Данные уведомления",
-												"id": "id11660698-c079-4635-cd39-431eaa059f33",
+												"id": "id380201bb-f46d-4377-05fd-99768d1a071f",
 												"isDone": true,
 												"comment": "",
 												"priority": 0,
@@ -888,7 +877,7 @@
 											},
 											{
 												"name": "Вложения",
-												"id": "idb403c7d9-32aa-4fc6-80f6-c35290c9037c",
+												"id": "idfdfc3bb5-4418-43c7-1702-6cd22f7bfa42",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -899,7 +888,7 @@
 											},
 											{
 												"name": "Адрес",
-												"id": "ida71b175d-c448-4fb9-8727-c2d1b6016e20",
+												"id": "id18b3f3b4-abcc-4ed7-6b61-4de891c0d016",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -910,7 +899,7 @@
 												"children": [
 													{
 														"name": "Неформализованная строка",
-														"id": "idde31c6a4-d17d-4c1e-03bd-be96669b46c5",
+														"id": "idb36fedd0-ba9a-4d79-472a-c47fd7e741e2",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -921,7 +910,7 @@
 													},
 													{
 														"name": "guid ФИАС",
-														"id": "idba2ac697-10be-4f56-aa1d-e1ee1d467514",
+														"id": "idf58035fc-706e-4734-84b8-7140f253ceb0",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -934,7 +923,7 @@
 											},
 											{
 												"name": "Импорт признака «отсутствует» у полей ",
-												"id": "idd37d4a8b-828e-4ae2-c555-9338abd179f8",
+												"id": "id3d819bcb-1a1e-443d-ba92-b43d07465102",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -945,7 +934,7 @@
 												"children": [
 													{
 														"name": "ФИО гостя",
-														"id": "id78501718-83e8-4467-9c1b-9ae94000f017",
+														"id": "idb1373dcd-2778-4d48-05f9-0f33316220ce",
 														"isDone": false,
 														"comment": "",
 														"priority": 0,
@@ -962,7 +951,7 @@
 							},
 							{
 								"name": "Форматы импорта",
-								"id": "idfcc42c4c-2176-4881-97d9-29128a54a868",
+								"id": "id6de32ae4-fdce-4dd4-4cb5-12fad19adf6b",
 								"isDone": false,
 								"comment": "",
 								"priority": 0,
@@ -973,7 +962,7 @@
 								"children": [
 									{
 										"name": "CSV",
-										"id": "id81bec10a-31bb-41ce-ecb7-4b2220bcf32a",
+										"id": "id5bc15426-1a44-40c7-c4ee-5d5bb2456d27",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -984,7 +973,7 @@
 										"children": [
 											{
 												"name": "Версия 1.0",
-												"id": "id2b2bb1d7-9d4c-473b-1ec2-2ebccb3ef6ea",
+												"id": "id70b56920-967c-4a06-956d-f523a0f13a23",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -995,7 +984,7 @@
 											},
 											{
 												"name": "Версия 2.0",
-												"id": "idbfc7ebad-3dab-40f6-af2a-cd115b937aca",
+												"id": "iddf827455-794b-416d-55df-ac8456b87803",
 												"isDone": false,
 												"comment": "",
 												"priority": 0,
@@ -1008,7 +997,7 @@
 									},
 									{
 										"name": "XML",
-										"id": "id88b53ed3-88ad-444b-a7c7-edb85f801f03",
+										"id": "id7c78780a-dcaf-453d-b4fb-151af21c8ae7",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -1019,7 +1008,7 @@
 									},
 									{
 										"name": "Zip-архив",
-										"id": "id754ac72d-1887-45e8-daad-8955ade23103",
+										"id": "iddc2ca44f-ca93-47b4-623b-13c07144c760",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -1034,7 +1023,7 @@
 					},
 					{
 						"name": "Отправка",
-						"id": "ida8eb7e37-da6d-4378-2033-b2728243d170",
+						"id": "ida3cf5ad9-ba29-444d-69a0-c3672809dfbc",
 						"isDone": false,
 						"comment": "нуждается в рефакторинге",
 						"priority": 0,
@@ -1045,7 +1034,7 @@
 						"children": [
 							{
 								"name": "Интерфейс отправки",
-								"id": "id81f05cb8-d86f-4762-b7ee-b38309581b1a",
+								"id": "id8f63f814-ebcd-4600-73e2-490bfa05c356",
 								"isDone": false,
 								"comment": "SendingControlTests.cs",
 								"priority": 0,
@@ -1056,7 +1045,7 @@
 								"children": [
 									{
 										"name": "Проверка прав",
-										"id": "idf45d2d3a-d777-4f5c-b1cb-375ea907a937",
+										"id": "id86df84c3-55e5-4081-97a8-cbd9883d0db7",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -1067,7 +1056,7 @@
 									},
 									{
 										"name": "Проверка наличия запрета на отправку уведомлений ИГ",
-										"id": "idf6fcf8b8-32e9-4a24-35f2-17273bac02d4",
+										"id": "id0663ddc3-0bb2-4285-6133-a7beea56f426",
 										"isDone": false,
 										"comment": "FMS-1333",
 										"priority": 0,
@@ -1078,7 +1067,7 @@
 									},
 									{
 										"name": "Проверка реквизитов",
-										"id": "id4e3eb446-4205-4163-3c06-54f4312459f8",
+										"id": "id06f19cfb-b920-4cff-dcf7-58b4b0f2eb40",
 										"isDone": true,
 										"comment": "TestSendingControl_HotelPageValidation",
 										"priority": 0,
@@ -1089,7 +1078,7 @@
 									},
 									{
 										"name": "Проверка статусов уведомлений",
-										"id": "id0a87db73-7c15-41d6-910a-152591c5f0d1",
+										"id": "idaf4cf916-7341-4dee-9e3e-db772201e6c0",
 										"isDone": true,
 										"comment": "TestSending_NotificationValidations, TestConfirmationLightbox_NotificationsCounter, TestConfirmationLightboxes_WithErrors",
 										"priority": 0,
@@ -1100,7 +1089,7 @@
 									},
 									{
 										"name": "Проверка наличия дубликатов",
-										"id": "id1b875e84-6a0a-4ece-c9a5-82088a83202b",
+										"id": "id5d8895c8-e186-45bf-9480-0c4c47b40681",
 										"isDone": true,
 										"comment": "TestSendingControl_WithDuplicates, TestConfirmationLightboxes_WithDuplicates, TestConfirmationLightboxes_WithDuplicates_ListOfDuplicates",
 										"priority": 0,
@@ -1111,7 +1100,7 @@
 									},
 									{
 										"name": "Проверка наличия сертификатов",
-										"id": "ide7330101-a0e0-444b-98b3-014fae2a8158",
+										"id": "id58b27c42-aba9-431b-45d7-8588eeabe022",
 										"isDone": false,
 										"comment": "TestConfirmationLightbox_Content",
 										"priority": 0,
@@ -1122,7 +1111,7 @@
 									},
 									{
 										"name": "Завершение отправки",
-										"id": "id0e1854c5-270d-41bc-6314-f651e05f2953",
+										"id": "idac9b607e-b84a-4b8b-cf93-bd1b28d8580e",
 										"isDone": false,
 										"comment": "",
 										"priority": 0,
@@ -1135,7 +1124,7 @@
 							},
 							{
 								"name": "Факт отправки",
-								"id": "idc14c691a-3713-4f36-1cb3-0967749c602c",
+								"id": "id4fefc6ff-c455-4024-749d-749c58b6fcf0",
 								"isDone": false,
 								"comment": "",
 								"priority": 0,
@@ -1146,7 +1135,7 @@
 							},
 							{
 								"name": "Отправленные данные",
-								"id": "idaec746c6-3317-4496-67d9-9f81123ac83e",
+								"id": "id27786e41-c70c-4eb3-162d-de27f8596f35",
 								"isDone": false,
 								"comment": "",
 								"priority": 0,
@@ -1163,7 +1152,7 @@
 	},
 	{
 		"name": "Уведомления",
-		"id": "id9aa422b9-b2fe-447a-dc16-e81cfa026185",
+		"id": "id0ac90154-abff-4a9c-8ec4-49aa53ce8ca2",
 		"isDone": true,
 		"comment": "FnPageTests, RnPageTests",
 		"priority": 2,
@@ -1174,7 +1163,7 @@
 		"children": [
 			{
 				"name": "Иностранный гражданин",
-				"id": "id47b94fcf-f743-48fb-17bb-d14fc9efb15d",
+				"id": "id69aac15e-616d-426f-7482-012f82e79a61",
 				"isDone": true,
 				"comment": "FnPageTests",
 				"priority": 0,
@@ -1185,7 +1174,7 @@
 				"children": [
 					{
 						"name": "Валидации",
-						"id": "id8b758346-3046-492e-f05b-3498b4ea5e2e",
+						"id": "id935c72e7-d218-489a-b448-9279f09a9a04",
 						"isDone": true,
 						"comment": "FnValidationTests",
 						"priority": 0,
@@ -1196,7 +1185,7 @@
 						"children": [
 							{
 								"name": "На недопустимое значение",
-								"id": "id2cea9203-c1a9-4a7d-1f5e-6d1441a5720f",
+								"id": "id36460453-fdbd-46b4-3ecc-7f06e38afdf3",
 								"isDone": false,
 								"comment": "FnIllegalValueValidationTests.cs",
 								"priority": 0,
@@ -1207,7 +1196,7 @@
 							},
 							{
 								"name": "На пустое значение",
-								"id": "id10c6d9cd-3fa5-4ab3-f43a-8cc83099418a",
+								"id": "ida38b25ae-12ac-472b-0ff6-395fb9a73851",
 								"isDone": false,
 								"comment": "FnRequiredInformationValidationTests.cs",
 								"priority": 0,
@@ -1218,7 +1207,7 @@
 							},
 							{
 								"name": "Остальные (на логику)",
-								"id": "id55e1a4f2-d4a5-4242-8ef0-eda282e6b815",
+								"id": "id8991738b-9706-4910-b38c-122d50dda174",
 								"isDone": false,
 								"comment": "FnSenseValidationTests.cs",
 								"priority": 0,
@@ -1231,7 +1220,7 @@
 					},
 					{
 						"name": "Фуф",
-						"id": "id9c6ee74c-5d49-4938-0584-f5ac8174087f",
+						"id": "id031e3789-1441-411a-9af2-94eab887838f",
 						"isDone": true,
 						"comment": "FnFUFTests.cs",
 						"priority": 0,
@@ -1242,7 +1231,7 @@
 					},
 					{
 						"name": "Контент страницы",
-						"id": "idf3f38245-c9d1-4ec7-99b5-278153ec10e4",
+						"id": "id2df6a88d-87ad-4f89-a18b-6828a72d9412",
 						"isDone": true,
 						"comment": "K_Auto-538 FnPageContentsTests.cs",
 						"priority": 0,
@@ -1255,7 +1244,7 @@
 			},
 			{
 				"name": "Гражданин РФ",
-				"id": "id55021f16-3d2e-4994-27c5-b0c94724f41d",
+				"id": "id953a6bc3-4f46-401c-be58-2a2447842e4d",
 				"isDone": true,
 				"comment": "RnPageTests",
 				"priority": 0,
@@ -1266,7 +1255,7 @@
 				"children": [
 					{
 						"name": "Валидации",
-						"id": "id34b20f23-f6b3-43e9-a433-ca663e2eff1b",
+						"id": "idde8d70fa-e25d-4752-be3f-1b8031506e38",
 						"isDone": true,
 						"comment": "RnValidationTests",
 						"priority": 0,
@@ -1277,7 +1266,7 @@
 						"children": [
 							{
 								"name": "На недопустимое значение",
-								"id": "idd30b6b11-1176-45e8-fb28-411e16c9bb51",
+								"id": "idd079a409-beb2-4e73-9a69-a13c1a54d27a",
 								"isDone": true,
 								"comment": "RnIllegalValueValidationTests.cs",
 								"priority": 0,
@@ -1288,7 +1277,7 @@
 							},
 							{
 								"name": "На пустое значение",
-								"id": "id5525603f-400c-4b63-a2f0-389fc556bc9b",
+								"id": "id32365b53-6bb0-45ef-f2c6-c0b18ae96372",
 								"isDone": true,
 								"comment": "RnRequiredInformationValidationTests.cs",
 								"priority": 0,
@@ -1299,7 +1288,7 @@
 							},
 							{
 								"name": "Остальные (на логику)",
-								"id": "ide462cb10-b343-474b-d0f6-8fc2ba227f72",
+								"id": "id1998c0d1-d526-49ac-14f2-0a335161c041",
 								"isDone": true,
 								"comment": "RnSenseValidationTests.cs",
 								"priority": 0,
@@ -1312,7 +1301,7 @@
 					},
 					{
 						"name": "Фуф",
-						"id": "iddf4d2d68-dc81-4f33-9c4f-75e3ef436286",
+						"id": "id52bf2d3b-6453-4006-8105-310fd4f2f324",
 						"isDone": true,
 						"comment": "RnFUFTests.cs",
 						"priority": 0,
@@ -1323,7 +1312,7 @@
 					},
 					{
 						"name": "Контент страницы",
-						"id": "id06ac6968-931b-46ac-1371-7076398cfa67",
+						"id": "id9fb5f10f-3923-4cad-52e9-16ec17335fcd",
 						"isDone": true,
 						"comment": "RnPageContentsTests.cs",
 						"priority": 0,
@@ -1338,7 +1327,7 @@
 	},
 	{
 		"name": "Реквизиты организации",
-		"id": "idbda2437b-aac4-463f-e2f2-ea0d5fcba31c",
+		"id": "id1a386fa4-71ce-4e6e-d28d-d15c59ccd733",
 		"isDone": false,
 		"comment": "HotelPageTests",
 		"priority": 1,
@@ -1349,7 +1338,7 @@
 		"children": [
 			{
 				"name": "Валидации",
-				"id": "id55a763fa-eeac-4b4c-0230-abf66397ddd7",
+				"id": "idb2600bb9-4e59-45d0-b7d8-51aef8ddeb56",
 				"isDone": true,
 				"comment": "HotelValidationTests",
 				"priority": 0,
@@ -1360,7 +1349,7 @@
 				"children": [
 					{
 						"name": "На недопустимое значение",
-						"id": "idee44e52a-155e-4f4f-e1c2-2b0e91440c65",
+						"id": "id20cf8496-434a-49b7-a58a-3cd4dbecd998",
 						"isDone": true,
 						"comment": "HotelIllegalValueValidationTests",
 						"priority": 0,
@@ -1371,7 +1360,7 @@
 					},
 					{
 						"name": "На пустое значение",
-						"id": "iddd72acf8-7484-4a03-498c-993c96bcb633",
+						"id": "idb335f303-756f-455d-f782-736375a08102",
 						"isDone": true,
 						"comment": "HotelRequiredInformationValidationTests",
 						"priority": 0,
@@ -1382,7 +1371,7 @@
 					},
 					{
 						"name": "Остальные (на логику)",
-						"id": "id196099a4-e176-4c75-13be-0f33b3d9d11a",
+						"id": "idb4d163db-45b4-4142-fb52-df03da903eee",
 						"isDone": true,
 						"comment": "HotelSenseValidationTests",
 						"priority": 0,
@@ -1395,7 +1384,7 @@
 			},
 			{
 				"name": "Контент страницы",
-				"id": "id09da3206-d1e6-439a-cd8d-c1f6c1dabb48",
+				"id": "idbb1f7f6e-cf80-45f4-e423-3bd8fb773346",
 				"isDone": false,
 				"comment": "тесты нужно обновить",
 				"priority": 2,
@@ -1408,7 +1397,7 @@
 	},
 	{
 		"name": "Новости",
-		"id": "id2c4f5083-28dd-432f-fb7d-efb205673fa1",
+		"id": "id4ac3d2ed-f26f-4afd-8d54-afcfc11b9ae2",
 		"isDone": true,
 		"comment": "NewsPageTests",
 		"priority": 0,
@@ -1419,7 +1408,7 @@
 		"children": [
 			{
 				"name": "Отображение иконки конверта",
-				"id": "id3436d2a0-2c1f-43e1-ee54-b2dfbd8bb309",
+				"id": "id76a5c803-f63c-4f4a-e9fd-8c331fd3597b",
 				"isDone": true,
 				"comment": "TestNewsEnvelopeIconVisibility.cs",
 				"priority": 0,
@@ -1430,7 +1419,7 @@
 			},
 			{
 				"name": "Отображение новостей",
-				"id": "ida4cfb54a-893d-4623-45b1-01479f861c77",
+				"id": "id1916451e-d4de-4803-abfe-79370e59b86a",
 				"isDone": true,
 				"comment": "NewsPageTests.cs",
 				"priority": 0,
@@ -1441,7 +1430,7 @@
 				"children": [
 					{
 						"name": "Контент блока новости",
-						"id": "id21902b8c-f5d0-4ab4-d996-fec92b7d6b7f",
+						"id": "idcd53e4c0-a527-475e-dc62-37289c9bef7f",
 						"isDone": true,
 						"comment": "TestNewsPageContents",
 						"priority": 0,
@@ -1452,7 +1441,7 @@
 					},
 					{
 						"name": "Зависимость от настроек",
-						"id": "id881fc249-9bba-46bf-d222-f44883150614",
+						"id": "id4f6afc75-6f91-413a-5360-f0c6c691900b",
 						"isDone": true,
 						"comment": "TestNewsIsArchivedAndPublicateDate",
 						"priority": 0,
@@ -1467,7 +1456,7 @@
 	},
 	{
 		"name": "Отправленные",
-		"id": "iddcaeb41e-ac45-44eb-1818-6aea33ff1920",
+		"id": "id8a508ef7-f1ea-4e45-d6a0-4fa9479cb585",
 		"isDone": false,
 		"comment": "",
 		"priority": 5,
@@ -1478,7 +1467,7 @@
 	},
 	{
 		"name": "Снятие с учета",
-		"id": "idb1ebf650-cc37-413d-f88e-fdc56bdf539b",
+		"id": "id44a601c1-72e6-4e9c-f4e0-901d842074fb",
 		"isDone": false,
 		"comment": "",
 		"priority": 5,
