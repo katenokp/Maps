@@ -4,3 +4,4 @@ data/*
 testServiceData/
 serviceData/
 bin/settings.json
+log.log
