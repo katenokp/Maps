@@ -32,7 +32,8 @@ router.get('/converter', function(req, res, next){
         var dataFileName = path.join(settings.dataFolderPath, service, 'data.json');
         fs.readFile(dataFileName, 'utf8', function (err, data) {
                 if (err) {
-                    throw err;
+                    res.statusCode = 409;
+                    res.message = err.message;
                 }
                 else {
                     if(needNormalization()){
@@ -87,25 +88,45 @@ function buildPage(service, res){
         else{
             var file = data;
             fs.readFile(commonInformationFileName, 'utf8', function(error, commonData){
-                if(error)
-                    throw error;
+                if(error) {
+                    res.statusCode = 409;
+                    res.message = error.message;
+                }
                 else{
                     var parsedData, weight;
                     if(needNormalization()){
-                        parsedData = normalize.normalizeData(data);
-                        weight = calculateRootCompleteness(parsedData);
+                        try {
+                            parsedData = normalize.normalizeData(data);
+                            weight = calculateRootCompleteness(parsedData);
+                        } catch(error){
+                            if(error.message.indexOf('JSON') != -1) {
+                                res.render('error', {
+                                    message: 'Ошибка в данных. Поправьте файл ' + dataFileName,
+                                    error: {stack: error.message}
+                                });
+                                return;
+                            }
+                            else
+                                throw error;
+                        }
                     } else {
                         parsedData = JSON.parse(data);
                         weight = JSON.parse(commonData).weight;
                     }
                     fs.writeFile(dataFileName, JSON.stringify(parsedData, replacer, '\t'), {"encoding": 'utf8'}, function(error){
                         if(error)
-                            throw error;
+                        {
+                            res.statusCode = 409;
+                            res.message = error.message;
+                        }
                         else{
                             console.log('saved normalized data, file %s', dataFileName);
                             fs.writeFile(commonInformationFileName, JSON.stringify(weight, ["all", "done"], "\t"), {"encoding":"utf8"}, function(error){
                                 if(error)
-                                    throw error;
+                                {
+                                    res.statusCode = 409;
+                                    res.message = error.message;
+                                }
                                 else{res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});}
                             })
                         }
