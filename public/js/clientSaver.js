@@ -86,7 +86,8 @@ function readOldData(fs){
                             fs.root.getFile(serviceName+"/oldData.json", {}, function(oldFile){
                                 oldFile.remove(function(){
                                     console.log("file removed from storage");
-                                    location.reload();
+                                    alert("saved");
+                                    //location.reload();
                                     console.log("refreshed");
                                 });
                             })

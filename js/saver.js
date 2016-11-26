@@ -3,7 +3,15 @@ var path = require('path');
 var diff3 = require('node-diff3').diff;
 var settings = require('../bin/settings.json');
 
-function saveToFile(reqBody, replacer, callback){
+var crypto = require('crypto');
+
+function saveToFile(reqBody, replacer, callback, res){
+
+    var name = 'braitsch';
+    var hash = crypto.createHash('md5').update(name).digest('hex');
+    console.log(hash);
+
+    var startTime = Date.now();
     var serviceName = reqBody.service;
 
     var dataFileName = path.join(settings.dataFolderPath, serviceName, 'data.json');
@@ -15,17 +23,33 @@ function saveToFile(reqBody, replacer, callback){
         if(error)
             throw error;
         else{
-            var actualData = actualDataFile.split('\n');
+            var actualData = actualDataFile.replace(/\t+/g, '').split('\n');
             var oldData = reqBody.oldData != null ?
-                JSON.stringify(reqBody.oldData, replacer, '\t').split('\n') :
+                JSON.stringify(reqBody.oldData, replacer, '\t').replace(/\t+/g, '').split('\n') :
                 actualData;
-            var newData = JSON.stringify(reqBody.data, replacer, '\t').split('\n');
+
+            console.log('beautify actual data - ', Date.now() - startTime);
+            startTime = Date.now();
+
+            var newData = JSON.stringify(reqBody.data, replacer, '\t').replace(/\t+/g, '').split('\n');
+
+            console.log('beautify old data - ', Date.now() - startTime);
+            startTime = Date.now();
 
             var patch = diff3.diffPatch(oldData, newData);
 
-            //isDataOnServiceChanged = diff3.diffComm(oldData, actualData).length == 0;
+            console.log('get patch - ', Date.now() - startTime);
+            startTime = Date.now();
+
+            var isDataOnServiceChanged = diff3.diffComm(oldData, actualData).length == 0;
+
+            console.log('comm - ', Date.now() - startTime);
+            startTime = Date.now();
 
             actualData = diff3.patch(actualData, patch);
+
+            console.log('patch - ', Date.now() - startTime);
+            startTime = Date.now();
 
             fs.writeFile(dataFileName, actualData.join('\n'), {"encoding": 'utf8'}, function(error){
                 var date = new Date();
@@ -47,12 +71,18 @@ function saveToFile(reqBody, replacer, callback){
                     console.log("New data saved to file %s", dataFileName);
                     if(callback!=null)
                         callback();
-                    return saveCommonInformation(reqBody.weight, commonInformationFileName);
+                    saveCommonInformation(reqBody.weight, commonInformationFileName, res);
+                    return isDataOnServiceChanged;
                 }
             });
         }
     });
 }
+
+function findDifferences(actualData, oldData){
+    var arr =
+}
+
 
 function merge(oldDataFileName, newDataFileName){
     /*var dataFileName = path.join("./data" + "/mergedData.json");
@@ -80,14 +110,15 @@ function merge(oldDataFileName, newDataFileName){
     console.log(diff3.diffIndices(first, second).length);
 }
 
-function saveCommonInformation(data, fileName){
+function saveCommonInformation(data, fileName, res){
     fs.writeFile(fileName, JSON.stringify(data, ["weight", "done", "all"], '\t'), {"encoding": 'utf8'}, function(error) {
         if (error) {
             console.error(error);
             return false;
         } else {
             console.log("Data saved to file %s", fileName);
-            return true;
+            res.status = 200;
+            res.send("saved");
         }
     });
 }

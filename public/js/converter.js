@@ -5,6 +5,7 @@ function validate() {
     if(service != '' && !checkbox.checked){
         document.getElementById('serviceNameRadioButton_' + service.toLowerCase()).checked = false;
     }
+
     if (service != '' && (textField.value[0]=='[' || textField.value[0]=='{' )) {
 
         try {
@@ -15,6 +16,9 @@ function validate() {
         }
 
         textField.value = JSON.stringify(preparedData);
+    }
+    else{
+        textField.value = deleteEmptyLines(textField.value);
     }
     document.getElementById("converterForm").submit();
     setTimeout(function(){location.href = location.href.replace('converter', service)}, 1000);
@@ -41,8 +45,18 @@ function validate() {
      }*/
 }
 
-function prepareData() {
+function deleteEmptyLines(text) {
+    return deleteUtmostEmptyLine(text).replace(/\n+/g, '\n');
+}
 
+function deleteUtmostEmptyLine(text){
+    var numberFirstNotEmptyLine = 0;
+    while(text[numberFirstNotEmptyLine] == '\n')
+        numberFirstNotEmptyLine ++;
+    var countEmptyLinesInEnd = 0;
+    while(text[text.length - countEmptyLinesInEnd - 1] == '\n')
+        countEmptyLinesInEnd ++;
+    return text.substr(numberFirstNotEmptyLine, text.length - numberFirstNotEmptyLine - countEmptyLinesInEnd);
 }
 
 function setService(service, data) {
