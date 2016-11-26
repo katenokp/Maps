@@ -4,13 +4,9 @@ var diff3 = require('node-diff3').diff;
 var settings = require('../bin/settings.json');
 
 var crypto = require('crypto');
+var md5 = require('md5');
 
 function saveToFile(reqBody, replacer, callback, res){
-
-    var name = 'braitsch';
-    var hash = crypto.createHash('md5').update(name).digest('hex');
-    console.log(hash);
-
     var startTime = Date.now();
     var serviceName = reqBody.service;
 
@@ -32,6 +28,8 @@ function saveToFile(reqBody, replacer, callback, res){
             startTime = Date.now();
 
             var newData = JSON.stringify(reqBody.data, replacer, '\t').replace(/\t+/g, '').split('\n');
+
+            findDifferences(reqBody.data, reqBody.oldData != null ? reqBody.oldData : actualData, replacer);
 
             console.log('beautify old data - ', Date.now() - startTime);
             startTime = Date.now();
@@ -79,8 +77,33 @@ function saveToFile(reqBody, replacer, callback, res){
     });
 }
 
-function findDifferences(actualData, oldData){
-    var arr =
+function findDifferences(newData, oldData, replacer){ //arrays
+    var replacerWithoutChildren = replacer.splice(replacer.indexOf("children"));
+
+    var newDataSting = [];
+    newData.forEach(function(newDataItem){
+        newDataSting.push(JSON.stringify(newDataItem, replacer));
+    });
+
+    var oldDataSting = [];
+    oldData.forEach(function(oldDataItem){
+        oldDataSting.push(JSON.stringify(oldDataItem, replacer));
+    });
+
+    if(newDataSting.length != oldDataSting.length){
+        //todo
+    }
+    else{
+        for(var i = 0; i < newDataSting.length; i++){
+            var newDataHash = md5(newDataSting[i]);
+            console.log(i + ' ' + newDataHash);
+            var oldDataHash = md5(oldDataSting[i]);
+            console.log(i + ' ' + oldDataHash);
+            if(newDataHash != oldDataHash){
+
+            }
+        }
+    }
 }
 
 
