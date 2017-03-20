@@ -1,6 +1,6 @@
 ﻿body {
     font-family: "segoe ui light",sans-serif;
-    padding: 1em 5em 5em 3em;
+    padding: 0 5em 5em 3em;
     margin:0;
     font-size: 62.5%;
 }
@@ -156,7 +156,7 @@ a {
 .counter{
     display: inline-block;
     height: 25px;
-    margin: 0 0 0 5px;
+    margin: 0 20px 0 5px;
     padding-bottom: 1px;
     font-size: 14px;
     color: #878787;
@@ -236,7 +236,7 @@ a:focus{
 
 .checkbox{
     vertical-align: top;
-    margin: 8px 0 2px 5px;
+    margin: 9px 0 2px 5px;
 }
 
 .checkbox:focus{
@@ -268,9 +268,38 @@ a:focus{
     visibility: visible;
 }
 
+.topUserIcon {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #a9a9a9;
+    height: 50px;
+    width: 50px;
+}
+
+.user1{
+    background: url("../images/userIcons/user1.jpg");
+    background-size: cover;
+}
+
+.user2{
+    background: url("../images/userIcons/user2.jpg");
+    background-size: cover;
+}
+
+.userDefault{
+    background: url("../images/userIcons/userDefault.png");
+    background-size: cover;
+}
+
+.usersListWrapper {
+    position: absolute;
+    display: inline-block;
+    margin: -15px 0 0 5px;
+}
+
 .progressBar{
     border: solid #a8a8a8 1px;
-    margin: 0 0 3px 0;
+    margin: 0 5px 3px 0;
     height: 20px;
     width: 50px;
     vertical-align: middle;
@@ -288,21 +317,41 @@ progress::-moz-progress-bar {
 
 .dropdownWrapper {
     padding:0;
-    margin: 0 5px 0 7px;
-    height: 22px;
-    width: 22px;
+    margin: 0 5px 0 0;
     vertical-align: middle;
     display: inline-block;
+}
+
+.dropdownWrapper.priority{
+    height: 22px;
+    width: 22px;
+}
+
+.dropdownWrapper.users{
+    height: 22px;
+    width: 22px;
 }
 
 .dropButton{
     position: absolute;
     display: block;
-    padding: 9px 11px 10px 11px;
     border: none;
     cursor: pointer;
     text-align: center;
+}
+
+.dropButton.priority{
+    padding: 9px 11px 10px 11px;
     height: 22px;
+    margin: -1px 0 0 0!important;
+}
+
+.dropButton.users{
+    border-radius: 50%;
+    border: 1px solid #a9a9a9;
+
+    padding: 9px 9px 10px 10px;
+    height: 20px;
     margin: -1px 0 0 0!important;
 }
 
@@ -312,21 +361,43 @@ progress::-moz-progress-bar {
 
 .dropContent{
     position: relative;
+    z-index: 2;
     text-align: center;
+
     background-color: #fdfdfd;
-    outline: 1px solid  #a8a8a8;
-    outline-offset: -1px;
+}
+
+.dropContent.priority{
     margin: 18px 0 0 0;
     width: 22px;
-    z-index: 2;
-    line-height: 24px;
+
+    outline: 1px solid  #a8a8a8;
+    outline-offset: -1px;
+}
+
+.dropContent.users{
+    margin: 20px 0 0 -2px;
+    padding: 1px 0 0 0;
+    width: 25px;
 }
 
 .dropLink{
+    display: block;
+    margin: 0 0 -2px 0;
+}
+
+.dropLink.priority{
     width: 22px;
     height: 22px;
-    display:block;
-    margin: 0 0 -2px 0;
+}
+
+.dropLink.users{
+    width: 19px;
+    height: 19px;
+
+    margin: 0 0 4px 2px;
+    border-radius: 50%;
+    border: 1px solid #a9a9a9;
 }
 
 .dropLink:active{
