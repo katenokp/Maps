@@ -77,8 +77,8 @@ function saveToFile(reqBody, replacer, callback, res){
     });
 }
 
-function findDifferences(newData, oldData, replacer){ //arrays
-    var replacerWithoutChildren = replacer.splice(replacer.indexOf("children"));
+function findDifferences(newData, oldData, replacer){
+    var replacerWithoutChildren = ["name", "id", "isDone", "comment", "priority", "weight", "done", "all"]; //todo поменять порядок элементов везде
 
     var newDataSting = [];
     newData.forEach(function(newDataItem){
@@ -100,7 +100,12 @@ function findDifferences(newData, oldData, replacer){ //arrays
             var oldDataHash = md5(oldDataSting[i]);
             console.log(i + ' ' + oldDataHash);
             if(newDataHash != oldDataHash){
+                var newDataWithoutChildren = JSON.stringify(newData[i], replacerWithoutChildren);
+                var oldDataWithoutChildren = JSON.stringify(oldData[i], replacerWithoutChildren);
 
+                if(md5(newDataWithoutChildren) != md5(oldDataWithoutChildren)){
+
+                }
             }
         }
     }
