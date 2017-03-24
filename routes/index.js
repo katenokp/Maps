@@ -71,6 +71,10 @@ router.get('/fms', function(req, res, next) {
     buildPage("Fms", res);
 });
 
+router.get('/forms', function(req, res, next) {
+    buildPage("Forms", res);
+});
+
 /*router.get('/normalize', function(req, res, err){
     res.render()
 })*/
