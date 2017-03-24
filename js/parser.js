@@ -195,7 +195,7 @@ function getRelationship(firstItem, secondItem) {
 
 
 function getStringLevel(str) {
-    var regexp = /^([ \t]+)([\d'"+-@#_!%а-яА-Я\w].*)(?:->(['"+-@#_!%а-яА-Я\w].*))?$/;
+    var regexp = /^([ \t]+)([\d'"+-@#_№!%а-яА-Я\w].*)(?:->(['"+-@#_№!%а-яА-Я\w].*))?$/;
     var matches = str.match(regexp);
     if (matches == null)
         return {
