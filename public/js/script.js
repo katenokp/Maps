@@ -14,6 +14,17 @@ function editDataFile(){
     }
 }
 
+function setUser(elemId){
+    var listItemId = getLiId(elemId.replace('_user', ''));
+    var dropButtonId = getDropButtonId(listItemId);
+
+    var priorityClassName = document.getElementById(elemId).className;
+
+    document.getElementById(dropButtonId).className = "dropButton " + priorityClassName;
+
+    markChangedItem(elemId);
+}
+
 function setPriority(elemId){
 
     var listItemId = getLiId(elemId);
@@ -24,6 +35,19 @@ function setPriority(elemId){
     document.getElementById(dropButtonId).className = "dropButton " + priorityClassName;
 
     markChangedItem(elemId);
+}
+
+function switchUserDropdownList(elemId) {
+    var listItemId = getLiId(elemId.replace('_user', ''));
+    var dropdownId = getDropdownId(listItemId);
+
+    var className = document.getElementById(dropdownId).className;
+
+    if(className.search("hidden") == -1){
+        document.getElementById(dropdownId).className += ' hidden';
+    } else {
+        document.getElementById(dropdownId).className = className.replace(' hidden', '');
+    }
 }
 
 function switchDropdownList(elemId) {
