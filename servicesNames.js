@@ -4,7 +4,8 @@ var services = {
     Pfr:'Pfr',//"ПФР",
     Kopf: 'Kopf', //"Kopf",
     Fms: 'Fms', //"ФМС",
-    Test: 'Test',//"Test"
+    Forms: 'Forms',
+    Test: 'Test'//"Test"
 };
 
 module.exports = services;
