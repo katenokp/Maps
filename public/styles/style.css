@@ -316,19 +316,19 @@ progress::-moz-progress-bar {
     background-color: #679deb;
 }
 
-.dropdownWrapper {
+.dropDownWrapper {
     padding:0;
     margin: 0 5px 0 0;
     vertical-align: middle;
     display: inline-block;
 }
 
-.dropdownWrapper.priority{
+.dropDownWrapper.priority{
     height: 22px;
     width: 22px;
 }
 
-.dropdownWrapper.users{
+.dropDownWrapper.users{
     height: 22px;
     width: 22px;
 }

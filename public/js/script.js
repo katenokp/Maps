@@ -14,18 +14,11 @@ function editDataFile(){
     }
 }
 
-function setUser(elemId){
-    var listItemId = getLiId(elemId.replace('_user', ''));
-    var dropButtonId = getDropButtonId(listItemId);
+function setDropDownValue(elemId){
 
-    var priorityClassName = document.getElementById(elemId).className;
-
-    document.getElementById(dropButtonId).className = "dropButton " + priorityClassName;
-
-    markChangedItem(elemId);
-}
-
-function setPriority(elemId){
+    var regexp = /^id[\d\w-]+_[\w]_dropLink$/;
+    var matches = str.match(regexp);
+    var dropDownType = matches[0];
 
     var listItemId = getLiId(elemId);
     var dropButtonId = getDropButtonId(listItemId);
@@ -37,33 +30,20 @@ function setPriority(elemId){
     markChangedItem(elemId);
 }
 
-function switchUserDropdownList(elemId) {
-    var listItemId = getLiId(elemId.replace('_user', ''));
-    var dropdownId = getDropdownId(listItemId);
-
-    var className = document.getElementById(dropdownId).className;
-
-    if(className.search("hidden") == -1){
-        document.getElementById(dropdownId).className += ' hidden';
-    } else {
-        document.getElementById(dropdownId).className = className.replace(' hidden', '');
-    }
-}
-
-function switchDropdownList(elemId) {
+function switchDropDownList(elemId) {
     var listItemId = getLiId(elemId);
-    var dropdownId = getDropdownId(listItemId);
+    var dropDownId = getDropDownId(listItemId);
 
-    var className = document.getElementById(dropdownId).className;
+    var className = document.getElementById(dropDownId).className;
 
     if(className.search("hidden") == -1){
-        document.getElementById(dropdownId).className += ' hidden';
+        document.getElementById(dropDownId).className += ' hidden';
     } else {
-        document.getElementById(dropdownId).className = className.replace(' hidden', '');
+        document.getElementById(dropDownId).className = className.replace(' hidden', '');
     }
 }
 
-function hideAllDropdownLists(event) {
+function hideAllDropDownLists(event) {
 
     if (!event) event = window.event;
 
@@ -73,12 +53,12 @@ function hideAllDropdownLists(event) {
     var dropLists = document.getElementsByClassName("dropContent");
 
     for (var i = 0; i < dropLists.length; i++) {
-        var dropdownId = dropLists[i].id;
+        var dropDownId = dropLists[i].id;
 
-        var className = document.getElementById(dropdownId).className;
+        var className = document.getElementById(dropDownId).className;
 
         if(className.search("hidden") == -1){
-            document.getElementById(dropdownId).className += ' hidden';
+            document.getElementById(dropDownId).className += ' hidden';
         }
     }
 }
@@ -87,7 +67,7 @@ function markChangedItem(controlId){
     var liId = getLiId(controlId);
     var itemId = getItemId(liId);
 
-    var itemClass =document.getElementById(itemId).className;
+    var itemClass = document.getElementById(itemId).className;
 
     if(itemClass.search("changed") == -1)
         document.getElementById(itemId).className += " changed";
@@ -132,10 +112,10 @@ function getMarkerId(listItemIndex) {
     return listItemIndex + "_Marker";
 }
 
-function getDropdownId(listItemIndex) {
-    return listItemIndex + "_PriorityDropDown";
+function getDropDownId(listItemIndex) {
+    return listItemIndex + "_DropDown";
 }
 
 function getDropButtonId(listItemIndex) {
-    return listItemIndex + "_PriorityButton";
+    return listItemIndex + "_Button";
 }

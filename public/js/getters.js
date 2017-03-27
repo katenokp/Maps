@@ -18,7 +18,7 @@ function getAllChildren(idItem){ //todo упростить
 
 function getPriority(idItem){
     var idNode = getNodeId(idItem);
-    var button = document.getElementById(idNode + "_PriorityButton");
+    var button = document.getElementById(idNode + "_Priority"+ "Button");
     if(button.className.indexOf("priority") == -1)
         return 0;
     var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace("priority", "");
