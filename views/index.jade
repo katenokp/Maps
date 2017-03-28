@@ -74,7 +74,7 @@ block content
                             .dropDownWrapper.users(id=id+"_Users_DropWrapper")
                                 button(id=id+"_Users_Button", class="dropButton users userDefault", onclick="switchDropDownList(this.id, 'Users')")
                                 div(id=id+"_Users_DropDown",  class="dropContent users hidden")
-                                    each val, index in {0:'Default', 1:'1', 2:''}
+                                    each val, index in {0:'Default', 1:'1', 2:'2'}
                                         a(id=id+"_Users_dropLink"+val, class="dropLink users user"+val, onclick="setDropDownValue(this.id, 'Users')")
                             .hintContainer
                                 progress(id=id+"_ProgressBar", class="progressBar", value=item.weight.done, max=item.weight.all)
