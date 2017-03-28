@@ -81,7 +81,7 @@ block content
                                 br
                                 span(id=id+"_Hint", span class="hintText") #{item.weight.done}/#{item.weight.all}
                             div(id=id+"_DropWrapper", class="dropDownWrapper priority")
-                                button(id=id+"_Priority_Button", class="dropButton priority"+ priority, onclick="switchDropDownList(this.id, 'Priority')")
+                                button(id=id+"_Priority_Button", class="dropButton priority "+ priority, onclick="switchDropDownList(this.id, 'Priority')")
                                 div(id=id+"_Priority_DropDown", class="dropContent priority hidden")
                                     each val, index in {0:'Default', 1:'1', 2:'2', 3:'3', 4:'4', 5:'5'}
                                         a(id=id+"_dropLink"+val, class="dropLink priority priority"+val, onclick="setDropDownValue(this.id, 'Priority')")
