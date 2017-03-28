@@ -45,7 +45,7 @@ function hideAllDropDownLists(event) {
 
     var id = (event.target || event.srcElement).id;
 
-    if( id.search("Priority_Button") != -1 || id.search("Users_Button") != -1)
+    if( id.search("Priority_Button") != -1 || id.search("User_Button") != -1)
         return;
 
     var dropLists = document.getElementsByClassName("dropContent");
@@ -121,7 +121,7 @@ function getDropDownButtonId(listItemIndex, dropDownType) {
 function getDropDownPrefix(dropDownType){
     switch (dropDownType.toLowerCase()){
         case 'priority' : return '_Priority';
-        case 'users' : return '_Users';
+        case 'user' : return '_User';
         default : return '';
     }
 }

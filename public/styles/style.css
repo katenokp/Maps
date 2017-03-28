@@ -330,7 +330,7 @@ progress::-moz-progress-bar {
     width: 22px;
 }
 
-.dropDownWrapper.users{
+.dropDownWrapper.user{
     height: 22px;
     width: 22px;
 }
@@ -350,7 +350,7 @@ progress::-moz-progress-bar {
     margin: -1px 0 0 0!important;
 }
 
-.dropButton.users{
+.dropButton.user{
     border-radius: 50%;
     border: 1px solid #a9a9a9;
 
@@ -377,7 +377,7 @@ progress::-moz-progress-bar {
     width: 22px;
 }
 
-.dropContent.users{
+.dropContent.user {
     margin: 20px 0 0 -2px;
     padding: 1px 0 0 0;
     width: 25px;
@@ -393,7 +393,7 @@ progress::-moz-progress-bar {
     height: 22px;
 }
 
-.dropLink.users{
+.dropLink.user {
     width: 19px;
     height: 19px;
 

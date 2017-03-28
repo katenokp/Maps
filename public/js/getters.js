@@ -16,12 +16,17 @@ function getAllChildren(idItem){ //todo упростить
     return children.id;
 }
 
-function getPriority(idItem){
+function getDropDownValue(idItem, dropDownType){
     var idNode = getNodeId(idItem);
-    var button = document.getElementById(idNode + "_Priority"+ "Button");
-    if(button.className.indexOf("priority") == -1)
+    var button = document.getElementById(idNode + "_"+ dropDownType + "_Button");
+    if(button.className.indexOf(dropDownType.toLowerCase()) == -1)
         return 0;
-    var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace("priority", "");
+    var regexp = dropDownType.toLowerCase() + '(\\d+|\\w+)';
+    var matches = button.className.match(regexp);
+
+    var priorityClass = matches[1];
+
+    //var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace(dropDownType.toLowerCase(), "").trim();
     if(priorityClass == "Default")
         return 0;
     return parseInt(priorityClass);

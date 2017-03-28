@@ -71,11 +71,11 @@ block content
                             input(id=id+"_Checkbox", class="checkbox", type="checkbox", onclick="markChangedItem(this.id); changeCheckboxes(this.id); changeWeights(this.id)", checked=item.isDone)
                             em(id=id+"_Marker", class="marker close" + (hasChildren!=true ? " hidden" : ""), onclick="collapseOrExpandElementByClick(this.id, event)")
                         .itemMessageWrapper
-                            .dropDownWrapper.users(id=id+"_Users_DropWrapper")
-                                button(id=id+"_Users_Button", class="dropButton users userDefault", onclick="switchDropDownList(this.id, 'Users')")
-                                div(id=id+"_Users_DropDown",  class="dropContent users hidden")
+                            .dropDownWrapper.users(id=id+"_User_DropWrapper")
+                                button(id=id+"_User_Button", class="dropButton user userDefault", onclick="switchDropDownList(this.id, 'User')")
+                                div(id=id+"_User_DropDown",  class="dropContent user hidden")
                                     each val, index in {0:'Default', 1:'1', 2:'2'}
-                                        a(id=id+"_Users_dropLink"+val, class="dropLink users user"+val, onclick="setDropDownValue(this.id, 'Users')")
+                                        a(id=id+"_User_dropLink"+val, class="dropLink user user" + val, onclick="setDropDownValue(this.id, 'User')")
                             .hintContainer
                                 progress(id=id+"_ProgressBar", class="progressBar", value=item.weight.done, max=item.weight.all)
                                 br
