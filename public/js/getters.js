@@ -23,10 +23,7 @@ function getDropDownValue(idItem, dropDownType){
         return 0;
     var regexp = dropDownType.toLowerCase() + '(\\d+|\\w+)';
     var matches = button.className.match(regexp);
-
     var priorityClass = matches[1];
-
-    //var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace(dropDownType.toLowerCase(), "").trim();
     if(priorityClass == "Default")
         return 0;
     return parseInt(priorityClass);
