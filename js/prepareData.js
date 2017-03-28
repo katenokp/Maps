@@ -50,6 +50,11 @@ function prepareItem(item) {
         item.priority = 0; //todo выкинуть эту проверку из рендеринга
     }
 
+    var user = item.user;
+    if (user == null || user > 2 || user < 0) {
+        item.user = 0; //todo сделать проверку по количеству юзеров
+    }
+
     if (item.isDone == null) {
         item.isDone = false;
     }

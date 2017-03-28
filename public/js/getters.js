@@ -23,10 +23,10 @@ function getDropDownValue(idItem, dropDownType){
         return 0;
     var regexp = dropDownType.toLowerCase() + '(\\d+|\\w+)';
     var matches = button.className.match(regexp);
-    var priorityClass = matches[1];
-    if(priorityClass == "Default")
+    var dropDownClass = matches[1];
+    if(dropDownClass == "Default")
         return 0;
-    return parseInt(priorityClass);
+    return parseInt(dropDownClass);
 }
 
 function getWeight(idItem){
@@ -74,7 +74,6 @@ function getNodeId(id){
     if(matches == null)
         return id;
     return matches[matches.length-1];
-    //var prefixes = ['_Checkbox', '_PriorityButton', '_PriorityDropDown', '_Item', '_commentInput', '_indexInput'];
 }
 
 function getParentUlId(nodeId){

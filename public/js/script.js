@@ -19,9 +19,9 @@ function setDropDownValue(elemId, dropDownType){
     var listItemId = getLiId(elemId, dropDownType);
     var dropButtonId = getDropDownButtonId(listItemId, dropDownType);
 
-    var priorityClassName = document.getElementById(elemId).className;
+    var dropDownClassName = document.getElementById(elemId).className;
 
-    document.getElementById(dropButtonId).className = "dropButton " + priorityClassName;
+    document.getElementById(dropButtonId).className = "dropButton " + dropDownClassName;
 
     markChangedItem(elemId);
 }

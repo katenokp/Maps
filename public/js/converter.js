@@ -50,11 +50,11 @@ function setService(service, data) {
         document.getElementById("listItemId_Checkbox").checked = true;
         document.getElementById("serviceNameRadioButton_" + service).checked = true;
         try{
-            document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
+            document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "user", "weight", "children", "done", "all"], '\t');
         } catch (error){
             data.replace(/\t/g, '');
             try{
-                document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
+                document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "user", "weight", "children", "done", "all"], '\t');
             } catch (error) {
                 document.getElementById("converterTextField").value = data;
                 alert(error.message);
