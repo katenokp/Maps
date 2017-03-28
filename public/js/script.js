@@ -16,10 +16,6 @@ function editDataFile(){
 
 function setDropDownValue(elemId, dropDownType){
 
-    /*var regexp = '^id[\d\w-]+_[\w]_'+ dropDownTypeName +'_dropLink$';
-    var matches = elemId.match(regexp);
-    var dropDownType = matches[0];*/
-
     var listItemId = getLiId(elemId, dropDownType);
     var dropButtonId = getDropDownButtonId(listItemId, dropDownType);
 
@@ -47,8 +43,9 @@ function hideAllDropDownLists(event) {
 
     if (!event) event = window.event;
 
-    if((event.target || event.srcElement).id.search("Users_Button") != -1 ||
-        (event.target || event.srcElement).id.search("Priority_Button") != -1)
+    var id = (event.target || event.srcElement).id;
+
+    if( id.search("Priority_Button") != -1 || id.search("Users_Button") != -1)
         return;
 
     var dropLists = document.getElementsByClassName("dropContent");
