@@ -71,20 +71,20 @@ block content
                             input(id=id+"_Checkbox", class="checkbox", type="checkbox", onclick="markChangedItem(this.id); changeCheckboxes(this.id); changeWeights(this.id)", checked=item.isDone)
                             em(id=id+"_Marker", class="marker close" + (hasChildren!=true ? " hidden" : ""), onclick="collapseOrExpandElementByClick(this.id, event)")
                         .itemMessageWrapper
-                            .dropDownWrapper.users(id=id+"_user_DropWrapper")
-                                button(id=id+"_User_Button", class="dropButton users userDefault", onclick="switchDropDownList(this.id)")
-                                div(id=id+"_User_DropDown",  class="dropContent users hidden")
+                            .dropDownWrapper.users(id=id+"_Users_DropWrapper")
+                                button(id=id+"_Users_Button", class="dropButton users userDefault", onclick="switchDropDownList(this.id, 'users')")
+                                div(id=id+"_Users_DropDown",  class="dropContent users hidden")
                                     each val, index in {0:'Default', 1:'1', 2:''}
-                                        a(id=id+"_User_dropLink"+val, class="dropLink users user"+val, onclick="setDropDownValue(this.id)")
+                                        a(id=id+"_Users_dropLink"+val, class="dropLink users user"+val, onclick="setDropDownValue(this.id, 'users')")
                             .hintContainer
                                 progress(id=id+"_ProgressBar", class="progressBar", value=item.weight.done, max=item.weight.all)
                                 br
                                 span(id=id+"_Hint", span class="hintText") #{item.weight.done}/#{item.weight.all}
                             div(id=id+"_DropWrapper", class="dropDownWrapper priority")
-                                button(id=id+"_Priority_Button", class="dropButton priority"+ priority, onclick="switchDropDownList(this.id)")
+                                button(id=id+"_Priority_Button", class="dropButton priority"+ priority, onclick="switchDropDownList(this.id, 'priority')")
                                 div(id=id+"_Priority_DropDown", class="dropContent priority hidden")
                                     each val, index in {0:'Default', 1:'1', 2:'2', 3:'3', 4:'4', 5:'5'}
-                                        a(id=id+"_dropLink"+val, class="dropLink priority priority"+val, onclick="setDropDownValue(this.id)")
+                                        a(id=id+"_dropLink"+val, class="dropLink priority priority"+val, onclick="setDropDownValue(this.id, 'priority')")
                             a(id=id+"_Item", class="itemName " + (hasChildren? "listItemLink" : "listItem"), onclick=hasChildren ? "collapseOrExpandElementByClick(this.id, event)" :"", onselectstart="return false", onmousedown="return false") #{item.name}
                             input(id=id+"_indexInput", class="textInput index" + (hasChildren==true ? " hidden" : ""), type="text", value=item.weight.done+"/"+item.weight.all, onchange="updateProgressBar(this.id); changeWeights(this.id); markChangedItem(this.id)")
                             input(id=id+"_commentInput", class="textInput comment", type="text", value=item.comment, oninput="markChangedItem(this.id)")

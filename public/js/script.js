@@ -14,14 +14,14 @@ function editDataFile(){
     }
 }
 
-function setDropDownValue(elemId){
+function setDropDownValue(elemId, dropDownType){
 
     var regexp = /^id[\d\w-]+_[\w]_dropLink$/;
     var matches = str.match(regexp);
     var dropDownType = matches[0];
 
-    var listItemId = getLiId(elemId);
-    var dropButtonId = getDropButtonId(listItemId);
+    var listItemId = getLiId(elemId, dropDownType);
+    var dropButtonId = getDropDownButtonId(listItemId);
 
     var priorityClassName = document.getElementById(elemId).className;
 
@@ -30,9 +30,9 @@ function setDropDownValue(elemId){
     markChangedItem(elemId);
 }
 
-function switchDropDownList(elemId) {
+function switchDropDownList(elemId, dropDownType) {
     var listItemId = getLiId(elemId);
-    var dropDownId = getDropDownId(listItemId);
+    var dropDownId = getDropDownId(listItemId, dropDownType);
 
     var className = document.getElementById(dropDownId).className;
 
@@ -112,10 +112,18 @@ function getMarkerId(listItemIndex) {
     return listItemIndex + "_Marker";
 }
 
-function getDropDownId(listItemIndex) {
-    return listItemIndex + "_DropDown";
+function getDropDownId(listItemIndex, dropDownType) {
+    return listItemIndex + getDropDownPrefix(dropDownType) + "_DropDown";
 }
 
-function getDropButtonId(listItemIndex) {
-    return listItemIndex + "_Button";
+function getDropDownButtonId(listItemIndex, dropDownType) {
+    return listItemIndex + getDropDownPrefix(dropDownType) + "_Button";
+}
+
+function getDropDownPrefix(dropDownType){
+    switch (dropDownType.toLowerCase()){
+        case 'priority' : return '_Priority';
+        case 'users' : return '_Users';
+        default : return '';
+    }
 }
