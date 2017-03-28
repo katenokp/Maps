@@ -1,6 +1,6 @@
 ﻿body {
     font-family: "segoe ui light",sans-serif;
-    padding: 1em 5em 5em 3em;
+    padding: 22px 5em 5em 3em;
     margin:0;
     font-size: 62.5%;
 }
@@ -271,7 +271,7 @@ a:focus{
     display: inline-block;
     border-radius: 50%;
     border: 1px solid #a9a9a9;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 10px;
     height: 50px;
     width: 50px;
 }
