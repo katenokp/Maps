@@ -57,6 +57,7 @@ function parseServiceName(serviceName){
         Pfr: "ПФР",
         Kopf: "Kopf",
         Fms: "ФМС",
+        Forms: "Формы",
         Test: "Test"
     };
     return services[serviceName];

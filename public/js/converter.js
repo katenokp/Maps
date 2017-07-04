@@ -63,7 +63,7 @@ function setService(service, data) {
     }
 }
 function resetServiceInConverter(){
-    ['ndfl', 'fss', 'pfr', 'kopf', 'fms', 'test'].forEach(function(item){
+    ['ndfl', 'fss', 'pfr', 'kopf', 'fms', 'forms', 'test'].forEach(function(item){
         document.getElementById('serviceNameRadioButton_' + item).checked = false;
     })
 }
