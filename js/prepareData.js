@@ -1,6 +1,7 @@
 var fs = require('fs');
 var save = require('./saver');
 var replacer = require('./replacerForJSON');
+var getUsers = require('./users')
 
 function prepareFile(fileName) {
     fs.readFile(fileName, 'utf8', function (error, data) {
@@ -51,8 +52,9 @@ function prepareItem(item) {
     }
 
     var user = item.user;
-    if (user == null || user > 2 || user < 0) {
-        item.user = 0; //todo сделать проверку по количеству юзеров
+    var users = getUsers();
+    if (user == null || user > users.length || user < 0) {
+        item.user = 0;
     }
 
     if (item.isDone == null) {

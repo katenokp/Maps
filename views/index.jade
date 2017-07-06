@@ -64,15 +64,7 @@ block content
                 - priority = "priorityDefault"
             - else
                 - priority = "priority" + item.priority;
-            - var user;
-            - var currentUserIndex;
-            - for (var i = 1; i<=allUsers.length; i++)
-                - if (allUsers[i-1] == item.user)
-                    - currentUserIndex = i;
-            - if(currentUserIndex == undefined)
-                - user = "Default"
-            - else
-                - user = "user" + currentUserIndex;
+            - var currentUser = (item.user != 0 && item.user != undefined) ? allUsers[item.user-1].id : "Default";
 
             li(id=id, class="listItemId"+(index==data.length-1 ? " last" : "") )
                 .grayLinesBlock
@@ -82,7 +74,7 @@ block content
                             em(id=id+"_Marker", class="marker close" + (hasChildren!=true ? " hidden" : ""), onclick="collapseOrExpandElementByClick(this.id, event)")
                         .itemMessageWrapper
                             .dropDownWrapper.user(id=id+"_User_DropWrapper")
-                                button(id=id+"_User_Button", class="userIcon dropButton user "+'#{user}', style="background-image: url(../images/userIcons/"+ '#{user}' +".png)", onclick="switchDropDownList(this.id, 'User')")
+                                button(id=id+"_User_Button", class="userIcon dropButton user "+currentUser, style="background-image: url(../images/userIcons/"+ '#{currentUser}' +".png)", onclick="switchDropDownList(this.id, 'User')")
                                 div(id=id+"_User_DropDown",  class="dropContent user hidden")
                                     each value, index in allUsers
                                         a(id=id+"_User_dropLink"+index, class="userIcon dropLink user " + value.id, style="background-image: url(../images/userIcons/"+value.id +".png)", onclick="setUserValue(this.id)")

@@ -46,7 +46,8 @@ router.get('/converter', function(req, res, next){
                     if(needNormalization()){
                         data = JSON.stringify(normalize.normalizeData(data));
                     }
-                    res.render('converter', {currentService: service, services: settings.services, data: data});
+                    var users = settings.users;
+                    res.render('converter', {currentService: service, services: settings.services, data: data, allUsers: users});
                 }
             }
         )

@@ -12,6 +12,7 @@ var saveData = require('./js/saver');
 var parser = require('./js/parser');
 var replacer = require('./js/replacerForJSON');
 var getService = require('./js/services');
+var getUsers= require('./js/users');
 
 var app = express();
 
