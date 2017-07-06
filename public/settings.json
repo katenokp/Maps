@@ -1,0 +1,43 @@
+{
+  "converter": "Конвертер",
+  "services": [
+    {
+      "id": "ndfl",
+      "name": "2-НДФЛ"
+    },
+    {
+      "id": "fss",
+      "name": "Пособия ФСС"
+    },
+    {
+      "id": "pfr",
+      "name": "ПФР"
+    },
+    {
+      "id": "kopf",
+      "name": "КОПФ"
+    },
+    {
+      "id": "forms",
+      "name": "Формы"
+    },
+    {
+      "id": "test",
+      "name": "Тестовый"
+    }
+  ],
+  "users": [
+    {
+      "name": "Маша",
+      "id": "tmv"
+    },
+    {
+      "name": "Лёша",
+      "id": "Alebastr"
+    },
+    {
+      "name": "Таня",
+      "id": "timkinatv"
+    }
+  ]
+}

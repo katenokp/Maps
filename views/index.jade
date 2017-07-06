@@ -43,8 +43,9 @@ block content
                     span(id="root_indexInput") #{weight.done}/#{weight.all}
                     | )
                 .usersListWrapper
-                    .userIcon.topUserIcon.user1
-                    .userIcon.topUserIcon.user2
+                    -each item in allUsers
+                        div(class="userIcon topUserIcon " + item.id, style="background-image: url(../images/userIcons/"+item.id +".png); background-size: cover")
+
         .buttonsWrapper
             div
                 .searchWrapper
@@ -64,10 +65,14 @@ block content
             - else
                 - priority = "priority" + item.priority;
             - var user;
-            - if(item.user==null || item.user<=0 || item.user>6)
-                - user = "userDefault"
+            - var currentUserIndex;
+            - for (var i = 1; i<=allUsers.length; i++)
+                - if (allUsers[i-1] == item.user)
+                    - currentUserIndex = i;
+            - if(currentUserIndex == undefined)
+                - user = "Default"
             - else
-                - user = "user" + item.user;
+                - user = "user" + currentUserIndex;
 
             li(id=id, class="listItemId"+(index==data.length-1 ? " last" : "") )
                 .grayLinesBlock
@@ -77,10 +82,10 @@ block content
                             em(id=id+"_Marker", class="marker close" + (hasChildren!=true ? " hidden" : ""), onclick="collapseOrExpandElementByClick(this.id, event)")
                         .itemMessageWrapper
                             .dropDownWrapper.user(id=id+"_User_DropWrapper")
-                                button(id=id+"_User_Button", class="dropButton user "+user, onclick="switchDropDownList(this.id, 'User')")
+                                button(id=id+"_User_Button", class="userIcon dropButton user "+'#{user}', style="background-image: url(../images/userIcons/"+ '#{user}' +".png)", onclick="switchDropDownList(this.id, 'User')")
                                 div(id=id+"_User_DropDown",  class="dropContent user hidden")
-                                    each val, index in {0:'Default', 1:'1', 2:'2'}
-                                        a(id=id+"_User_dropLink"+val, class="dropLink user user" + val, onclick="setDropDownValue(this.id, 'User')")
+                                    each value, index in allUsers
+                                        a(id=id+"_User_dropLink"+index, class="userIcon dropLink user " + value.id, style="background-image: url(../images/userIcons/"+value.id +".png)", onclick="setUserValue(this.id)")
                             .hintContainer
                                 progress(id=id+"_ProgressBar", class="progressBar", value=item.weight.done, max=item.weight.all)
                                 br
@@ -89,7 +94,7 @@ block content
                                 button(id=id+"_Priority_Button", class="dropButton priority "+ priority, onclick="switchDropDownList(this.id, 'Priority')")
                                 div(id=id+"_Priority_DropDown", class="dropContent priority hidden")
                                     each val, index in {0:'Default', 1:'1', 2:'2', 3:'3', 4:'4', 5:'5'}
-                                        a(id=id+"_dropLink"+val, class="dropLink priority priority"+val, onclick="setDropDownValue(this.id, 'Priority')")
+                                        a(id=id+"_dropLink"+val, class="dropLink priority priority"+val, onclick="setPriorityValue(this.id)")
                             a(id=id+"_Item", class="itemName " + (hasChildren? "listItemLink" : "listItem"), onclick=hasChildren ? "collapseOrExpandElementByClick(this.id, event)" :"", onselectstart="return false", onmousedown="return false") #{item.name}
                             input(id=id+"_indexInput", class="textInput index" + (hasChildren==true ? " hidden" : ""), type="text", value=item.weight.done+"/"+item.weight.all, onchange="updateProgressBar(this.id); changeWeights(this.id); markChangedItem(this.id)")
                             input(id=id+"_commentInput", class="textInput comment", type="text", value=item.comment, oninput="markChangedItem(this.id)")

@@ -14,14 +14,27 @@ function editDataFile(){
     }
 }
 
-function setDropDownValue(elemId, dropDownType){
+function setPriorityValue(elemId){
 
-    var listItemId = getLiId(elemId, dropDownType);
-    var dropButtonId = getDropDownButtonId(listItemId, dropDownType);
+    var listItemId = getLiId(elemId, 'Priority');
+    var dropButtonId = getDropDownButtonId(listItemId, 'Priority');
 
     var dropDownClassName = document.getElementById(elemId).className;
 
     document.getElementById(dropButtonId).className = "dropButton " + dropDownClassName;
+
+    markChangedItem(elemId);
+}
+
+function setUserValue(elemId) {
+    var listItemId = getLiId(elemId, 'User');
+    var dropButtonId = getDropDownButtonId(listItemId, 'User');
+
+    var dropDownClasses = document.getElementById(elemId).className.split(' ');
+    var currentUser = dropDownClasses[dropDownClasses.length-1];
+
+    document.getElementById(dropButtonId).style.backgroundImage = "url(../images/userIcons/"+ currentUser +".png)";
+    document.getElementById(dropButtonId).className = "userIcon dropButton user " + currentUser;
 
     markChangedItem(elemId);
 }

@@ -12,8 +12,8 @@ function readItem(idItem){ //todo rename
         name: getNodeName(idItem),
         id: idItem,
         isDone: getIsDone(idItem),
-        priority: getDropDownValue(idItem, 'Priority'),
-        user: getDropDownValue(idItem, 'User'),
+        priority: getPriorityValue(idItem),
+        user: getUserId(getUserValue(idItem)),
         comment: document.getElementById(idItem + "_commentInput").value,
         weight: getWeight(idItem)
     };

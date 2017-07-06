@@ -16,17 +16,29 @@ function getAllChildren(idItem){ //todo упростить
     return children.id;
 }
 
-function getDropDownValue(idItem, dropDownType){
+function getPriorityValue(idItem){
+    return parseInt(getDropDownValue(idItem, 'Priority'));
+}
+
+function getDropDownValue(idItem, dropDownType) {
     var idNode = getNodeId(idItem);
     var button = document.getElementById(idNode + "_"+ dropDownType + "_Button");
     if(button.className.indexOf(dropDownType.toLowerCase()) == -1)
         return 0;
-    var regexp = dropDownType.toLowerCase() + '(\\d+|\\w+)';
+    var regexp = getDropDownClassMask(dropDownType);
     var matches = button.className.match(regexp);
     var dropDownClass = matches[1];
     if(dropDownClass == "Default")
         return 0;
-    return parseInt(dropDownClass);
+    return dropDownClass;
+}
+
+function getUserValue(idItem){
+    return getDropDownValue(idItem, 'User');
+}
+
+function getDropDownClassMask(dropDownType) {
+    return dropDownType.toLowerCase() + (dropDownType == 'User' ? ' ' : '')+'(\\d+|\\w+)'
 }
 
 function getWeight(idItem){
