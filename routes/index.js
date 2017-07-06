@@ -3,32 +3,39 @@ var router = express.Router();
 var fs = require('fs');
 var path = require('path');
 var normalize = require('../js/prepareData');
-var serviceName = require('../servicesNames');
 var replacer = require('../js/replacerForJSON');
 var settings = require('../bin/settings.json');
+var getService = require('../js/services')
+var getUsers = require('../js/users')
+var url = require('url');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var serviceNamesArray = [];
-    for (property in serviceName){
+    for(var i=0; i<settings.services.length; i++){
+        serviceNamesArray.push({
+            name: settings.services[i].name,
+            code: settings.services[i].id
+        })
+    }
+    /*for (property in serviceName){
         serviceNamesArray.push({
             name: serviceName[property],
             code: property
         })
-    }
+    }*/
     res.render('start', {servicesNames: serviceNamesArray});
 });
 
 router.get('/converter', function(req, res, next){
     var service = req.headers.referer != null ?
-        req.headers.referer.replace(req.headers.host + "/", "").split("//")[1].toLowerCase() :
+        req.headers.referer.replace(req.headers.host + "/", "").split("//")[1].split("?")[1].toLowerCase() :
         null;
     if(service == '')
         service = null;
     if(service == null) {
-        res.render('converter', {service: service, data: null});
+        res.render('converter', {currentService: service, services: settings.services, data: null});
     } else {
-        //var dataFileName = path.join(__dirname, '../data/' + service + '/data.json');
         var dataFileName = path.join(settings.dataFolderPath, service, 'data.json');
         fs.readFile(dataFileName, 'utf8', function (err, data) {
                 if (err) {
@@ -39,7 +46,7 @@ router.get('/converter', function(req, res, next){
                     if(needNormalization()){
                         data = JSON.stringify(normalize.normalizeData(data));
                     }
-                    res.render('converter', {service: service, data: data});
+                    res.render('converter', {currentService: service, services: settings.services, data: data});
                 }
             }
         )
@@ -47,43 +54,19 @@ router.get('/converter', function(req, res, next){
 
 });
 
-router.get('/test', function(req, res, next) {
-    buildPage("Test", res);
-});
-
-router.get('/ndfl', function(req, res, next) {
-    buildPage("Ndfl", res);
-});
-
-router.get('/fss', function(req, res, next) {
-    buildPage("Fss", res);
-});
-
-router.get('/pfr', function(req, res, next) {
-    buildPage("Pfr", res);
-});
-
-router.get('/kopf', function(req, res, next) {
-    buildPage("Kopf", res);
-});
-
-router.get('/fms', function(req, res, next) {
-    buildPage("Fms", res);
-});
-
-router.get('/forms', function(req, res, next) {
-    buildPage("Forms", res);
+router.get('/start', function(req, res, next) {
+    buildPage(url.parse(req.url).query, res);
 });
 
 /*router.get('/normalize', function(req, res, err){
     res.render()
 })*/
 
-function buildPage(service, res){
-    var commonInformationFileName = path.join(settings.dataFolderPath, service, 'commonInformation.json');
+function buildPage(serviceId, res){
+    var commonInformationFileName = path.join(settings.dataFolderPath, serviceId, 'commonInformation.json');
     //var commonInformationFileName = path.join(__dirname,'../data/' + service + '/commonInformation.json');
     //var dataFileName = path.join(__dirname,'../data/' + service + '/data.json');
-    var dataFileName = path.join(settings.dataFolderPath, service, 'data.json');
+    var dataFileName = path.join(settings.dataFolderPath, serviceId, 'data.json');
 
     fs.readFile(dataFileName, 'utf8', function(err, data){
         if(err){
@@ -131,7 +114,10 @@ function buildPage(service, res){
                                     res.statusCode = 409;
                                     res.message = error.message;
                                 }
-                                else{res.render('index', {data: parsedData, weight: weight, service: service, serviceName: serviceName[service]});}
+                                else{
+                                    var service = getService(serviceId);
+                                    var users = settings.users;
+                                    res.render('index', {data: parsedData, weight: weight, serviceInfo: service, allUsers: users});}
                             })
                         }
                     });

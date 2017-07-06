@@ -50,21 +50,8 @@ function errorHandler(e) {
     console.log(e);
 }
 
-function parseServiceName(serviceName){
-    var services = {
-        Ndfl: "НДФЛ",
-        Fss: "ФСС",
-        Pfr: "ПФР",
-        Kopf: "Kopf",
-        Fms: "ФМС",
-        Forms: "Формы",
-        Test: "Test"
-    };
-    return services[serviceName];
-}
-
-function readOldData(fs){
-    var serviceName = this.serviceName;
+function readOldData(fs) {
+    var serviceName = this.service;
     var newData = this.newData;
     console.log("service name = " + serviceName);
     fs.root.getFile(serviceName+"/oldData.json", {}, function(fileEntity){
@@ -74,7 +61,12 @@ function readOldData(fs){
             reader.onloadend = function(e){
                 oldData = JSON.parse(this.result);
 
-                var dataJson = JSON.stringify({service: serviceName, weight: getRootWeight(), data: newData, oldData: oldData});
+                var dataJson = JSON.stringify({
+                    service: serviceName,
+                    weight: getRootWeight(),
+                    data: newData,
+                    oldData: oldData
+                });
 
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "/save", true);

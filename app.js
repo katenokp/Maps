@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var saveData = require('./js/saver');
 var parser = require('./js/parser');
 var replacer = require('./js/replacerForJSON');
-var servicesNames = require('./servicesNames');
+var getService = require('./js/services');
 
 var app = express();
 
@@ -92,8 +92,8 @@ app.post('/converter', function (req, res, next) {
             res.render('index', {
                 data: data.data,
                 weight: {all: 0, done: 0},
-                service: data.service,
-                serviceName: servicesNames[data.service]
+                serviceInfo: getService(data.service),
+                allUsers: getUsers()
             })
         });
 

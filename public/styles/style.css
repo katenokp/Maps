@@ -276,38 +276,7 @@ a:focus{
     width: 50px;
 }
 
-.user1{
-    background: url("../images/userIcons/Alebastr.png");
-    background-size: cover;
-}
-
-.user2{
-    background: url("../images/userIcons/e_pajl.png");
-    background-size: cover;
-}
-
-.user3{
-    background: url("../images/userIcons/gsl.png");
-    background-size: cover;
-}
-
-.user4{
-    background: url("../images/userIcons/nass_qwerty.png");
-    background-size: cover;
-}
-
-.user5{
-    background: url("../images/userIcons/timkinatv.jpg");
-    background-size: cover;
-}
-
-.user6{
-    background: url("../images/userIcons/tmv.png");
-    background-size: cover;
-}
-
-.userDefault{
-    background: url("../images/userIcons/Default.png");
+.userIcon{
     background-size: cover;
 }
 
