@@ -3,14 +3,14 @@ extends layout
 block content
     -var parsedData = JSON.stringify(data, replacer);
     script.
-        var serviceName = '#{serviceName}';
-        var service = '#{service}';
+        var serviceName = '#{serviceInfo.name}';
+        var service = '#{serviceInfo.id}';
         createListState(service);
 
         navigator.webkitPersistentStorage.requestQuota(10*1024*1024, function (bytes) {
             window.webkitRequestFileSystem(window.PERSISTENT, bytes, function (fs) {
                 console.log("storage is ready");
-                fs.root.getDirectory(serviceName, {create:true}, function(directory){
+                fs.root.getDirectory(service, {create:true}, function(directory){
                     directory.getFile('oldData.json', {create: true}, function(file){
                         file.remove(function(){
                             directory.getFile('oldData.json', {create: true}, function(newFile) {
