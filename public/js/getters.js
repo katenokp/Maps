@@ -49,10 +49,10 @@ function getWeight(idItem){
             done : getIsDone(idNode) ? 1: 0,
             all : 1
         };
-    return parseWeight(weightText);
+    return parseWeight(weightText, idItem);
 }
 
-function parseWeight(weightText){
+function parseWeight(weightText, idItem){
     var regexp = /(\d+?)[/\\;:&@](\d+)/;
     var weightValues = weightText.match(regexp);
     if(weightValues.length != 3 || parseInt(weightValues[1]) > parseInt(weightValues[2]))
