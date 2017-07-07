@@ -56,6 +56,8 @@ block content
                 input.button.edit(type='button', value='', onclick='editDataFile()')
                 input.button.saveAll(id='saveButton', name=serviceName, type='submit', value='', onclick='unmarkAllItems(); saveByButton()')
     mixin drawBlock(data)
+        - var usersWithDefault = allUsers.slice();
+        - usersWithDefault.unshift({id : "Default", name: "-"})
         each item,index in data
             - var id=item.id
             - var hasChildren = item.children!=null;
@@ -64,7 +66,7 @@ block content
                 - priority = "priorityDefault"
             - else
                 - priority = "priority" + item.priority;
-            - var currentUser = (item.user != 0 && item.user != undefined) ? allUsers[item.user-1].id : "Default";
+            - var currentUser = (item.user != 0 && item.user != undefined) ? item.user : "Default";
 
             li(id=id, class="listItemId"+(index==data.length-1 ? " last" : "") )
                 .grayLinesBlock
@@ -76,7 +78,7 @@ block content
                             .dropDownWrapper.user(id=id+"_User_DropWrapper")
                                 button(id=id+"_User_Button", class="userIcon dropButton user "+currentUser, style="background-image: url(../images/userIcons/"+ '#{currentUser}' +".png)", onclick="switchDropDownList(this.id, 'User')")
                                 div(id=id+"_User_DropDown",  class="dropContent user hidden")
-                                    each value, index in allUsers
+                                    each value, index in usersWithDefault
                                         a(id=id+"_User_dropLink"+index, class="userIcon dropLink user " + value.id, style="background-image: url(../images/userIcons/"+value.id +".png)", onclick="setUserValue(this.id)")
                             .hintContainer
                                 progress(id=id+"_ProgressBar", class="progressBar", value=item.weight.done, max=item.weight.all)

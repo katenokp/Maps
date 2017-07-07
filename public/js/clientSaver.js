@@ -8,12 +8,13 @@ function readDataForSave(ulId){
 }
 
 function readItem(idItem){ //todo rename
+    var userValue = getUserValue(idItem);
     var parsedItem = {
         name: getNodeName(idItem),
         id: idItem,
         isDone: getIsDone(idItem),
         priority: getPriorityValue(idItem),
-        user: getUserId(getUserValue(idItem)),
+        user: (userValue!=0 && userValue!=null) ? userValue : null,
         comment: document.getElementById(idItem + "_commentInput").value,
         weight: getWeight(idItem)
     };
