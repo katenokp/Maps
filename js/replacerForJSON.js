@@ -1,1 +1,1 @@
-module.exports = ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"];
+module.exports = ["name", "id", "isDone", "comment", "priority", "user", "weight", "children", "done", "all"];

@@ -16,15 +16,29 @@ function getAllChildren(idItem){ //todo упростить
     return children.id;
 }
 
-function getPriority(idItem){
+function getPriorityValue(idItem){
+    return parseInt(getDropDownValue(idItem, 'Priority'));
+}
+
+function getDropDownValue(idItem, dropDownType) {
     var idNode = getNodeId(idItem);
-    var button = document.getElementById(idNode + "_PriorityButton");
-    if(button.className.indexOf("priority") == -1)
+    var button = document.getElementById(idNode + "_"+ dropDownType + "_Button");
+    if(button.className.indexOf(dropDownType.toLowerCase()) == -1)
         return 0;
-    var priorityClass = button.className.replace(/dropButton /, "").replace(/dropLink /, "").replace("priority", "");
-    if(priorityClass == "Default")
+    var regexp = getDropDownClassMask(dropDownType);
+    var matches = button.className.match(regexp);
+    var dropDownClass = matches[1];
+    if(dropDownClass == "Default")
         return 0;
-    return parseInt(priorityClass);
+    return dropDownClass;
+}
+
+function getUserValue(idItem){
+    return getDropDownValue(idItem, 'User');
+}
+
+function getDropDownClassMask(dropDownType) {
+    return dropDownType.toLowerCase() + (dropDownType == 'User' ? ' ' : '')+'(\\d+|\\w+)'
 }
 
 function getWeight(idItem){
@@ -72,7 +86,6 @@ function getNodeId(id){
     if(matches == null)
         return id;
     return matches[matches.length-1];
-    //var prefixes = ['_Checkbox', '_PriorityButton', '_PriorityDropDown', '_Item', '_commentInput', '_indexInput'];
 }
 
 function getParentUlId(nodeId){

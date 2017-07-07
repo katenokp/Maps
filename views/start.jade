@@ -6,6 +6,6 @@ html
    body
        each item in servicesNames
            div
-           a(href='/'+item.code) #{item.name}
+           a(href='/start?'+item.code) #{item.name}
        br
        a(href='/converter') Конвертер    

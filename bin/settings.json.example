@@ -1,4 +1,14 @@
 {
-  "port" : "8777",
-  "dataFolderPath" : "//K1406010/data2"
+  "port": "1337",
+  "dataFolderPath": "..\\Data",
+  "users": [
+    {
+      "name": "Маша",
+      "id": "tmv"
+    },
+    {
+      "name": "Таня",
+      "id": "timkinatv"
+    }
+  ]
 }

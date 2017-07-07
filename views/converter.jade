@@ -4,7 +4,15 @@ html
       meta(charset='UTF-8')
       link(rel='stylesheet', href='/styles/style.css')
       script(src='/js/converter.js')
-   body(onload= "setService('#{service}', '#{data}')")
+      script(src='/js/settings.js')
+      mixin loadServices()
+        each item in services
+            -var id = item.id
+            -var name  = item.name
+            p
+                input(type="radio", id="serviceNameRadioButton_" + id, name="service", value=id)
+                | #{name}
+   body(onload= "setService('#{currentService}', '#{data}')")
        form.converterForm#converterForm(action="/converter", method="POST", onsubmit="submit()")
            textarea#converterTextField(type="text", name="text")
            .converterSettingsWrapper
@@ -13,27 +21,7 @@ html
                br
                .servicesBtns
                     p.topItemWrapper Сервис
-                    p
-                        input#serviceNameRadioButton_ndfl(type="radio", name="service", value="Ndfl")
-                        |НДФЛ
-                    p
-                        input#serviceNameRadioButton_fss(type="radio", name="service", value="Fss")
-                        |ФСС
-                    p
-                        input#serviceNameRadioButton_pfr(type="radio", name="service", value="Pfr")
-                        |ПФР
-                    p
-                        input#serviceNameRadioButton_kopf(type="radio", name="service", value="Kopf")
-                        |КОПФ
-                    p
-                        input#serviceNameRadioButton_fms(type="radio", name="service", value="Fms")
-                        |ФМС
-                    p
-                        input#serviceNameRadioButton_forms(type="radio", name="service", value="Forms")
-                        |Формы
-                    p
-                        input#serviceNameRadioButton_test(type="radio", name="service", value="Test")
-                        |Тестовый
+                        +loadServices()
                 input.sendButton(type="button", value="send", onclick="validate()")
                .templateWrapper(title="Кликни, чтобы скопировать")
                p Шаблон элемента списка

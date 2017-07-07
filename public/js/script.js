@@ -14,47 +14,62 @@ function editDataFile(){
     }
 }
 
-function setPriority(elemId){
+function setPriorityValue(elemId){
 
-    var listItemId = getLiId(elemId);
-    var dropButtonId = getDropButtonId(listItemId);
+    var listItemId = getLiId(elemId, 'Priority');
+    var dropButtonId = getDropDownButtonId(listItemId, 'Priority');
 
-    var priorityClassName = document.getElementById(elemId).className;
+    var dropDownClassName = document.getElementById(elemId).className;
 
-    document.getElementById(dropButtonId).className = "dropButton " + priorityClassName;
+    document.getElementById(dropButtonId).className = "dropButton " + dropDownClassName;
 
     markChangedItem(elemId);
 }
 
-function switchDropdownList(elemId) {
-    var listItemId = getLiId(elemId);
-    var dropdownId = getDropdownId(listItemId);
+function setUserValue(elemId) {
+    var listItemId = getLiId(elemId, 'User');
+    var dropButtonId = getDropDownButtonId(listItemId, 'User');
 
-    var className = document.getElementById(dropdownId).className;
+    var dropDownClasses = document.getElementById(elemId).className.split(' ');
+    var currentUser = dropDownClasses[dropDownClasses.length-1];
+
+    document.getElementById(dropButtonId).style.backgroundImage = "url(../images/userIcons/"+ currentUser +".png)";
+    document.getElementById(dropButtonId).className = "userIcon dropButton user " + currentUser;
+
+    markChangedItem(elemId);
+}
+
+function switchDropDownList(elemId, dropDownType) {
+    var listItemId = getLiId(elemId);
+    var dropDownId = getDropDownId(listItemId, dropDownType);
+
+    var className = document.getElementById(dropDownId).className;
 
     if(className.search("hidden") == -1){
-        document.getElementById(dropdownId).className += ' hidden';
+        document.getElementById(dropDownId).className += ' hidden';
     } else {
-        document.getElementById(dropdownId).className = className.replace(' hidden', '');
+        document.getElementById(dropDownId).className = className.replace(' hidden', '');
     }
 }
 
-function hideAllDropdownLists(event) {
+function hideAllDropDownLists(event) {
 
     if (!event) event = window.event;
 
-    if((event.target || event.srcElement).id.search("PriorityButton") != -1)
+    var id = (event.target || event.srcElement).id;
+
+    if( id.search("Priority_Button") != -1 || id.search("User_Button") != -1)
         return;
 
     var dropLists = document.getElementsByClassName("dropContent");
 
     for (var i = 0; i < dropLists.length; i++) {
-        var dropdownId = dropLists[i].id;
+        var dropDownId = dropLists[i].id;
 
-        var className = document.getElementById(dropdownId).className;
+        var className = document.getElementById(dropDownId).className;
 
         if(className.search("hidden") == -1){
-            document.getElementById(dropdownId).className += ' hidden';
+            document.getElementById(dropDownId).className += ' hidden';
         }
     }
 }
@@ -63,7 +78,7 @@ function markChangedItem(controlId){
     var liId = getLiId(controlId);
     var itemId = getItemId(liId);
 
-    var itemClass =document.getElementById(itemId).className;
+    var itemClass = document.getElementById(itemId).className;
 
     if(itemClass.search("changed") == -1)
         document.getElementById(itemId).className += " changed";
@@ -108,10 +123,18 @@ function getMarkerId(listItemIndex) {
     return listItemIndex + "_Marker";
 }
 
-function getDropdownId(listItemIndex) {
-    return listItemIndex + "_PriorityDropDown";
+function getDropDownId(listItemIndex, dropDownType) {
+    return listItemIndex + getDropDownPrefix(dropDownType) + "_DropDown";
 }
 
-function getDropButtonId(listItemIndex) {
-    return listItemIndex + "_PriorityButton";
+function getDropDownButtonId(listItemIndex, dropDownType) {
+    return listItemIndex + getDropDownPrefix(dropDownType) + "_Button";
+}
+
+function getDropDownPrefix(dropDownType){
+    switch (dropDownType.toLowerCase()){
+        case 'priority' : return '_Priority';
+        case 'user' : return '_User';
+        default : return '';
+    }
 }

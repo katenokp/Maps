@@ -17,7 +17,7 @@ function validate() {
         textField.value = JSON.stringify(preparedData);
     }
     document.getElementById("converterForm").submit();
-    setTimeout(function(){location.href = location.href.replace('converter', service)}, 1000);
+    setTimeout(function(){location.href = location.href.replace('converter', 'start?' + service)}, 1000);
 
 
     /*var formData = new FormData();
@@ -50,11 +50,11 @@ function setService(service, data) {
         document.getElementById("listItemId_Checkbox").checked = true;
         document.getElementById("serviceNameRadioButton_" + service).checked = true;
         try{
-            document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
+            document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "user", "weight", "children", "done", "all"], '\t');
         } catch (error){
             data.replace(/\t/g, '');
             try{
-                document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "weight", "children", "done", "all"], '\t');
+                document.getElementById("converterTextField").value = JSON.stringify(JSON.parse(data), ["name", "id", "isDone", "comment", "priority", "user", "weight", "children", "done", "all"], '\t');
             } catch (error) {
                 document.getElementById("converterTextField").value = data;
                 alert(error.message);
@@ -63,8 +63,8 @@ function setService(service, data) {
     }
 }
 function resetServiceInConverter(){
-    ['ndfl', 'fss', 'pfr', 'kopf', 'fms', 'forms', 'test'].forEach(function(item){
-        document.getElementById('serviceNameRadioButton_' + item).checked = false;
+    getServices().forEach(function(item){
+        document.getElementById('serviceNameRadioButton_' + item.id.toLowerCase()).checked = false;
     })
 }
 

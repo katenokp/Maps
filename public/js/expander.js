@@ -281,7 +281,7 @@ function getExpandStatesFromPage() {
 
 function createListState(service) {
     if (location.href.indexOf('converter') != -1)
-        location.href = location.href.replace('converter', service);
+        location.href = location.href.replace('converter', 'start?' + service);
     localStorage.setItem("service", service);
     if (localStorage.getItem(service + "_expanded") == null)
         localStorage.setItem(service + "_expanded", JSON.stringify({ids: []}));

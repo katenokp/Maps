@@ -1,6 +1,7 @@
 var fs = require('fs');
 var save = require('./saver');
 var replacer = require('./replacerForJSON');
+var getUsers = require('./users')
 
 function prepareFile(fileName) {
     fs.readFile(fileName, 'utf8', function (error, data) {
@@ -48,6 +49,12 @@ function prepareItem(item) {
     var priority = item.priority;
     if (priority == null || priority > 5 || priority < 0) {
         item.priority = 0; //todo выкинуть эту проверку из рендеринга
+    }
+
+    var user = item.user;
+    var users = getUsers();
+    if (user == null || user > users.length || user < 0) {
+        item.user = 0;
     }
 
     if (item.isDone == null) {
