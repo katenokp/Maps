@@ -1,14 +1,25 @@
 {
-  "port": "1337",
-  "dataFolderPath": "..\\Data",
-  "users": [
+  "port" : "1337",
+  "dataFolderPath" : "C:\\FunctlionalMaps\\Data",
+  "converter": "Конвертер",
+  "services": [
     {
-      "name": "Маша",
-      "id": "tmv"
+      "id": "service1",
+      "name": "Сервис1"
     },
     {
-      "name": "Таня",
-      "id": "timkinatv"
+      "id": "service2",
+      "name": "Сервис2"
+    }
+  ],
+  "users": [
+    {
+      "name": "Имя1",
+      "id": "User1"
+    },
+    {
+      "name": "Имя2",
+      "id": "User2"
     }
   ]
 }
