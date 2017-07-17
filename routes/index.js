@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/converter', function(req, res, next){
     var service = req.headers.referer != null ?
-        req.headers.referer.replace(req.headers.host + "/", "").split("//")[1].split("?")[1].toLowerCase() :
+        req.headers.referer.replace(req.headers.host + "/", "").split("//")[1].split("?")[1] :
         null;
     if(service == '')
         service = null;
@@ -138,10 +138,11 @@ function needNormalization(){
 
 function calculateRootCompleteness(data){
     var weight = {done:0, all:0};
-    data.forEach(function(item){
-        weight.done += item.weight.done;
-        weight.all += item.weight.all;
-    });
+    if(data.length!=undefined)
+        data.forEach(function(item){
+            weight.done += item.weight.done;
+            weight.all += item.weight.all;
+        });
     return weight;
 }
 

@@ -157,6 +157,8 @@ function prepareData(data, needClearIds){
 
 
 function clearIds(itemsArray){
+    if(itemsArray.length == undefined)
+        throw new Error("Bad JSON file");
     itemsArray.forEach(function(item){
         item.id = undefined;
         if(item.children != undefined)

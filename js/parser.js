@@ -17,6 +17,8 @@ function parse(data) {
 function calculateWeight(itemsArray, currentCommonWeight){
     if(currentCommonWeight == undefined)
         currentCommonWeight = {all: 0, done: 0};
+    if(itemsArray.length == undefined)
+        throw new Error("Bad JSON file")
     itemsArray.forEach(function(item){
         if(item.children == null){
             item.weight = {all: 1, done: 0};
@@ -128,7 +130,7 @@ function normalizeWeight(item) {
 function parseAll() {
     var result = [];
     if (linesLevels[0].level != 0)
-        throw error('Bad structure on position 0');
+        throw new Error('Bad structure on position 0');
 
     index = 0;
     while (index < linesLevels.length) {

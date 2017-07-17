@@ -27,6 +27,8 @@ function normalizeData(data) {
 }
 
 function normalizeItemsArray(itemsArray) {
+    if(itemsArray.length == undefined)
+        throw new Error("Bad JSON file");
     itemsArray.forEach(function (item) {
         prepareItem(item);
         if (item.children != null && item.children.length == 0)
